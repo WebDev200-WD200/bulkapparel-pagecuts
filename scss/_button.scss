@@ -1,0 +1,56 @@
+.btn {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+
+  &--track {
+    display: flex;
+    flex-direction: row;
+    background-color: $color-dark-blue;
+    padding: 5px 15px 5px 10px;
+    align-items: center;
+    &__icon {
+      fill: $color-white;
+      margin-right: 10px;
+      height: 18px;
+    }
+
+    &__label {
+      font-size: 14px;
+      color: $color-white;
+    }
+  }
+
+  &--cart {
+    svg {
+      height: 35px;
+    }
+
+    &__count {
+    }
+  }
+
+  &--icon {
+    position: relative;
+    svg {
+      height: 35px;
+      fill: $color-dark-blue;
+    }
+
+    &__count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: -15px;
+      top: -15px;
+      background: $color-red;
+      height: 24px;
+      width: 24px;
+      border-radius: 100%;
+      color: $color-white;
+    }
+  }
+}

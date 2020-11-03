@@ -1,0 +1,35 @@
+.inp {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  &--search {
+    position: relative;
+    height: 45px;
+    width: 100%;
+
+    &__input {
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      padding: 10px;
+      background: $color-light-gray;
+      font-size: 16px;
+    }
+
+    &__button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 60px;
+      background: $color-dark-blue;
+
+      svg {
+        fill: $color-white;
+      }
+    }
+  }
+}

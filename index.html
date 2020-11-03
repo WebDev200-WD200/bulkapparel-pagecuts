@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer Customized</title>
+    <link rel="stylesheet" href="./scss/main.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar__main">
+                <div class="container">
+                    <div class="navbar__logo">
+                        <img src="./assets/img/logo.svg" alt="Bulkapparel logo">
+                    </div>
+
+                    <div class="navbar__ads">
+                        <div class="ads-free-shipping mb-1">
+                            <div class="free-text">
+                                <h2>Free Shipping</h2>
+                                <p>on order over<span class="price-bold">$99.00</span></p>
+                            </div>
+
+                            <div class="free-icon">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                        <path
+                                            d="M61 16H35a1 1 0 000 2h25v4H26v-4h5a1 1 0 000-2h-6a1 1 0 00-1 1v11H11a1 1 0 00-.781.375l-8 10A1 1 0 002 39v12a1 1 0 001 1h3.08a7 7 0 100-2H4V40h17a1 1 0 001-1v-6a1 1 0 00-2 0v5h-6.382l4-8H24v20h-1a1 1 0 000 2h15.08a7 7 0 100-2H26v-8h31a1 1 0 000-2H26V24h34v26h-5a1 1 0 000 2h6a1 1 0 001-1V17a1 1 0 00-1-1zM13 46a5 5 0 11-5 5 5.006 5.006 0 015-5zm-1.618-8H5.08l6.4-8h3.9zM45 46a5 5 0 11-5 5 5.006 5.006 0 015-5z" />
+                                        <path
+                                            d="M13 54a3 3 0 10-3-3 3 3 0 003 3zm0-4a1 1 0 11-1 1 1 1 0 011-1zm32 4a3 3 0 10-3-3 3 3 0 003 3zm0-4a1 1 0 11-1 1 1 1 0 011-1zM33 29a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 002 0v-3h2a1 1 0 000-2h-2v-2zm6-2h-2a1 1 0 00-1 1v8a1 1 0 002 0v-3h1a1 1 0 011 1v2a1 1 0 002 0v-2a2.981 2.981 0 00-.78-2A2.987 2.987 0 0039 27zm-1 4v-2h1a1 1 0 010 2zm11-2a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 000-2h-3v-2h2a1 1 0 000-2h-2v-2zm8 0a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 000-2h-3v-2h2a1 1 0 000-2h-2v-2z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn--track">
+                            <figure>
+                                <svg class="btn--track__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.489 5.014H5.512a.498.498 0 00-.498.498v5.976c0 .275.223.498.498.498h5.977a.498.498 0 00.498-.498V5.512a.498.498 0 00-.498-.498zm-3.487.996H9v.996h-.997V6.01zm2.989 4.98H6.01V6.01h.995v1.494c0 .275.223.498.498.498h1.993a.498.498 0 00.498-.498V6.01h.996v4.98z" />
+                                    <path
+                                        d="M16.502 8.002h-1.546A6.485 6.485 0 009 2.044V.498a.498.498 0 00-.997 0v1.546a6.485 6.485 0 00-5.957 5.958H.499a.498.498 0 000 .996h1.546a6.485 6.485 0 005.957 5.958v1.546a.498.498 0 00.997 0v-1.546a6.485 6.485 0 005.957-5.958h1.546a.498.498 0 100-.996zM9 13.956v-.476a.498.498 0 10-.997 0v.476a5.488 5.488 0 01-4.957-4.958h.475a.498.498 0 000-.996h-.475a5.488 5.488 0 014.957-4.958v.476a.498.498 0 00.997 0v-.476a5.487 5.487 0 014.957 4.958h-.475a.498.498 0 100 .996h.475A5.488 5.488 0 019 13.956zM1.528 4.018a.498.498 0 00.498-.498V2.025H3.52a.498.498 0 000-.996H1.528a.498.498 0 00-.498.498V3.52c0 .275.223.498.498.498zM3.52 14.975H2.026V13.48a.498.498 0 10-.996 0v1.993c0 .275.223.498.498.498H3.52a.498.498 0 000-.996zM15.473 12.982a.498.498 0 00-.498.498v1.495h-1.494a.498.498 0 100 .996h1.992a.498.498 0 00.498-.498V13.48a.498.498 0 00-.498-.498zM13.481 2.025h1.494V3.52a.498.498 0 00.996 0V1.527a.498.498 0 00-.498-.498h-1.992a.498.498 0 100 .996z" />
+                                </svg>
+                            </figure>
+
+                            <div class="btn--track__label">
+                                Track your order
+                            </div>
+                        </button>
+                    </div>
+
+
+
+
+                    <div class="navbar__search">
+                        <div class=" inp--search">
+                            <input type="text" class="inp inp--search__input" placeholder="Search Product, Brands">
+                            <button class="btn inp--search__button">
+                                <span class="icon">
+                                    <svg width="19" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.66 16.66l-5.332-5.116a6.764 6.764 0 001.62-4.378c0-3.844-3.258-6.97-7.264-6.97C3.679.195.42 3.321.42 7.165c0 3.843 3.259 6.97 7.264 6.97a7.417 7.417 0 004.563-1.554l5.331 5.115c.15.144.392.144.54 0l.541-.518a.357.357 0 000-.52zM7.683 12.669c-3.162 0-5.735-2.469-5.735-5.503 0-3.035 2.573-5.503 5.735-5.503 3.163 0 5.735 2.468 5.735 5.503 0 3.034-2.572 5.503-5.735 5.503z" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="navbar__action">
+                        <button class="btn btn--icon">
+                            <span class="icon">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.018.001C7.228.001.1 7.128.1 15.92c0 8.79 7.127 15.917 15.918 15.917 8.792 0 15.918-7.126 15.918-15.917S24.81 0 16.018 0zm0 4.76a5.265 5.265 0 110 10.53 5.265 5.265 0 010-10.53zm-.004 22.914a11.682 11.682 0 01-7.607-2.806 2.244 2.244 0 01-.787-1.705c0-2.949 2.386-5.309 5.335-5.309h6.127c2.95 0 5.327 2.36 5.327 5.309 0 .656-.287 1.279-.787 1.705a11.678 11.678 0 01-7.608 2.806z" />
+                                </svg>
+                            </span>
+                        </button>
+
+                        <button class="btn btn--icon">
+                            <span class="icon">
+                                <?xml version="1.0" encoding="UTF-8"?>
+                                <svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M24.783 23.257c1.956 0 3.523 1.291 3.523 2.885 0 1.594-1.567 2.885-3.523 2.885-1.956 0-3.54-1.291-3.54-2.885 0-1.594 1.584-2.885 3.54-2.885zM7.08 23.257c1.957 0 3.524 1.291 3.524 2.885 0 1.594-1.567 2.885-3.523 2.885-1.956 0-3.54-1.291-3.54-2.885 0-1.594 1.584-2.885 3.54-2.885zM22.836 16.045H9.648c-1.328 0-2.488-.598-3.098-1.485L.22 5.198A1.2 1.2 0 010 4.506c0-.8.796-1.442 1.77-1.442h26.173L29.625.179h5.78v2.885h-3.541L25.5 14.004l2.39 3.534c.274.419.433.887.433 1.392 0 1.594-1.584 2.885-3.54 2.885H3.54V18.93h20.49c.248 0 .443-.159.443-.36a.294.294 0 00-.053-.174l-1.584-2.35z" />
+                                </svg>
+                            </span>
+
+                            <span class="btn--icon__count">
+                                3
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__footer">
+                <div class="container">
+                    <ul class="navbar__footer-list">
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">T-Shirts</a>
+                            <ul class="mega-menu">
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-cotton100">Cotton - 100%</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-71"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                                        5000 Heavy Cotton ...</a></li>
+                                                <li class="21-71"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                                        64000 Softstyle T-...</a></li>
+                                                <li class="21-71"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                                        2000 Ultra Cotton ...</a></li>
+                                                <li class="21-71"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001-t-shirt-unisex-short-sleeve">BELLA
+                                                        + CANVAS 3001 Unise...</a></li>
+                                                <li class="21-71"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001cvc-unisex-short-sleeve-heather-jersey-tee">BELLA
+                                                        + CANVAS 3001CVC Un...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-cotton100"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-cottonover50tests">Cotton - Over
+                                        50%</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-72"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                                        5000 Heavy Cotton ...</a></li>
+                                                <li class="21-72"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                                        64000 Softstyle T-...</a></li>
+                                                <li class="21-72"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                                        2000 Ultra Cotton ...</a></li>
+                                                <li class="21-72"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001-t-shirt-unisex-short-sleeve">BELLA
+                                                        + CANVAS 3001 Unise...</a></li>
+                                                <li class="21-72"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001cvc-unisex-short-sleeve-heather-jersey-tee">BELLA
+                                                        + CANVAS 3001CVC Un...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-cottonover50tests"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-womens">Womens</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-13"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-1533-womens-ideal-racerback-tank">Next
+                                                        Level 1533 Women's I...</a></li>
+                                                <li class="21-13"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-5000l-heavy-cotton-womens-short-sleeve-t-shirt">Gildan
+                                                        5000L Heavy Cotton...</a></li>
+                                                <li class="21-13"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-1540-womens-ideal-v">Next
+                                                        Level 1540 Women's I...</a></li>
+                                                <li class="21-13"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6051-unisex-tri-blend-three-quarter-sleeve-baseball-raglan-tee">Next
+                                                        Level 6051 Unisex Tr...</a></li>
+                                                <li class="21-13"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6610-womens-cvc-crew">Next
+                                                        Level 6610 Womens CV...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-womens"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-mens">Mens</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-87"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                                        5000 Heavy Cotton ...</a></li>
+                                                <li class="21-87"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                                        64000 Softstyle T-...</a></li>
+                                                <li class="21-87"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                                        2000 Ultra Cotton ...</a></li>
+                                                <li class="21-87"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001-t-shirt-unisex-short-sleeve">BELLA
+                                                        + CANVAS 3001 Unise...</a></li>
+                                                <li class="21-87"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001cvc-unisex-short-sleeve-heather-jersey-tee">BELLA
+                                                        + CANVAS 3001CVC Un...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-mens"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-youth">Youth</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-28"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g500b-gildan-5000b-kids-t-shirt-wholesale">Gildan
+                                                        5000B Heavy Cotton...</a></li>
+                                                <li class="21-28"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-8000b-dryblend-youth-50-50-t-shirt">Gildan
+                                                        8000B DryBlend You...</a></li>
+                                                <li class="21-28"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-2000b-ultra-cotton-youth-t-shirt">Gildan
+                                                        2000B Ultra Cotton...</a></li>
+                                                <li class="21-28"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001y-youth-short-sleeve-crewneck-jersey-tee">BELLA
+                                                        + CANVAS 3001Y Yout...</a></li>
+                                                <li class="21-28"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-64500b-softstyle-youth-short-sleeve-t-shirt">Gildan
+                                                        64500B Softstyle Y...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-youth"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-pockets">Pockets</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-61"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-2300-ultra-cotton-t-shirt-with-a-pocket">Gildan
+                                                        2300 Ultra Cotton ...</a></li>
+                                                <li class="21-61"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/comfort-colors-6030-garment-dyed-heavyweight-ringspun-short-sleeve-shirt-with-a-pocket">Comfort
+                                                        Colors 6030 Garme...</a></li>
+                                                <li class="21-61"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/jerzees-29mpr-dri-power-active-5050-t-shirt-with-a-pocket">JERZEES
+                                                        29MPR Dri-Power 5...</a></li>
+                                                <li class="21-61"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-2410-ultra-cotton-long-sleeve-t-shirt-with-a-pocket">Gildan
+                                                        2410 Ultra Cotton ...</a></li>
+                                                <li class="21-61"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-8300-dryblend-50-50-t-shirt-with-a-pocket">Gildan
+                                                        8300 DryBlend Pock...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-pockets"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-longsleeves">Long Sleeves</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-56"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-5400-heavy-cotton-long-sleeve-t-shirt">Gildan
+                                                        5400 Heavy Cotton ...</a></li>
+                                                <li class="21-56"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-g240-long-sleeve-t-shirt-2400-ultra-cotton">Gildan
+                                                        2400 Ultra Cotton ...</a></li>
+                                                <li class="21-56"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/bella-canvas-3501-long-sleeve-jersey-tee">BELLA
+                                                        + CANVAS 3501 Unise...</a></li>
+                                                <li class="21-56"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/fruit-of-the-loom-4930r-hd-cotton-long-sleeve-t-shirt">Fruit
+                                                        of the Loom 4930R H...</a></li>
+                                                <li class="21-56"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-8400-dryblend-50-50-long-sleeve-t-shirt">Gildan
+                                                        8400 DryBlend 50/5...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-longsleeves"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-sleeveless">Sleeveless</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-63"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-1533-womens-ideal-racerback-tank">Next
+                                                        Level 1533 Women's I...</a></li>
+                                                <li class="21-63"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6733-womens-triblend-racerback-tank">Next
+                                                        Level 6733 Womens Tr...</a></li>
+                                                <li class="21-63"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-8800-womens-flowy-racerback-tank">BELLA
+                                                        + CANVAS 8800 Women...</a></li>
+                                                <li class="21-63"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-5013-womens-festival-muscle-tank">Next
+                                                        Level 5013 Womens Fe...</a></li>
+                                                <li class="21-63"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6633-womens-the-jersey-racerback-tank">Next
+                                                        Level 6633 Womens Sp...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-sleeveless"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-vneck">V-Neck</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-66"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3005-unisex-short-sleeve-v-neck-jersey-tee">BELLA
+                                                        + CANVAS 3005 Unise...</a></li>
+                                                <li class="21-66"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-1540-womens-ideal-v">Next
+                                                        Level 1540 Women's I...</a></li>
+                                                <li class="21-66"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-3200-premium-short-sleeve-v">Next
+                                                        Level 3200 Cotton Sh...</a></li>
+                                                <li class="21-66"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/gildan-5v00l-heavy-cotton-womens-v-neck-t-shirt">Gildan
+                                                        5V00L Heavy Cotton...</a></li>
+                                                <li class="21-66"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3415-unisex-triblend-short-sleeve-v-neck-tee">BELLA
+                                                        + CANVAS 3415 Unise...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-vneck"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-tanktops">Tank Tops</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-64"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-1533-womens-ideal-racerback-tank">Next
+                                                        Level 1533 Women's I...</a></li>
+                                                <li class="21-64"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6733-womens-triblend-racerback-tank">Next
+                                                        Level 6733 Womens Tr...</a></li>
+                                                <li class="21-64"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-8800-womens-flowy-racerback-tank">BELLA
+                                                        + CANVAS 8800 Women...</a></li>
+                                                <li class="21-64"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-5013-womens-festival-muscle-tank">Next
+                                                        Level 5013 Womens Fe...</a></li>
+                                                <li class="21-64"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6633-womens-the-jersey-racerback-tank">Next
+                                                        Level 6633 Womens Sp...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-tanktops"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-crewneckcollar">Crewneck Collar</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-8"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                                        5000 Heavy Cotton ...</a></li>
+                                                <li class="21-8"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                                        64000 Softstyle T-...</a></li>
+                                                <li class="21-8"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                                        2000 Ultra Cotton ...</a></li>
+                                                <li class="21-8"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001-t-shirt-unisex-short-sleeve">BELLA
+                                                        + CANVAS 3001 Unise...</a></li>
+                                                <li class="21-8"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/bella-canvas-3001cvc-unisex-short-sleeve-heather-jersey-tee">BELLA
+                                                        + CANVAS 3001CVC Un...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-crewneckcollar"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mega-menu__sub"><a class="mega-menu__title"
+                                        href="https://robx.bulkapparel.com/tshirts-athletics">Athletics</a>
+                                    <div class="mega-menu__body">
+                                        <div class="mega-menu__text">
+                                            <ul>
+                                                <li class="21-2"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/jerzees-29mr-dri-power-active-5050-t-shirt">JERZEES
+                                                        29MR Dri-Power 50...</a></li>
+                                                <li class="21-2"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6010-triblend-crew">Next
+                                                        Level 6010 Triblend ...</a></li>
+                                                <li class="21-2"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/jerzees-21mr-dri-power-sport-short-sleeve-t-shirt">JERZEES
+                                                        21MR Dri-Power Pe...</a></li>
+                                                <li class="21-2"><a
+                                                        href="https://robx.bulkapparel.com/tshirts/next-level-6051-unisex-tri-blend-three-quarter-sleeve-baseball-raglan-tee">Next
+                                                        Level 6051 Unisex Tr...</a></li>
+                                                <li class="21-2"><a
+                                                        href="https://robx.bulkapparel.com/tshirts-longsleeves/jerzees-29lsr-dri-power-active-long-sleeve-5050-t-shirt">JERZEES
+                                                        29LSR Dri-Power L...</a></li>
+                                            </ul><a href="https://robx.bulkapparel.com/tshirts-athletics"
+                                                class="mega-menu__more">View more here <span>⇀</span> </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Sweatshirts</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Polos</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Ladies</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Kids</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Athletics</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Workwear</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Jackets</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Hats</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Bags</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Face-Masks</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">More</a>
+                        </li>
+                        <li class="navbar__footer-item">
+                            <a class="navbar__footer-link" href="/">Shop Brands</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="footer__logo">
+                                <img src="./assets/img/logo-dark.svg" alt="Bulkapparel logo">
+                            </div>
+
+                            <div class="footer__banner" style="white-space: pre-line;">
+                                For Support use LiveChat button to the right
+                                You can also visit our
+                                Help Desk
+
+                                or call Toll-Free 1-877-***-*****
+
+                                <span style="color: yellow;">
+                                    <h3>Covid-19 Update</h3>
+                                    Phone support is not avaialble for 2 weeks
+                                    Please use our chat or email from
+                                </span>
+
+                                All our warehouses are operationg as normal
+
+                                We will offer customer support by Chat and Email
+                                only.
+
+                                <span style="color:greenyellow;">
+                                    All orders are being processed and
+                                    shipped at this time
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Poular Brands</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Popular Categories</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="col-4">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Customer Services
+                                        </h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <div class="row no-gutters">
+                                        <div class="col flex align-item-center">
+                                            <ul class="footer__payments">
+                                                <li><img src="./assets/img/amex.jpg" alt=""></li>
+                                                <li><img src="./assets/img/discover.jpg" alt=""></li>
+                                                <li><img src="./assets/img/master-card.jpg" alt=""></li>
+                                                <li><img src="./assets/img/paypal.jpg" alt=""></li>
+                                                <li><img src="./assets/img/visa.jpg" alt=""></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="footer__ribbon">
+                                                <img src="./assets/img/ribbon-footer.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="footer__credit">
+                        © 2020 bulkapparel.com All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
