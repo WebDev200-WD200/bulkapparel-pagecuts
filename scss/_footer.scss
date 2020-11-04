@@ -1,12 +1,51 @@
 .footer {
+  display: flex;
   background-color: $color-gray;
   color: $color-white;
-  padding: 70px 0;
+  padding: 60px 0;
+
+  @include respond(tab-port) {
+    padding: 40px 0;
+  }
 
   &__logo {
     height: 70px;
+    margin-bottom: 20px;
+
+    @include respond(laptop-s) {
+      text-align: center;
+    }
+
+    @include respond(tab-port) {
+      height: 60px;
+    }
+    @include respond(mobile-lg) {
+      height: 50px;
+    }
+    @include respond(mobile-m) {
+      height: 40px;
+    }
+
     img {
       height: 100%;
+    }
+  }
+
+  &__banner {
+    white-space: pre-line;
+
+    @include respond(laptop-s) {
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+
+    @include respond(tab-port) {
+      font-size: 15px;
+    }
+    @include respond(mobile-lg) {
+      width: 90%;
     }
   }
 
@@ -17,6 +56,13 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
+
+    @include respond(mobile-lg) {
+      font-size: 18px;
+    }
+    @include respond(mobile-m) {
+      font-size: 17px;
+    }
   }
 
   &__list-group {
@@ -28,6 +74,10 @@
   &__list-item {
     font-size: 16px;
     font-weight: 300;
+
+    @include respond(mobile-lg) {
+      font-size: 15px;
+    }
   }
 
   &__list-link {
@@ -46,7 +96,14 @@
     li {
       border-radius: 5px;
       overflow: hidden;
-      height: 35px;
+      height: 40px;
+
+      @include respond(mobile-lg) {
+        height: 35px;
+      }
+      @include respond(mobile-m) {
+        height: 28px;
+      }
     }
 
     img {
@@ -59,6 +116,17 @@
   }
 
   &__ribbon {
+    height: 150px;
+    img {
+      height: 100%;
+    }
+
+    @include respond(mobile-lg) {
+      height: 120px;
+    }
+    @include respond(mobile-m) {
+      height: 100px;
+    }
   }
 
   &__credit {
@@ -82,6 +150,5 @@ ul {
 }
 
 a {
-  color: $color-white;
   text-decoration: none;
 }

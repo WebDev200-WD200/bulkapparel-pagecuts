@@ -25,10 +25,45 @@
       top: 0;
       height: 100%;
       width: 60px;
-      background: $color-dark-blue;
+      background: $color-darkblue;
 
       svg {
         fill: $color-white;
+      }
+
+      @include respond(tab-port) {
+        svg {
+          height: 16px;
+        }
+      }
+    }
+
+    @include respond(tab-port) {
+      height: 40px;
+
+      &__input {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      &__button {
+        width: 55px;
+      }
+    }
+    @include respond(mobile-lg) {
+      height: 36px;
+
+      &__input {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      &__button {
+        width: 40px;
+      }
+
+      svg {
+        height: 14px;
       }
     }
   }

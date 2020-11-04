@@ -61,3 +61,21 @@
 @mixin transition {
   transition: all 300ms ease;
 }
+
+@mixin hoverImage {
+  transform: scale(1.05);
+  padding-left: 5px;
+  position: relative;
+  border: 3px solid $color-lightgray3;
+  & .card--search__title {
+    color: $color-black;
+  }
+}
+
+@mixin hoverText {
+  position: relative;
+  transform: scale(1.03);
+  font-weight: 700;
+  color: $color-darkblue !important;
+  left: 4px;
+}

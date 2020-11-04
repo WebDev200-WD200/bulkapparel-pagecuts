@@ -5,10 +5,71 @@
   cursor: pointer;
   font: inherit;
 
+  &--ads {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    font-size: 15px;
+    img {
+      height: 38px;
+      margin-right: 8px;
+    }
+
+    p {
+      font-weight: 700;
+      color: $color-black;
+    }
+
+    @include respond(tab-port) {
+      font-size: 13px;
+
+      img {
+        height: 35px;
+      }
+    }
+    @include respond(mobile-lg) {
+      font-size: 13px;
+      width: 120px;
+      img {
+        height: 32px;
+      }
+    }
+    @include respond(mobile-lg) {
+      font-size: 12px;
+      width: 110px;
+      img {
+        height: 30px;
+      }
+    }
+    @include respond(mobile-lg) {
+      font-size: 11px;
+      width: 100px;
+      img {
+        height: 25px;
+      }
+    }
+  }
+
+  &--link {
+    color: $color-black;
+    padding: 5px 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--primary {
+    background: $color-gray;
+    padding: 10px 20px;
+    color: $color-white;
+    border-radius: 3px;
+  }
+
   &--track {
     display: flex;
     flex-direction: row;
-    background-color: $color-dark-blue;
+    background-color: $color-darkblue;
     padding: 5px 15px 5px 10px;
     align-items: center;
     &__icon {
@@ -26,6 +87,10 @@
   &--cart {
     svg {
       height: 35px;
+
+      @include respond(tab-port) {
+        height: 30px;
+      }
     }
 
     &__count {
@@ -36,7 +101,7 @@
     position: relative;
     svg {
       height: 35px;
-      fill: $color-dark-blue;
+      fill: $color-darkblue;
     }
 
     &__count {
@@ -48,9 +113,43 @@
       top: -15px;
       background: $color-red;
       height: 24px;
-      width: 24px;
-      border-radius: 100%;
+      padding: 10px;
+      border-radius: 8px;
       color: $color-white;
+    }
+
+    @include respond(laptop) {
+      &__count {
+        right: -10px;
+        font-size: 15px;
+      }
+    }
+
+    @include respond(tab-port) {
+      svg {
+        height: 32px;
+      }
+    }
+
+    @include respond(mobile-lg) {
+      &__count {
+        font-size: 12px;
+        padding: 8px;
+        height: 20px;
+      }
+      svg {
+        height: 28px;
+      }
+    }
+    @include respond(mobile-m) {
+      &__count {
+        padding: 3px 6px;
+        font-size: 10px;
+        top: -10px;
+      }
+      svg {
+        height: 25px;
+      }
     }
   }
 }
