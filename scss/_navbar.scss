@@ -15,6 +15,14 @@
     }
   }
 
+  &__login {
+    position: relative;
+
+    &:hover .login-floater {
+      display: block;
+    }
+  }
+
   &__hamburger-btn {
     display: block;
     align-items: center;
@@ -643,5 +651,31 @@
 
   @include respond(laptop) {
     display: none;
+  }
+}
+
+.login-floater {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: $color-white;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba($color-black, 0.1);
+  width: 430px;
+  border: 1px solid rgba($color-black, 0.1);
+  border-radius: 8px;
+
+  &__action {
+    display: flex;
+  }
+  &__footer {
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+      color: $color-gray;
+      font-weight: 700;
+    }
   }
 }

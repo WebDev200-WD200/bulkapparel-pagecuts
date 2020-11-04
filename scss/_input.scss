@@ -3,6 +3,13 @@
   background: none;
   outline: none;
   font: inherit;
+
+  &--primary {
+    border: 1px solid $color-gray;
+    padding: 12px;
+    border-radius: 3px;
+  }
+
   &--search {
     position: relative;
     height: 45px;
@@ -66,5 +73,14 @@
         height: 14px;
       }
     }
+  }
+}
+
+.inp-group {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 8px;
   }
 }

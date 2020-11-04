@@ -5,6 +5,24 @@
   cursor: pointer;
   font: inherit;
 
+  &--my-account {
+    display: flex;
+    font-weight: 700;
+    font-size: 18px;
+    color: $color-darkblue;
+    align-items: center;
+
+    span {
+      display: flex;
+      align-items: center;
+      height: 35px;
+
+      svg {
+        fill: $color-darkblue;
+      }
+    }
+  }
+
   &--ads {
     display: flex;
     align-items: center;
@@ -151,5 +169,21 @@
         height: 25px;
       }
     }
+  }
+}
+
+.flex-pc-only {
+  display: flex;
+
+  @include respond(laptop) {
+    display: none;
+  }
+}
+
+.flex-mob-only {
+  display: none;
+
+  @include respond(laptop) {
+    display: flex;
   }
 }

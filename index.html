@@ -316,15 +316,91 @@
                                 </svg>
                             </span>
                         </button>
-                        <button class="btn btn--icon">
-                            <span class="icon">
-                                <?xml version="1.0" encoding="UTF-8"?>
-                                <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.018.001C7.228.001.1 7.128.1 15.92c0 8.79 7.127 15.917 15.918 15.917 8.792 0 15.918-7.126 15.918-15.917S24.81 0 16.018 0zm0 4.76a5.265 5.265 0 110 10.53 5.265 5.265 0 010-10.53zm-.004 22.914a11.682 11.682 0 01-7.607-2.806 2.244 2.244 0 01-.787-1.705c0-2.949 2.386-5.309 5.335-5.309h6.127c2.95 0 5.327 2.36 5.327 5.309 0 .656-.287 1.279-.787 1.705a11.678 11.678 0 01-7.608 2.806z" />
-                                </svg>
-                            </span>
-                        </button>
+
+                        <div class="navbar__login">
+                            <a href="/" class="btn btn--icon mobile-only">
+                                <span class="icon">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.018.001C7.228.001.1 7.128.1 15.92c0 8.79 7.127 15.917 15.918 15.917 8.792 0 15.918-7.126 15.918-15.917S24.81 0 16.018 0zm0 4.76a5.265 5.265 0 110 10.53 5.265 5.265 0 010-10.53zm-.004 22.914a11.682 11.682 0 01-7.607-2.806 2.244 2.244 0 01-.787-1.705c0-2.949 2.386-5.309 5.335-5.309h6.127c2.95 0 5.327 2.36 5.327 5.309 0 .656-.287 1.279-.787 1.705a11.678 11.678 0 01-7.608 2.806z" />
+                                    </svg>
+                                </span>
+                            </a>
+
+                            <a href="/" class="btn btn--my-account flex-pc-only">
+                                My Account <span>
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <!DOCTYPE svg
+                                        PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                    </svg></span>
+
+                            </a>
+
+                            <div class="login-floater">
+                                <form name="frmLoginpop" id="frmLoginpop" method="post" action=""
+                                    novalidate="novalidate">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="errordivpop"
+                                                style="margin-top: 10px;color:red;padding-bottom: 20px;display: block;">
+                                                <label>Wrong Username/Password entered!</label></div>
+                                        </div>
+                                        <div class="col-12 mb-2">
+                                            <div class="inp-group">
+                                                <label for="uemailpop">Email</label>
+                                                <input type="email"
+                                                    class="validate[required,custom[email]] inp inp--primary"
+                                                    name="uemailpop" id="uemailpop" value="" autocomplete="off">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 mb-2">
+                                            <div class="inp-group">
+                                                <label for="upasswordpop">Password</label>
+                                                <input type="password" name="upasswordpop"
+                                                    class="validate[required,minSize[5],maxSize[12]] inp inp--primary"
+                                                    id="upasswordpop" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mb-3" id="sid">
+                                            <div class="login-floater__action">
+                                                <button type="submit" name="loginpop" id="loginpop"
+                                                    class="btn btn--primary mr-auto">
+                                                    Login
+                                                </button>
+
+                                                <div class="log-sub-left" style="padding-top: 12px;"><label
+                                                        style="font-size: 14px;"><input id="my-checkpop"
+                                                            name="my-checkpop" type="checkbox"> Keep me logged
+                                                        in</label></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 forget-row">
+                                            <div class="login-floater__footer">
+                                                <p style="margin-bottom: 12px;font-size: 18px">Don't have an account? <a
+                                                        href="https://robx.bulkapparel.com/login"
+                                                        style="float: none;font-style: normal;">Register Now!</a></p>
+                                                <a href="https://robx.bulkapparel.com/forgotpassword"
+                                                    style="float: none;font-style: normal;font-size: 18px">Forgot
+                                                    Password?</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="mailTrackingNo" value="">
+                                </form>
+                            </div>
+
+                        </div>
+
 
                         <div class="navbar__cart">
                             <button class="btn btn--icon">

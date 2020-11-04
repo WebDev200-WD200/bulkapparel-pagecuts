@@ -39,6 +39,32 @@ main {
   font: inherit;
 }
 
+.btn--my-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+  font-size: 18px;
+  color: #0a2972;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn--my-account span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 35px;
+}
+
+.btn--my-account span svg {
+  fill: #0a2972;
+}
+
 .btn--ads {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -215,11 +241,41 @@ main {
   }
 }
 
+.flex-pc-only {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 79em) {
+  .flex-pc-only {
+    display: none;
+  }
+}
+
+.flex-mob-only {
+  display: none;
+}
+
+@media (max-width: 79em) {
+  .flex-mob-only {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .inp {
   border: none;
   background: none;
   outline: none;
   font: inherit;
+}
+
+.inp--primary {
+  border: 1px solid #44414f;
+  padding: 12px;
+  border-radius: 3px;
 }
 
 .inp--search {
@@ -287,6 +343,20 @@ main {
   }
 }
 
+.inp-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inp-group label {
+  margin-bottom: 8px;
+}
+
 .navbar .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -309,6 +379,14 @@ main {
   .navbar .container {
     padding: 0 12px;
   }
+}
+
+.navbar__login {
+  position: relative;
+}
+
+.navbar__login:hover .login-floater {
+  display: block;
 }
 
 .navbar__hamburger-btn {
@@ -1091,6 +1169,36 @@ main {
   .desktop-only {
     display: none;
   }
+}
+
+.login-floater {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  padding: 40px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 430px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.login-floater__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.login-floater__footer {
+  text-align: center;
+}
+
+.login-floater__footer a {
+  text-decoration: underline;
+  color: #44414f;
+  font-weight: 700;
 }
 
 .footer {
