@@ -12,6 +12,10 @@
     height: 70px;
     margin-bottom: 20px;
 
+    @include respond(laptop) {
+      height: 60px;
+    }
+
     @include respond(laptop-s) {
       text-align: center;
     }

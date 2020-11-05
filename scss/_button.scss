@@ -175,7 +175,7 @@
 .flex-pc-only {
   display: flex;
 
-  @include respond(laptop) {
+  @include respond(laptop-s) {
     display: none;
   }
 }
@@ -183,7 +183,7 @@
 .flex-mob-only {
   display: none;
 
-  @include respond(laptop) {
+  @include respond(laptop-s) {
     display: flex;
   }
 }

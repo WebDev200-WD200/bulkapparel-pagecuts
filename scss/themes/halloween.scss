@@ -1,0 +1,129 @@
+@import "../mixin";
+
+$color-black: #000;
+$img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
+$img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
+$img-spider: url("../../assets/theme/halloween/spider_100x.webp");
+$img-footer: url("../../assets/theme/halloween/backdrop.webp");
+
+@mixin pseudoImage($psuedo, $img) {
+  &::#{$psuedo} {
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: $img;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @content;
+  }
+}
+
+.navbar {
+  &__main .container {
+    position: relative;
+    @include pseudoImage("after", $img-right-nav) {
+      right: -180px;
+      top: 10px;
+      width: 150px;
+      height: 150px;
+
+      @media (max-width: 1600px) {
+        display: none;
+      }
+    }
+  }
+
+  &__hamburger-btn {
+    span {
+      background-color: $color-black;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    @include pseudoImage("before", $img-spider-web) {
+      top: -200%;
+      left: -160px;
+      width: 220px;
+      height: 220px;
+      transform: rotate(125deg);
+
+      @include respond(laptop) {
+        display: none;
+      }
+    }
+
+    @include pseudoImage("after", $img-spider) {
+      top: -70%;
+      right: 20%;
+      width: 50px;
+      height: 50px;
+
+      @include respond(mobile-lg) {
+          width: 35px;
+          height: 35px;
+          right: 25%;
+      }
+    }
+  }
+
+  & .btn--my-account {
+    color: $color-black;
+
+    svg {
+      fill: $color-black;
+    }
+  }
+
+  & .btn--track {
+    background-color: $color-black;
+  }
+
+  & .btn--icon {
+    svg {
+      fill: $color-black;
+    }
+  }
+
+  & .inp--search__button {
+    background: $color-black;
+  }
+
+  &__footer {
+    background-color: $color-black;
+  }
+}
+
+.footer {
+  position: relative;
+  background-color: $color-black;
+  background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
+
+  @include pseudoImage("before", $img-footer) {
+    top: -180px;
+    right: 0;
+    width: 100%;
+    height: 267px;
+    background-repeat: repeat-x;
+
+    @include respond(laptop-s) {
+        height: 220px;
+        top: -160px;
+    }
+    @include respond(tab-port) {
+        height: 200px;
+        top: -150px;
+    }
+    @include respond(mobile-lg) {
+        height: 180px;
+        top: -120px;
+    }
+    @include respond(mobile-m) {
+        top: -100px;
+    }
+  }
+}
+
+.show-sub-list {
+  background-color: $color-black;
+}

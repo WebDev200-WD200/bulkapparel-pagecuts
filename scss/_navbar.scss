@@ -7,7 +7,7 @@
     padding: 0;
 
     @include respond(laptop) {
-      padding: 0 15px;
+      padding: 0 20px;
     }
 
     @include respond(mobile-lg) {
@@ -114,7 +114,7 @@
     z-index: 150;
     height: 120px;
 
-    @include respond(laptop) {
+    @include respond(laptop-s) {
       height: 100px;
     }
     @include respond(tab-port) {
@@ -137,9 +137,9 @@
     }
 
     @include respond(laptop) {
-      height: 50px;
+      width: 200px;
+      height: 45px;
     }
-
     @include respond(tab-land) {
       height: 45px;
     }
@@ -166,6 +166,10 @@
 
     &:hover .search {
       display: flex !important;
+    }
+
+    @include respond(laptop) {
+      width: 300px;
     }
   }
 
@@ -222,8 +226,9 @@
     text-decoration: none;
     font-size: 18px;
 
-    &:hover,
-    &:focus {
+    @include respond(laptop) {
+      font-size: 16px;
+      padding: 12px;
     }
   }
 
@@ -245,6 +250,9 @@
 
     @include respond(laptop) {
       right: 0;
+      font-size: 15px;
+    }
+    @include respond(laptop-s) {
       font-size: 14px;
     }
 
@@ -301,6 +309,12 @@
   align-items: flex-end;
 
   .free-text {
+
+    p {
+      @include respond(laptop) {
+        font-size: 14px;
+      }
+    }
   }
 
   .price-bold {
@@ -309,6 +323,10 @@
     font-size: 20px;
     vertical-align: top;
     margin-left: 5px;
+
+    @include respond(laptop) {
+      font-size: 14px;
+    }
   }
 
   .free-icon {
@@ -316,6 +334,13 @@
     svg {
       height: 50px;
       width: 50px;
+    }
+    
+    @include respond(laptop) {
+      svg {
+        height: 40px;
+        width: 40px;
+      }
     }
   }
 }
@@ -641,7 +666,7 @@
 .mobile-only {
   display: none;
 
-  @include respond(laptop) {
+  @include respond(laptop-s) {
     display: unset;
   }
 }
@@ -649,7 +674,7 @@
 .desktop-only {
   display: flow-root;
 
-  @include respond(laptop) {
+  @include respond(laptop-s) {
     display: none;
   }
 }
