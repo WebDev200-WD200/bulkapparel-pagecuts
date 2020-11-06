@@ -7,7 +7,12 @@
     <title>Header and Footer Customized</title>
     <link rel="stylesheet" href="./scss/main.css">
     <link rel="stylesheet" href="./bootstrap.min.css">
-    <link rel="stylesheet" href="./scss/themes/halloween.css">
+    <!-- Hallooween theme -->
+    <!-- <link rel="stylesheet" href="./scss/themes/halloween-theme.min.css"> -->
+
+    <!-- Thanks giving theme-->
+    <link id="theme" rel="stylesheet" href="./scss/themes/thanks-giving-theme.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
         rel="stylesheet">
@@ -30,9 +35,9 @@
                         <span></span>
                     </button>
 
-                    <div class="navbar__logo">
+                    <a href="/" class="navbar__logo">
                         <img src="./assets/img/logo.svg" alt="Bulkapparel logo">
-                    </div>
+                    </a>
 
                     <div class="navbar__ads desktop-only">
                         <div class="ads-free-shipping mb-1">
@@ -1159,7 +1164,24 @@
     </header>
 
     <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 halloween w-100" onclick="changeTheme('halloween')">Change
+                        Hallooween theme</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 thanks-giving w-100"
+                        onclick="changeTheme('thanks-giving')">Change Thanks Giving Theme</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 christmas w-100" disabled
+                        onclick="changeTheme('christmas')">Change
+                        Christmas theme (Ongoing)</button>
+                </div>
+            </div>
 
+        </div>
     </main>
     <footer class="footer">
         <div class="container">
@@ -1398,6 +1420,19 @@
     <script src="./assets/js/templateGenarator.js"></script>
 
     <script>
+
+
+        function changeTheme(theme) {
+            const headCss = $("#theme");
+
+            if (theme === "halloween") {
+                headCss.attr("href", "/scss/themes/halloween-theme.css");
+            } else if (theme === 'thanks-giving') {
+                headCss.attr("href", "/scss/themes/thanks-giving-theme.css");
+            } else if (theme === 'christmas') {
+                headCss.attr("href", "/scss/themes/thanks-giving-theme.css");
+            }
+        }
 
         $('.sidebar__list').click(function (e) {
             var activeClass = 'show-sub-list';

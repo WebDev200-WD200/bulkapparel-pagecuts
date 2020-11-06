@@ -1,3 +1,7 @@
+.halloween {
+  background-color: #eb6123;
+}
+
 .navbar__main .container {
   position: relative;
 }
@@ -143,6 +147,10 @@
   }
 }
 
-.show-sub-list {
+.sidebar {
   background-color: #000;
+}
+
+.show-sub-list {
+  background-color: #eb6123;
 }

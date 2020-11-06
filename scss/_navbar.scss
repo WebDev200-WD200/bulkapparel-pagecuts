@@ -137,9 +137,14 @@
     }
 
     @include respond(laptop) {
-      width: 200px;
+      width: 280px;
       height: 45px;
     }
+
+    @include respond(laptop-s) {
+      width: auto;
+    }
+
     @include respond(tab-land) {
       height: 45px;
     }
@@ -309,7 +314,6 @@
   align-items: flex-end;
 
   .free-text {
-
     p {
       @include respond(laptop) {
         font-size: 14px;
@@ -335,7 +339,7 @@
       height: 50px;
       width: 50px;
     }
-    
+
     @include respond(laptop) {
       svg {
         height: 40px;

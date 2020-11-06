@@ -1,0 +1,19 @@
+{
+    "json.schemas": [
+    
+    ],
+    "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": null
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": null
+    }
+  ],
+  "editor.codeActionsOnSave": null,
+  "editor.formatOnSave": true,
+}

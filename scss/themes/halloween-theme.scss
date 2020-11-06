@@ -1,10 +1,15 @@
 @import "../mixin";
 
 $color-black: #000;
+$color-orange: #eb6123;
 $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
 $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
 $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
 $img-footer: url("../../assets/theme/halloween/backdrop.webp");
+
+.halloween {
+  background-color: $color-orange;
+}
 
 @mixin pseudoImage($psuedo, $img) {
   &::#{$psuedo} {
@@ -60,9 +65,9 @@ $img-footer: url("../../assets/theme/halloween/backdrop.webp");
       height: 50px;
 
       @include respond(mobile-lg) {
-          width: 35px;
-          height: 35px;
-          right: 25%;
+        width: 35px;
+        height: 35px;
+        right: 25%;
       }
     }
   }
@@ -107,23 +112,26 @@ $img-footer: url("../../assets/theme/halloween/backdrop.webp");
     background-repeat: repeat-x;
 
     @include respond(laptop-s) {
-        height: 220px;
-        top: -160px;
+      height: 220px;
+      top: -160px;
     }
     @include respond(tab-port) {
-        height: 200px;
-        top: -150px;
+      height: 200px;
+      top: -150px;
     }
     @include respond(mobile-lg) {
-        height: 180px;
-        top: -120px;
+      height: 180px;
+      top: -120px;
     }
     @include respond(mobile-m) {
-        top: -100px;
+      top: -100px;
     }
   }
 }
+.sidebar {
+  background-color: $color-black;
+}
 
 .show-sub-list {
-  background-color: $color-black;
+  background-color: $color-orange;
 }
