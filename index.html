@@ -1167,6 +1167,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 default w-100"
+                        onclick="changeTheme('default')">Default</button>
+                </div>
+                <div class="col-12 col-lg-4">
                     <button class="btn btn--primary mt-2 halloween w-100" onclick="changeTheme('halloween')">Change
                         Hallooween theme</button>
                 </div>
@@ -1431,6 +1435,8 @@
                 headCss.attr("href", "/scss/themes/thanks-giving-theme.css");
             } else if (theme === 'christmas') {
                 headCss.attr("href", "/scss/themes/thanks-giving-theme.css");
+            } else {
+                headCss.attr('href', "")
             }
         }
 

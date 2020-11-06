@@ -1990,3 +1990,7 @@ a {
   display: -ms-flexbox !important;
   display: flex !important;
 }
+
+.default {
+  background-color: #0a2972;
+}
