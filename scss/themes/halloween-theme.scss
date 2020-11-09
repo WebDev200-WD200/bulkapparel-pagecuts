@@ -1,14 +1,15 @@
 @import "../mixin";
 
-$color-black: #000;
-$color-orange: #eb6123;
+$color-theme-primary: #000;
+$color-theme-secondary: #eb6123;
+$color-white: #fff;
 $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
 $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
 $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
 $img-footer: url("../../assets/theme/halloween/backdrop.webp");
 
 .halloween {
-  background-color: $color-orange;
+  background-color: $color-theme-secondary;
 }
 
 @mixin pseudoImage($psuedo, $img) {
@@ -40,8 +41,13 @@ $img-footer: url("../../assets/theme/halloween/backdrop.webp");
 
   &__hamburger-btn {
     span {
-      background-color: $color-black;
+      background-color: $color-theme-primary;
     }
+  }
+
+  &__footer-item:hover &__footer-link {
+    background-color: $color-theme-secondary;
+    color: $color-white;
   }
 
   &__logo {
@@ -73,35 +79,67 @@ $img-footer: url("../../assets/theme/halloween/backdrop.webp");
   }
 
   & .btn--my-account {
-    color: $color-black;
+    color: $color-theme-primary;
 
     svg {
-      fill: $color-black;
+      fill: $color-theme-primary;
     }
   }
 
   & .btn--track {
-    background-color: $color-black;
+    background-color: $color-theme-primary;
   }
 
   & .btn--icon {
     svg {
-      fill: $color-black;
+      fill: $color-theme-primary;
     }
   }
 
   & .inp--search__button {
-    background: $color-black;
+    background: $color-theme-primary;
   }
 
   &__footer {
-    background-color: $color-black;
+    background-color: $color-theme-primary;
+  }
+
+  & .mega-menu__title {
+    color: $color-theme-secondary;
+    &::after {
+      background: $color-theme-secondary;
+    }
+  }
+
+  & .mega-menu__sub {
+    &:hover {
+      background-color: rgba($color-theme-secondary, 0.08);
+    }
+  }
+
+  & .search {
+    &__auto-result {
+      li {
+        &:hover,
+        &:focus {
+          a {
+            color: $color-theme-secondary !important;
+          }
+        }
+      }
+    }
+
+    &__live-header {
+      span {
+        color: $color-theme-secondary;
+      }
+    }
   }
 }
 
 .footer {
   position: relative;
-  background-color: $color-black;
+  background-color: $color-theme-primary;
   background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
 
   @include pseudoImage("before", $img-footer) {
@@ -129,9 +167,9 @@ $img-footer: url("../../assets/theme/halloween/backdrop.webp");
   }
 }
 .sidebar {
-  background-color: $color-black;
+  background-color: $color-theme-primary;
 }
 
 .show-sub-list {
-  background-color: $color-orange;
+  background-color: $color-theme-secondary;
 }

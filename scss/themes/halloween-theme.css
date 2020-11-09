@@ -29,6 +29,11 @@
   background-color: #000;
 }
 
+.navbar__footer-item:hover .navbar__footer-link {
+  background-color: #eb6123;
+  color: #fff;
+}
+
 .navbar__logo {
   position: relative;
 }
@@ -97,6 +102,26 @@
 
 .navbar__footer {
   background-color: #000;
+}
+
+.navbar .mega-menu__title {
+  color: #eb6123;
+}
+
+.navbar .mega-menu__title::after {
+  background: #eb6123;
+}
+
+.navbar .mega-menu__sub:hover {
+  background-color: rgba(235, 97, 35, 0.08);
+}
+
+.navbar .search__auto-result li:hover a, .navbar .search__auto-result li:focus a {
+  color: #eb6123 !important;
+}
+
+.navbar .search__live-header span {
+  color: #eb6123;
 }
 
 .footer {
