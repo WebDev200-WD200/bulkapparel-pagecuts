@@ -50,7 +50,7 @@
     span {
       position: relative;
       display: block;
-      height: 4px;
+      height: 6px;
       width: 100%;
       background: $color-darkblue;
 
@@ -73,7 +73,7 @@
       }
 
       @include respond(tab-port) {
-        height: 4px;
+        height: 6px;
 
         &::after {
           top: 12px;
@@ -84,7 +84,7 @@
         }
       }
       @include respond(mobile-lg) {
-        height: 3px;
+        height: 4px;
 
         &::after {
           top: 10px;
@@ -294,15 +294,15 @@
     @include respond(mobile-lg) {
       width: 200px;
       &:focus-within {
-        width: 60%;
+        width: 90%;
       }
     }
     @include respond(mobile-m) {
       width: 30%;
 
-      &:focus-within {
-        width: 90%;
-      }
+      // &:focus-within {
+      //   width: 90%;
+      // }
     }
 
     @include transition;

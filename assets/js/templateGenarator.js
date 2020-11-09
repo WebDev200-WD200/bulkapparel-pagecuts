@@ -19,7 +19,7 @@ const genSidebar = () => {
     list.forEach((item, idx) => {
 
         template += `
-            <li class="sidebar__item ${idx === 0 ? 'show-sub-list': ''}">
+            <li class="sidebar__item">
             <div class="sidebar__item-header">
                 <a class="sidebar__item-link" href="/#">${item}</a>
 

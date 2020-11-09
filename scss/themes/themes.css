@@ -96,10 +96,12 @@
   fill: #522011;
 }
 
-@media (max-width: 62.5em) {
-  .themes--thanks-giving .navbar .btn--track__label {
-    color: #522011 !important;
-  }
+.themes--thanks-giving .navbar .btn--track__icon {
+  fill: #522011;
+}
+
+.themes--thanks-giving .navbar .btn--track__label {
+  color: #522011 !important;
 }
 
 .themes--thanks-giving .navbar .inp--search__button {
@@ -261,9 +263,9 @@
 
 @media (max-width: 37.5625em) {
   .themes--christmas .navbar__logo::before {
-    bottom: -5px;
-    height: 45px;
-    width: 45px;
+    bottom: -22px;
+    height: 50px;
+    width: 50px;
     right: -50px;
   }
 }
@@ -298,8 +300,8 @@
 }
 
 .themes--christmas .navbar__footer-item:hover .themes--christmas .navbar__footer-link {
-  background-color: #c20d11;
-  color: #fff;
+  background-color: #c20d11 !important;
+  color: #fff !important;
 }
 
 .themes--christmas .navbar .btn--my-account {
@@ -310,10 +312,12 @@
   fill: #00234f;
 }
 
-@media (max-width: 62.5em) {
-  .themes--christmas .navbar .btn--track__label {
-    color: #00234f !important;
-  }
+.themes--christmas .navbar .btn--track__icon {
+  fill: #00234f;
+}
+
+.themes--christmas .navbar .btn--track__label {
+  color: #00234f !important;
 }
 
 .themes--christmas .navbar .btn--icon svg {
@@ -501,6 +505,11 @@
   background-color: #eb6123;
 }
 
+.themes--halloween .navbar__footer-item:hover .themes--halloween .navbar__footer-link {
+  background-color: #eb6123 !important;
+  color: #fff !important;
+}
+
 .themes--halloween .navbar__main .container {
   position: relative;
 }
@@ -527,11 +536,6 @@
 
 .themes--halloween .navbar__hamburger-btn span {
   background-color: #000;
-}
-
-.themes--halloween .navbar__footer-item:hover .themes--halloween .navbar__footer-link {
-  background-color: #eb6123;
-  color: #fff;
 }
 
 .themes--halloween .navbar__logo {
@@ -590,10 +594,12 @@
   fill: #000;
 }
 
-@media (max-width: 62.5em) {
-  .themes--halloween .navbar .btn--track__label {
-    color: #000 !important;
-  }
+.themes--halloween .navbar .btn--track__icon {
+  fill: #000;
+}
+
+.themes--halloween .navbar .btn--track__label {
+  color: #000 !important;
 }
 
 .themes--halloween .navbar .btn--icon svg {

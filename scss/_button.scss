@@ -87,19 +87,21 @@
   &--track {
     display: flex;
     flex-direction: row;
-    background-color: $color-darkblue;
-    padding: 5px 15px 5px 10px;
+    // background-color: $color-darkblue;
+
+    padding: 5px 0 5px 0;
     align-items: center;
 
     &__icon {
-      fill: $color-white;
+      fill: $color-darkblue;
       margin-right: 10px;
-      height: 18px;
+      height: 22px;
     }
 
     &__label {
-      font-size: 14px;
-      color: $color-white;
+      font-size: 17px;
+      font-weight: 700;
+      color: $color-darkblue;
     }
 
     @include respond(laptop-s) {
@@ -111,7 +113,7 @@
 
       &__label {
         color: $color-darkblue;
-        font-weight: 700;
+
         font-size: 16px;
       }
     }

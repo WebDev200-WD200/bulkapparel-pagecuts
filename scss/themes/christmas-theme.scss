@@ -53,9 +53,9 @@
           right: -70px;
         }
         @include respond(mobile-lg) {
-          bottom: -5px;
-          height: 45px;
-          width: 45px;
+          bottom: -22px;
+          height: 50px;
+          width: 50px;
           right: -50px;
         }
         // @include respond(mobile-m) {
@@ -84,8 +84,8 @@
     }
 
     &__footer-item:hover &__footer-link {
-      background-color: $color-theme-secondary;
-      color: $color-white;
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
     }
 
     & .btn--my-account {
@@ -97,10 +97,11 @@
     }
 
     & .btn--track {
-      @include respond(laptop-s) {
-        &__label {
-          color: $color-theme-primary !important;
-        }
+      &__icon {
+        fill: $color-theme-primary;
+      }
+      &__label {
+        color: $color-theme-primary !important;
       }
     }
 

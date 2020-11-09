@@ -84,10 +84,11 @@
       }
     }
     & .btn--track {
-      @include respond(laptop-s) {
-        &__label {
-          color: $color-theme-primary !important;
-        }
+      &__icon {
+        fill: $color-theme-primary;
+      }
+      &__label {
+        color: $color-theme-primary !important;
       }
     }
     & .inp--search__button {
