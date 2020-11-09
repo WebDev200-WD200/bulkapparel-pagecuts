@@ -92,10 +92,6 @@
   fill: #522011;
 }
 
-.themes--thanks-giving .navbar .btn--track {
-  background-color: #522011;
-}
-
 .themes--thanks-giving .navbar .btn--icon svg {
   fill: #522011;
 }
@@ -594,8 +590,10 @@
   fill: #000;
 }
 
-.themes--halloween .navbar .btn--track {
-  background-color: #000;
+@media (max-width: 62.5em) {
+  .themes--halloween .navbar .btn--track__label {
+    color: #000 !important;
+  }
 }
 
 .themes--halloween .navbar .btn--icon svg {

@@ -76,7 +76,11 @@
     }
 
     & .btn--track {
-      background-color: $color-theme-primary;
+      @include respond(laptop-s) {
+        &__label {
+          color: $color-theme-primary !important;
+        }
+      }
     }
 
     & .btn--icon {
