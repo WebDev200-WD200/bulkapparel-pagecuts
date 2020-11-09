@@ -1,198 +1,194 @@
 @import "../mixin";
 
-$color-theme-primary: #522011;
-$color-footer-gradient: linear-gradient(180deg, #522011 0%, #1c0d00 100%);
-$color-orange: #eb6123;
-$img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
-$img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
-$img-spider: url("../../assets/theme/halloween/spider_100x.webp");
-$img-footer: url("../../assets/theme/halloween/backdrop.webp");
+@mixin thanks-giving-theme {
+  $color-theme-primary: #522011;
+  $color-footer-gradient: linear-gradient(180deg, #522011 0%, #1c0d00 100%);
+  $color-orange: #eb6123;
+  $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
+  $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
+  $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
+  $img-footer: url("../../assets/theme/halloween/backdrop.webp");
 
-$img-candle-pumpkin: url("../../assets/theme/thanks-giving/candle-pumpkin.webp");
-$img-turkey: url("../../assets/theme/thanks-giving/turkey.webp");
-$img-leave-footer: url("../../assets/theme/thanks-giving/leaves-footer.webp");
+  $img-candle-pumpkin: url("../../assets/theme/thanks-giving/candle-pumpkin.webp");
+  $img-turkey: url("../../assets/theme/thanks-giving/turkey.webp");
+  $img-leave-footer: url("../../assets/theme/thanks-giving/leaves-footer.webp");
 
-@mixin pseudoImage($psuedo, $img) {
-  &::#{$psuedo} {
-    position: absolute;
-    display: block;
-    content: "";
-    background-image: $img;
-    background-size: contain;
-    background-repeat: no-repeat;
-    @content;
-  }
-}
-
-.thanks-giving {
-  background: $color-theme-primary;
-}
-
-.navbar {
-  &__hamburger-btn {
-    span {
-      background-color: $color-theme-primary;
-    }
+  .thanks-giving {
+    background: $color-theme-primary;
   }
 
-  &__logo {
-    position: relative;
-    @include pseudoImage("before", $img-turkey) {
-      width: 110px;
-      height: 110px;
-      bottom: -65px;
-      left: -100px;
-      @include respond(laptop) {
-        right: 20px;
-        width: 90px;
-        bottom: -84px;
-        left: unset;
+  .navbar {
+    &__hamburger-btn {
+      span {
+        background-color: $color-theme-primary;
       }
-      @include respond(laptop-s) {
+    }
+
+    &__logo {
+      position: relative;
+      @include pseudoImage("before", $img-turkey) {
+        width: 110px;
+        height: 110px;
+        bottom: -65px;
+        left: -100px;
+        @include respond(laptop) {
+          right: 20px;
+          width: 90px;
+          bottom: -84px;
+          left: unset;
+        }
+        @include respond(laptop-s) {
+          width: 80px;
+          right: -80px;
+          bottom: -70px;
+        }
+        @include respond(laptop-s) {
+          width: 70px;
+          right: -75px;
+        }
+        @include respond(mobile-lg) {
+          width: 55px;
+          right: -60px;
+          bottom: -80px;
+        }
+        @include respond(mobile-m) {
+          width: 45px;
+          right: -45px;
+          bottom: -85px;
+        }
+      }
+
+      @include pseudoImage("after", $img-candle-pumpkin) {
+        bottom: -70%;
+        right: -8px;
         width: 80px;
-        right: -80px;
-        bottom: -70px;
-      }
-      @include respond(laptop-s) {
-        width: 70px;
-        right: -75px;
-      }
-      @include respond(mobile-lg) {
-        width: 55px;
-        right: -60px;
-        bottom: -80px;
-      }
-      @include respond(mobile-m) {
-        width: 45px;
-        right: -45px;
-        bottom: -85px;
-      }
-    }
+        height: 80px;
 
-    @include pseudoImage("after", $img-candle-pumpkin) {
-      bottom: -70%;
-      right: -8px;
-      width: 80px;
-      height: 80px;
-
-      @include respond(laptop) {
-        display: none;
-      }
-    }
-  }
-
-  & .btn--my-account {
-    color: $color-theme-primary;
-
-    svg {
-      fill: $color-theme-primary;
-    }
-  }
-
-  & .btn--track {
-    background-color: $color-theme-primary;
-  }
-
-  & .btn--icon {
-    svg {
-      fill: $color-theme-primary;
-    }
-  }
-
-  & .inp--search__button {
-    background: $color-theme-primary;
-  }
-
-  &__footer {
-    background: $color-theme-primary;
-  }
-
-  & .mega-menu__title {
-    color: $color-theme-primary;
-    &::after {
-      background: $color-theme-primary;
-    }
-  }
-
-  & .mega-menu__sub {
-    &:hover {
-      background-color: rgba($color-theme-primary, 0.08);
-    }
-  }
-
-  & .search {
-    &__auto-result {
-      li {
-        &:hover,
-        &:focus {
-          a {
-            color: $color-theme-primary !important;
-          }
+        @include respond(laptop) {
+          display: none;
         }
       }
     }
 
-    &__live-header {
-      span {
-        color: $color-theme-primary;
+    & .btn--my-account {
+      color: $color-theme-primary;
+
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .btn--track {
+      background-color: $color-theme-primary;
+    }
+
+    & .btn--icon {
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+    & .btn--track {
+      @include respond(laptop-s) {
+        &__label {
+          color: $color-theme-primary !important;
+        }
+      }
+    }
+    & .inp--search__button {
+      background: $color-theme-primary;
+    }
+
+    &__footer {
+      background: $color-theme-primary;
+    }
+
+    & .mega-menu__title {
+      color: $color-theme-primary;
+      &::after {
+        background: $color-theme-primary;
+      }
+    }
+
+    & .mega-menu__sub {
+      &:hover {
+        background-color: rgba($color-theme-primary, 0.08);
+      }
+    }
+
+    & .search {
+      &__auto-result {
+        li {
+          &:hover,
+          &:focus {
+            a {
+              color: $color-theme-primary !important;
+            }
+          }
+        }
+      }
+
+      &__live-header {
+        span {
+          color: $color-theme-primary;
+        }
       }
     }
   }
-}
 
-.footer {
-  position: relative;
-  background-color: $color-theme-primary;
-  background: $color-footer-gradient;
-  white-space: nowrap;
+  .footer {
+    position: relative;
+    background-color: $color-theme-primary;
+    background: $color-footer-gradient;
+    white-space: nowrap;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    background-image: $img-leave-footer;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 180px;
-    width: 540px;
-    top: -110px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-image: $img-leave-footer;
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 180px;
+      width: 540px;
+      top: -110px;
 
-    @include respond(laptop) {
-      width: 400px;
-      top: -90px;
+      @include respond(laptop) {
+        width: 400px;
+        top: -90px;
+      }
+      @include respond(laptop-s) {
+        width: 350px;
+        top: -80px;
+      }
+      @include respond(tab-port) {
+        width: 280px;
+        top: -60px;
+      }
+      @include respond(mobile-lg) {
+        width: 240px;
+        top: -50px;
+      }
     }
-    @include respond(laptop-s) {
-      width: 350px;
-      top: -80px;
+
+    &::after {
+      left: 0px;
     }
-    @include respond(tab-port) {
-      width: 280px;
-      top: -60px;
-    }
-    @include respond(mobile-lg) {
-      width: 240px;
-      top: -50px;
+
+    &::before {
+      right: 0;
+      transform: rotateY(180deg);
     }
   }
-
-  &::after {
-    left: 0px;
+  .sidebar {
+    background-color: $color-theme-primary;
   }
 
-  &::before {
-    right: 0;
-    transform: rotateY(180deg);
+  .show-sub-list {
+    background-color: $color-orange;
   }
-}
-.sidebar {
-  background-color: $color-theme-primary;
-}
 
-.show-sub-list {
-  background-color: $color-orange;
-}
-
-body {
-  overflow-x: hidden !important;
+  body {
+    overflow-x: hidden !important;
+  }
 }

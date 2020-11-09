@@ -109,7 +109,7 @@ main {
   }
 }
 
-@media (max-width: 37.5625em) {
+@media (max-width: 23.4375em) {
   .btn--ads {
     font-size: 12px;
     width: 110px;
@@ -119,7 +119,7 @@ main {
   }
 }
 
-@media (max-width: 37.5625em) {
+@media (max-width: 20em) {
   .btn--ads {
     font-size: 11px;
     width: 100px;
@@ -169,6 +169,37 @@ main {
 .btn--track__label {
   font-size: 14px;
   color: #fff;
+}
+
+@media (max-width: 62.5em) {
+  .btn--track {
+    width: 45px;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: transparent !important;
+    padding: 0;
+  }
+  .btn--track__label {
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .btn--track {
+    margin-right: 0 !important;
+  }
+  .btn--track__label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .btn--track__label {
+    font-size: 12px;
+  }
 }
 
 .btn--cart svg {
@@ -241,7 +272,7 @@ main {
     top: -10px;
   }
   .btn--icon svg {
-    height: 25px;
+    height: 24px;
   }
 }
 
@@ -421,9 +452,9 @@ main {
 
 @media (max-width: 23.4375em) {
   .navbar__hamburger-btn {
-    width: 30px;
-    min-width: 30px;
-    margin-right: 8px;
+    width: 28px;
+    min-width: 28px;
+    margin-right: 5px;
   }
 }
 
@@ -553,13 +584,13 @@ main {
 
 @media (max-width: 23.4375em) {
   .navbar__logo {
-    height: 32px;
+    height: 28px;
   }
 }
 
 @media (max-width: 20em) {
   .navbar__logo {
-    height: 28px;
+    height: 25px;
   }
 }
 
@@ -604,7 +635,7 @@ main {
 
 @media (max-width: 37.5625em) {
   .navbar__action > *:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 5px;
   }
 }
 

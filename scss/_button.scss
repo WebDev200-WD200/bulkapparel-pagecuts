@@ -52,14 +52,14 @@
         height: 32px;
       }
     }
-    @include respond(mobile-lg) {
+    @include respond(mobile-m) {
       font-size: 12px;
       width: 110px;
       img {
         height: 30px;
       }
     }
-    @include respond(mobile-lg) {
+    @include respond(mobile-s) {
       font-size: 11px;
       width: 100px;
       img {
@@ -90,6 +90,7 @@
     background-color: $color-darkblue;
     padding: 5px 15px 5px 10px;
     align-items: center;
+
     &__icon {
       fill: $color-white;
       margin-right: 10px;
@@ -99,6 +100,31 @@
     &__label {
       font-size: 14px;
       color: $color-white;
+    }
+
+    @include respond(laptop-s) {
+      width: 45px;
+      text-align: center;
+      align-items: center;
+      background: transparent !important;
+      padding: 0;
+
+      &__label {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+
+    @include respond(mobile-lg) {
+      &__label {
+        font-size: 14px;
+      }
+      margin-right: 0 !important;
+    }
+    @include respond(mobile-m) {
+      &__label {
+        font-size: 12px;
+      }
     }
   }
 
@@ -166,7 +192,7 @@
         top: -10px;
       }
       svg {
-        height: 25px;
+        height: 24px;
       }
     }
   }

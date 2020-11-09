@@ -79,3 +79,16 @@
   color: $color-darkblue !important;
   left: 4px;
 }
+
+@mixin pseudoImage($psuedo, $img) {
+  &::#{$psuedo} {
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: $img;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    @content;
+  }
+}

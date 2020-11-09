@@ -1,0 +1,17 @@
+@import "thanks-giving-theme";
+@import "halloween-theme";
+@import "christmas-theme";
+
+.themes {
+  &--thanks-giving {
+    @include thanks-giving-theme;
+  }
+
+  &--christmas {
+    @include christmas-theme;
+  }
+
+  &--halloween {
+    @include halloween-theme;
+  }
+}

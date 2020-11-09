@@ -7,11 +7,12 @@
     <title>Header and Footer Customized</title>
     <link rel="stylesheet" href="./scss/main.css">
     <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./scss/themes/themes.min.css">
     <!-- Hallooween theme -->
     <!-- <link rel="stylesheet" href="./scss/themes/halloween-theme.min.css"> -->
 
     <!-- Thanks giving theme-->
-    <link id="theme" rel="stylesheet" href="./scss/themes/christmas-theme.css">
+    <!-- <link id="theme" rel="stylesheet" href="./scss/themes/christmas-theme.css"> -->
 
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
@@ -21,7 +22,7 @@
 </head>
 
 
-<body>
+<body class="themes--christmas">
     <header>
         <aside class="sidebar" id="app-sidebar">
             <ul class="sidebar__list">
@@ -86,7 +87,7 @@
                                 </span>
                             </button>
                         </div>
-                        <div id="search-auto" class="search search-auto ">
+                        <div id="search-auto" class="search search-auto">
                             <!--search-show-->
                             <div class="search__live">
                                 <div class="search__live-header">
@@ -311,16 +312,13 @@
                     </div>
 
                     <div class="navbar__action">
-                        <button class="btn btn--icon mobile-only">
-                            <span class="icon">
-                                <?xml version="1.0" encoding="UTF-8"?>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                    <path
-                                        d="M11.489 5.014H5.512a.498.498 0 00-.498.498v5.976c0 .275.223.498.498.498h5.977a.498.498 0 00.498-.498V5.512a.498.498 0 00-.498-.498zm-3.487.996H9v.996h-.997V6.01zm2.989 4.98H6.01V6.01h.995v1.494c0 .275.223.498.498.498h1.993a.498.498 0 00.498-.498V6.01h.996v4.98z" />
-                                    <path
-                                        d="M16.502 8.002h-1.546A6.485 6.485 0 009 2.044V.498a.498.498 0 00-.997 0v1.546a6.485 6.485 0 00-5.957 5.958H.499a.498.498 0 000 .996h1.546a6.485 6.485 0 005.957 5.958v1.546a.498.498 0 00.997 0v-1.546a6.485 6.485 0 005.957-5.958h1.546a.498.498 0 100-.996zM9 13.956v-.476a.498.498 0 10-.997 0v.476a5.488 5.488 0 01-4.957-4.958h.475a.498.498 0 000-.996h-.475a5.488 5.488 0 014.957-4.958v.476a.498.498 0 00.997 0v-.476a5.487 5.487 0 014.957 4.958h-.475a.498.498 0 100 .996h.475A5.488 5.488 0 019 13.956zM1.528 4.018a.498.498 0 00.498-.498V2.025H3.52a.498.498 0 000-.996H1.528a.498.498 0 00-.498.498V3.52c0 .275.223.498.498.498zM3.52 14.975H2.026V13.48a.498.498 0 10-.996 0v1.993c0 .275.223.498.498.498H3.52a.498.498 0 000-.996zM15.473 12.982a.498.498 0 00-.498.498v1.495h-1.494a.498.498 0 100 .996h1.992a.498.498 0 00.498-.498V13.48a.498.498 0 00-.498-.498zM13.481 2.025h1.494V3.52a.498.498 0 00.996 0V1.527a.498.498 0 00-.498-.498h-1.992a.498.498 0 100 .996z" />
-                                </svg>
-                            </span>
+                        <button class="btn btn--track mobile-only">
+                            <figure>
+                            </figure>
+
+                            <div class="btn--track__label">
+                                Track Order
+                            </div>
                         </button>
 
                         <div class="navbar__login">
@@ -1424,17 +1422,34 @@
     <script src="./assets/js/snow.min.js"></script>
 
     <script>
+        // function changeTheme(theme) {
+        //     const headCss = $("#theme");
+        //     const themeScript = $('#theme-js');
+
+        //     if (theme === "halloween") {
+        //         headCss.attr("href", "./scss/themes/halloween-theme.min.css");
+        //     } else if (theme === 'thanks-giving') {
+        //         headCss.attr("href", "./scss/themes/thanks-giving-theme.min.css");
+        //     } else if (theme === 'christmas') {
+        //         headCss.attr("href", "./scss/themes/christmas-theme.min.css");
+        //     } else {
+        //         themeScript.attr('src', '')
+        //     }
+        // }
         function changeTheme(theme) {
-            const headCss = $("#theme");
+            const body = $("body");
+            const themeScript = $('#theme-js');
+
+            body.removeClass(body.attr('class'))
 
             if (theme === "halloween") {
-                headCss.attr("href", "./scss/themes/halloween-theme.min.css");
+                body.addClass('themes--halloween');
             } else if (theme === 'thanks-giving') {
-                headCss.attr("href", "./scss/themes/thanks-giving-theme.min.css");
+                body.addClass('themes--thanks-giving');
             } else if (theme === 'christmas') {
-                headCss.attr("href", "./scss/themes/christmas-theme.min.css");
+                body.addClass('themes--christmas');
             } else {
-                headCss.attr('href', "")
+                body.addClass('themes--default');
             }
         }
 

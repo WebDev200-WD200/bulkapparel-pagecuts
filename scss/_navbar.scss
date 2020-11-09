@@ -42,9 +42,9 @@
       min-width: 35px;
     }
     @include respond(mobile-m) {
-      width: 30px;
-      min-width: 30px;
-      margin-right: 8px;
+      width: 28px;
+      min-width: 28px;
+      margin-right: 5px;
     }
 
     span {
@@ -152,10 +152,10 @@
       height: 36px;
     }
     @include respond(mobile-m) {
-      height: 32px;
+      height: 28px;
     }
     @include respond(mobile-s) {
-      height: 28px;
+      height: 25px;
     }
   }
 
@@ -187,7 +187,7 @@
       margin-right: 15px;
 
       @include respond(mobile-lg) {
-        margin-right: 10px;
+        margin-right: 5px;
       }
       @include respond(mobile-m) {
         margin-right: 5px;

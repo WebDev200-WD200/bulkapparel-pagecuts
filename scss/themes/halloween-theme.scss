@@ -1,175 +1,165 @@
 @import "../mixin";
 
-$color-theme-primary: #000;
-$color-theme-secondary: #eb6123;
-$color-white: #fff;
-$img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
-$img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
-$img-spider: url("../../assets/theme/halloween/spider_100x.webp");
-$img-footer: url("../../assets/theme/halloween/backdrop.webp");
+@mixin halloween-theme {
+  $color-theme-primary: #000;
+  $color-theme-secondary: #eb6123;
+  $color-white: #fff;
+  $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
+  $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
+  $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
+  $img-footer: url("../../assets/theme/halloween/backdrop.webp");
 
-.halloween {
-  background-color: $color-theme-secondary;
-}
-
-@mixin pseudoImage($psuedo, $img) {
-  &::#{$psuedo} {
-    position: absolute;
-    display: block;
-    content: "";
-    background-image: $img;
-    background-size: contain;
-    background-repeat: no-repeat;
-    @content;
-  }
-}
-
-.navbar {
-  &__main .container {
-    position: relative;
-    @include pseudoImage("after", $img-right-nav) {
-      right: -180px;
-      top: 10px;
-      width: 150px;
-      height: 150px;
-
-      @media (max-width: 1600px) {
-        display: none;
-      }
-    }
-  }
-
-  &__hamburger-btn {
-    span {
-      background-color: $color-theme-primary;
-    }
-  }
-
-  &__footer-item:hover &__footer-link {
+  .halloween {
     background-color: $color-theme-secondary;
-    color: $color-white;
   }
 
-  &__logo {
-    position: relative;
-    @include pseudoImage("before", $img-spider-web) {
-      top: -200%;
-      left: -160px;
-      width: 220px;
-      height: 220px;
-      transform: rotate(125deg);
+  .navbar {
+    &__main .container {
+      position: relative;
+      @include pseudoImage("after", $img-right-nav) {
+        right: -180px;
+        top: 10px;
+        width: 150px;
+        height: 150px;
 
-      @include respond(laptop) {
-        display: none;
-      }
-    }
-
-    @include pseudoImage("after", $img-spider) {
-      top: -70%;
-      right: 20%;
-      width: 50px;
-      height: 50px;
-
-      @include respond(mobile-lg) {
-        width: 35px;
-        height: 35px;
-        right: 25%;
-      }
-    }
-  }
-
-  & .btn--my-account {
-    color: $color-theme-primary;
-
-    svg {
-      fill: $color-theme-primary;
-    }
-  }
-
-  & .btn--track {
-    background-color: $color-theme-primary;
-  }
-
-  & .btn--icon {
-    svg {
-      fill: $color-theme-primary;
-    }
-  }
-
-  & .inp--search__button {
-    background: $color-theme-primary;
-  }
-
-  &__footer {
-    background-color: $color-theme-primary;
-  }
-
-  & .mega-menu__title {
-    color: $color-theme-secondary;
-    &::after {
-      background: $color-theme-secondary;
-    }
-  }
-
-  & .mega-menu__sub {
-    &:hover {
-      background-color: rgba($color-theme-secondary, 0.08);
-    }
-  }
-
-  & .search {
-    &__auto-result {
-      li {
-        &:hover,
-        &:focus {
-          a {
-            color: $color-theme-secondary !important;
-          }
+        @media (max-width: 1600px) {
+          display: none;
         }
       }
     }
 
-    &__live-header {
+    &__hamburger-btn {
       span {
-        color: $color-theme-secondary;
+        background-color: $color-theme-primary;
+      }
+    }
+
+    &__footer-item:hover &__footer-link {
+      background-color: $color-theme-secondary;
+      color: $color-white;
+    }
+
+    &__logo {
+      position: relative;
+      @include pseudoImage("before", $img-spider-web) {
+        top: -200%;
+        left: -160px;
+        width: 220px;
+        height: 220px;
+        transform: rotate(125deg);
+
+        @include respond(laptop) {
+          display: none;
+        }
+      }
+
+      @include pseudoImage("after", $img-spider) {
+        top: -70%;
+        right: 20%;
+        width: 50px;
+        height: 50px;
+
+        @include respond(mobile-lg) {
+          width: 35px;
+          height: 35px;
+          right: 25%;
+        }
+      }
+    }
+
+    & .btn--my-account {
+      color: $color-theme-primary;
+
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .btn--track {
+      background-color: $color-theme-primary;
+    }
+
+    & .btn--icon {
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .inp--search__button {
+      background: $color-theme-primary;
+    }
+
+    &__footer {
+      background-color: $color-theme-primary;
+    }
+
+    & .mega-menu__title {
+      color: $color-theme-secondary;
+      &::after {
+        background: $color-theme-secondary;
+      }
+    }
+
+    & .mega-menu__sub {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
+    & .search {
+      &__auto-result {
+        li {
+          &:hover,
+          &:focus {
+            a {
+              color: $color-theme-secondary !important;
+            }
+          }
+        }
+      }
+
+      &__live-header {
+        span {
+          color: $color-theme-secondary;
+        }
       }
     }
   }
-}
 
-.footer {
-  position: relative;
-  background-color: $color-theme-primary;
-  background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
+  .footer {
+    position: relative;
+    background-color: $color-theme-primary;
+    background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
 
-  @include pseudoImage("before", $img-footer) {
-    top: -180px;
-    right: 0;
-    width: 100%;
-    height: 267px;
-    background-repeat: repeat-x;
+    @include pseudoImage("before", $img-footer) {
+      top: -180px;
+      right: 0;
+      width: 100%;
+      height: 267px;
+      background-repeat: repeat-x;
 
-    @include respond(laptop-s) {
-      height: 220px;
-      top: -160px;
-    }
-    @include respond(tab-port) {
-      height: 200px;
-      top: -150px;
-    }
-    @include respond(mobile-lg) {
-      height: 180px;
-      top: -120px;
-    }
-    @include respond(mobile-m) {
-      top: -100px;
+      @include respond(laptop-s) {
+        height: 220px;
+        top: -160px;
+      }
+      @include respond(tab-port) {
+        height: 200px;
+        top: -150px;
+      }
+      @include respond(mobile-lg) {
+        height: 180px;
+        top: -120px;
+      }
+      @include respond(mobile-m) {
+        top: -100px;
+      }
     }
   }
-}
-.sidebar {
-  background-color: $color-theme-primary;
-}
+  .sidebar {
+    background-color: $color-theme-primary;
+  }
 
-.show-sub-list {
-  background-color: $color-theme-secondary;
+  .show-sub-list {
+    background-color: $color-theme-secondary;
+  }
 }
