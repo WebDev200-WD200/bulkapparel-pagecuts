@@ -1,0 +1,212 @@
+@import "../mixin";
+
+@mixin new-year-theme {
+  $color-theme-primary: #15347d;
+  $color-footer-gradient: linear-gradient(180deg, #002374 0%, #001547 100%);
+  $color-theme-secondary: #15347d;
+  $color-white: #fff;
+  $img-champange-fireworks: url("../../assets/theme/new-year/champange-fireworks.png");
+  $img-firework-solo: url("../../assets/theme/new-year/firework-solo.png");
+  $img-pseudo: url("../../assets/theme/new-year/pseudo-img.png");
+
+  .new-year {
+    background: $color-theme-secondary;
+  }
+
+  .navbar {
+    &__hamburger-btn {
+      span {
+        background-color: $color-theme-primary;
+      }
+    }
+
+    &__logo {
+      position: relative;
+      @include pseudoImage("before", $img-champange-fireworks) {
+        width: 105px;
+        height: 105px;
+        bottom: -32px;
+        right: -25px;
+
+        @include respond(laptop) {
+          height: 95px;
+          width: 95px;
+          right: 0;
+          bottom: -37px;
+        }
+        @include respond(laptop-s) {
+          height: 90px;
+          width: 90px;
+          right: -90px;
+          bottom: -25px;
+        }
+        @include respond(tab-port) {
+          height: 80px;
+          width: 80px;
+          right: -80px;
+          bottom: -15px;
+        }
+        @include respond(mobile-lg) {
+          height: 65px;
+          width: 65px;
+          right: -65px;
+          bottom: -15px;
+        }
+        @include respond(mobile-m) {
+          height: 55px;
+          width: 55px;
+          right: -55px;
+          bottom: -15px;
+        }
+      }
+
+      @include pseudoImage("after", $img-firework-solo) {
+        bottom: -53px;
+        left: -100px;
+        width: 100px;
+        height: 120px;
+        @include respond(laptop) {
+          display: none;
+        }
+      }
+    }
+
+    //   &__footer-item:hover &__footer-link {
+    //     background-color: $color-theme-secondary !important;
+    //     color: $color-white !important;
+    //   }
+
+    & .btn--my-account {
+      color: $color-theme-primary;
+
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .btn--track {
+      &__icon {
+        fill: $color-theme-primary;
+      }
+      &__label {
+        color: $color-theme-primary !important;
+      }
+    }
+
+    & .btn--icon {
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .inp--search__button {
+      background: $color-theme-primary;
+    }
+
+    &__footer {
+      background: $color-theme-primary;
+    }
+
+    & .mega-menu__title {
+      color: $color-theme-secondary;
+      &::after {
+        background: $color-theme-secondary;
+      }
+    }
+
+    & .mega-menu__sub {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
+    & .search {
+      &__auto-result {
+        li {
+          &:hover,
+          &:focus {
+            a {
+              color: $color-theme-secondary !important;
+            }
+          }
+        }
+      }
+
+      &__live-header {
+        span {
+          color: $color-theme-secondary;
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: relative;
+    background-color: $color-theme-primary;
+    background: $color-footer-gradient;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 120px 0;
+    @include respond(laptop-s) {
+      padding: 110px 0;
+    }
+    @include respond(mobile-lg) {
+      padding: 90px 0;
+    }
+    @include respond(mobile-lg) {
+      padding: 70px 0;
+    }
+
+    &:after,
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      background-image: $img-pseudo;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      height: 169px;
+      width: 100%;
+      left: 0;
+      background-repeat: repeat;
+
+      @include respond(laptop-s) {
+        height: 150px;
+      }
+      @include respond(mobile-lg) {
+        height: 130px;
+      }
+      @include respond(mobile-m) {
+        height: 110px;
+      }
+    }
+
+    &::after {
+      top: -70px;
+      @include respond(mobile-lg) {
+        top: -60px;
+      }
+      @include respond(mobile-m) {
+        top: -50px;
+      }
+    }
+
+    &::before {
+      bottom: -60px;
+    }
+  }
+  .sidebar {
+    background-color: $color-theme-primary;
+  }
+
+  .show-sub-list {
+    background-color: $color-theme-secondary;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+}
+
+// @include new-year-theme();

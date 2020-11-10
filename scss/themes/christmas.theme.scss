@@ -83,11 +83,6 @@
       }
     }
 
-    &__footer-item:hover &__footer-link {
-      background-color: $color-theme-secondary !important;
-      color: $color-white !important;
-    }
-
     & .btn--my-account {
       color: $color-theme-primary;
 
@@ -130,6 +125,11 @@
       &:hover {
         background-color: rgba($color-theme-secondary, 0.08);
       }
+    }
+
+    &__footer-item:hover &__footer-link {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
     }
 
     & .search {
@@ -250,3 +250,5 @@
     overflow-x: hidden !important;
   }
 }
+
+// @include christmas-theme;

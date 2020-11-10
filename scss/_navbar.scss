@@ -50,7 +50,7 @@
     span {
       position: relative;
       display: block;
-      height: 6px;
+      height: 5px;
       width: 100%;
       background: $color-darkblue;
 
@@ -73,7 +73,7 @@
       }
 
       @include respond(tab-port) {
-        height: 6px;
+        height: 5px;
 
         &::after {
           top: 12px;
@@ -219,11 +219,6 @@
     }
   }
 
-  &__footer-item:hover &__footer-link {
-    background-color: $color-white;
-    color: $color-gray;
-  }
-
   &__footer-link {
     display: block;
     padding: 14px 14px;
@@ -235,6 +230,10 @@
       font-size: 16px;
       padding: 12px;
     }
+  }
+  &__footer-item:hover &__footer-link {
+    background-color: $color-white;
+    color: $color-gray;
   }
 
   &__cart {

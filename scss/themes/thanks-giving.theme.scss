@@ -3,7 +3,8 @@
 @mixin thanks-giving-theme {
   $color-theme-primary: #522011;
   $color-footer-gradient: linear-gradient(180deg, #522011 0%, #1c0d00 100%);
-  $color-orange: #eb6123;
+  $color-theme-secondary: #eb6123;
+  $color-white: #fff;
   $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
   $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
   $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
@@ -22,6 +23,11 @@
       span {
         background-color: $color-theme-primary;
       }
+    }
+
+    &__footer-item:hover &__footer-link {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
     }
 
     &__logo {
@@ -182,10 +188,12 @@
   }
 
   .show-sub-list {
-    background-color: $color-orange;
+    background-color: $color-theme-secondary;
   }
 
   body {
     overflow-x: hidden !important;
   }
 }
+
+// @include thanks-giving-theme();

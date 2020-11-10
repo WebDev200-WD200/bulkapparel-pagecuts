@@ -14,6 +14,9 @@
     <!-- Thanks giving theme-->
     <!-- <link id="theme" rel="stylesheet" href="./scss/themes/christmas-theme.css"> -->
 
+    <!-- New year theme-->
+    <!-- <link id="theme" rel="stylesheet" href="./scss/themes/new-year.theme.css"> -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
         rel="stylesheet">
@@ -22,7 +25,7 @@
 </head>
 
 
-<body class="themes--christmas">
+<body class="themes--new-year">
     <header>
         <aside class="sidebar" id="app-sidebar">
             <ul class="sidebar__list">
@@ -1180,6 +1183,11 @@
                     <button class="btn btn--primary mt-2 christmas w-100" onclick="changeTheme('christmas')">Change
                         Christmas theme</button>
                 </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 new-year w-100" onclick="changeTheme('new-year')">Change New
+                        Year
+                        theme</button>
+                </div>
             </div>
 
         </div>
@@ -1419,7 +1427,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/templateGenarator.js"></script>
-    <script src="./assets/js/snow.min.js"></script>
+    <!-- <script src="./assets/js/snow.min.js"></script> -->
 
     <script>
         // function changeTheme(theme) {
@@ -1448,6 +1456,8 @@
                 body.addClass('themes--thanks-giving');
             } else if (theme === 'christmas') {
                 body.addClass('themes--christmas');
+            } else if (theme === 'new-year') {
+                body.addClass('themes--new-year');
             } else {
                 body.addClass('themes--default');
             }

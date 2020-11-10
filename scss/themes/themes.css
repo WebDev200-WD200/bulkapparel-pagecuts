@@ -6,6 +6,11 @@
   background-color: #522011;
 }
 
+.themes--thanks-giving .navbar__footer-item:hover .themes--thanks-giving .navbar__footer-link {
+  background-color: #eb6123 !important;
+  color: #fff !important;
+}
+
 .themes--thanks-giving .navbar__logo {
   position: relative;
 }
@@ -299,11 +304,6 @@
   }
 }
 
-.themes--christmas .navbar__footer-item:hover .themes--christmas .navbar__footer-link {
-  background-color: #c20d11 !important;
-  color: #fff !important;
-}
-
 .themes--christmas .navbar .btn--my-account {
   color: #00234f;
 }
@@ -342,6 +342,11 @@
 
 .themes--christmas .navbar .mega-menu__sub:hover {
   background-color: rgba(194, 13, 17, 0.08);
+}
+
+.themes--christmas .navbar__footer-item:hover .themes--christmas .navbar__footer-link {
+  background-color: #c20d11 !important;
+  color: #fff !important;
 }
 
 .themes--christmas .navbar .search__auto-result li:hover a, .themes--christmas .navbar .search__auto-result li:focus a {
@@ -689,4 +694,235 @@
 
 .themes--halloween .show-sub-list {
   background-color: #eb6123;
+}
+
+.themes--new-year .new-year {
+  background: #15347d;
+}
+
+.themes--new-year .navbar__hamburger-btn span {
+  background-color: #15347d;
+}
+
+.themes--new-year .navbar__logo {
+  position: relative;
+}
+
+.themes--new-year .navbar__logo::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("../../assets/theme/new-year/champange-fireworks.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  width: 105px;
+  height: 105px;
+  bottom: -32px;
+  right: -25px;
+}
+
+@media (max-width: 79em) {
+  .themes--new-year .navbar__logo::before {
+    height: 95px;
+    width: 95px;
+    right: 0;
+    bottom: -37px;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .themes--new-year .navbar__logo::before {
+    height: 90px;
+    width: 90px;
+    right: -90px;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 48em) {
+  .themes--new-year .navbar__logo::before {
+    height: 80px;
+    width: 80px;
+    right: -80px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .themes--new-year .navbar__logo::before {
+    height: 65px;
+    width: 65px;
+    right: -65px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .themes--new-year .navbar__logo::before {
+    height: 55px;
+    width: 55px;
+    right: -55px;
+    bottom: -15px;
+  }
+}
+
+.themes--new-year .navbar__logo::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("../../assets/theme/new-year/firework-solo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  bottom: -53px;
+  left: -100px;
+  width: 100px;
+  height: 120px;
+}
+
+@media (max-width: 79em) {
+  .themes--new-year .navbar__logo::after {
+    display: none;
+  }
+}
+
+.themes--new-year .navbar .btn--my-account {
+  color: #15347d;
+}
+
+.themes--new-year .navbar .btn--my-account svg {
+  fill: #15347d;
+}
+
+.themes--new-year .navbar .btn--track__icon {
+  fill: #15347d;
+}
+
+.themes--new-year .navbar .btn--track__label {
+  color: #15347d !important;
+}
+
+.themes--new-year .navbar .btn--icon svg {
+  fill: #15347d;
+}
+
+.themes--new-year .navbar .inp--search__button {
+  background: #15347d;
+}
+
+.themes--new-year .navbar__footer {
+  background: #15347d;
+}
+
+.themes--new-year .navbar .mega-menu__title {
+  color: #15347d;
+}
+
+.themes--new-year .navbar .mega-menu__title::after {
+  background: #15347d;
+}
+
+.themes--new-year .navbar .mega-menu__sub:hover {
+  background-color: rgba(21, 52, 125, 0.08);
+}
+
+.themes--new-year .navbar .search__auto-result li:hover a, .themes--new-year .navbar .search__auto-result li:focus a {
+  color: #15347d !important;
+}
+
+.themes--new-year .navbar .search__live-header span {
+  color: #15347d;
+}
+
+.themes--new-year .footer {
+  position: relative;
+  background-color: #15347d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#002374), to(#001547));
+  background: linear-gradient(180deg, #002374 0%, #001547 100%);
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+@media (max-width: 62.5em) {
+  .themes--new-year .footer {
+    padding: 110px 0;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .themes--new-year .footer {
+    padding: 90px 0;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .themes--new-year .footer {
+    padding: 70px 0;
+  }
+}
+
+.themes--new-year .footer:after, .themes--new-year .footer:before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("../../assets/theme/new-year/pseudo-img.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  height: 169px;
+  width: 100%;
+  left: 0;
+  background-repeat: repeat;
+}
+
+@media (max-width: 62.5em) {
+  .themes--new-year .footer:after, .themes--new-year .footer:before {
+    height: 150px;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .themes--new-year .footer:after, .themes--new-year .footer:before {
+    height: 130px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .themes--new-year .footer:after, .themes--new-year .footer:before {
+    height: 110px;
+  }
+}
+
+.themes--new-year .footer::after {
+  top: -70px;
+}
+
+@media (max-width: 37.5625em) {
+  .themes--new-year .footer::after {
+    top: -60px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .themes--new-year .footer::after {
+    top: -50px;
+  }
+}
+
+.themes--new-year .footer::before {
+  bottom: -60px;
+}
+
+.themes--new-year .sidebar {
+  background-color: #15347d;
+}
+
+.themes--new-year .show-sub-list {
+  background-color: #15347d;
+}
+
+.themes--new-year body {
+  overflow-x: hidden !important;
 }
