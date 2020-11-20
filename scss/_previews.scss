@@ -1,0 +1,34 @@
+.brand-preview {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-preview {
+  border: 1px solid rgba($color-black, 0.08);
+  border-bottom: none;
+  &__header {
+    padding: 10px;
+    h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: rgba($color-gray, 1);
+    }
+  }
+
+  &__body {
+    .row {
+      & > * {
+        &:first-child {
+          border-left: none !important;
+        }
+      }
+    }
+  }
+}
+
+.ads-box {
+  padding: 15px 10px;
+}
