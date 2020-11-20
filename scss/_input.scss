@@ -24,6 +24,12 @@
       padding: 10px;
       background: $color-light-gray;
       font-size: 16px;
+      border: 1px solid $color-light-gray;
+
+      &:focus,
+      &:hover {
+        border-color: $color-darkblue;
+      }
     }
 
     &__button {
@@ -32,7 +38,7 @@
       top: 0;
       height: 100%;
       width: 60px;
-      background: $color-darkblue;
+      background-color: $color-gray;
 
       svg {
         fill: $color-white;
@@ -58,8 +64,6 @@
       }
     }
     @include respond(mobile-lg) {
-      height: 36px;
-
       &__input {
         font-size: 14px;
         padding: 8px;
@@ -72,6 +76,10 @@
       svg {
         height: 14px;
       }
+    }
+
+    @include respond(mobile-m) {
+      height: 38px;
     }
   }
 }

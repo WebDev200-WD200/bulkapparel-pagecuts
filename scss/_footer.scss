@@ -3,12 +3,16 @@
   background-color: $color-gray;
   color: $color-white;
   padding: 60px 0;
+  width: 100%;
+  float: left;
 
   @include respond(tab-port) {
     padding: 40px 0;
   }
 
-  &__logo {
+  &__logo,
+  .box-1-inner a:first-child {
+    display: block;
     height: 70px;
     margin-bottom: 20px;
 
@@ -170,4 +174,16 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.box-1-inner {
+  @media screen and (max-width: 1200px) {
+    max-width: unset !important;
+  }
+
+  @include respond(mobile-lg) {
+    // img {
+    //   width: 100%;
+    // }
+  }
 }

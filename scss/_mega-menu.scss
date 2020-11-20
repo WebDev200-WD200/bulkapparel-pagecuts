@@ -6,7 +6,7 @@
   width: 100%;
   background: $color-white;
   z-index: 2000;
-  top: 51px;
+  top: 100%;
   left: 0;
   box-shadow: 0 10px 10px rgba($color-black, 0.1);
   border-top: none;
@@ -50,6 +50,11 @@
       /* End - Drawer is not fixed to its position and still scrollable - CL - 09/23/2020 */
     }
 
+    @include respond(laptop) {
+      color: $color-black !important;
+      font-weight: 400 !important;
+    }
+
     &::after {
       display: flex;
       justify-content: center;
@@ -66,6 +71,10 @@
       border-radius: 100%;
       opacity: 0;
       transition: all 300ms ease;
+
+      @include respond(tab-port) {
+        display: none;
+      }
     }
 
     &:hover {
@@ -121,6 +130,11 @@
     @include respond(laptop-s) {
       width: 100% !important;
       padding: 5px;
+    }
+
+    @include respond(laptop) {
+      background-color: $color-white3;
+      border-bottom: 1px solid rgba($color-black, 0.08);
     }
 
     &:hover {

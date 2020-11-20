@@ -4,20 +4,16 @@
   $color-theme-primary: #000;
   $color-theme-secondary: #eb6123;
   $color-white: #fff;
-  $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
-  $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
-  $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
-  $img-footer: url("../../assets/theme/halloween/backdrop.webp");
+  $img-right-nav: url("/images/theme/halloween/right-nav-halloween_300x.webp");
+  $img-spider-web: url("/images/theme/halloween/spider-web_500x.webp");
+  $img-spider: url("/images/theme/halloween/spider_100x.webp");
+  $img-footer: url("/images/theme/halloween/backdrop.webp");
 
   .halloween {
     background-color: $color-theme-secondary;
   }
 
   .navbar {
-    &__footer-item:hover &__footer-link {
-      background-color: $color-theme-secondary !important;
-      color: $color-white !important;
-    }
     &__main .container {
       position: relative;
       @include pseudoImage("after", $img-right-nav) {
@@ -110,6 +106,12 @@
       }
     }
 
+    & .navbar__footer-sub-link {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
     & .search {
       &__auto-result {
         li {
@@ -128,12 +130,22 @@
         }
       }
     }
+
+    &__footer-item:hover > .navbar__footer-header {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
+    }
   }
 
   .footer {
     position: relative;
     background-color: $color-theme-primary;
     background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
+    margin-top: 80px;
+
+    @include respond(laptop) {
+      margin-top: 50px;
+    }
 
     @include pseudoImage("before", $img-footer) {
       top: -180px;
@@ -163,8 +175,10 @@
     background-color: $color-theme-primary;
   }
 
-  .show-sub-list {
-    background-color: $color-theme-secondary;
+  .show-sub-list .navbar__footer-header {
+    @include respond(laptop-s) {
+      background-color: $color-theme-secondary;
+    }
   }
 }
 

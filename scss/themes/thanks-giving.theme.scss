@@ -3,19 +3,19 @@
 @mixin thanks-giving-theme {
   $color-theme-primary: #522011;
   $color-footer-gradient: linear-gradient(180deg, #522011 0%, #1c0d00 100%);
-  $color-theme-secondary: #eb6123;
+  $color-theme-secondary: #c1311c;
   $color-white: #fff;
-  $img-right-nav: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
-  $img-spider-web: url("../../assets/theme/halloween/spider-web_500x.webp");
-  $img-spider: url("../../assets/theme/halloween/spider_100x.webp");
-  $img-footer: url("../../assets/theme/halloween/backdrop.webp");
+  $img-right-nav: url("/images/theme/halloween/right-nav-halloween_300x.webp");
+  $img-spider-web: url("/images/theme/halloween/spider-web_500x.webp");
+  $img-spider: url("/images/theme/halloween/spider_100x.webp");
+  $img-footer: url("/images/theme/halloween/backdrop.webp");
 
-  $img-candle-pumpkin: url("../../assets/theme/thanks-giving/candle-pumpkin.webp");
-  $img-turkey: url("../../assets/theme/thanks-giving/turkey.webp");
-  $img-leave-footer: url("../../assets/theme/thanks-giving/leaves-footer.webp");
+  $img-candle-pumpkin: url("/images/theme/thanks-giving/candle-pumpkin.webp");
+  $img-turkey: url("/images/theme/thanks-giving/turkey.webp");
+  $img-leave-footer: url("/images/theme/thanks-giving/leaves-footer.webp");
 
   .thanks-giving {
-    background: $color-theme-primary;
+    background: $color-theme-secondary;
   }
 
   .navbar {
@@ -23,11 +23,6 @@
       span {
         background-color: $color-theme-primary;
       }
-    }
-
-    &__footer-item:hover &__footer-link {
-      background-color: $color-theme-secondary !important;
-      color: $color-white !important;
     }
 
     &__logo {
@@ -118,6 +113,12 @@
       }
     }
 
+    & .navbar__footer-sub-link {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
     & .search {
       &__auto-result {
         li {
@@ -136,6 +137,10 @@
         }
       }
     }
+    &__footer-item:hover > .navbar__footer-header {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
+    }
   }
 
   .footer {
@@ -143,7 +148,11 @@
     background-color: $color-theme-primary;
     background: $color-footer-gradient;
     white-space: nowrap;
+    margin-top: 100px;
 
+    @include respond(tab-port) {
+      margin-top: 40px;
+    }
     &::before,
     &::after {
       content: "";
@@ -187,8 +196,10 @@
     background-color: $color-theme-primary;
   }
 
-  .show-sub-list {
-    background-color: $color-theme-secondary;
+  .show-sub-list .navbar__footer-header {
+    @include respond(laptop-s) {
+      background-color: $color-theme-secondary;
+    }
   }
 
   body {

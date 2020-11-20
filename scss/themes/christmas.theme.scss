@@ -5,11 +5,11 @@
   $color-footer-gradient: #011a39;
   $color-theme-secondary: #c20d11;
   $color-white: #fff;
-  $img-gifts: url("../../assets/theme/christmas/gift-w150px.webp");
-  $img-santa: url("../../assets/theme/christmas/santa-claus_x220.webp");
-  $img-snow-pile-1: url("../../assets/theme/christmas/snow-pile-1_1_x338.webp");
-  $img-snow-pile-2: url("../../assets/theme/christmas/snow-pile-4_x180.webp");
-  $img-ornament: url("../../assets/theme/christmas/ornament_x300.webp");
+  $img-gifts: url("/images/theme/christmas/gift-w150px.webp");
+  $img-santa: url("/images/theme/christmas/santa-claus_x220.webp");
+  $img-snow-pile-1: url("/images/theme/christmas/snow-pile-1_1_x338.webp");
+  $img-snow-pile-2: url("/images/theme/christmas/snow-pile-4_x180.webp");
+  $img-ornament: url("/images/theme/christmas/ornament_x300.webp");
 
   .christmas {
     background: $color-theme-secondary;
@@ -126,10 +126,10 @@
         background-color: rgba($color-theme-secondary, 0.08);
       }
     }
-
-    &__footer-item:hover &__footer-link {
-      background-color: $color-theme-secondary !important;
-      color: $color-white !important;
+    & .navbar__footer-sub-link {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
     }
 
     & .search {
@@ -150,6 +150,11 @@
         }
       }
     }
+
+    &__footer-item:hover > .navbar__footer-header {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
+    }
   }
 
   .footer {
@@ -157,9 +162,10 @@
     background-color: $color-theme-primary;
     background: $color-footer-gradient;
     white-space: nowrap;
-
+    margin-top: 40px;
     @include respond(tab-port) {
       padding-bottom: 100px;
+      margin-top: 20px;
     }
 
     @include pseudoImage("after", $img-snow-pile-1) {
@@ -242,8 +248,10 @@
     background-color: $color-theme-primary;
   }
 
-  .show-sub-list {
-    background-color: $color-theme-secondary;
+  .show-sub-list .navbar__footer-header {
+    @include respond(laptop-s) {
+      background-color: $color-theme-secondary;
+    }
   }
 
   body {

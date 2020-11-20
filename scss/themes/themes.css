@@ -1,14 +1,9 @@
 .themes--thanks-giving .thanks-giving {
-  background: #522011;
+  background: #c1311c;
 }
 
 .themes--thanks-giving .navbar__hamburger-btn span {
   background-color: #522011;
-}
-
-.themes--thanks-giving .navbar__footer-item:hover .themes--thanks-giving .navbar__footer-link {
-  background-color: #eb6123 !important;
-  color: #fff !important;
 }
 
 .themes--thanks-giving .navbar__logo {
@@ -19,7 +14,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/thanks-giving/turkey.webp");
+  background-image: url("/images/theme/thanks-giving/turkey.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -73,7 +68,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/thanks-giving/candle-pumpkin.webp");
+  background-image: url("/images/theme/thanks-giving/candle-pumpkin.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -129,6 +124,10 @@
   background-color: rgba(82, 32, 17, 0.08);
 }
 
+.themes--thanks-giving .navbar .navbar__footer-sub-link:hover {
+  background-color: rgba(193, 49, 28, 0.08);
+}
+
 .themes--thanks-giving .navbar .search__auto-result li:hover a, .themes--thanks-giving .navbar .search__auto-result li:focus a {
   color: #522011 !important;
 }
@@ -137,19 +136,31 @@
   color: #522011;
 }
 
+.themes--thanks-giving .navbar__footer-item:hover > .navbar__footer-header {
+  background-color: #c1311c !important;
+  color: #fff !important;
+}
+
 .themes--thanks-giving .footer {
   position: relative;
   background-color: #522011;
   background: -webkit-gradient(linear, left top, left bottom, from(#522011), to(#1c0d00));
   background: linear-gradient(180deg, #522011 0%, #1c0d00 100%);
   white-space: nowrap;
+  margin-top: 100px;
+}
+
+@media (max-width: 48em) {
+  .themes--thanks-giving .footer {
+    margin-top: 40px;
+  }
 }
 
 .themes--thanks-giving .footer::before, .themes--thanks-giving .footer::after {
   content: "";
   position: absolute;
   display: block;
-  background-image: url("../../assets/theme/thanks-giving/leaves-footer.webp");
+  background-image: url("/images/theme/thanks-giving/leaves-footer.webp");
   background-size: contain;
   background-repeat: no-repeat;
   height: 180px;
@@ -199,8 +210,10 @@
   background-color: #522011;
 }
 
-.themes--thanks-giving .show-sub-list {
-  background-color: #eb6123;
+@media (max-width: 62.5em) {
+  .themes--thanks-giving .show-sub-list .navbar__footer-header {
+    background-color: #c1311c;
+  }
 }
 
 .themes--thanks-giving body {
@@ -223,7 +236,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/christmas/santa-claus_x220.webp");
+  background-image: url("/images/theme/christmas/santa-claus_x220.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -288,7 +301,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/christmas/gift-w150px.webp");
+  background-image: url("/images/theme/christmas/gift-w150px.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -344,9 +357,8 @@
   background-color: rgba(194, 13, 17, 0.08);
 }
 
-.themes--christmas .navbar__footer-item:hover .themes--christmas .navbar__footer-link {
-  background-color: #c20d11 !important;
-  color: #fff !important;
+.themes--christmas .navbar .navbar__footer-sub-link:hover {
+  background-color: rgba(194, 13, 17, 0.08);
 }
 
 .themes--christmas .navbar .search__auto-result li:hover a, .themes--christmas .navbar .search__auto-result li:focus a {
@@ -357,16 +369,23 @@
   color: #c20d11;
 }
 
+.themes--christmas .navbar__footer-item:hover > .navbar__footer-header {
+  background-color: #c20d11 !important;
+  color: #fff !important;
+}
+
 .themes--christmas .footer {
   position: relative;
   background-color: #00234f;
   background: #011a39;
   white-space: nowrap;
+  margin-top: 40px;
 }
 
 @media (max-width: 48em) {
   .themes--christmas .footer {
     padding-bottom: 100px;
+    margin-top: 20px;
   }
 }
 
@@ -374,7 +393,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/christmas/snow-pile-1_1_x338.webp");
+  background-image: url("/images/theme/christmas/snow-pile-1_1_x338.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -427,7 +446,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/christmas/snow-pile-4_x180.webp");
+  background-image: url("/images/theme/christmas/snow-pile-4_x180.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -478,7 +497,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/christmas/ornament_x300.webp");
+  background-image: url("/images/theme/christmas/ornament_x300.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -498,8 +517,10 @@
   background-color: #00234f;
 }
 
-.themes--christmas .show-sub-list {
-  background-color: #c20d11;
+@media (max-width: 62.5em) {
+  .themes--christmas .show-sub-list .navbar__footer-header {
+    background-color: #c20d11;
+  }
 }
 
 .themes--christmas body {
@@ -510,11 +531,6 @@
   background-color: #eb6123;
 }
 
-.themes--halloween .navbar__footer-item:hover .themes--halloween .navbar__footer-link {
-  background-color: #eb6123 !important;
-  color: #fff !important;
-}
-
 .themes--halloween .navbar__main .container {
   position: relative;
 }
@@ -523,7 +539,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/halloween/right-nav-halloween_300x.webp");
+  background-image: url("/images/theme/halloween/right-nav-halloween_300x.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -551,7 +567,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/halloween/spider-web_500x.webp");
+  background-image: url("/images/theme/halloween/spider-web_500x.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -573,7 +589,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/halloween/spider_100x.webp");
+  background-image: url("/images/theme/halloween/spider_100x.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -631,6 +647,10 @@
   background-color: rgba(235, 97, 35, 0.08);
 }
 
+.themes--halloween .navbar .navbar__footer-sub-link:hover {
+  background-color: rgba(235, 97, 35, 0.08);
+}
+
 .themes--halloween .navbar .search__auto-result li:hover a, .themes--halloween .navbar .search__auto-result li:focus a {
   color: #eb6123 !important;
 }
@@ -639,18 +659,30 @@
   color: #eb6123;
 }
 
+.themes--halloween .navbar__footer-item:hover > .navbar__footer-header {
+  background-color: #eb6123 !important;
+  color: #fff !important;
+}
+
 .themes--halloween .footer {
   position: relative;
   background-color: #000;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(36.2%, #03060c), to(#1c0d00));
   background: linear-gradient(180deg, #03060c 36.2%, #1c0d00 100%);
+  margin-top: 80px;
+}
+
+@media (max-width: 79em) {
+  .themes--halloween .footer {
+    margin-top: 50px;
+  }
 }
 
 .themes--halloween .footer::before {
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/halloween/backdrop.webp");
+  background-image: url("/images/theme/halloween/backdrop.webp");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -692,12 +724,14 @@
   background-color: #000;
 }
 
-.themes--halloween .show-sub-list {
-  background-color: #eb6123;
+@media (max-width: 62.5em) {
+  .themes--halloween .show-sub-list .navbar__footer-header {
+    background-color: #eb6123;
+  }
 }
 
 .themes--new-year .new-year {
-  background: #15347d;
+  background: #d4b03a;
 }
 
 .themes--new-year .navbar__hamburger-btn span {
@@ -712,7 +746,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/new-year/champange-fireworks.png");
+  background-image: url("/images/theme/new-year/champange-fireworks.png");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -771,7 +805,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/new-year/firework-solo.png");
+  background-image: url("/images/theme/new-year/firework-solo.png");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -785,6 +819,11 @@
   .themes--new-year .navbar__logo::after {
     display: none;
   }
+}
+
+.themes--new-year .navbar__footer-item:hover > .navbar__footer-header {
+  background-color: #d4b03a !important;
+  color: #fff !important;
 }
 
 .themes--new-year .navbar .btn--my-account {
@@ -816,23 +855,27 @@
 }
 
 .themes--new-year .navbar .mega-menu__title {
-  color: #15347d;
+  color: #d4b03a;
 }
 
 .themes--new-year .navbar .mega-menu__title::after {
-  background: #15347d;
+  background: #d4b03a;
 }
 
 .themes--new-year .navbar .mega-menu__sub:hover {
-  background-color: rgba(21, 52, 125, 0.08);
+  background-color: rgba(212, 176, 58, 0.08);
+}
+
+.themes--new-year .navbar .navbar__footer-sub-link:hover {
+  background-color: rgba(212, 176, 58, 0.08);
 }
 
 .themes--new-year .navbar .search__auto-result li:hover a, .themes--new-year .navbar .search__auto-result li:focus a {
-  color: #15347d !important;
+  color: #d4b03a !important;
 }
 
 .themes--new-year .navbar .search__live-header span {
-  color: #15347d;
+  color: #d4b03a;
 }
 
 .themes--new-year .footer {
@@ -867,7 +910,7 @@
   position: absolute;
   display: block;
   content: "";
-  background-image: url("../../assets/theme/new-year/pseudo-img.png");
+  background-image: url("/images/theme/new-year/pseudo-img.png");
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
@@ -919,8 +962,10 @@
   background-color: #15347d;
 }
 
-.themes--new-year .show-sub-list {
-  background-color: #15347d;
+@media (max-width: 62.5em) {
+  .themes--new-year .show-sub-list .navbar__footer-header {
+    background-color: #d4b03a;
+  }
 }
 
 .themes--new-year body {
