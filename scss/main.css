@@ -142,6 +142,9 @@ main {
 }
 
 .btn--primary {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   background: #44414f;
   padding: 10px 20px;
   color: #fff;

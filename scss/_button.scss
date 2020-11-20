@@ -80,6 +80,7 @@
   }
 
   &--primary {
+    display: inline-flex;
     background: $color-gray;
     padding: 10px 20px;
     color: $color-white;

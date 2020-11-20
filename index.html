@@ -430,7 +430,7 @@
                                 </span>
                             </div>
 
-                            <div class="cart-preview" style="display: block;">
+                            <div class="cart-preview">
                                 <ul class="cart-preview__list">
                                     <li class="cart-preview__item">
                                         <a href="/" class="cart-preview__item-header">
@@ -821,7 +821,7 @@
 
     <main>
         <div class="container">
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-12 col-lg-4">
                     <button class="btn btn--primary mt-2 default w-100"
                         onclick="changeTheme('default')">Default</button>
@@ -843,10 +843,18 @@
                         Year
                         theme</button>
                 </div>
-            </div> -->
+            </div>
 
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h1>New Structure Page Layout</h1>
+                    <a href="/card.html" class="btn btn--primary mt-2 new-year" onclick="changeTheme('new-year')">New
+                        Card
+                        Page
+                        Structure</a>
 
-
+                </div>
+            </div>
         </div>
     </main>
 
@@ -1085,7 +1093,7 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/templateGenarator.js"></script>
-    <!-- <script src="./assets/js/snow.jquery.min.js"></script> -->
+    <script src="./assets/js/snow.jquery.min.js"></script>
     <!-- <script src="./assets/js/snow.min.js"></script> -->
 
     <script>
@@ -1152,6 +1160,7 @@
 
     <script>
         $(document).ready(function () {
+            $(document).snowfall({ flakeCount: 200, round: true, maxSpeed: 5, maxSize: 8 });
 
             if ($('body').hasClass('themes--christmas')) {
                 var script = document.createElement("script");  // create a script DOM node
@@ -1161,7 +1170,6 @@
 
 
                 function initSnowFall() {
-                    $(document).snowfall({ flakeCount: 200, round: true, maxSpeed: 5, maxSize: 8 });
                 }
 
 
