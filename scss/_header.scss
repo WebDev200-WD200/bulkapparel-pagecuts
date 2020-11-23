@@ -236,7 +236,7 @@
     z-index: 2;
     min-width: 220px;
     box-shadow: 0 0 14px rgba($color-black, 0.1);
-    right: 0;
+    left: 0;
 
     @include respond(laptop-s) {
       min-width: 100%;
@@ -905,4 +905,8 @@
 #ajax_response {
   top: 100% !important;
   margin-top: 0 !important;
+}
+
+.navbar-relative {
+  position: relative;
 }

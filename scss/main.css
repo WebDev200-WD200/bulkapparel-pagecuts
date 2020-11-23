@@ -1392,7 +1392,7 @@ a {
   min-width: 220px;
   -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
-  right: 0;
+  left: 0;
 }
 
 @media (max-width: 62.5em) {
@@ -2226,6 +2226,10 @@ a {
 #ajax_response {
   top: 100% !important;
   margin-top: 0 !important;
+}
+
+.navbar-relative {
+  position: relative;
 }
 
 .card--primary {

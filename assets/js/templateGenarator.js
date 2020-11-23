@@ -561,89 +561,36 @@ const megaMenuTemplate = `
 
 `;
 
-const genSidebar = () => {
-  const list = [
-    "T-Shirts",
-    "Sweatshirts",
-    "Polos",
-    "Ladies",
-    "Kids",
-    "Athletics",
-    "Workwear",
-    "Jackets",
-    "Hats",
-    "Face-Masks",
-    "Shop Brands",
-  ];
-  const subList = [
-    "Cotton-100%",
-    "Cotton-Over 50%",
-    "Women",
-    "Mens",
-    "Youth",
-    "Pockets",
-    "Sleeeveless",
-    "V-Neck",
-    "Tank Tops",
-    "Crewnect Collar",
-    "Athelitics",
-  ];
-  let template = "";
-  let subTemplate = "";
-
-  subList.forEach((item) => {
-    subTemplate += `
-            <li class="sidebar__sub-item">
-                <a href="/#" class="sidebar__sub-link">
-                 ${item}
-                </a>
-            </li>
-        `;
-  });
-
-  list.forEach((item, idx) => {
-    if (item === "Shop Brands") {
-      template += `
-            <li class="sidebar__item">
-                <div class="sidebar__item-header">
-                    <a class="sidebar__item-link" href="/#">${item}</a>
-    
-                    <button class="btn sidebar__item-btn">
-                        <img src="./assets/img/chevron-right.svg" alt="">
-                    </button>
-                    <button class="btn sidebar__item-btn">
-                        <img src="./assets/img/chevron-right.svg" alt="">
-                    </button>
-    
-                    
-                </div>
-               
-                <div class="navbar__footer-brands">
-                    ${subTemplate}
-                </div>
-            </li>
-            `;
-    } else {
-      template += `
-            <li class="sidebar__item">
-                <div class="sidebar__item-header">
-                    <a class="sidebar__item-link" href="/#">${item}</a>
-    
-                    <button class="btn sidebar__item-btn">
-                        <img src="./assets/img/chevron-right.svg" alt="">
-                    </button>
-    
-                    
-                </div>
-                <ul class="sidebar__sub">
-                ${shopTemplate}
-            </ul>
-            </li>
-        `;
-    }
-  });
-  document.querySelector(".sidebar__list").innerHTML = template;
-};
+const footerMoreTemplate = `
+<ul class="navbar__footer-more navbar__footer-sub">
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/blankets">Blankets</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/bowlingshirts">Bowling Shirts</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/bras">Bras</a></li>
+ <li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/camouflage">Camouflage</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/loungewear">Loungewear</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/onesies">Onesies</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/packables">Packables</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/scoopneck">Scoop Neck</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/swimwear">Swimwear</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/thumbholes">Thumbholes</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/tiedyed">Tie Dyed</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/towels">Towels</a></li>
+<li>
+<a class="navbar__footer-sub-link" href="https://robx.bulkapparel.com/usamade">USA Made</a></li>
+</ul>
+`;
 
 const genNavbar = () => {
   const list = [
@@ -657,6 +604,7 @@ const genNavbar = () => {
     "Jackets",
     "Hats",
     "Face-Masks",
+    "More",
     "Shop Brands",
   ];
   const subList = [
@@ -676,7 +624,22 @@ const genNavbar = () => {
   let subTemplate = "";
 
   list.forEach((item, idx) => {
-    if (item === "Shop Brands") {
+    if (item === "More") {
+      template += `
+        <li class="navbar__footer-item navbar-relative">
+        <div class="navbar__footer-header">
+           <a class="navbar__footer-link" href="/#">${item}</a>
+           <button class="btn navbar__footer-item-btn">
+                   <img src="./assets/img/chevron-right.svg" alt="">
+           </button>
+         </div>
+
+                <div class="navbar__footer-more">
+                 ${footerMoreTemplate}
+                </div>
+        </li>
+        `;
+    } else if (item === "Shop Brands") {
       template += `
                         <li class="navbar__footer-item">
                         <div class="navbar__footer-header">
