@@ -265,6 +265,10 @@
     color: $color-black;
     // @include transition;
 
+    img {
+      height: 50px;
+    }
+
     &:hover {
       font-weight: 700 !important;
       background-color: #e9efff;
