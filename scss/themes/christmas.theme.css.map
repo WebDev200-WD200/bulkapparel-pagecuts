@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "christmas.theme.scss",
+        "../_mixin.scss"
+    ],
+    "names": [],
+    "file": "christmas.theme.css"
+}

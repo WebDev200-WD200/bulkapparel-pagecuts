@@ -1411,6 +1411,7 @@ a {
   min-width: 220px;
   -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
 }
 
 @media (max-width: 62.5em) {
@@ -1435,9 +1436,18 @@ a {
   background-color: #e9efff;
 }
 
+@media (max-width: 48em) {
+  .navbar__footer-sub-link img {
+    height: 40px;
+  }
+}
+
 @media (max-width: 37.5625em) {
   .navbar__footer-sub-link {
     font-size: 15px;
+  }
+  .navbar__footer-sub-link img {
+    height: 35px;
   }
 }
 
@@ -2353,3 +2363,4 @@ a {
 .ads-box {
   padding: 15px 10px;
 }
+/*# sourceMappingURL=main.css.map */

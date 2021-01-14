@@ -861,188 +861,33 @@
         </div>
     </main>
 
-    <div class="backdrop" id="added-card-modal">
 
-        <div class="modal modal--added-cart">
+    <style>
 
-            <button class="btn modal--added-cart__exit" id="added-cart-exit">
+.backdrop{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:fixed;top:0;left:0;background-color:rgba(0,0,0,0.3);height:100vh;width:100%;z-index:9999;overflow:auto}.modal--coupon{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;background:white;padding:20px;width:400px;position:relative;text-align:center}@media (max-width: 37.5625em){.modal--coupon{padding:15px;width:80%}}@media (max-width: 23.4375em){.modal--coupon{width:90%}}.modal--coupon .heading{margin:0 auto;color:#00234f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:26px}@media (max-width: 37.5625em){.modal--coupon .heading{font-size:23px}}@media (max-width: 23.4375em){.modal--coupon .heading{font-size:20px}}.modal--coupon .heading svg{fill:#00234f;height:42px;width:42px;margin-right:10px;display:inline-block}@media (max-width: 37.5625em){.modal--coupon .heading svg{height:36px;width:36px;margin-right:6px}}@media (max-width: 23.4375em){.modal--coupon .heading svg{height:34px;width:34px}}.modal--coupon__exit{font-size:20px;font-weight:800;position:absolute;right:15px;top:10px}@media (max-width: 37.5625em){.modal--coupon__exit{font-size:18px}}@media (max-width: 23.4375em){.modal--coupon__exit{right:10px;top:5px}}.modal--coupon__description{margin-top:15px;font-size:18px}
+    </style>
+
+    <div class="backdrop" id="coupon-modal">
+
+        <div class="modal modal--coupon">
+
+            <button class="btn modal--coupon__exit" id="coupon-exit">
                 ✕
             </button>
 
-            <h1 class="heading"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    version="1.1" width="24" height="24" viewBox="0 0 24 24">
-                    <path
-                        d="M10,0V4H8L12,8L16,4H14V0M1,2V4H3L6.6,11.59L5.25,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42C7.29,15 7.17,14.89 7.17,14.75L7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.59 17.3,11.97L21.16,4.96L19.42,4H19.41L18.31,6L15.55,11H8.53L8.4,10.73L6.16,6L5.21,4L4.27,2M7,18A2,2 0 0,0 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20A2,2 0 0,0 7,18M17,18A2,2 0 0,0 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20A2,2 0 0,0 17,18Z" />
-                </svg> Items added to Cart</h1>
+            <h1 class="heading"> 
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M4,4A2,2 0 0,0 2,6V10C3.11,10 4,10.9 4,12A2,2 0 0,1 2,14V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V14A2,2 0 0,1 20,12C20,10.89 20.9,10 22,10V6C22,4.89 21.1,4 20,4H4M15.5,7L17,8.5L8.5,17L7,15.5L15.5,7M8.81,7.04C9.79,7.04 10.58,7.83 10.58,8.81A1.77,1.77 0 0,1 8.81,10.58C7.83,10.58 7.04,9.79 7.04,8.81A1.77,1.77 0 0,1 8.81,7.04M15.19,13.42C16.17,13.42 16.96,14.21 16.96,15.19A1.77,1.77 0 0,1 15.19,16.96C14.21,16.96 13.42,16.17 13.42,15.19A1.77,1.77 0 0,1 15.19,13.42Z" /></svg> 
+                
+               Coupon added to Cart</h1>
 
-            <p class="modal--added-cart__product-title">
-                Gildan 500 Heavy Cotton T-Shirt in bulk
+            <p class="modal--coupon__description">
+               <b>BULK20%</b> coupon has been activated and placed into your cart. Thank you!
             </p>
-
-            <div class="modal--added-cart__list" id="added-card-list">
-
-                <div class="modal--added-cart__item">
-                    <div class="modal--added-cart__item-photo">
-                        <img src="https://robx.bulkapparel.com/styleImages/SCImages/Color-item-480-600/16813_f_fm.jpg"
-                            alt="" draggable="false">
-                    </div>
-
-                    <div class="modal--added-cart__item-color">
-
-                        <div class="color">
-                            <span class="box">
-                            </span>
-                            White
-                        </div>
-                    </div>
-
-                    <div class="modal--added-cart__item-table">
-                        <table>
-                            <thead>
-
-                                <tr>
-                                    <th>Size</th>
-                                    <th>Qty</th>
-                                    <th>Price</th>
-                                </tr>
-
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>2XL</td>
-                                    <td>12</td>
-                                    <td>$1.50</td>
-                                </tr>
-                                <tr>
-                                    <td>2XL</td>
-                                    <td>12</td>
-                                    <td>$1.50</td>
-                                </tr>
-                                <tr>
-                                    <td>2XL</td>
-                                    <td>12</td>
-                                    <td>$1.50</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
-                    </div>
-
-                </div>
-                <div class="modal--added-cart__item">
-                    <div class="modal--added-cart__item-photo">
-                        <img src="https://robx.bulkapparel.com/styleImages/SCImages/Color-item-480-600/16813_f_fm.jpg"
-                            alt="" draggable="false">
-                    </div>
-
-                    <div class="modal--added-cart__item-color">
-
-                        <div class="color">
-                            <span class="box" style="background: #000;">
-                            </span>
-                            Black
-                        </div>
-                    </div>
-
-                    <div class="modal--added-cart__item-table">
-                        <table>
-                            <tr>
-                                <th>Size</th>
-                                <th>Qty</th>
-                                <th>Price</th>
-                            </tr>
-
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                </div>
-                <div class="modal--added-cart__item">
-                    <div class="modal--added-cart__item-photo">
-                        <img src="https://robx.bulkapparel.com/styleImages/SCImages/Color-item-480-600/16813_f_fm.jpg"
-                            alt="" draggable="false">
-                    </div>
-
-                    <div class="modal--added-cart__item-color">
-
-                        <div class="color">
-                            <span class="box" style="background: #000;">
-                            </span>
-                            Black
-                        </div>
-                    </div>
-
-                    <div class="modal--added-cart__item-table">
-                        <table>
-                            <tr>
-                                <th>Size</th>
-                                <th>Qty</th>
-                                <th>Price</th>
-                            </tr>
-
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                            <tr>
-                                <td>2XL</td>
-                                <td>12</td>
-                                <td>$1.50</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-
-
-
-            <div class="modal--added-cart__action">
-                <button class="btn btn--continue">
-                    Continue Shopping
-                </button>
-                <button class="btn btn--view-cart">
-                    View Cart & Checkout
-                </button>
-            </div>
-
-
-            <div class="modal--added-cart__cards">
-                <span class="separator"></span>
-                <p>You might also find these product interesting...</p>
-
-                <div class="row">
-                    <div class="col-6 col-lg-3"></div>
-                    <div class="col-6 col-lg-3"></div>
-                    <div class="col-6 col-lg-3"></div>
-                    <div class="col-6 col-lg-3"></div>
-                </div>
-            </div>
 
         </div>
 
     </div>
+
 
     <footer class="footer" id="footer">
         <div class="container">
@@ -1281,6 +1126,14 @@
     <script src="./assets/js/templateGenarator.js"></script>
     <script src="./assets/js/snow.jquery.min.js"></script>
     <!-- <script src="./assets/js/snow.min.js"></script> -->
+
+    <script>
+       
+        $('#coupon-exit').click(function() {
+            $('#coupon-modal').hide();
+        })
+
+    </script>
 
     <script>
         $('#added-cart-exit').click(function () {

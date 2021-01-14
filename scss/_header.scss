@@ -252,6 +252,7 @@
     background-color: $color-white;
     min-width: 220px;
     box-shadow: 0 0 14px rgba($color-black, 0.1);
+    padding: 15px 0;
 
     @include respond(laptop-s) {
       width: 100%;
@@ -274,8 +275,16 @@
       background-color: #e9efff;
     }
 
+    @include respond(tab-port) {
+     img { height: 40px;}
+    }
+
     @include respond(mobile-lg) {
       font-size: 15px;
+
+      img {
+        height: 35px;
+      }
     }
 
     @include respond(mobile-m) {

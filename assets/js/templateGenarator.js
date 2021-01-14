@@ -1,5 +1,5 @@
 const shopTemplate = `<div class="row no-gutters">
-<div class="col-6 col-md-3 col-lg-cs-14">
+<div class="col-6 col-md-3 col-lg-cs-14 col-lg-2">
 <a href="https://robx.bulkapparel.com/styles?brand=adidas" class="navbar__footer-sub-link"><img
                         src="https://robx.bulkapparel.com/Brand-detail/Images/Brand/31_fm.jpg">
 </a></div>

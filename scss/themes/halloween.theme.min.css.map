@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "halloween.theme.scss",
+        "../_mixin.scss"
+    ],
+    "names": [],
+    "file": "halloween.theme.min.css"
+}
