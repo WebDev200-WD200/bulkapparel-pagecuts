@@ -1,0 +1,240 @@
+@import "../mixin";
+
+@mixin valentines-theme {
+  $color-theme-primary: #890023;
+  $color-footer-gradient:  linear-gradient(180deg, #4B0013 0%, #9B1235 100%);
+  $color-theme-secondary: #890023;
+  $color-white: #fff;
+  $background-footer-image: url("/images/theme/valentines/hearts-background.png");
+
+
+  $img-logo-left: url("/images/theme/valentines/cupid.png");
+  $img-logo-right: url("/images/theme/valentines/heart-fly.png");
+  $imt-footer-top: url("/images/theme/valentines/cupid-with-heart.png"); 
+  $imt-footer-bottom: url("/images/theme/valentines/cloud.png"); 
+//   $img-leave-footer: url("/images/theme/thanks-giving/leaves-footer.webp");
+
+  .valentines {
+    background: $color-theme-secondary;
+  }
+
+  .navbar {
+    &__hamburger-btn {
+      span {
+        background-color: $color-theme-primary;
+      }
+    }
+
+    &__logo {
+      position: relative;
+      @include pseudoImage("before", $img-logo-left) {
+        width: 100px;
+        height: 100px;
+        top: -40px;
+        left: -95px;
+
+        @include respond(desktop) {
+            left: unset;
+            top: -20px;
+            right: 10px;
+            height: 75px;
+            width: 75px;
+        }
+        
+        @include respond(laptop) {
+            right: 28px;
+            
+        }
+        @include respond(laptop-s) {
+            right: -70px;
+
+        }
+        @include respond(tab-port) {
+            height: 65px;
+            width: 65px;
+            top: -15px;
+            right: -60px;
+        }
+        @include respond(mobile-lg) {
+            height: 50px;
+            width: 50px;
+            right: -48px;
+            
+        }
+        @include respond(mobile-ms) {
+            height: 45px;
+            width: 45px;
+            right: -40px;
+         
+        }
+
+        @media (max-width: 374px) {
+           display: none;
+        }
+      }
+
+      @include pseudoImage("after", $img-logo-right) {
+        top: -46px;
+        right: 8px;
+        width: 88px;
+        height: 88px;
+
+        @include respond(desktop) {
+            right: -23px;
+            top: -23px;
+            height: 45px;
+            width: 45px;
+        }
+        @include respond(laptop) {
+            right: -15px;
+            height: 55px;
+            width: 55px;
+        }
+        @include respond(laptop-s) {
+            right: -120px;
+        }
+        @include respond(tab-port) {
+            right: -100px;
+            height: 50px;
+            width: 50px;
+        }
+        @include respond(mobile-lg) {
+            right: -80px;
+            top: -20px;
+            height: 40px;
+            width: 40px;
+        }
+        @include respond(mobile-ms) {
+            right: -63px;
+            top: -15px;
+            height: 30px;
+            width: 30px;
+        }
+
+        @media (max-width: 374px) {
+            display: none;
+        }
+      }
+    }
+
+    & .btn--my-account {
+      color: $color-theme-primary;
+
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .btn--icon {
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+    & .btn--track {
+      &__icon {
+        fill: $color-theme-primary;
+      }
+      &__label {
+        color: $color-theme-primary !important;
+      }
+    }
+    & .inp--search__button {
+      background: $color-theme-primary;
+    }
+
+    &__footer {
+      background: $color-theme-primary;
+    }
+
+    & .mega-menu__title {
+      color: $color-theme-primary;
+      &::after {
+        background: $color-theme-primary;
+      }
+    }
+
+    & .mega-menu__sub {
+      &:hover {
+        background-color: rgba($color-theme-primary, 0.08);
+      }
+    }
+
+    & .navbar__footer-sub-link {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
+    & .search {
+      &__auto-result {
+        li {
+          &:hover,
+          &:focus {
+            a {
+              color: $color-theme-primary !important;
+            }
+          }
+        }
+      }
+
+      &__live-header {
+        span {
+          color: $color-theme-primary;
+        }
+      }
+    }
+    &__footer-item:hover > .navbar__footer-header {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
+    }
+  }
+
+  .footer {
+    position: relative;
+    // background-color: $color-theme-primary;
+    background: $color-footer-gradient;
+    white-space: nowrap;
+    margin-top: 100px;
+    width: 100vw;
+    overflow: hidden;
+    
+    &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        z-index: 0;
+        top: -10%;
+        left: -10%;
+        background: $background-footer-image 0 0 repeat;
+        // background-size: cover;
+
+        @include respond(tab-port) {
+            // transform: rotate(90deg);
+
+        }
+    }
+
+
+    @include respond(tab-port) {
+      margin-top: 40px;
+    }
+
+  }
+  .sidebar {
+    background-color: $color-theme-primary;
+  }
+
+  .show-sub-list .navbar__footer-header {
+    @include respond(laptop-s) {
+      background-color: $color-theme-secondary;
+    }
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+}
+
+@include valentines-theme();

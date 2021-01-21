@@ -2,8 +2,12 @@
 @import "halloween.theme";
 @import "christmas.theme";
 @import "new-year.theme";
+@import "valentines.theme";
 
 .themes {
+  &--valentines {
+    @include valentines-theme;
+  }
   &--thanks-giving {
     @include thanks-giving-theme;
   }
@@ -19,4 +23,5 @@
   &--new-year {
     @include new-year-theme;
   }
+ 
 }

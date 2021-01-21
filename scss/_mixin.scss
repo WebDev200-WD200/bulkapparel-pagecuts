@@ -11,12 +11,21 @@
       @content;
     }
   }
-  // 375px - 600px
+
+  // 375px - 500px
+  @if $screen-size == mobile-ms {
+    @media (max-width: 31.25em) {
+      @content;
+    }
+  }
+
+  // 500px - 600px
   @if $screen-size == mobile-lg {
     @media (max-width: 37.5625em) {
       @content;
     }
   }
+
   // 600px - 768px
   @if $screen-size == tab-port {
     @media (max-width: 48em) {
@@ -90,5 +99,25 @@
     background-repeat: no-repeat;
     pointer-events: none;
     @content;
+  }
+}
+
+@mixin buttonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -15px;
+  top: -250%;
+  background: $color-red;
+  height: 24px;
+  padding: 8px 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: $color-white;
+
+  @include respond(mobile-lg) {
+    right: -10px;
+    height: auto;
   }
 }
