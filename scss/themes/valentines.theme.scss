@@ -3,15 +3,15 @@
 @mixin valentines-theme {
   $color-theme-primary: #890023;
   $color-footer-gradient:  linear-gradient(180deg, #4B0013 0%, #9B1235 100%);
-  $color-theme-secondary: #890023;
+  $color-theme-secondary: #a7002a;
   $color-white: #fff;
-  $background-footer-image: url("/images/theme/valentines/hearts-background.png");
+  // $background-footer-image: url("/images/theme/valentines/hearts-background.png");
 
 
   $img-logo-left: url("/images/theme/valentines/cupid.png");
   $img-logo-right: url("/images/theme/valentines/heart-fly.png");
-  $imt-footer-top: url("/images/theme/valentines/cupid-with-heart.png"); 
-  $imt-footer-bottom: url("/images/theme/valentines/cloud.png"); 
+  $img-footer-top: url("/images/theme/valentines/cupid-with-heart.svg"); 
+  $img-footer-bottom: url("/images/theme/valentines/cloud.png"); 
 //   $img-leave-footer: url("/images/theme/thanks-giving/leaves-footer.webp");
 
   .valentines {
@@ -30,28 +30,30 @@
       @include pseudoImage("before", $img-logo-left) {
         width: 100px;
         height: 100px;
-        top: -40px;
+        top: -20px;
         left: -95px;
 
         @include respond(desktop) {
             left: unset;
             top: -20px;
-            right: 10px;
-            height: 75px;
-            width: 75px;
-        }
-        
-        @include respond(laptop) {
-            right: 28px;
+            right: -15%;
+            height: 60px;
+            width: 60px;
+          }
+          
+          @include respond(laptop) {
+            right: -25%;
+            height: 54px;
+            width: 54px;
             
         }
         @include respond(laptop-s) {
-            right: -70px;
+            right: -28%;
 
         }
         @include respond(tab-port) {
-            height: 65px;
-            width: 65px;
+            height: 55px;
+            width: 55px;
             top: -15px;
             right: -60px;
         }
@@ -62,36 +64,37 @@
             
         }
         @include respond(mobile-ms) {
-            height: 45px;
-            width: 45px;
-            right: -40px;
-         
-        }
-
-        @media (max-width: 374px) {
-           display: none;
+            height: 40px;
+            width: 40px;
+            right: -35px;
+            
+          }
+          
+          @media (max-width: 374px) {
+          height: 28px;
+          width: 28px;
+          right: -16px;
+      
         }
       }
 
       @include pseudoImage("after", $img-logo-right) {
-        top: -46px;
-        right: 8px;
-        width: 88px;
-        height: 88px;
+        top: -28px;
+        right: -17%;
+        width: 55px;
+        height:55px;
 
         @include respond(desktop) {
-            right: -23px;
-            top: -23px;
-            height: 45px;
-            width: 45px;
+          right: -20%;
+          height: 30px;
+          width: 30px;
         }
         @include respond(laptop) {
-            right: -15px;
-            height: 55px;
-            width: 55px;
+          right: -33%;
+   
         }
         @include respond(laptop-s) {
-            right: -120px;
+          right: -38%;
         }
         @include respond(tab-port) {
             right: -100px;
@@ -105,14 +108,17 @@
             width: 40px;
         }
         @include respond(mobile-ms) {
-            right: -63px;
-            top: -15px;
-            height: 30px;
-            width: 30px;
+            right: -54px;
+            top: -18px;
+            height: 25px;
+            width: 25px;
         }
 
         @media (max-width: 374px) {
-            display: none;
+            height: 10px;
+            width: 10px;
+            right: -20px;
+            top: -15px
         }
       }
     }
@@ -194,31 +200,136 @@
     // background-color: $color-theme-primary;
     background: $color-footer-gradient;
     white-space: nowrap;
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100vw;
     overflow: hidden;
-    
+
+
+    &::before, &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      background: $img-footer-bottom no-repeat;
+      height: 260px;
+      width: 500px;
+
+
+      @include respond(laptop-s) {
+        height: 240px;
+        width: 460px;
+        bottom: -60px;
+      }
+      @include respond(tab-port) {
+        height: 220px;
+        width: 400px;
+      }
+      @include respond(mobile-ms) {
+        height: 200px;
+        width: 380px;
+        bottom: -40px;
+      }
+      @include respond(mobile-m) {
+        height: 180px;
+        width: 300px;
+        bottom: -30px;
+      }
+    }
+
     &::before {
+      transform: scaleX(-1);
+      left: -160px;
+    }
+
+    &::after {
+      right: -150px;
+    }
+
+    @include respond(laptop-s) {
+      padding-top: 160px;
+    }
+    @include respond(tab-port) {
+      padding: 130px 0;
+    }
+    @include respond(mobile-lg) {
+      padding: 85px 0;
+    }
+    @include respond(mobile-m) {
+      padding: 65px 0;
+    }
+    @include respond(mobile-s) {
+      padding: 45px 0;
+    }
+
+    .container {
+      &::before, &::after {
         display: block;
         content: "";
         position: absolute;
-        width: 150%;
-        height: 150%;
-        z-index: 0;
-        top: -10%;
-        left: -10%;
-        background: $background-footer-image 0 0 repeat;
-        // background-size: cover;
+        background: $img-footer-top no-repeat;
+        height: 370px;
+        top: -120px;
+        width: 460px;
+
+        
+        @media (max-width: 1800px) {
+          top: -140px;
+          transform: translateX(-10%); 
+          opacity: .5
+        }
+
+        @include respond(laptop-s) {
+          height: 340px;
+          width: 450px;
+          opacity: 1;
+        } 
 
         @include respond(tab-port) {
-            // transform: rotate(90deg);
-
+          height: 280px;
+          width: 400px;
+          top: -100px;
         }
-    }
+        @include respond(mobile-lg) {
+          height: 240px;
+          width: 360px;
+          top: -100px;
+        }
+        @include respond(mobile-ms) {
+          height: 200px;
+          width: 300px;
+          top: -80px;
+        }
+        @include respond(mobile-m) {
+          height: 160px;
+          width: 260px;
+          top: -60px;
+        }
+        @include respond(mobile-m) {
+          height: 140px;
+          width: 240px;
+          top: -50px;
+        }
+      }
+      
+      &::before {
+        left: 0;
+        // @include respond(mobile-lg) {
+        //   left: -20px; 
+        // }
+       
+      }
+      
+      &::after {
+        transform: scaleX(-1);
+        right: -20px;
+       
+      }
+  
+  
+      @include respond(tab-port) {
+        margin-top: 40px;
+      }
 
-
-    @include respond(tab-port) {
-      margin-top: 40px;
     }
 
   }
