@@ -6,12 +6,12 @@ $color-white: #fff;
 $color-light-dark: #eaeaea;
 $color-track-red: #ff4545;
 $background-dash-primary: repeating-linear-gradient(
-    to right,
-    #15347d,
-    #15347d 10px,
-    #fff 5px,
-    #fff 15px
-  ) !important;
+  to right,
+  #15347d,
+  #15347d 10px,
+  #fff 5px,
+  #fff 15px
+) !important;
 
 .color--primary {
   color: $color-track-primary !important;
@@ -112,10 +112,10 @@ $background-dash-primary: repeating-linear-gradient(
   position: relative;
   overflow: hidden;
   padding: 0;
-  
+
   &__main {
-      padding: 15px;
-      padding-bottom: 40px;
+    padding: 15px;
+    padding-bottom: 40px;
   }
 
   &__pro {
@@ -186,36 +186,36 @@ $background-dash-primary: repeating-linear-gradient(
     display: flex;
     align-items: flex-start;
     background: $color-track-bg;
-    }
+  }
 }
 
 .track-loc {
-    width: 30%;
-    &--origin {
-        margin-right: auto ;
-    }
+  width: 30%;
+  &--origin {
+    margin-right: auto;
+  }
 
-    &--destination {
-        text-align: right;
-    }
+  &--destination {
+    text-align: right;
+  }
 
-    &__icon {
-        margin-bottom: 5px;
-        svg {
-            height: 35px;
-            width: 35px;
-        }
+  &__icon {
+    margin-bottom: 5px;
+    svg {
+      height: 35px;
+      width: 35px;
     }
+  }
 
-    &__body {
-        h3 {
-            font-weight: 400;
-            margin-bottom: 4px;
-        }
-        p {
-            color: $color-track-gray;
-        }
+  &__body {
+    h3 {
+      font-weight: 400;
+      margin-bottom: 4px;
     }
+    p {
+      color: $color-track-gray;
+    }
+  }
 }
 
 .track-bread {
@@ -262,75 +262,166 @@ $background-dash-primary: repeating-linear-gradient(
   }
 }
 @mixin circle-lobe {
-    content: "";
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    position: absolute;
-    background: $color-track-gray;
-    left: 50%;
-    transform: translateX(-50%);
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  position: absolute;
+  background: $color-track-gray;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tracking-history {
+  &__timeline {
+    display: flex;
+    margin: 20px 0;
+    margin-left: 30px;
+    width: 100%;
+  }
 
-    &__timeline {
-        display: flex;
-        margin: 20px 0;
-        width: 100%;
-    }
-
-    &__line {
-        width: 2px;
-        background: $color-track-gray;
-        position: relative;
-        &::after, &::before {
-           @include circle-lobe();
-        }   
-
-        &::after {
-            top: 0;
-        }
-
-        &::before {
-            bottom: 0;
-        }
-     }
-
-    &__list {
-        padding: 20px 0;
-        margin-left: -2px;
-    }
-}
-
-
-.track-line {
-    padding-left: 30%;
+  &__line {
+    width: 2px;
+    background: $color-track-gray;
     position: relative;
-
-    &::after, &::before {
-        top: 20%;
+    &::after,
+    &::before {
+      @include circle-lobe();
     }
 
     &::after {
-        content: "";
-        display: block;
-        height: 4px;
-        width: 30%;
-        position: absolute;
-        left: 0;
-        background:$background-dash-primary;
-
+      top: 0;
     }
 
     &::before {
-        @include circle-lobe();
-        left: -4px;
-        transform: translateY(-5px);
-        z-index: 2;
-        background: $color-track-primary;
-        height: 15px;
-        width: 15px;
+      bottom: 0;
     }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    margin-left: -2px;
+    width: 90%;
+
+    & > *:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@mixin dashed-line($color) {
+  background: repeating-linear-gradient(
+    to right,
+    $color,
+    $color 8px,
+    #fff 2px,
+    #fff 12px
+  ) !important;
+}
+
+.track-line {
+  $line-width: 15%;
+  padding-left: $line-width;
+  position: relative;
+  width: 100%;
+
+  &::after,
+  &::before {
+    top: 20%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: $line-width;
+    position: absolute;
+    left: 0;
+    @include dashed-line($color-track-gray);
+  }
+
+  &::before {
+    @include circle-lobe();
+    left: -5px;
+    transform: translateY(-5px);
+    z-index: 2;
+    background: $color-track-gray;
+    height: 15px;
+    width: 15px;
+  }
+
+  &__body {
+    padding-left: 10px;
+    color: $color-track-gray;
+
+    h2 {
+      margin-bottom: 6px;
+    }
+
+    .time {
+      margin-bottom: 6px;
+      color: rgba($color-track-gray, 0.8);
+    }
+
+    .caption {
+      font-size: 18px;
+    }
+  }
+}
+
+.track-active {
+  &::after {
+    @include dashed-line(#15347d);
+  }
+  &::before {
+    background: $color-track-primary !important;
+  }
+
+  h2 {
+    color: $color-track-primary;
+  }
+
+  .time {
+    color: $color-track-gray;
+  }
+
+  .caption {
+    color: $color-black;
+  }
+}
+
+
+.sp-offer {
+  background: #fff;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  min-height: 600px;
+  text-align: center;
+  
+  h3 {
+    color: #d83939;
+  }
+
+  .sp-offer-box {
+    background: #eee;
+    float: left;
+    width: 100%;
+    padding: 1px 1px;
+    margin-bottom: 1px;
+    border: 0px;
+    margin-top: 1px;
+    box-sizing: border-box;
+  }
+}
+
+
+.sp-offer {
+  padding-left: 5px !important;
 }
