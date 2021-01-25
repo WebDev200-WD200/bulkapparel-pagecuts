@@ -1,3 +1,5 @@
+@import "mixin";
+
 $color-track-primary: #15347d;
 $color-track-gray: #7c7c7c;
 $color-black: #000;
@@ -5,13 +7,28 @@ $color-track-bg: #f8f8f8;
 $color-white: #fff;
 $color-light-dark: #eaeaea;
 $color-track-red: #ff4545;
-$background-dash-primary: repeating-linear-gradient(
-  to right,
-  #15347d,
-  #15347d 10px,
-  #fff 5px,
-  #fff 15px
-) !important;
+
+@mixin tracking-dashed($direction, $color) {
+    background: repeating-linear-gradient(
+      $direction,
+      $color,
+      $color 10px,
+      #fff 5px,
+      #fff 15px
+    ) !important;
+}
+
+@mixin dashed-line($color) {
+  background: repeating-linear-gradient(
+    to right,
+    $color,
+    $color 8px,
+    #fff 2px,
+    #fff 12px
+  ) !important;
+}
+
+
 
 .color--primary {
   color: $color-track-primary !important;
@@ -21,9 +38,16 @@ $background-dash-primary: repeating-linear-gradient(
   border-radius: 4px;
   padding: 15px;
   border: 1px solid #c9c9c9;
+
+  @include respond(mobile-lg) {
+    padding: 10px;
+  }
 }
 
 .heading--tracking {
+  @include respond(mobile-lg) {
+    font-size: 20px;
+  }
 }
 
 .tracking-list {
@@ -37,6 +61,10 @@ $background-dash-primary: repeating-linear-gradient(
   color: $color-white;
   padding-bottom: 60px;
   border-color: $color-track-primary;
+
+  @include respond(mobile-lg) {
+    padding-bottom: 40px;
+  }
 
   .tracking-est {
     p {
@@ -60,15 +88,27 @@ $background-dash-primary: repeating-linear-gradient(
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 8px;
+
+    @include respond(mobile-lg) {
+      font-size: 12px;
+    }
   }
 
   h2 {
     font-size: 23px;
+
+    @include respond(mobile-lg) {
+      font-size: 20px;
+    }
   }
 }
 
 .tracking-order {
   padding-bottom: 50px;
+
+  @include respond(mobile-lg) {
+    padding-bottom: 30px;
+  }
   .tracking-est {
     p {
       color: $color-track-gray;
@@ -76,34 +116,6 @@ $background-dash-primary: repeating-linear-gradient(
 
     h2 {
       color: $color-track-primary;
-    }
-  }
-}
-
-.track-done {
-  &::before {
-    background: $color-track-primary !important;
-  }
-
-  .track-bread {
-    &__icon {
-      border-style: solid;
-      border-color: $color-track-primary;
-      fill: $color-track-primary !important;
-    }
-  }
-}
-
-.track-in-progress {
-  &::before {
-    background: $background-dash-primary !important;
-  }
-
-  .track-bread {
-    &__icon {
-      border-style: dashed;
-      border-color: $color-track-primary;
-      fill: $color-track-primary !important;
     }
   }
 }
@@ -124,17 +136,35 @@ $background-dash-primary: repeating-linear-gradient(
     align-items: flex-start;
     margin: 10px 0;
     color: $color-track-primary;
+
+    @include respond(mobile-lg) {
+      font-size: 22px;
+    }
+
     span {
       opacity: 0.9;
       font-size: 21px;
       text-transform: uppercase;
       margin-right: 8px;
+
+      @include respond(mobile-lg) {
+        font-size: 18px;
+      }
     }
   }
 
   &__progress {
     display: flex;
     width: 100%;
+    margin-top: 30px;
+
+    @include respond(mobile-lg) {
+      margin-top: 15px;
+      flex-direction: column;
+    }
+    @include respond(mobile-m) {
+      margin-top: 10px;
+    }
 
     li {
       width: 100%;
@@ -148,6 +178,18 @@ $background-dash-primary: repeating-linear-gradient(
         top: 26%;
         left: 20%;
         z-index: 0;
+
+        @include respond(mobile-lg) {
+          height: 100%;
+          top: 10%;
+          bottom: 0;
+          width: 4px;
+          left: 40px;
+        }
+        @include respond(mobile-m) {
+          left: 34px;
+          width: 3px;
+        }
       }
 
       &:not(:last-child)::before {
@@ -158,10 +200,30 @@ $background-dash-primary: repeating-linear-gradient(
           #fff 5px,
           #fff 15px
         );
+
+        @include respond(mobile-lg) {
+          background: repeating-linear-gradient(
+            to bottom,
+            $color-track-gray,
+            $color-track-gray 10px,
+            #fff 5px,
+            #fff 15px
+          );
+        }
       }
 
       &:last-child {
         width: auto;
+      }
+
+      &:not(:last-child) {
+        @include respond(mobile-lg) {
+          height: 130px;
+        }
+        @include respond(mobile-m) {
+          height: 110px;
+        }
+        
       }
     }
   }
@@ -172,6 +234,7 @@ $background-dash-primary: repeating-linear-gradient(
     right: -50px;
     opacity: 0.1;
     transform: rotate(-20deg);
+    z-index: 0;
     svg {
       height: 320px;
       width: 320px;
@@ -186,17 +249,35 @@ $background-dash-primary: repeating-linear-gradient(
     display: flex;
     align-items: flex-start;
     background: $color-track-bg;
+
+    @include respond(mobile-ms) {
+      padding: 20px 15px;
+      flex-direction: column;
+
+      & > *:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
   }
 }
 
 .track-loc {
   width: 30%;
+
+  @include respond(mobile-lg) {
+    width: 100%;
+  }
+
   &--origin {
     margin-right: auto;
   }
 
   &--destination {
     text-align: right;
+
+    @include respond(mobile-ms) {
+      text-align: left;
+    }
   }
 
   &__icon {
@@ -204,6 +285,11 @@ $background-dash-primary: repeating-linear-gradient(
     svg {
       height: 35px;
       width: 35px;
+
+      @include respond(mobile-lg) {
+        height: 32px;
+        width: 32px;
+      }
     }
   }
 
@@ -226,12 +312,18 @@ $background-dash-primary: repeating-linear-gradient(
   position: relative;
   z-index: 1;
 
+  @include respond(mobile-lg) {
+    flex-direction: row;
+    width: auto;
+  }
+
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 94px;
     width: 94px;
+    min-width: 94px;
     border-width: 5px;
     border-style: dashed;
     border-radius: 100%;
@@ -242,15 +334,53 @@ $background-dash-primary: repeating-linear-gradient(
       height: 35px;
       width: 35px;
     }
+
+    @include respond(mobile-lg) {
+      border-width: 4px;
+      height: 80px;
+      min-width: 80px;
+      width: 80px;
+      svg {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    @include respond(mobile-m) {
+      height: 70px;
+      min-width: 70px;
+      width: 70px;
+      border-width: 4px;
+      svg {
+        height: 25px;
+        width: 25px;
+      }
+    }
   }
 
   &__label {
     text-align: center;
     margin-top: 20px;
 
+    @include respond(mobile-lg) {
+      margin-left: 20px;
+      text-align: start;
+    }
+
+    @include respond(mobile-m) {
+      margin-left: 15px;
+    }
+
     h4 {
       font-weight: 600;
       font-size: 14px;
+
+      @include respond(mobile-lg) {
+        font-size: 20px;
+      }
+      @include respond(mobile-m) {
+        font-size: 16px;
+      }
     }
 
     p {
@@ -258,9 +388,52 @@ $background-dash-primary: repeating-linear-gradient(
       font-size: 12px;
       color: $color-track-gray;
       text-transform: uppercase;
+
+      @include respond(mobile-lg) {
+        font-size: 14px;
+      }
+
+      @include respond(mobile-m) {
+        font-size: 12px;
+      }
     }
   }
 }
+
+.track-done {
+  &::before {
+    background: $color-track-primary !important;
+  }
+
+  .track-bread {
+    &__icon {
+      border-style: solid;
+      border-color: $color-track-primary;
+      fill: $color-track-primary !important;
+    }
+  }
+}
+
+
+.track-in-progress {
+  &::before {
+    @include tracking-dashed(to right, $color-track-primary);
+    @include respond(mobile-lg) {
+      @include tracking-dashed(to bottom, $color-track-primary);
+    }
+
+  }
+
+  .track-bread {
+    &__icon {
+      border-style: dashed;
+      border-color: $color-track-primary;
+      fill: $color-track-primary !important;
+    }
+  }
+}
+
+
 @mixin circle-lobe {
   content: "";
   display: block;
@@ -279,6 +452,10 @@ $background-dash-primary: repeating-linear-gradient(
     margin: 20px 0;
     margin-left: 30px;
     width: 100%;
+
+    @include respond(mobile-lg) {
+      margin-left: 10px;
+    }
   }
 
   &__line {
@@ -309,17 +486,11 @@ $background-dash-primary: repeating-linear-gradient(
     & > *:not(:last-child) {
       margin-bottom: 30px;
     }
-  }
-}
 
-@mixin dashed-line($color) {
-  background: repeating-linear-gradient(
-    to right,
-    $color,
-    $color 8px,
-    #fff 2px,
-    #fff 12px
-  ) !important;
+    @include respond(mobile-lg) {
+      width: 95%;
+    }
+  }
 }
 
 .track-line {
@@ -359,20 +530,32 @@ $background-dash-primary: repeating-linear-gradient(
 
     h2 {
       margin-bottom: 6px;
+
+      @include respond(mobile-lg) {
+        font-size: 20px;
+      }
     }
 
     .time {
       margin-bottom: 6px;
       color: rgba($color-track-gray, 0.8);
+
+      @include respond(mobile-ms) {
+        font-size: 14px;
+      }
     }
 
     .caption {
       font-size: 18px;
+
+      @include respond(mobile-lg) {
+        font-size: 16px;
+      }
     }
   }
 }
 
-.track-active {
+.history-active {
   &::after {
     @include dashed-line(#15347d);
   }
@@ -393,7 +576,6 @@ $background-dash-primary: repeating-linear-gradient(
   }
 }
 
-
 .sp-offer {
   background: #fff;
   width: 100%;
@@ -404,7 +586,7 @@ $background-dash-primary: repeating-linear-gradient(
   padding-bottom: 10px;
   min-height: 600px;
   text-align: center;
-  
+
   h3 {
     color: #d83939;
   }
@@ -421,7 +603,60 @@ $background-dash-primary: repeating-linear-gradient(
   }
 }
 
-
 .sp-offer {
   padding-left: 5px !important;
+}
+
+@include respond(laptop) {
+  .d-md-none {
+    display: none;
+  }
+
+  .height-md-100 {
+    height: 100%;
+  }
+}
+
+.tracking-card .product-preview__body {
+  .card--primary {
+      @include respond(mobile-lg) {
+        padding: 4px;
+        &__brand {
+          display: none;
+        }
+
+        &__available {
+          display: none;
+        }
+
+        &__footer {
+          padding: 5px 0;
+        }
+
+        &__title {
+          font-size: 13px;
+        }
+        .start-at {
+          font-size: 11px;
+        } 
+        .price {
+          font-size: 16px;
+        }
+      }
+  }
+
+  .row {
+    & > * {
+      @include respond(laptop-s) {
+        &:nth-last-child(-n + 2) {
+          display: none;
+        }
+      }
+      @include respond(tab-port) {
+        &:nth-last-child(-n + 3) {
+          display: none;
+        }
+      }
+    }
+  }
 }
