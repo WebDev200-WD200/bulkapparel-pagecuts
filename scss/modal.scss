@@ -1,17 +1,18 @@
 @import "mixin";
+@import "color";
 
 .backdrop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  height: 100vh;
+  height: auto;
   width: 100%;
-  z-index: 9999;
-  overflow: auto;
+  height: 100%;
+  z-index: 999;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .btn {
@@ -48,10 +49,164 @@
 }
 
 .modal {
-  // position: absolute !important;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  &__logo {
+    cursor: pointer;
+    user-select: none;
+
+    @include respond(mobile-lg) {
+      img {
+        height: 36px;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-width: 550px;
+    margin: 50px auto;
+  }
+  &__exit {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    color:$color-darkblue;
+  }
+  &__heading {
+    color:$color-darkblue ;
+    font-size: 26px;
+
+    @include respond(mobile-lg) {
+     font-size: 22px;
+    }
+  }
+
+  &__body {
+    color: $color-gray;
+  }
+
+  &--feedback {
+    position: relative;
+    width: 550px;
+    // height: 550px;
+    margin: 40px auto;
+    background: $color-white;
+    padding: 40px 20px;
+    // padding-top: 40px;
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    @include respond(mobile-lg) {
+      padding: 30px 20px;
+    }
+    @include respond(mobile-m) {
+      padding: 20px 12px;
+    }
+
+    .jq-ry-container {
+      padding: 0;
+    }
+
+    .modal__header {
+      text-align: center;
+    
+    }
+  
+    .modal__text {
+      color: #ABABAB;
+      font-size: 17px;
+      @include respond(mobile-lg) {
+        font-size: 14px;
+      }
+      
+    }
+
+    .input-group {
+      textarea {
+        min-height: 100px;
+        max-height: 100px;
+        resize: none;
+      }
+      select {
+        padding: 10px;
+      }
+
+      select:invalid {
+        color: #44414F;
+      }
+
+      label {
+        font-weight: 400;
+        font-size: 16px;
+        color: #44414F;
+
+        @include respond(mobile-lg) {
+          font-size: 14px;
+        }
+      }
+      
+      .inp--secondary {
+        padding: 13px;
+        font-size: 16px;
+        @include respond(mobile-lg) {
+          font-size: 14px;
+          padding: 10px;
+        }
+        
+        &::placeholder {
+          font-size: 16px;
+          @include respond(mobile-lg) {
+            font-size: 14px;
+          }
+        }
+
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: #8d8d8d;
+
+        @include respond(mobile-lg) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &__icon {
+      svg {
+        height: 107px;
+        width: 104px;
+        fill: #FFC700;
+
+        @include respond(mobile-lg){
+          height: 90px;
+          width: 85px;
+
+        }
+      }
+    }
+
+    &__footer {
+      p {
+        text-align: center;
+        font-size: 15px;
+        color: #44414F;
+
+        @include respond(mobile-lg) {
+          font-size: 13px;
+         }
+      }
+
+      a {
+        color:$color-darkblue;
+        font-weight: 700;
+      }
+    }
+  }
   &--added-cart {
     position: relative;
     display: flex;
@@ -412,8 +567,8 @@
   }
 
   &--coupon {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
     background: white;
     padding: 20px;
     width: 400px;
@@ -434,7 +589,6 @@ flex-direction: column;
       display: flex;
       align-items: center;
       font-size: 26px;
-      
 
       @include respond(mobile-lg) {
         font-size: 23px;
@@ -475,10 +629,66 @@ flex-direction: column;
       }
     }
 
-
     &__description {
       margin-top: 15px;
       font-size: 18px;
     }
   }
+
+  &--dashboard {
+    position: relative;
+    width: 600px;
+    background-color: #fff;
+    padding:  20px;
+  }
 }
+
+.show-modal {
+  display: block !important;
+}
+
+.btn {
+  &--float-feedback {
+    background: $color-gray;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    // height: 30px;
+    right: -35px;
+    top: 60%;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transform: rotate(-90deg);
+    @include transition;
+
+    @include respond(mobile-lg) {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+
+    &:hover {
+      background: $color-darkblue;
+    }
+  }
+
+  &--feedback {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 16px;
+    background:$color-darkblue;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: .5px;
+
+    @include respond(mobile-lg) {
+     padding: 12px;
+     font-size: 16px;
+    }
+  }
+}
+

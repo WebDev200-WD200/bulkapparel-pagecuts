@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer Customized</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/themes/themes.min.css"> -->
+    <!-- Hallooween theme -->
+    <!-- <link rel="stylesheet" href="./css/themes/halloween-theme.min.css"> -->
+
+    <!-- Thanks giving theme-->
+    <!-- <link id="theme" rel="stylesheet" href="./css/themes/christmas-theme.css"> -->
+
+    <!-- New year theme-->
+    <!-- <link id="theme" rel="stylesheet" href="./css/themes/new-year.theme.css"> -->
+    <!-- New year theme-->
+
+    <link id="theme" rel="stylesheet" href="./css/themes/valentines.theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+
+
+
+</head>
+
+
+<body class="themes--valentines">
+    <header>
+        <!-- <aside class="sidebar" id="app-sidebar">
+            <ul class="sidebar__list">
+
+            </ul>
+        </aside> -->
+        <nav class="navbar">
+            <div class="navbar__main">
+                <div class="container">
+                    <button class="btn navbar__hamburger-btn n-mobile-only" id="burger-btn">
+                        <span></span>
+                    </button>
+
+                    <a href="/" class="navbar__logo">
+                        <img src="./assets/img/logo.svg" alt="Bulkapparel logo">
+                    </a>
+
+                    <div class="navbar__ads n-desktop-only">
+                        <div class="ads-free-shipping">
+                            <div class="free-text">
+                                <h2>Free Shipping</h2>
+                                <p>on order over<span class="price-bold">$99.00</span></p>
+                            </div>
+
+                            <div class="free-icon">
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                                        <path
+                                            d="M61 16H35a1 1 0 000 2h25v4H26v-4h5a1 1 0 000-2h-6a1 1 0 00-1 1v11H11a1 1 0 00-.781.375l-8 10A1 1 0 002 39v12a1 1 0 001 1h3.08a7 7 0 100-2H4V40h17a1 1 0 001-1v-6a1 1 0 00-2 0v5h-6.382l4-8H24v20h-1a1 1 0 000 2h15.08a7 7 0 100-2H26v-8h31a1 1 0 000-2H26V24h34v26h-5a1 1 0 000 2h6a1 1 0 001-1V17a1 1 0 00-1-1zM13 46a5 5 0 11-5 5 5.006 5.006 0 015-5zm-1.618-8H5.08l6.4-8h3.9zM45 46a5 5 0 11-5 5 5.006 5.006 0 015-5z" />
+                                        <path
+                                            d="M13 54a3 3 0 10-3-3 3 3 0 003 3zm0-4a1 1 0 11-1 1 1 1 0 011-1zm32 4a3 3 0 10-3-3 3 3 0 003 3zm0-4a1 1 0 11-1 1 1 1 0 011-1zM33 29a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 002 0v-3h2a1 1 0 000-2h-2v-2zm6-2h-2a1 1 0 00-1 1v8a1 1 0 002 0v-3h1a1 1 0 011 1v2a1 1 0 002 0v-2a2.981 2.981 0 00-.78-2A2.987 2.987 0 0039 27zm-1 4v-2h1a1 1 0 010 2zm11-2a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 000-2h-3v-2h2a1 1 0 000-2h-2v-2zm8 0a1 1 0 000-2h-4a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 000-2h-3v-2h2a1 1 0 000-2h-2v-2z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn--track">
+                            <figure>
+                                <svg class="btn--track__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.489 5.014H5.512a.498.498 0 00-.498.498v5.976c0 .275.223.498.498.498h5.977a.498.498 0 00.498-.498V5.512a.498.498 0 00-.498-.498zm-3.487.996H9v.996h-.997V6.01zm2.989 4.98H6.01V6.01h.995v1.494c0 .275.223.498.498.498h1.993a.498.498 0 00.498-.498V6.01h.996v4.98z" />
+                                    <path
+                                        d="M16.502 8.002h-1.546A6.485 6.485 0 009 2.044V.498a.498.498 0 00-.997 0v1.546a6.485 6.485 0 00-5.957 5.958H.499a.498.498 0 000 .996h1.546a6.485 6.485 0 005.957 5.958v1.546a.498.498 0 00.997 0v-1.546a6.485 6.485 0 005.957-5.958h1.546a.498.498 0 100-.996zM9 13.956v-.476a.498.498 0 10-.997 0v.476a5.488 5.488 0 01-4.957-4.958h.475a.498.498 0 000-.996h-.475a5.488 5.488 0 014.957-4.958v.476a.498.498 0 00.997 0v-.476a5.487 5.487 0 014.957 4.958h-.475a.498.498 0 100 .996h.475A5.488 5.488 0 019 13.956zM1.528 4.018a.498.498 0 00.498-.498V2.025H3.52a.498.498 0 000-.996H1.528a.498.498 0 00-.498.498V3.52c0 .275.223.498.498.498zM3.52 14.975H2.026V13.48a.498.498 0 10-.996 0v1.993c0 .275.223.498.498.498H3.52a.498.498 0 000-.996zM15.473 12.982a.498.498 0 00-.498.498v1.495h-1.494a.498.498 0 100 .996h1.992a.498.498 0 00.498-.498V13.48a.498.498 0 00-.498-.498zM13.481 2.025h1.494V3.52a.498.498 0 00.996 0V1.527a.498.498 0 00-.498-.498h-1.992a.498.498 0 100 .996z" />
+                                </svg>
+                            </figure>
+
+                            <div class="btn--track__label">
+                                Track your order
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="navbar__search n-desktop-only">
+                        <div class=" inp--search">
+                            <input type="text" class="inp inp--search__input" placeholder="Search Product, Brands">
+                            <button class="btn inp--search__button">
+                                <span class="icon">
+                                    <svg width="19" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.66 16.66l-5.332-5.116a6.764 6.764 0 001.62-4.378c0-3.844-3.258-6.97-7.264-6.97C3.679.195.42 3.321.42 7.165c0 3.843 3.259 6.97 7.264 6.97a7.417 7.417 0 004.563-1.554l5.331 5.115c.15.144.392.144.54 0l.541-.518a.357.357 0 000-.52zM7.683 12.669c-3.162 0-5.735-2.469-5.735-5.503 0-3.035 2.573-5.503 5.735-5.503 3.163 0 5.735 2.468 5.735 5.503 0 3.034-2.572 5.503-5.735 5.503z" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div id="search-auto" class="search search-auto">
+                            <!--search-show-->
+                            <div class="search__live">
+                                <div class="search__live-header">
+                                    <h1>You Search <span>"gildan"</span></h1>
+                                </div>
+                                <ul class="search__live-list" id="result-image">
+                                    <li class="card--search" data-image="5">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/16_fm.jpg"
+                                                    alt="Gildan 5000 Heavy Cotton T-" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5000 Heavy Cotton T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="14">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/32_fm.jpg"
+                                                    alt="Gildan 64000 Softstyle T-Sh" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 64000 Softstyle T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="17">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/39_fm.jpg"
+                                                    alt="Gildan 2000 Ultra Cotton T-" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 2000 Ultra Cotton T-Shirt Test 091420
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="54">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g800-gildan-t-shirt-8000-dryblend-50-50">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/146_fm.jpg"
+                                                    alt="Gildan 8000 DryBlend T-Shir" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 8000 DryBlend T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="123">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/fleece/gildan-18500-hoodie-heavy-blend-hooded-sweatshirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/395_fm.jpg"
+                                                    alt="Gildan 18500 Heavy Blend Ho" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 18500 Heavy Blend Hooded Sweatshirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="195">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g500b-gildan-5000b-kids-t-shirt-wholesale">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/543_fm.jpg"
+                                                    alt="Gildan 5000B Heavy Cotton Y" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5000B Heavy Cotton Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="187">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-8000b-dryblend-youth-50-50-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/526_fm.jpg"
+                                                    alt="Gildan 8000B DryBlend Youth" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 8000B DryBlend Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="111">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/fleece/g180-gildan-sweatshirt-18000-heavy-blend-crewneck">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/372_fm.jpg"
+                                                    alt="Gildan 18000 Heavy Blend Sw" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 18000 Heavy Blend Sweatshirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="200">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-2000b-ultra-cotton-youth-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/551_fm.jpg"
+                                                    alt="Gildan 2000B Ultra Cotton Y" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 2000B Ultra Cotton Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="35">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-5400-heavy-cotton-long-sleeve-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/94_fm.jpg"
+                                                    alt="Gildan 5400 Heavy Cotton Lo" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5400 Heavy Cotton Long Sleeve T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="search__help">
+                                    <h1 class="search__help-title">How Can We Help?</h1>
+                                    <ul class="search__help-list">
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/shipping">Shipping</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/tracking">Tracking</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/help">Help / FAQ</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/returns">Return Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="search__auto">
+                                <div class="search__auto-header">
+                                </div>
+                                <ul class="search__auto-result" id="result-text">
+                                    <li>
+                                        <h3>Suggestions</h3>
+                                    </li>
+                                    <li></li>
+                                    <li data-text="5"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                            5000 Heavy Cotton ...</a></li>
+                                    <li data-text="14"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                            64000 Softstyle T-...</a></li>
+                                    <li data-text="17"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                            2000 Ultra Cotton ...</a></li>
+                                    <li data-text="54"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g800-gildan-t-shirt-8000-dryblend-50-50">Gildan
+                                            8000 DryBlend T-Sh...</a></li>
+                                    <li data-text="123"><a
+                                            href="https://robx.bulkapparel.com/fleece/gildan-18500-hoodie-heavy-blend-hooded-sweatshirt">Gildan
+                                            18500 Heavy Blend ...</a></li>
+                                    <li data-text="195"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g500b-gildan-5000b-kids-t-shirt-wholesale">Gildan
+                                            5000B Heavy Cotton...</a></li>
+                                    <li data-text="187"><a
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-8000b-dryblend-youth-50-50-t-shirt">Gildan
+                                            8000B DryBlend You...</a></li>
+                                    <li data-text="111"><a
+                                            href="https://robx.bulkapparel.com/fleece/g180-gildan-sweatshirt-18000-heavy-blend-crewneck">Gildan
+                                            18000 Heavy Blend ...</a></li>
+                                    <li data-text="200"><a
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-2000b-ultra-cotton-youth-t-shirt">Gildan
+                                            2000B Ultra Cotton...</a></li>
+                                    <li data-text="35"><a
+                                            href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-5400-heavy-cotton-long-sleeve-t-shirt">Gildan
+                                            5400 Heavy Cotton ...</a></li>
+                                    <li class="see-more-results" data-count="1"><a href="javascript:void(0);">See More
+                                            Results</a></li>
+                                    <li class="view-all-results"><a href="javascript:void(0);">View All Results</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar__action">
+                        <button class="btn btn--track n-mobile-only">
+                            <figure>
+                            </figure>
+
+                            <div class="btn--track__label">
+                                Track Order
+                            </div>
+                        </button>
+
+                        <div class="navbar__login">
+                            <a href="/" class="btn btn--icon n-mobile-only">
+                                <span class="icon">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.018.001C7.228.001.1 7.128.1 15.92c0 8.79 7.127 15.917 15.918 15.917 8.792 0 15.918-7.126 15.918-15.917S24.81 0 16.018 0zm0 4.76a5.265 5.265 0 110 10.53 5.265 5.265 0 010-10.53zm-.004 22.914a11.682 11.682 0 01-7.607-2.806 2.244 2.244 0 01-.787-1.705c0-2.949 2.386-5.309 5.335-5.309h6.127c2.95 0 5.327 2.36 5.327 5.309 0 .656-.287 1.279-.787 1.705a11.678 11.678 0 01-7.608 2.806z" />
+                                    </svg>
+                                </span>
+                            </a>
+
+                            <a href="/" class="btn btn--my-account flex-pc-only">
+                                My Account <span>
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <!DOCTYPE svg
+                                        PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                    </svg>
+                                </span>
+
+                            </a>
+
+                            <div class="login-floater">
+                                <form name="frmLoginpop" id="frmLoginpop" method="post" action=""
+                                    novalidate="novalidate">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="errordivpop"
+                                                style="margin-top: 10px;color:red;padding-bottom: 20px;display: block;">
+                                                <label>Wrong Username/Password entered!</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-2">
+                                            <div class="inp-group">
+                                                <label for="uemailpop">Email</label>
+                                                <input type="email"
+                                                    class="validate[required,custom[email]] inp inp--primary"
+                                                    name="uemailpop" id="uemailpop" value="" autocomplete="off">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 mb-2">
+                                            <div class="inp-group">
+                                                <label for="upasswordpop">Password</label>
+                                                <input type="password" name="upasswordpop"
+                                                    class="validate[required,minSize[5],maxSize[12]] inp inp--primary"
+                                                    id="upasswordpop" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mb-3" id="sid">
+                                            <div class="login-floater__action">
+                                                <button type="submit" name="loginpop" id="loginpop"
+                                                    class="btn btn--primary mr-auto">
+                                                    Login
+                                                </button>
+
+                                                <div class="log-sub-left" style="padding-top: 12px;"><label
+                                                        style="font-size: 14px;"><input id="my-checkpop"
+                                                            name="my-checkpop" type="checkbox"> Keep me logged
+                                                        in</label></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 forget-row">
+                                            <div class="login-floater__footer">
+                                                <p style="margin-bottom: 12px;font-size: 18px">Don't have an account? <a
+                                                        href="https://robx.bulkapparel.com/login"
+                                                        style="float: none;font-style: normal;">Register Now!</a></p>
+                                                <a href="https://robx.bulkapparel.com/forgotpassword"
+                                                    style="float: none;font-style: normal;font-size: 18px">Forgot
+                                                    Password?</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="mailTrackingNo" value="">
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                        <div class="navbar__cart">
+                            <button class="btn btn--icon">
+                                <span class="icon">
+                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    <svg viewBox="0 0 32 30" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.783 23.257c1.956 0 3.523 1.291 3.523 2.885 0 1.594-1.567 2.885-3.523 2.885-1.956 0-3.54-1.291-3.54-2.885 0-1.594 1.584-2.885 3.54-2.885zM7.08 23.257c1.957 0 3.524 1.291 3.524 2.885 0 1.594-1.567 2.885-3.523 2.885-1.956 0-3.54-1.291-3.54-2.885 0-1.594 1.584-2.885 3.54-2.885zM22.836 16.045H9.648c-1.328 0-2.488-.598-3.098-1.485L.22 5.198A1.2 1.2 0 010 4.506c0-.8.796-1.442 1.77-1.442h26.173L29.625.179h5.78v2.885h-3.541L25.5 14.004l2.39 3.534c.274.419.433.887.433 1.392 0 1.594-1.584 2.885-3.54 2.885H3.54V18.93h20.49c.248 0 .443-.159.443-.36a.294.294 0 00-.053-.174l-1.584-2.35z" />
+                                    </svg>
+                                </span>
+
+
+
+                            </button>
+
+                            <div class="navbar__cart-price">
+                                $1,194.20
+                                <span class="btn--icon__count">
+                                    3
+                                </span>
+                            </div>
+
+                            <div class="cart-preview">
+                                <ul class="cart-preview__list">
+                                    <li class="cart-preview__item">
+                                        <a href="/" class="cart-preview__item-header">
+                                            G500 Gildan T-Shirt 5000 Heavy Cotton 5.3
+                                        </a>
+                                        <div class="cart-preview__item-body">
+
+                                            <a href="/" class="cart-preview__item-img">
+                                                <img src="./assets/img/prod-sample.jpg" alt="">
+                                            </a>
+
+                                            <div class="cart-preview__item-details">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p><b>Price:</b>$4.77</p>
+                                                        <p><b>Quantity:</b>331</p>
+                                                        <p><b>Color:</b>White</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p><b>Size:</b>2XL</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-preview__item">
+                                        <a href="/" class="cart-preview__item-header">
+                                            G500 Gildan T-Shirt 5000 Heavy Cotton 5.3
+                                        </a>
+                                        <div class="cart-preview__item-body">
+
+                                            <a href="/" class="cart-preview__item-img">
+                                                <img src="./assets/img/prod-sample.jpg" alt="">
+                                            </a>
+
+                                            <div class="cart-preview__item-details">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p><b>Price:</b>$4.77</p>
+                                                        <p><b>Quantity:</b>331</p>
+                                                        <p><b>Color:</b>White</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p><b>Size:</b>2XL</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-preview__item">
+                                        <a href="/" class="cart-preview__item-header">
+                                            G500 Gildan T-Shirt 5000 Heavy Cotton 5.3
+                                        </a>
+                                        <div class="cart-preview__item-body">
+
+                                            <a href="/" class="cart-preview__item-img">
+                                                <img src="./assets/img/prod-sample.jpg" alt="">
+                                            </a>
+
+                                            <div class="cart-preview__item-details">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p><b>Price:</b>$4.77</p>
+                                                        <p><b>Quantity:</b>331</p>
+                                                        <p><b>Color:</b>White</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p><b>Size:</b>2XL</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cart-preview__item">
+                                        <a href="/" class="cart-preview__item-header">
+                                            G500 Gildan T-Shirt 5000 Heavy Cotton 5.3
+                                        </a>
+                                        <div class="cart-preview__item-body">
+
+                                            <a href="/" class="cart-preview__item-img">
+                                                <img src="./assets/img/prod-sample.jpg" alt="">
+                                            </a>
+
+                                            <div class="cart-preview__item-details">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <p><b>Price:</b>$4.77</p>
+                                                        <p><b>Quantity:</b>331</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <p><b>Color:</b>White</p>
+                                                        <p><b>Size:</b>2XL</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <div class="cart-preview__action">
+                                    <p class="cart-preview__count">Total Items - 737 Items</p>
+                                    <ul class="cart-preview__summary">
+                                        <li class="subtotal">
+                                            <h4>Subtotal</h4>
+                                            <p>$1.326.89</p>
+                                        </li>
+                                        <li>
+                                            <h3>Bulk Discount</h3>
+                                            <p>-$826.82</p>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-preview__btns">
+                                        <a class="btn btn--link" href="/cart" class="">View Cart</a>
+                                        <button class="btn btn--primary ml-auto">Checkout</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- End? -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__middle n-mobile-only">
+                <div class="container">
+                    <div class="navbar__middle-ads">
+                        <a class="btn btn--ads" href="/shipping">
+                            <img src="./assets/img/free-shipping.png" alt="Free Shipping">
+                            <p>SAME DAY FREE SHIPPING over $99.00</p>
+                        </a>
+                        <a class="btn btn--ads" href="/">
+                            <img src="./assets/img/bulk-discount.png" alt="Bulk Discount">
+                            <p>BULK DISCOUNT</p>
+                        </a>
+                    </div>
+
+                    <div class="navbar__middle-search">
+                        <div class=" inp--search">
+                            <input type="text" class="inp inp--search__input" placeholder="Search Product, Brands">
+                            <button class="btn inp--search__button">
+                                <span class="icon">
+                                    <svg width="19" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M18.66 16.66l-5.332-5.116a6.764 6.764 0 001.62-4.378c0-3.844-3.258-6.97-7.264-6.97C3.679.195.42 3.321.42 7.165c0 3.843 3.259 6.97 7.264 6.97a7.417 7.417 0 004.563-1.554l5.331 5.115c.15.144.392.144.54 0l.541-.518a.357.357 0 000-.52zM7.683 12.669c-3.162 0-5.735-2.469-5.735-5.503 0-3.035 2.573-5.503 5.735-5.503 3.163 0 5.735 2.468 5.735 5.503 0 3.034-2.572 5.503-5.735 5.503z" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div id="search-auto" class="search search-auto ">
+                            <!--search-show-->
+                            <div class="search__live">
+                                <div class="search__live-header">
+                                    <h1>You Search <span>"gildan"</span></h1>
+                                </div>
+                                <ul class="search__live-list" id="result-image">
+                                    <li class="card--search" data-image="5">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/16_fm.jpg"
+                                                    alt="Gildan 5000 Heavy Cotton T-" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5000 Heavy Cotton T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="14">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/32_fm.jpg"
+                                                    alt="Gildan 64000 Softstyle T-Sh" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 64000 Softstyle T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="17">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/39_fm.jpg"
+                                                    alt="Gildan 2000 Ultra Cotton T-" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 2000 Ultra Cotton T-Shirt Test 091420
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="54">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g800-gildan-t-shirt-8000-dryblend-50-50">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/146_fm.jpg"
+                                                    alt="Gildan 8000 DryBlend T-Shir" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 8000 DryBlend T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="123">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/fleece/gildan-18500-hoodie-heavy-blend-hooded-sweatshirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/395_fm.jpg"
+                                                    alt="Gildan 18500 Heavy Blend Ho" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 18500 Heavy Blend Hooded Sweatshirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="195">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/g500b-gildan-5000b-kids-t-shirt-wholesale">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/543_fm.jpg"
+                                                    alt="Gildan 5000B Heavy Cotton Y" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5000B Heavy Cotton Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="187">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-8000b-dryblend-youth-50-50-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/526_fm.jpg"
+                                                    alt="Gildan 8000B DryBlend Youth" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 8000B DryBlend Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="111">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/fleece/g180-gildan-sweatshirt-18000-heavy-blend-crewneck">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/372_fm.jpg"
+                                                    alt="Gildan 18000 Heavy Blend Sw" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 18000 Heavy Blend Sweatshirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="200">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-2000b-ultra-cotton-youth-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/551_fm.jpg"
+                                                    alt="Gildan 2000B Ultra Cotton Y" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 2000B Ultra Cotton Youth T-Shirt wholesale
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="card--search" data-image="35">
+                                        <a class="card--search__link"
+                                            href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-5400-heavy-cotton-long-sleeve-t-shirt">
+                                            <div class="card--search__img">
+                                                <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/94_fm.jpg"
+                                                    alt="Gildan 5400 Heavy Cotton Lo" draggable="false"
+                                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                            </div>
+                                            <div class="card--search__body">
+                                                <div class="card--search__title">
+                                                    Gildan 5400 Heavy Cotton Long Sleeve T-Shirt in bulk
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="search__help">
+                                    <h1 class="search__help-title">How Can We Help?</h1>
+                                    <ul class="search__help-list">
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/shipping">Shipping</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/tracking">Tracking</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/help">Help / FAQ</a>
+                                        </li>
+                                        <li class="search__help-items">
+                                            <a href="https://robx.bulkapparel.com/cms/page/returns">Return Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="search__auto">
+                                <div class="search__auto-header">
+                                </div>
+                                <ul class="search__auto-result" id="result-text">
+                                    <li>
+                                        <h3>Suggestions</h3>
+                                    </li>
+                                    <li></li>
+                                    <li data-text="5"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g500-gildan-wholesale-t-shirt-5000">Gildan
+                                            5000 Heavy Cotton ...</a></li>
+                                    <li data-text="14"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g640-gildan-t-shirt-64000-softstyle">Gildan
+                                            64000 Softstyle T-...</a></li>
+                                    <li data-text="17"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton-test-rob">Gildan
+                                            2000 Ultra Cotton ...</a></li>
+                                    <li data-text="54"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g800-gildan-t-shirt-8000-dryblend-50-50">Gildan
+                                            8000 DryBlend T-Sh...</a></li>
+                                    <li data-text="123"><a
+                                            href="https://robx.bulkapparel.com/fleece/gildan-18500-hoodie-heavy-blend-hooded-sweatshirt">Gildan
+                                            18500 Heavy Blend ...</a></li>
+                                    <li data-text="195"><a
+                                            href="https://robx.bulkapparel.com/tshirts/g500b-gildan-5000b-kids-t-shirt-wholesale">Gildan
+                                            5000B Heavy Cotton...</a></li>
+                                    <li data-text="187"><a
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-8000b-dryblend-youth-50-50-t-shirt">Gildan
+                                            8000B DryBlend You...</a></li>
+                                    <li data-text="111"><a
+                                            href="https://robx.bulkapparel.com/fleece/g180-gildan-sweatshirt-18000-heavy-blend-crewneck">Gildan
+                                            18000 Heavy Blend ...</a></li>
+                                    <li data-text="200"><a
+                                            href="https://robx.bulkapparel.com/tshirts/gildan-2000b-ultra-cotton-youth-t-shirt">Gildan
+                                            2000B Ultra Cotton...</a></li>
+                                    <li data-text="35"><a
+                                            href="https://robx.bulkapparel.com/tshirts-longsleeves/gildan-5400-heavy-cotton-long-sleeve-t-shirt">Gildan
+                                            5400 Heavy Cotton ...</a></li>
+                                    <li class="see-more-results" data-count="1"><a href="javascript:void(0);">See More
+                                            Results</a></li>
+                                    <li class="view-all-results"><a href="javascript:void(0);">View All Results</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__footer" id="navbar-footer">
+                <div class="container">
+                    <ul class="navbar__footer-list">
+                    </ul>
+                </div>
+
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="footer__logo">
+                                <img src="./assets/img/logo-dark.svg" alt="Bulkapparel logo">
+                            </div>
+
+                            <div class="footer__banner">
+                                For Support use LiveChat button to the right You can also visit our Help Desk or call
+                                Toll-Free 1-877-***-*****
+                                <span style="color: yellow;">
+                                    <h3>Covid-19 Update</h3>
+                                    Phone support is not avaialble for 2 weeks Please use our chat or email from
+                                </span>
+                                All our warehouses are operationg as normal We will offer customer support by Chat and
+                                Email only.
+                                <span style="color:greenyellow;">
+                                    All orders are being processed and shipped at this time
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Poular Brands</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Popular Categories</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Customer Services
+                                        </h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                        <div class="col-12 col-lg flex align-item-center">
+                                            <ul class="footer__payments">
+                                                <li><img src="./assets/img/amex.jpg" alt=""></li>
+                                                <li><img src="./assets/img/discover.jpg" alt=""></li>
+                                                <li><img src="./assets/img/master-card.jpg" alt=""></li>
+                                                <li><img src="./assets/img/paypal.jpg" alt=""></li>
+                                                <li><img src="./assets/img/visa.jpg" alt=""></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-lg mt-3 mt-lg-0">
+                                            <div class="footer__ribbon">
+                                                <img src="./assets/img/ribbon-footer.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="footer__credit">
+                        © 2020 bulkapparel.com All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/templateGenarator.js"></script>
+    <script src="./assets/js/snow.jquery.min.js"></script>
+    <!-- <script src="./assets/js/snow.min.js"></script> -->
+
+    <script>
+        $('#added-cart-exit').click(function () {
+            $('#added-card-modal').hide();
+        })
+
+    </script>
+    <button class="btn btn--float-feedback" id="btn-feedback">
+        Feedback
+    </button>
+    <div class="backdrop" id="modal-feedback" style="display:block;">
+        <div class="modal__content">
+            <div class="modal--feedback">
+                <button class="btn modal__exit" id="exit-feedback">✖</button>
+
+                <span id="feedback-main">
+                    <div class="modal__header">
+                        <a href="#" class="modal__logo">
+                            <img src="./assets/img/logo.svg" alt="" draggable="">
+                        </a>
+                        <h1 class="modal__heading">Rate Your Experience?</h1>
+                    </div>
+
+                    <div class="modal__body mt-2 mt-lg=3">
+                        <div class="row">
+                            <div class="col-12 mb-2 mb-lg-3">
+                                <div class="input-group">
+                                    <div class="input-group__header">
+                                        <label for="" class="input-group__label">Are you satisfied with the Service?</label>
+                                    </div>
+                                    <div id="rate-it"></div>
+                                    <input type="hidden" name="rating" value="5" id="rate-value">
+                                </div>
+
+                            </div>
+                            <div class="col-12 mb-1 mb-lg-2">
+                                <div class="input-group">
+                                    <div class="input-group__header">
+                                        <label for="" class="input-group__label">Enter your email address to recieved any
+                                            reply to us about your feedback.</label>
+                                    </div>
+                                    <input class="inp inp--secondary" type="text" id="email" name="email" value=""
+                                        placeholder="Please enter your email address here" autocomplete="false">
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-1 mb-lg-2">
+                                <div class="input-group">
+                                    <div class="input-group__header">
+                                        <label for="" class="input-group__label">Select a category best describe the nature
+                                            of your feedback.</label>
+
+                                    </div>
+                                    <select class="inp inp--secondary" type="text" id="category" name="pemail" value=""
+                                        placeholder="Please select any of the options">
+                                        <option value="" hidden selected disabled>Please select any of the options</option>
+                                        <option value="opt-1">Option 1</option>
+                                        <option value="opt-2">Option 2</option>
+                                        <option value="opt-3">Option 3</option>
+                                        <option value="opt-4">Option 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-2 mb-lg-3">
+                                <div class="input-group">
+                                    <div class="input-group__header">
+                                        <label for="" class="input-group__label">Care to share more?</label>
+                                    </div>
+                                    <p class="input-group__hint">How was your overall experience? What’s that one thing you
+                                        won’t forget to this website?</p>
+                                    <textarea class="inp inp--secondary" type="text" id="pemail" name="pemail" value=""
+                                        placeholder="Please enter your email address here"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-1">
+                                <button class="btn btn--feedback" id="feedback-submit">Send Feedback</button>
+                            </div>
+                        </div>
+
+                        <div class="modal--feedback__footer">
+                            <div class="separator"></div>
+                            <p>
+                                All users of our online services are subject to our <a href="/">Privacy Statement</a> and
+                                agree to be bound by the <a href="/">Terms of Service</a>. Please do not submit personal or
+                                account information. For all customer service questions visit or <a href="/">Help Center</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </span>
+                <!-- If feedback is successfull show this -->
+                <span id="feedback-success" style="display: none;">
+                    <div class="modal__header">
+                        <a href="#" class="modal__logo">
+                            <img src="./assets/img/logo.svg" alt="" draggable="">
+                        </a>
+                    </div>
+    
+                    <div class="modal__body mt-2 px-lg-3 px-2" style="text-align: center;">
+                        <div class="modal--feedback__icon">
+                            <svg viewBox="0 0 104 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M27.8519 10.0952C32.013 9.75433 35.9632 8.07496 39.14 5.29627C42.728 2.16063 47.287 0.438507 52 0.438507C56.713 0.438507 61.272 2.16063 64.86 5.29627C68.0367 8.07496 71.987 9.75433 76.1481 10.0952C80.8472 10.4806 85.259 12.5708 88.5924 15.9912C91.9257 19.4115 93.9628 23.9383 94.3384 28.7601C94.6683 33.028 96.3049 37.0836 99.0153 40.3426C102.071 44.0242 103.75 48.7021 103.75 53.5381C103.75 58.374 102.071 63.052 99.0153 66.7336C96.3073 69.9932 94.6706 74.0464 94.3384 78.3161C93.9628 83.1379 91.9257 87.6647 88.5924 91.085C85.259 94.5054 80.8472 96.5956 76.1481 96.9809C71.987 97.3218 68.0367 99.0012 64.86 101.78C61.272 104.916 56.713 106.638 52 106.638C47.287 106.638 42.728 104.916 39.14 101.78C35.9632 99.0012 32.013 97.3218 27.8519 96.9809C23.1528 96.5956 18.741 94.5054 15.4076 91.085C12.0742 87.6647 10.0372 83.1379 9.66161 78.3161C9.32938 74.0464 7.69271 69.9932 4.98466 66.7336C1.92874 63.052 0.250397 58.374 0.250397 53.5381C0.250397 48.7021 1.92874 44.0242 4.98466 40.3426C7.69271 37.083 9.32938 33.0297 9.66161 28.7601C10.0372 23.9383 12.0742 19.4115 15.4076 15.9912C18.741 12.5708 23.1528 10.4806 27.8519 10.0952V10.0952ZM75.9799 44.9557C77.1582 43.7039 77.8102 42.0272 77.7955 40.2869C77.7808 38.5465 77.1005 36.8817 75.9011 35.6511C74.7017 34.4204 73.0793 33.7223 71.3831 33.7072C69.687 33.6921 68.053 34.3611 66.833 35.5702L45.5312 57.4277L37.167 48.8453C35.947 47.6362 34.3129 46.9672 32.6168 46.9823C30.9207 46.9975 29.2983 47.6955 28.0989 48.9262C26.8995 50.1568 26.2192 51.8216 26.2045 53.562C26.1897 55.3023 26.8418 56.979 28.0201 58.2308L40.9577 71.506C42.1708 72.7503 43.8159 73.4494 45.5312 73.4494C47.2465 73.4494 48.8915 72.7503 50.1046 71.506L75.9799 44.9557V44.9557Z" />
+                            </svg>
+                        </div>
+    
+                        <h1 class="modal__heading mb-1 mb-lg-2 mt-2 mt-lg-3">Thank you for your feedback!</h1>
+                        <p class="modal__text">We will review your feedback and we will take any action to this matter.
+                            The information you provide in this suvery will not be used to investigate a specific complaint.
+                        </p>
+                    </div>
+    
+                    <div class="modal__body px-2 mt-3">
+                        <div class="row">
+                            <btn class="col-12 btn btn--feedback" id="feedback-close">Close</btn>
+                        </div>
+                    
+                    </div>
+                </span>
+
+
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var rateValue = $('#rate-value');
+            var rate = $("#rate-it").rateYo({
+                rating: 5,
+                ratedFill: '#FFC700',
+                normalFill: '#C4C4C4',
+                halfStar: true,
+                spacing: '5px',
+                onInit: function (rating) {
+                    rateValue.val(rating)
+                },
+                onSet: function (rating) {
+                    rateValue.val(rating)
+                }
+            });
+
+            var feedBackBtn = $('#btn-feedback');
+            var feedBackModal = $('#modal-feedback');
+            var feedBackExit = $('#exit-feedback');
+            var feedBackMain = $('#feedback-main');
+            var feedBackSuccess = $('#feedback-success');
+            var feedBackSubmit = $('#feedback-submit');
+            var feedBackClose = $('#feedback-close');
+
+            function feedBackShow() {
+                feedBackBtn.hide();
+                $('html').css({'overflow-y': 'hidden'})
+                feedBackModal.show();
+                feedBackShowMain();
+            }
+            
+            function feedBackHide() {
+                feedBackBtn.show();
+                $('html').css({'overflow-y': 'auto'})
+                feedBackModal.hide();
+                feedBackShowMain();
+            }
+
+            function feedBackShowSuccess() {
+                feedBackMain.hide();
+                feedBackSuccess.show();
+            }
+            
+            function feedBackShowMain() {
+                feedBackMain.show();
+                feedBackSuccess.hide();
+            }
+
+            feedBackBtn.click(feedBackShow)
+            
+            feedBackExit.click(feedBackHide)
+
+            feedBackModal.click(feedBackHide).children().click(function() {
+                return false;
+            })
+
+            feedBackSubmit.click(feedBackShowSuccess)
+            feedBackClose.click(feedBackHide);
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer Customized</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/themes/themes.min.css"> -->
+    <!-- Hallooween theme -->
+    <!-- <link rel="stylesheet" href="./css/themes/halloween-theme.min.css"> -->
+
+    <!-- Thanks giving theme-->
+    <!-- <link id="theme" rel="stylesheet" href="./css/themes/christmas-theme.css"> -->
+
+    <!-- New year theme-->
+    <!-- <link id="theme" rel="stylesheet" href="./css/themes/new-year.theme.css"> -->
+
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet"> -->
+
+
+</head>
+
+
+<body class="themes--christmas">
+    <header>
+        <!-- <aside class="sidebar" id="app-sidebar">
+            <ul class="sidebar__list">
+
+            </ul>
+        </aside> -->
+      
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 default w-100"
+                        onclick="changeTheme('default')">Default</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 halloween w-100" onclick="changeTheme('halloween')">Change
+                        Hallooween theme</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 thanks-giving w-100"
+                        onclick="changeTheme('thanks-giving')">Change Thanks Giving Theme</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 christmas w-100" onclick="changeTheme('christmas')">Change
+                        Christmas theme</button>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 new-year w-100" onclick="changeTheme('new-year')">Change New
+                        Year
+                        theme</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h1>New Structure Page Layout</h1>
+                    <a href="/card.html" class="btn btn--primary mt-2 new-year" onclick="changeTheme('new-year')">New
+                        Card
+                        Page
+                        Structure</a>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <style>
+    .backdrop{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:fixed;top:0;left:0;background-color:rgba(0,0,0,0.3);height:100vh;width:100%;z-index:9999;overflow:auto}.modal--coupon{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;background:white;padding:20px;width:400px;position:relative;text-align:center}@media (max-width: 37.5625em){.modal--coupon{padding:15px;width:80%}}@media (max-width: 23.4375em){.modal--coupon{width:90%}}.modal--coupon .heading{margin:0 auto;color:#00234f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;font-size:26px}@media (max-width: 37.5625em){.modal--coupon .heading{font-size:23px}}@media (max-width: 23.4375em){.modal--coupon .heading{font-size:20px}}.modal--coupon .heading svg{fill:#00234f;height:42px;width:42px;margin-right:10px;display:inline-block}@media (max-width: 37.5625em){.modal--coupon .heading svg{height:36px;width:36px;margin-right:6px}}@media (max-width: 23.4375em){.modal--coupon .heading svg{height:34px;width:34px}}.modal--coupon__exit{font-size:20px;font-weight:800;position:absolute;right:15px;top:10px}@media (max-width: 37.5625em){.modal--coupon__exit{font-size:18px}}@media (max-width: 23.4375em){.modal--coupon__exit{right:10px;top:5px}}.modal--coupon__description{margin-top:15px;font-size:18px}
+    </style>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-lg-4">
+                            <div class="footer__logo">
+                                <img src="./assets/img/logo-dark.svg" alt="Bulkapparel logo">
+                            </div>
+
+                            <div class="footer__banner">
+                                For Support use LiveChat button to the right You can also visit our Help Desk or call
+                                Toll-Free 1-877-***-*****
+                                <span style="color: yellow;">
+                                    <h3>Covid-19 Update</h3>
+                                    Phone support is not avaialble for 2 weeks Please use our chat or email from
+                                </span>
+                                All our warehouses are operationg as normal We will offer customer support by Chat and
+                                Email only.
+                                <span style="color:greenyellow;">
+                                    All orders are being processed and shipped at this time
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="row">
+                                <div class="col-6 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Poular Brands</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Popular Categories</h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4 mb-5">
+                                    <div class="footer__list">
+                                        <h1 class="footer__list-header">Customer Services
+                                        </h1>
+                                        <ul class="footer__list-group">
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Gildan
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    JERZEES
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Hanes
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Bella + CANVAS
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Next Level
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Valucap
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Skins
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Rabbit Flexit
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Independent Trading Co.
+                                                </a>
+                                            </li>
+                                            <li class="footer__list-item">
+                                                <a class="footer__list-link" href="/">
+                                                    Champion
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <div class="row">
+                                        <div class="col-12 col-lg flex align-item-center">
+                                            <ul class="footer__payments">
+                                                <li><img src="./assets/img/amex.jpg" alt=""></li>
+                                                <li><img src="./assets/img/discover.jpg" alt=""></li>
+                                                <li><img src="./assets/img/master-card.jpg" alt=""></li>
+                                                <li><img src="./assets/img/paypal.jpg" alt=""></li>
+                                                <li><img src="./assets/img/visa.jpg" alt=""></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-lg mt-3 mt-lg-0">
+                                            <div class="footer__ribbon">
+                                                <img src="./assets/img/ribbon-footer.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="footer__credit">
+                        © 2020 bulkapparel.com All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/templateGenarator.js"></script>
+    <script src="./assets/js/snow.jquery.min.js"></script>
+    <!-- <script src="./assets/js/snow.min.js"></script> -->
+
+    <script>
+       
+        $('#coupon-exit').click(function() {
+            $('#coupon-modal').hide();
+        })
+
+    </script>
+
+    <script>
+        $('#added-cart-exit').click(function () {
+            $('#added-card-modal').hide();
+        })
+
+    </script>
+
+    <script>
+        // function changeTheme(theme) {
+        //     const headCss = $("#theme");
+        //     const themeScript = $('#theme-js');
+
+        //     if (theme === "halloween") {
+        //         headCss.attr("href", "./css/themes/halloween-theme.min.css");
+        //     } else if (theme === 'thanks-giving') {
+        //         headCss.attr("href", "./css/themes/thanks-giving-theme.min.css");
+        //     } else if (theme === 'christmas') {
+        //         headCss.attr("href", "./css/themes/christmas-theme.min.css");
+        //     } else {
+        //         themeScript.attr('src', '')
+        //     }
+        // }
+        function changeTheme(theme) {
+            const body = $("body");
+            const themeScript = $('#theme-js');
+
+            body.removeClass(body.attr('class'))
+
+            if (theme === "halloween") {
+                body.addClass('themes--halloween');
+            } else if (theme === 'thanks-giving') {
+                body.addClass('themes--thanks-giving');
+            } else if (theme === 'christmas') {
+                body.addClass('themes--christmas');
+            } else if (theme === 'new-year') {
+                body.addClass('themes--new-year');
+            } else {
+                body.addClass('themes--default');
+            }
+        }
+
+        $('.navbar__footer-list').click(function (e) {
+            var activeClass = 'show-sub-list';
+            var item = e.target.closest('.navbar__footer-item')
+            var link = e.target.closest('.navbar__footer-link')
+            $(item).toggleClass(activeClass)
+
+            console.log(link)
+            if (link) {
+                window.location.href = $(link).attr('href')
+            }
+
+        })
+
+        $('#burger-btn').click(function (e) {
+            var showClass = "show-sidebar";
+            var sidebar = $('#navbar-footer');
+
+            console.log(sidebar, 'Hello', sidebar.hasClass(showClass))
+            if (!sidebar.hasClass(showClass)) {
+                $("body").attr('style', 'overflow:hidden;')
+                sidebar.addClass(showClass)
+            } else {
+                $("body").attr('style', 'overflow:auto;')
+                sidebar.removeClass(showClass)
+            }
+        })
+    </script>
+
+    <div class="backdrop" id="dashboard-modal" style="display: none;">
+
+        <div class="modal__content">
+            <div class="modal modal--dashboard">
+    
+                <button class="btn modal__exit" id="dashboard-exit">
+                    ✕
+                </button>
+
+
+    
+                <div class="modal__body pr-2">
+                    <h1 class="modal__heading mb-1">Dashboard Modal</h1>
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit nostrum velit molestiae dolor nesciunt praesentium aliquid totam nobis aperiam. Quisquam?
+                </div>
+    
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        var dashBoardModal = $("#dashboard-modal");
+        var dashBoardModalExit = $("#dashboard-exit");
+
+        function showDashboardModal() {
+            $('html').css({'overflow-y': 'hidden'})
+            dashBoardModal.addClass('show-modal');
+        }
+
+        function hideDashboardModal() {
+            $('html').css({'overflow-y': 'auto'})
+            dashBoardModal.removeClass('show-modal')
+        }
+
+        dashBoardModalExit.click(function(){
+            hideDashboardModal()
+        })
+
+        dashBoardModal.click(function(){
+            hideDashboardModal()
+        }).children().click(function(){
+            return false;
+        })
+
+        showDashboardModal();
+
+    </script>
+
+    <!-- <script>
+        $(document).ready(function () {
+            $(document).snowfall({ flakeCount: 200, round: true, maxSpeed: 5, maxSize: 8 });
+
+            if ($('body').hasClass('themes--christmas')) {
+                var script = document.createElement("script");  // create a script DOM node
+                script.src = url;  // set its src to the provided URL
+
+                document.head.appendChild(script);
+
+
+                function initSnowFall() {
+                }
+
+
+                // remove snow fall on mobile
+                if ($(window).width() >= 768) {
+                    initSnowFall();
+
+                    // when on blur or fucos out detach snow fall to minimize processor process 
+                    $(window).blur(function () {
+                        $(document).snowfall('clear');
+                    }).focus(function () {
+                        initSnowFall();
+                    })
+                }
+            }
+
+
+
+
+        })
+    </script> -->
+
+    <!-- <div class="modal--added-cart__product">
+                <div class="modal--added-cart__product-photo">
+                    <img src="https://robx.bulkapparel.com/styleImages/SCImages/Color-item-480-600/16813_f_fm.jpg"
+                        alt="" draggable="false">
+                </div>
+
+                <p class="modal--added-cart__product-title">
+                    Gildan 500 Heavy Cotton T-Shirt in bulk
+                </p>
+
+                <div class="modal--added-cart__product-info">
+
+                    <div class="color">
+                        <span class="box">
+                        </span>
+                        White
+                    </div>
+
+
+                    <ul class="others">
+                        <li>
+                            <p>
+                                <span>Size:</span>
+                                <b>2XL</b>
+                            </p>
+                            <p>
+                                <span>Qty:</span>
+                                <b>1</b>
+                            </p>
+                            <p>
+                                <span>Price:</span>
+                                <b>1</b>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+
+</body>
+
+</html>

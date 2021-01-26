@@ -18,7 +18,7 @@
   "php.validate.executablePath": "C:/php-7.4.12-Win32-vc15-x64/php.exe",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[php]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   }
 
 }
