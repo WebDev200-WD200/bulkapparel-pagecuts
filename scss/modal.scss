@@ -1,7 +1,7 @@
 @import "mixin";
 @import "color";
 
-.backdrop {
+.backdrop-new {
   display: block;
   position: fixed;
   top: 0;
@@ -58,13 +58,19 @@
         height: 36px;
       }
     }
+    @include respond(mobile-m) {
+      img {
+        height: 32px;
+      }
+    }
   }
   &__content {
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     height: 100%;
+    overflow-y: auto;
     max-width: 550px;
-    margin: 50px auto;
+    margin: 0 auto;
   }
   &__exit {
     position: absolute;
@@ -79,6 +85,9 @@
 
     @include respond(mobile-lg) {
      font-size: 22px;
+    }
+    @include respond(mobile-m) {
+     font-size: 20px;
     }
   }
 
@@ -95,6 +104,14 @@
     padding: 40px 20px;
     // padding-top: 40px;
 
+    .rate-it {
+      width: auto;
+      height: 38px !important;
+      font-size: 35px !important;
+    }
+    .rate-select-layer {
+      height: 38px !important;
+    }
     @include respond(tab-port) {
       width: 90%;
     }
@@ -103,11 +120,19 @@
       padding: 30px 20px;
     }
     @include respond(mobile-m) {
+      
       padding: 20px 12px;
+      margin: 20px auto;
+    }
+    @include respond(mobile-s) {
+      width: 95%;
     }
 
-    .jq-ry-container {
-      padding: 0;
+    .jq-star {
+      @include respond(mobile-m) {
+        height: 28px !important;
+        width: 28px !important;
+      }
     }
 
     .modal__header {
@@ -129,6 +154,10 @@
         min-height: 100px;
         max-height: 100px;
         resize: none;
+
+        @include respond(mobile-m) {
+          min-height: 70px;
+        }
       }
       select {
         padding: 10px;
@@ -146,6 +175,9 @@
         @include respond(mobile-lg) {
           font-size: 14px;
         }
+        @include respond(mobile-m) {
+          font-size: 13px;
+        }
       }
       
       .inp--secondary {
@@ -154,6 +186,10 @@
         @include respond(mobile-lg) {
           font-size: 14px;
           padding: 10px;
+        }
+        @include respond(mobile-m) {
+          font-size: 13px;
+          padding: 8px;
         }
         
         &::placeholder {
@@ -640,6 +676,10 @@
     width: 600px;
     background-color: #fff;
     padding:  20px;
+    margin: 0 auto;
+    @include respond(mobile-lg) {
+      width: 90%;
+    }
   }
 }
 
@@ -660,11 +700,17 @@
     font-weight: 700;
     letter-spacing: 1px;
     transform: rotate(-90deg);
+    z-index: 100;
     @include transition;
 
     @include respond(mobile-lg) {
       font-size: 16px;
       padding: 8px 16px;
+    }
+    @include respond(mobile-m) {
+      font-size: 14px;
+      padding: 6px 14px;
+      font-weight: 400;
     }
 
     &:hover {
@@ -688,6 +734,10 @@
     @include respond(mobile-lg) {
      padding: 12px;
      font-size: 16px;
+    }
+    @include respond(mobile-lg) {
+     padding: 10px;
+     font-size: 14px;
     }
   }
 }

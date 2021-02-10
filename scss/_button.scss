@@ -203,6 +203,49 @@
       }
     }
   }
+
+  &--float-feedback {
+    background: $color-gray;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    // height: 30px;
+    right: -35px;
+    top: 60%;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transform: rotate(-90deg);
+    @include transition;
+
+    @include respond(mobile-lg) {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+
+    &:hover {
+      background: $color-darkblue;
+    }
+  }
+
+  &--feedback {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 16px;
+    background:$color-darkblue;
+    font-weight: 700;
+    border-radius: 4px;
+    font-size: 18px;
+    letter-spacing: .5px;
+
+    @include respond(mobile-lg) {
+     padding: 12px;
+     font-size: 16px;
+    }
+  }
 }
 
 .flex-pc-only {
