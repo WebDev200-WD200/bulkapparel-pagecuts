@@ -589,7 +589,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/16_fm.jpg"
                                     alt="Gildan 5000 Heavy Cotton T-" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -604,7 +604,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/32_fm.jpg"
                                     alt="Gildan 64000 Softstyle T-Sh" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -619,7 +619,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/39_fm.jpg"
                                     alt="Gildan 2000 Ultra Cotton T-" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -634,7 +634,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/146_fm.jpg"
                                     alt="Gildan 8000 DryBlend T-Shir" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -649,7 +649,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/395_fm.jpg"
                                     alt="Gildan 18500 Heavy Blend Ho" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -664,7 +664,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/543_fm.jpg"
                                     alt="Gildan 5000B Heavy Cotton Y" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -679,7 +679,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/526_fm.jpg"
                                     alt="Gildan 8000B DryBlend Youth" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -694,7 +694,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/372_fm.jpg"
                                     alt="Gildan 18000 Heavy Blend Sw" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -709,7 +709,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/551_fm.jpg"
                                     alt="Gildan 2000B Ultra Cotton Y" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -724,7 +724,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/94_fm.jpg"
                                     alt="Gildan 5400 Heavy Cotton Lo" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1084,7 +1084,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/16_fm.jpg"
                                     alt="Gildan 5000 Heavy Cotton T-" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1099,7 +1099,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/32_fm.jpg"
                                     alt="Gildan 64000 Softstyle T-Sh" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1114,7 +1114,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/39_fm.jpg"
                                     alt="Gildan 2000 Ultra Cotton T-" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1129,7 +1129,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/146_fm.jpg"
                                     alt="Gildan 8000 DryBlend T-Shir" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1144,7 +1144,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/395_fm.jpg"
                                     alt="Gildan 18500 Heavy Blend Ho" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1159,7 +1159,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/543_fm.jpg"
                                     alt="Gildan 5000B Heavy Cotton Y" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1174,7 +1174,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/526_fm.jpg"
                                     alt="Gildan 8000B DryBlend Youth" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1189,7 +1189,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/372_fm.jpg"
                                     alt="Gildan 18000 Heavy Blend Sw" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1204,7 +1204,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/551_fm.jpg"
                                     alt="Gildan 2000B Ultra Cotton Y" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">
@@ -1219,7 +1219,7 @@ const navbarTemplate = ` <div class="navbar__main">
                             <div class="card--search__img">
                                 <img src="https://robx.bulkapparel.com/styleImages/SCImages/cart-images/94_fm.jpg"
                                     alt="Gildan 5400 Heavy Cotton Lo" draggable="false"
-                                    onerror="this.src='https://robx.bulkapparel.com/images/no-image-found.jpg';">
+                                    >
                             </div>
                             <div class="card--search__body">
                                 <div class="card--search__title">

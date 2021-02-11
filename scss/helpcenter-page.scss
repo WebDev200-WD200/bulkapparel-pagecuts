@@ -1,0 +1,223 @@
+@import 'color';
+
+$help-search-background: #F5F5F5;
+
+svg {
+    display: block;
+}
+
+.help-search-jumbotron  {
+    padding: 60px 0;
+    background-color: $help-search-background;
+    
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .heading--primary {
+        color: $color-darkblue;
+        margin-bottom: 20px;
+       
+    }
+}
+
+.help-search-bar {
+    height: 80px;
+    width: 800px;
+    background: $color-white;
+    display: flex;
+    &__button {
+        display: flex;
+        width: 120px;
+        align-items: center;
+        justify-content: center;
+        background: $color-darkblue;
+       
+
+        svg {
+            height: 40px;
+            width: 40px;
+            fill: $color-white;
+        }
+    }
+
+    &__input {
+        height: 100%;
+        border: none;
+        padding: 20px;
+        font-size: 18px;
+        width: 100%;
+        
+    }
+}
+
+.help-search-list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    &>*:not(:last-child) {
+        margin-right: 20px;
+    }
+}
+
+.btn {
+
+    &--help-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 25px;
+        height: 150px;
+        width: 240px;
+        border: 3px solid $color-darkblue;
+        
+
+        svg {
+            height: 60px;
+            width: 60px;
+            fill: $color-darkblue;
+        }
+        
+        span {
+            margin-top: 10px;
+            font-weight: 700;
+            color: $color-darkblue;
+        }
+
+        &:hover {
+            transition: all 300ms ease;
+            background: $color-darkblue;
+           svg { fill: $color-white;}
+           span { color: $color-white;}
+        }
+    }
+}
+
+$accordion-border: #DBDBDB;
+$accordion-color: #484848;
+$accordion-plus-color: #B7B7B7;
+$accordion-padding-left: 25px;
+.accordion {
+    border-bottom: .5px solid $accordion-border;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+        padding-right: 15px ;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__plus {
+        margin-left: auto;
+        &::after, &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            height: 20px;
+            width: 3px;
+            background: $accordion-plus-color;
+            transition: all ease 300ms;
+        }
+
+        &::before {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__title {
+        // display: inline;
+        vertical-align: middle;
+        color: $color-darkblue;
+        padding: 0;
+        margin: 0;
+        // line-height: 1.4;
+        &::before {
+            display: inline;
+            margin-right: $accordion-padding-left;
+            content: "\2022";
+            font-size: 30px;
+            color: $accordion-color;
+            margin-bottom: -10px;
+            height: 10px !important;
+            position: relative;
+            bottom: -5px;
+        }
+
+    }
+
+    &__plus {
+
+    }
+
+    &__text {
+        display: none;
+        color: $accordion-color;    
+        padding: 12px 10px 20px $accordion-padding-left + 10
+   
+    }
+}
+
+.accordion-show {
+    .accordion {
+        &__text {
+            // border-bottom: .5px solid $accordion-border;
+            display: block;
+        }
+        &__plus {
+            &::after {
+               opacity: 0;
+            }
+        }
+    }
+}
+
+.help-section {
+    .heading--primary {
+        width: 100%;
+        text-align: center;
+        color: $color-darkblue;
+    }
+    .paragraph--primary {
+        text-align: center;
+        width: 70%;
+        line-height: 1.6;
+        margin: 0 auto;
+        color: $accordion-color;
+    }
+}
+
+.alert {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    
+    &--error {
+        background: #FFF5F5;
+        color: #CC433B;
+
+    }
+    &--success {
+        background: #EBFFF1;
+        color: #00A52E;
+    }
+
+    &--info {
+        background: #EBFDFF;
+        color: #0091A5;
+    }
+
+    &--warning {
+        background: #FBF2D1;
+        color: #6C5500;
+    }   
+}
