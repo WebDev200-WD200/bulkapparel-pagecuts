@@ -181,16 +181,24 @@ $accordion-padding-left: 25px;
 }
 
 .help-section {
-    .heading--primary {
+    &__header {
         width: 100%;
         text-align: center;
-        color: $color-darkblue;
     }
-    .paragraph--primary {
+
+    &__intro {
+        display: block;
         text-align: center;
         width: 70%;
         line-height: 1.6;
         margin: 0 auto;
+
+    }
+
+    .heading--primary {
+        color: $color-darkblue;
+    }
+    .paragraph--primary {
         color: $accordion-color;
     }
 }
@@ -220,4 +228,44 @@ $accordion-padding-left: 25px;
         background: #FBF2D1;
         color: #6C5500;
     }   
+}
+
+.contact-list {
+    margin-top: 20px;
+   
+    &__item {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__icon {
+        $icon-size: 50px;
+        height: $icon-size;
+        width: $icon-size;
+        min-width: $icon-size;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba($color-darkblue, .1);
+        margin-right: 12px;
+        svg {
+            height: 20px;
+            fill: $color-darkblue;
+        }
+    }
+
+    &__body {
+        p {
+            color: #44414F;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
 }
