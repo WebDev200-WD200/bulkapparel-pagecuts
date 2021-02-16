@@ -253,6 +253,24 @@
     background-color: $color-darkblue;
     color: $color-white;
   }
+
+  &--secondary {
+    display: inline-block;
+    padding: 13px 60px;
+    background-color: $color-darkred;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
+    @include respond(tab-port) {
+        font-size: 14px;
+        padding: 12px 50px;
+    }
+    @include respond(mobile-lg) {
+        font-size: 12px;
+        padding: 11px 40px;
+    }
+}
 }
 
 .flex-pc-only {

@@ -1,4 +1,5 @@
 @import 'color';
+@import './mixin';
 
 $help-search-background: #F5F5F5;
 
@@ -9,6 +10,10 @@ svg {
 .help-search-jumbotron  {
     padding: 60px 0;
     background-color: $help-search-background;
+
+    @include respond(mobile-lg){
+        padding: 50px 0;
+    }
     
     .container {
         display: flex;
@@ -20,7 +25,14 @@ svg {
     .heading--primary {
         color: $color-darkblue;
         margin-bottom: 20px;
-       
+        
+        @include respond(mobile-lg) {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        @include respond(mobile-m) {
+            font-size: 20px;
+        }
     }
 }
 
@@ -29,18 +41,48 @@ svg {
     width: 800px;
     background: $color-white;
     display: flex;
+
+    @include respond(laptop-s) {
+        width: 90%;
+    }
+
+    @include respond(mobile-lg) {
+        width: 95%;
+        height: 60px;
+    }
+    @include respond(mobile-m) {
+        height: 48px;
+    }
+
+    
+
     &__button {
         display: flex;
         width: 120px;
         align-items: center;
         justify-content: center;
         background: $color-darkblue;
-       
+        
+        @include respond(mobile-lg) {
+            width: 90px;
+        }
+        @include respond(mobile-m) {
+            width: 75px;
+        }
 
         svg {
             height: 40px;
             width: 40px;
             fill: $color-white;
+            
+            @include respond(mobile-lg) {
+                height: 30px;
+                width: 30px;
+            }
+            @include respond(mobile-m) {
+                height: 25px;
+                width: 25px;
+            }
         }
     }
 
@@ -51,18 +93,35 @@ svg {
         font-size: 18px;
         width: 100%;
         
+        @include respond(mobile-lg) {
+            padding: 15px;
+            font-size: 16px;
+        }
+        @include respond(mobile-m) {
+            padding: 12px;
+            // font-size: 14px;
+        }
     }
 }
 
 .help-search-list {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-wrap: wrap;
     margin-top: 20px;
+
+    @include respond(tab-port) {
+        flex-wrap: wrap;
+    }
 
     &>*:not(:last-child) {
         margin-right: 20px;
+
+        @include respond(tab-port) {
+            margin-right: 0;
+        }
     }
 }
 
@@ -73,22 +132,49 @@ svg {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        text-align: center;
         padding: 25px;
         height: 150px;
-        width: 240px;
+        width:100%;
         border: 3px solid $color-darkblue;
-        
 
+        @include respond(tab-land) {
+            height: 120px;
+            padding: 20px;
+        } 
+
+        @include respond(mobile-lg) {
+            padding: 15px;
+            border-width: 2px;
+        } 
+        
+        
         svg {
             height: 60px;
             width: 60px;
             fill: $color-darkblue;
+            @include respond(tab-land) {
+                height: 50px;
+                width: 50px;
+                min-height: 50px;
+            } 
+            @include respond(mobile-lg) {
+                height: 40px;
+                width: 40px;
+                min-height: 40px;
+            } 
         }
         
         span {
             margin-top: 10px;
             font-weight: 700;
             color: $color-darkblue;
+            @include respond(tab-land) {
+              font-size: 16px;
+            } 
+            @include respond(mobile-m) {
+              font-size: 14px;
+            } 
         }
 
         &:hover {
@@ -114,10 +200,20 @@ $accordion-padding-left: 25px;
         padding-right: 15px ;
         position: relative;
         cursor: pointer;
+
+        @include respond(mobile-lg) {
+            font-size: 15px;
+            padding-bottom: 10px;
+        }
+        @include respond(mobile-m) {
+            font-size: 14px;
+            padding-bottom: 8px;
+        }
     }
 
     &__plus {
         margin-left: auto;
+        // width: 25px;
         &::after, &::before {
             position: absolute;
             content: "";
@@ -126,6 +222,10 @@ $accordion-padding-left: 25px;
             width: 3px;
             background: $accordion-plus-color;
             transition: all ease 300ms;
+            @include respond(mobile-lg) {
+                height: 15px;
+                width: 2.5px;
+            }
         }
 
         &::before {
@@ -140,6 +240,7 @@ $accordion-padding-left: 25px;
         padding: 0;
         margin: 0;
         // line-height: 1.4;
+        margin-right: 30px;
         &::before {
             display: inline;
             margin-right: $accordion-padding-left;
@@ -150,18 +251,49 @@ $accordion-padding-left: 25px;
             height: 10px !important;
             position: relative;
             bottom: -5px;
+
+            @include respond(mobile-lg) {
+                margin-right: 10px;
+                font-size: 24px;
+                margin-right: 5px;
+            }
         }
-
-    }
-
-    &__plus {
 
     }
 
     &__text {
         display: none;
         color: $accordion-color;    
-        padding: 12px 10px 20px $accordion-padding-left + 10
+        padding: 12px 10px 20px $accordion-padding-left + 10;
+        line-height: 1.4;
+        // white-space: pre-line;
+        @include respond(mobile-lg) {
+            padding: 8px 5px 15px 0;
+            font-size: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
+        a {
+            color: $color-darkblue;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        @include respond(mobile-lg) {
+            img {
+                width: 100%;
+            }
+        }
+
+
+        & > *:not(:last-child) {
+            display: block;
+            margin-bottom: 20px;
+        }
    
     }
 }
@@ -184,6 +316,10 @@ $accordion-padding-left: 25px;
     &__header {
         width: 100%;
         text-align: center;
+
+        @include respond(mobile-lg) {
+            font-size: 22px;
+        }
     }
 
     &__intro {
@@ -193,6 +329,30 @@ $accordion-padding-left: 25px;
         line-height: 1.6;
         margin: 0 auto;
 
+        @include respond(tab-port) {
+            width: 90%;
+        }
+        @include respond(mobile-lg) {
+            width: 100%;
+        }
+
+    }
+
+    &__warehouse {
+        @include respond(laptop) {
+            max-width: 600px;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+
+    .btn--help-link {
+        @include respond(mobile-lg) {
+            font-size: 14px;
+            padding: 10px 25px;
+        }
     }
 
     .heading--primary {
@@ -200,14 +360,20 @@ $accordion-padding-left: 25px;
     }
     .paragraph--primary {
         color: $accordion-color;
+
+        a {
+            color: $color-darkblue;
+        }
     }
 }
 
 .alert {
     display: flex;
-    flex-direction: row;
+    // flex-direction: row;
     align-items: flex-start;
     padding: 10px;
+    font-size: 15px;
+    flex-direction: column;
     
     &--error {
         background: #FFF5F5;
@@ -231,13 +397,13 @@ $accordion-padding-left: 25px;
 }
 
 .contact-list {
-    margin-top: 20px;
+    margin-top: 35px;
    
     &__item {
         display: flex;
 
         &:not(:last-child) {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
     }
 
@@ -252,9 +418,30 @@ $accordion-padding-left: 25px;
         justify-content: center;
         background: rgba($color-darkblue, .1);
         margin-right: 12px;
+        
+        @include respond(mobile-lg) {
+            $icon-size: 45px;
+            height: $icon-size;
+            width: $icon-size;
+            min-width: $icon-size;
+        }
+        @include respond(mobile-s) {
+            $icon-size: 40px;
+            height: $icon-size;
+            width: $icon-size;
+            min-width: $icon-size;
+        }
+        
         svg {
-            height: 20px;
+            @include respond(mobile-lg) {
+                height: 18px;
+            }
+            @include respond(mobile-s) {
+                height: 16px;
+            }
+           
             fill: $color-darkblue;
+            height: 22px;
         }
     }
 
@@ -262,10 +449,101 @@ $accordion-padding-left: 25px;
         p {
             color: #44414F;
         }
+
+        ul {
+            list-style: disc;
+            list-style-type: disc;
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-left: 20px;
+            font-weight: 700;
+            padding: 3px 5px 3px 0;
+            
+        }
+
+        img {
+            width: 100%;
+            margin-top: 15px;
+            user-select: none;
+            max-width: 400px;
+        }
     }
 
     &__title {
         font-size: 20px;
         margin-bottom: 8px;
+
+        @include respond(mobile-lg) {
+            font-size: 18px;
+        }
+        @include respond(mobile-s) {
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+    }
+}
+
+
+.contact-form {
+    &__chat-now {
+        display: block;
+        @include respond(mobile-lg) {
+            height: 60px;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+    &__or {
+        font-weight: 700;
+    }
+    .heading--primary {
+        display: inline-flex;
+        align-items: center;
+        .icon {
+            margin-right: 5px;
+        }
+
+        svg {
+            fill: $color-darkblue;
+            @include respond(mobile-lg) {
+                height: 25px;
+            }
+        }
+
+        @include respond(mobile-lg) {
+            font-size: 23px;
+        }
+    }
+
+    .inp--secondary {
+        padding: 12px 12px;
+    }
+
+    .btn--secondary {
+        background-color: $color-darkblue;
+        // text-transform: uppercase;
+    }
+    .card--form__body, .card--form__actions {
+        padding: 15px 22px;
+        
+        @include respond(mobile-lg) {
+            padding: 12px 15px;
+
+        }
+    }
+}
+
+.contact-get-touch {
+    .heading--primary {
+        @include respond(mobile-lg) {
+            font-size: 20px;
+        }
     }
 }
