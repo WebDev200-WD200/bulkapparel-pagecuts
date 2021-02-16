@@ -854,6 +854,10 @@
                     <button class="btn btn--primary mt-2 valentines w-100" onclick="changeTheme('valentines')">Change
                         Valentines theme</button>
                 </div>
+                <div class="col-12 col-lg-4">
+                    <button class="btn btn--primary mt-2 st-patrick-day w-100" onclick="changeTheme('st-patrick-day')">Change
+                        St. Patrick Day theme</button>
+                </div>
             </div>
 
             <div class="row">
@@ -1129,20 +1133,36 @@
         //         themeScript.attr('src', '')
         //     }
         // }
+
+            function pathLink(url) {
+                return `./css/themes/${url}`
+            }
+
         function changeTheme(theme) {
             const body = $("body");
             const themeScript = $('#theme-js');
+            const themeLink = $('#theme');
 
             body.removeClass(body.attr('class'))
 
             if (theme === "halloween") {
                 body.addClass('themes--halloween');
+                themeLink.attr('href', pathLink('halloween.theme.css'))
+                themeLink.attr('href')
             } else if (theme === 'thanks-giving') {
                 body.addClass('themes--thanks-giving');
+                themeLink.attr('href', pathLink('thanks-giving.theme.css'))
             } else if (theme === 'christmas') {
                 body.addClass('themes--christmas');
+                themeLink.attr('href', pathLink('christmas.theme.css'))
             } else if (theme === 'new-year') {
                 body.addClass('themes--new-year');
+                themeLink.attr('href', pathLink('new-year.theme.css'))
+            } else if (theme === 'valentines') {
+                body.addClass('themes--valentines');
+                themeLink.attr('href', pathLink('valentines.theme.css'))
+            } else if (theme === 'st-patrick-day') {
+                themeLink.attr('href', pathLink('st-patrick-day.theme.css'))
             } else {
                 body.addClass('themes--default');
             }
