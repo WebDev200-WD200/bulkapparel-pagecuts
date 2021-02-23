@@ -8,6 +8,7 @@
       height: 100%;
       position: relative;
       padding: 0;
+      
       @include respond(laptop) {
           padding: 0 20px;
       }
@@ -59,6 +60,7 @@
               height: 100%;
               width: 100%;
               background: inherit;
+              @include transition;
           }
           &::after {
               top: 13px;
@@ -82,6 +84,18 @@
               }
               &::before {
                   top: -10px;
+              }
+          }
+      }
+      &--clicked {
+          span {
+              &::after {
+                  top: 0;
+                  transform: rotate(45deg);
+              }
+              &::before {
+                  transform: rotate(-45deg);
+                  top: 0;
               }
           }
       }
@@ -111,13 +125,13 @@
           margin-bottom: -15px;
       }
       @include respond(laptop) {
-          height: 45px;
+          height: 65px;
       }
       @include respond(laptop-s) {
-          width: auto;
+          height: 45px;
       }
       @include respond(tab-land) {
-          height: 45px;
+          // height: 45px;
           top: 4px;
       }
       @include respond(mobile-lg) {
@@ -238,6 +252,22 @@
           width: 100%;
           min-width: 100%;
       }
+      .col-lg-12 {
+          .row {
+              .col-lg-cs-14 {
+                  flex: 0 0 16.6%;
+                  max-width: 16.6%;
+                  @media only screen and (max-width: 1000px) {
+                      flex: 0 0 33.33%;
+                      max-width: 33.33%;
+                  }
+                  @media only screen and (max-width:768px) {
+                      flex: 0 0 50%;
+                      max-width: 50%;
+                  }
+              }
+          }
+      }
   }
   &__footer-sub-link {
       display: block;
@@ -324,11 +354,12 @@
           padding: 10px 14px;
       }
       @include respond(mobile-lg) {
-          font-size: 18px;
+          font-size: 20px;
           padding: 12px 12px;
       }
       @include respond(mobile-m) {
-          font-size: 16px;
+          // font-size: 16px;
+          font-size: 20px;
           padding: 8px 10px;
       }
   }
@@ -462,12 +493,14 @@
               width: 90%;
           }
       }
-      @include respond(mobile-m) {
+      @media only screen and (max-width:420px) {
           width: 30%;
-          // &:focus-within {
-          //   width: 90%;
-          // }
+          right: 5px;
       }
+      // @include respond(mobile-m) {
+      //     width: 30%;
+      //     right: 5px;
+      // }
   }
 }
 
