@@ -1,6 +1,6 @@
 @import "../mixin";
 
-@mixin valentines-theme {
+@mixin st-patrick-day-theme {
   $color-theme-primary: #0c5716;
   $color-footer-gradient: radial-gradient(50.72% 50.72% at 48.35% 50.72%, #0F9522 0%, #166D22 100%);;
   $color-theme-secondary: #378a22;
@@ -299,4 +299,4 @@
   }
 }
 
-@include valentines-theme();
+@include st-patrick-day-theme();

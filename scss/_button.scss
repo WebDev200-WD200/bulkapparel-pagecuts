@@ -5,6 +5,22 @@
   cursor: pointer;
   font: inherit;
 
+  &--screenshot {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    
+    .icon {
+      width: 30px;
+      margin-right: 8px;
+    }
+
+    .placeholder {
+      color: $color-black;
+      font-weight: 700;
+    }
+  }
+
   &--my-account {
     display: flex;
     font-weight: 700;

@@ -1,6 +1,103 @@
 @import "mixin";
 @import "color";
 
+@mixin emotion-active {
+  .neutral,
+  .happy,
+  .love,
+  .angry,
+  .sad {
+    .outline {
+      fill: #000;
+    }
+  }
+  .neutral,
+  .happy,
+  .love {
+    .circle {
+      fill: #f5b108;
+    }
+  }
+
+  .angry {
+    .circle {
+      fill: #f73908;
+    }
+  }
+
+  .sad {
+    .circle {
+      fill: #f66108;
+    }
+  }
+
+  .neutral {
+  }
+
+  .love {
+    .outline {
+      fill: #f71108;
+      stroke: #f71108 !important;
+    }
+    .border {
+      fill: #000;
+    }
+    .smile {
+      fill: #000 !important;
+    }
+  }
+}
+
+.input-emotion-select {
+  display: flex;
+  align-items: center;
+
+  .input-group__label {
+    font-size: 18px !important;
+    text-align: center;
+    width: 60%;
+    color: 282828;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+}
+
+.emotion-select {
+  display: flex;
+  align-items: center;
+  &__btn {
+    background: none;
+    transition: all 300 ease;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    svg {
+      width: 75px;
+    }
+
+    .outline,
+    .border,
+    .smile,
+    .circle {
+      transition: all 300 ease;
+    }
+
+    p {
+      display: none;
+    }
+
+    &:hover {
+      @include emotion-active();
+    }
+  }
+
+  .selected {
+    transform: scale(1.1);
+    @include emotion-active();
+  }
+}
+
 .backdrop-new {
   display: block;
   position: fixed;
@@ -77,17 +174,17 @@
     right: 15px;
     top: 10px;
     font-size: 22px;
-    color:$color-darkblue;
+    color: $color-darkblue;
   }
   &__heading {
-    color:$color-darkblue ;
+    color: $color-darkblue;
     font-size: 26px;
 
     @include respond(mobile-lg) {
-     font-size: 22px;
+      font-size: 22px;
     }
     @include respond(mobile-m) {
-     font-size: 20px;
+      font-size: 20px;
     }
   }
 
@@ -101,7 +198,7 @@
     // height: 550px;
     margin: 40px auto;
     background: $color-white;
-    padding: 40px 20px;
+    padding: 25px;
     // padding-top: 40px;
 
     .rate-it {
@@ -120,7 +217,6 @@
       padding: 30px 20px;
     }
     @include respond(mobile-m) {
-      
       padding: 20px 12px;
       margin: 20px auto;
     }
@@ -137,16 +233,14 @@
 
     .modal__header {
       text-align: center;
-    
     }
-  
+
     .modal__text {
-      color: #ABABAB;
+      color: #ababab;
       font-size: 17px;
       @include respond(mobile-lg) {
         font-size: 14px;
       }
-      
     }
 
     .input-group {
@@ -164,13 +258,13 @@
       }
 
       select:invalid {
-        color: #44414F;
+        color: #44414f;
       }
 
       label {
         font-weight: 400;
         font-size: 16px;
-        color: #44414F;
+        color: #44414f;
 
         @include respond(mobile-lg) {
           font-size: 14px;
@@ -179,7 +273,7 @@
           font-size: 13px;
         }
       }
-      
+
       .inp--secondary {
         padding: 13px;
         font-size: 16px;
@@ -191,14 +285,13 @@
           font-size: 13px;
           padding: 8px;
         }
-        
+
         &::placeholder {
           font-size: 16px;
           @include respond(mobile-lg) {
             font-size: 14px;
           }
         }
-
       }
 
       p {
@@ -216,12 +309,11 @@
       svg {
         height: 107px;
         width: 104px;
-        fill: #FFC700;
+        fill: #ffc700;
 
-        @include respond(mobile-lg){
+        @include respond(mobile-lg) {
           height: 90px;
           width: 85px;
-
         }
       }
     }
@@ -230,15 +322,15 @@
       p {
         text-align: center;
         font-size: 15px;
-        color: #44414F;
+        color: #44414f;
 
         @include respond(mobile-lg) {
           font-size: 13px;
-         }
+        }
       }
 
       a {
-        color:$color-darkblue;
+        color: $color-darkblue;
         font-weight: 700;
       }
     }
@@ -675,7 +767,7 @@
     position: relative;
     width: 600px;
     background-color: #fff;
-    padding:  20px;
+    padding: 20px;
     margin: 0 auto;
     @include respond(mobile-lg) {
       width: 90%;
@@ -725,20 +817,19 @@
     justify-content: center;
     color: #fff;
     padding: 16px;
-    background:$color-darkblue;
+    background: $color-darkblue;
     font-weight: 700;
     border-radius: 4px;
     font-size: 18px;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
 
     @include respond(mobile-lg) {
-     padding: 12px;
-     font-size: 16px;
+      padding: 12px;
+      font-size: 16px;
     }
     @include respond(mobile-lg) {
-     padding: 10px;
-     font-size: 14px;
+      padding: 10px;
+      font-size: 14px;
     }
   }
 }
-

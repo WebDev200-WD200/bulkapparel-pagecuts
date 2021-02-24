@@ -1,0 +1,43 @@
+.list-group {
+    &__item {
+        a {
+            display: flex;
+            color: $color-black;
+            padding: 15px 8px;
+           
+        }
+        
+        &:hover {
+            a {
+                background-color: rgba($color-black, 0.03);
+                
+            }
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-gray-border;
+        }
+    }
+
+    &__body {
+
+    }
+
+    &__icon {
+        width: 42px;
+        margin-right: 25px;
+        margin-left: 5px;
+        svg {
+            fill: $color-darkblue;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+    }
+
+    &__subtitle {
+        margin-top: 5px;
+    }
+}
