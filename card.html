@@ -18,59 +18,171 @@
 
 <body class="themes--new-year">
         <header>
-               
                 <nav class="navbar">
-                        
                 </nav>
         </header>
 
         <main>
                 <div class="container mt-1">
                         <div class="row">
-                                <div class="col-2">
-                                        SIDEBAR & ADS
+                                <div class="col-3">
+                                        <div class="sidenav lp-filter sidenav__static" style="display: none;" id="sidebarFilter">
+                                                <!-- new -->
+                                                <div class="sidenav__header">
+                                                        
+                                                        <div class="icon-filter">
+                                                                <svg viewBox="0 0 28 25" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M27.062 4.768H23.1C22.616 2.545 20.683.902 18.364.902c-2.32 0-4.253 1.643-4.736 3.866H0V6.7h13.628c.483 2.223 2.416 3.866 4.736 3.866s4.252-1.643 4.736-3.866h3.962V4.768zm-8.698 3.866c-1.643 0-2.9-1.257-2.9-2.9s1.257-2.9 2.9-2.9 2.9 1.257 2.9 2.9-1.257 2.9-2.9 2.9zM0 20.232h3.963c.483 2.223 2.416 3.866 4.736 3.866s4.252-1.643 4.736-3.866h13.627V18.3H13.434c-.483-2.223-2.416-3.866-4.735-3.866-2.32 0-4.253 1.643-4.736 3.866H0v1.933zm8.699-3.866c1.643 0 2.9 1.256 2.9 2.9 0 1.643-1.257 2.9-2.9 2.9s-2.9-1.257-2.9-2.9 1.257-2.9 2.9-2.9z"/></svg>    
+                                                        </div>
+                                                        <p class="sidenav__header-title">
+                                                                Filter
+                                                        </p>
+                                                        
+                                                        <button class="btn icon-exit" id=btnFilterExit>
+                                                                <svg viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M1.35257 18.2894L10.6763 8.96571M10.6763 8.96571L18.9315 0.710486M10.6763 8.96571L2.42104 0.710449M10.6763 8.96571L20 18.2894" stroke="black" stroke-width="2"/>
+                                                                </svg>   
+                                                        </button>
+                                                </div>
+                                                <!-- new -->
+
+                                                <ul id="side-filter">
+                                                        <ul class="filters tab-info-holder accordion-section-content rs"
+                                                                id="10" style="display:block;">
+                                                        </ul>
+                                                        <li>
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="categories">Categories</a>
+                                                                <ul
+                                                                        class="tab-info-holder accordion-section-content rs ajax-category">
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/tshirts"
+                                                                                        data-param="https://www.bulkapparel.com/tshirts"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox"
+                                                                                                checked="">
+                                                                                        T-Shirts </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/sweatshirts"
+                                                                                        data-param="https://www.bulkapparel.com/sweatshirts"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Sweatshirts </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/polos"
+                                                                                        data-param="https://www.bulkapparel.com/polos"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Polos </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/womens"
+                                                                                        data-param="https://www.bulkapparel.com/womens"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Ladies </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/youth"
+                                                                                        data-param="https://www.bulkapparel.com/youth"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Kids </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/athletics"
+                                                                                        data-param="https://www.bulkapparel.com/athletics"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Athletics </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/workwear"
+                                                                                        data-param="https://www.bulkapparel.com/workwear"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Workwear </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/jackets"
+                                                                                        data-param="https://www.bulkapparel.com/jackets"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Jackets </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/headwear"
+                                                                                        data-param="https://www.bulkapparel.com/headwear"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Hats </a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="https://www.bulkapparel.com/totesbags"
+                                                                                        data-param="https://www.bulkapparel.com/totesbags"
+                                                                                        data-type="category">
+                                                                                        <input type="checkbox">
+                                                                                        Bags </a>
+                                                                        </li>
+                                                                </ul>
+                                                                <button href="javascript:void(0);"
+                                                                        class="lp-filter__more ajax-sidemenu-toggle">
+                                                                        See more categories
+                                                                        <span>
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                        version="1.1" width="24"
+                                                                                        height="24" viewBox="0 0 24 24"
+                                                                                        style="transform: rotate(0deg);">
+                                                                                        <path
+                                                                                                d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                                                                                        </path>
+                                                                                </svg>
+                                                                        </span>
+                                                                </button>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="shop-for">Shop For</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="brands">Brands</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="fabrics">Fabrics</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="sizes">Sizes</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="styles">Styles</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="fit">Fit</a>
+                                                        </li>
+                                                        <li class="collapsed">
+                                                                <a href="javascript:void(0);"
+                                                                        class="down h reload-ajax-sidemenu"
+                                                                        data-id="shop-by-price">Shop by Price</a>
+                                                        </li>
+                                                </ul>
+                                        </div>
                                 </div>
 
-                                <div class="col-10">
-                                        <div class="row">
-                                                <div class="col-12">
-                                                        <div class="ads-box">
-                                                                <p style="font-size:18px;color:navy;font-weight:normal">
-                                                                        Use
-                                                                        coupon <span
-                                                                                style="color:red;font-weight:bolder">"Spring5"</span>
-                                                                        for $5 off $65
-                                                                        <span style="color:black;font-weight:normal">&nbsp;
-                                                                                OR
-                                                                                &nbsp;</span>
-                                                                        <span style="color:red;font-weight:bolder">"Spring10"
-                                                                        </span>for $10 off $175
-                                                                        <span
-                                                                                style="font-size:12px;color:black;font-weight:normal">&nbsp;&nbsp;&nbsp;*not
-                                                                                valid with any other offers</span>
-                                                                </p>
-                                                                <h5>
-                                                                        <p style="text-align:left">** All our warehouses
-                                                                                are
-                                                                                currently <span
-                                                                                        style="text-align:center;font-size:16px;color:green;font-weight:600">
-                                                                                        operating as normal.</span></p>
-                                                                        <p
-                                                                                style="text-align:left;font-size:13px;color:navy">
-                                                                                We
-                                                                                will offer customer support by Chat and
-                                                                                Email
-                                                                                only.<span
-                                                                                        style="text-align:center;font-size:14px;color:Green">
-                                                                                        All orders are being processsed
-                                                                                        and
-                                                                                        shipped at this time.**</span>
-                                                                        </p>
-                                                                </h5>
-                                                        </div>
-
-                                                </div>
-                                        </div>
+                                <div class="col-9">
                                         <div class="row no-gutters">
                                                 <div class="col-3 mb-1">
                                                         <div class="card card--primary">
@@ -452,7 +564,7 @@
         </main>
 
         <footer class="footer" id="footer">
-                
+
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="./assets/js/navbar-template.js"></script>
@@ -554,6 +666,31 @@
 
 
 
+                })
+        </script>
+        <script>
+                var navbarFooter =$('#navbar-footer');
+                var btnFilter = $('#btnFilter');
+                var sidebarFilter = $('#sidebarFilter');
+                var btnFilterExit =$('#btnFilterExit')
+
+                function filterShow() {
+                        sidebarFilter.show();
+                        navbarFooter.hide()
+                }
+                
+                function filterHide() {
+                        sidebarFilter.hide();
+                        navbarFooter.show()
+
+                }
+
+                btnFilter.click(function(){
+                        filterShow();
+                })
+
+                btnFilterExit.click(function() {
+                        filterHide()
                 })
         </script>
 

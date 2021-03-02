@@ -1087,12 +1087,12 @@
             <div class="modal--feedback">
                 <button class="btn modal__exit" id="exit-feedback">✖</button>
 
-                <span id="feedback-intro" style="display: none;">
+                <span id="feedback-intro" style="display: block;">
                     <div class="modal__header">
                         <h1 class="modal__heading">Feedback & Support</h1>
                     </div>
 
-                    <div class="modal__body mt-lg-2">
+                    <div class="modal__body mt-1 mt-lg-2">
                         <ul class="list-group">
                             <li class="list-group__item">
                                 <a class="btn" href="/contact.html">
@@ -1156,7 +1156,7 @@
                 <span id="feedback-issues" style="display: none;">
                     <div class="modal__body mt-2 mt-lg-1">
                         <div class="row">
-                            <div class="col-12 mb-lg-2">
+                            <div class="col-12 mb-1 mb-lg-2">
                                 <div class="input-group">
                                     <div class="input-group__header">
                                         <label for="issue" class="input-group__label">Please Report the website
@@ -1201,7 +1201,7 @@
                     </div>
                 </span>
 
-                <span id="feedback-main" style="display: block;">
+                <span id="feedback-main" style="display: none;">
                     <div class="modal__header">
                         <!-- <a href="#" class="modal__logo">
                             <img src="./assets/img/logo.svg" alt="" draggable="">
@@ -1218,7 +1218,7 @@
                                             our service?</label>
                                     </div>
                                     <div class="emotion-select" id="emotion-select">
-                                        <button class="btn emotion-select__btn" data-value="1">
+                                        <button type="button" class="btn emotion-select__btn" data-value="1">
                                             <svg class="angry" viewBox="0 0 69 66" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0)">
@@ -1239,7 +1239,7 @@
                                             </svg>
                                             <p>Angry</p>
                                         </button>
-                                        <button class="btn emotion-select__btn" data-value="2">
+                                        <button type="button" class="btn emotion-select__btn" data-value="2">
                                             <svg class="sad" viewBox="0 0 69 65" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0)">
@@ -1260,7 +1260,7 @@
                                             </svg>
                                             <p>Sad</p>
                                         </button>
-                                        <button class="btn emotion-select__btn" data-value="3">
+                                        <button type="button" class="btn emotion-select__btn" data-value="3">
                                             <svg class="neutral" viewBox="0 0 69 66" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0)">
@@ -1281,7 +1281,7 @@
                                             </svg>
                                             <p>Neutral</p>
                                         </button>
-                                        <button class="btn emotion-select__btn" data-value="4">
+                                        <button type="button" class="btn emotion-select__btn" data-value="4">
                                             <svg class="happy" viewBox="0 0 69 66" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g clip-path="url(#clip0)">
@@ -1302,7 +1302,7 @@
                                             </svg>
                                             <p>Happy</p>
                                         </button>
-                                        <button class="btn emotion-select__btn" data-value="5">
+                                        <button type="button" class="btn emotion-select__btn" data-value="5">
                                             <svg class="love" viewBox="0 0 69 66" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <g>
@@ -1355,12 +1355,6 @@
                 </span>
                 <!-- If feedback is successfull show this -->
                 <span id="feedback-success" style="display: none;">
-                    <div class="modal__header">
-                        <a href="#" class="modal__logo">
-                            <img src="./assets/img/logo.svg" alt="" draggable="">
-                        </a>
-                    </div>
-
                     <div class="modal__body mt-2 px-lg-3 px-2" style="text-align: center;">
                         <div class="modal--feedback__icon">
                             <svg viewBox="0 0 104 107" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,7 @@
 const headerTemplate = `
 <div class="navbar__main">
     <div class="container">
+        
             <button class="btn navbar__hamburger-btn n-mobile-only" id="burger-btn">
                     <span></span>
             </button>
@@ -530,8 +531,12 @@ const headerTemplate = `
 </div>
 <div class="navbar__footer" id="navbar-footer">
     <div class="container">
-            <ul class="navbar__footer-list">
-            </ul>
+        <button class="navbar__filter" id="btnFilter">
+                <svg viewBox="0 0 28 25" fill="#000" xmlns="http://www.w3.org/2000/svg"><path d="M27.062 4.768H23.1C22.616 2.545 20.683.902 18.364.902c-2.32 0-4.253 1.643-4.736 3.866H0V6.7h13.628c.483 2.223 2.416 3.866 4.736 3.866s4.252-1.643 4.736-3.866h3.962V4.768zm-8.698 3.866c-1.643 0-2.9-1.257-2.9-2.9s1.257-2.9 2.9-2.9 2.9 1.257 2.9 2.9-1.257 2.9-2.9 2.9zM0 20.232h3.963c.483 2.223 2.416 3.866 4.736 3.866s4.252-1.643 4.736-3.866h13.627V18.3H13.434c-.483-2.223-2.416-3.866-4.735-3.866-2.32 0-4.253 1.643-4.736 3.866H0v1.933zm8.699-3.866c1.643 0 2.9 1.256 2.9 2.9 0 1.643-1.257 2.9-2.9 2.9s-2.9-1.257-2.9-2.9 1.257-2.9 2.9-2.9z"/></svg>    
+                Filter
+        </button>
+        <ul class="navbar__footer-list">
+        </ul>
     </div>
 
 </div>

@@ -4,6 +4,10 @@
             display: flex;
             color: $color-black;
             padding: 15px 8px;
+
+            @include respond(mobile-lg) {
+                padding: 12px 8px;
+            }
            
         }
         
@@ -27,6 +31,12 @@
         width: 42px;
         margin-right: 25px;
         margin-left: 5px;
+
+        @include respond(mobile-lg) {
+            width: 32px;
+            margin-right: 20px;
+        }
+
         svg {
             fill: $color-darkblue;
             width: 100%;
@@ -35,9 +45,17 @@
 
     &__title {
         font-size: 22px;
+
+        @include respond(mobile-lg) {
+            font-size: 20px;
+        }
     }
 
     &__subtitle {
         margin-top: 5px;
+
+        @include respond(mobile-lg) {
+            margin-top: 0px;
+        }
     }
 }

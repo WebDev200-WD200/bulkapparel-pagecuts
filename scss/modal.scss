@@ -59,6 +59,15 @@
     color: 282828;
     margin: 0 auto;
     margin-bottom: 8px;
+
+    @include respond(mobile-lg) {
+      font-size: 16px !important;
+      width: 80%;
+    }
+
+    @include respond(mobile-m) {
+      font-size: 15px !important;
+    }
   }
 }
 
@@ -70,10 +79,30 @@
     transition: all 300 ease;
     &:not(:last-child) {
       margin-right: 10px;
+
+      @include respond(mobile-lg) {
+        margin-right: 8px;
+      }
+      @include respond(mobile-ms) {
+        margin-right: 5px;
+      }
     }
 
     svg {
       width: 75px;
+
+      @include respond(tab-port) {
+        width: 65px;
+      }
+      @include respond(mobile-lg) {
+        width: 60px;
+      }
+      @include respond(mobile-ms) {
+        width: 50px;
+      }
+      @include respond(mobile-m) {
+        width: 48px;
+      }
     }
 
     .outline,
@@ -214,7 +243,7 @@
     }
 
     @include respond(mobile-lg) {
-      padding: 30px 20px;
+      padding: 25px 15px;
     }
     @include respond(mobile-m) {
       padding: 20px 12px;
