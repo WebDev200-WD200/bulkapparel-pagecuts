@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Header and Footer Customized</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="./css/main.css">
+    <link rel="stylesheet"
+        href="./css/modal.css">
+    <link rel="stylesheet"
+        href="bootstrap.min.css">
+
+    <link id="theme"
+        rel="stylesheet"
+        href="./css/themes/valentines.theme.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/star-rating-svg@3.5.0/src/css/star-rating-svg.css">
+
+</head>
+
+<style>
+    body {
+        background: #111;
+        /* color: #fff; */
+    }
+
+    #canvas {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #f8f8f8;
+        padding: 0;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        height: 100vh;
+        width: 100%;
+        border: 10px solid #0a2972;
+    }
+
+    .rectangle {
+        border: 3px solid #FF0000;
+        position: absolute;
+    }
+
+    .canvas__save,
+    .canvas__exit {
+        position: absolute;
+
+        padding: 10px 40px;
+        color: #fff;
+        font-weight: 700;
+        font-size: 20px;
+        z-index: 10;
+
+    }
+
+    .canvas__save:hover {
+        background: transparent;
+        color: #0a2972;
+    }
+
+    .canvas__save {
+        bottom: 15px;
+        right: 15px;
+        background: #0a2972;
+        border: 5px solid #0a2972;
+    }
+
+    .canvas__exit {
+        top: 15px;
+        right: 15px;
+        background: #FF0000;
+        ;
+        border: 5px solid #FF0000;
+    }
+
+    .drawing-area {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #f8f8f8;
+    }
+</style>
+
+<body style="background-color: beige;"
+    class="themes--valentines">
+    <main>
+        <div>
+
+            <h1>Test This World</h1>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Voluptates et sunt enim deleniti ex asperiores hic eius
+                quisquam. Optio reprehenderit laudantium ut aliquid rem, tempore
+                cumque nulla deserunt. At, aperiam nisi. Debitis alias assumenda
+                dolores quod architecto ipsa nesciunt doloribus.</p>
+
+            <h2>This is airplane</h2>
+            <img style="height: 700px; width: 900px;"
+                src="https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cmFuZG9tfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80"
+                alt="">
+
+            <button id="screenshotBtn">Screenshot</button>
+
+
+            <div class="class"
+                id="canvas">
+                <div class="drawing-area" id="drawingArea">
+
+                </div>
+
+                <button class="btn canvas__save"
+                    id="saveScreenshotBtn">Save</button>
+                <button class="btn canvas__exit"
+                    id="exitScreenshotBtn">Exit</button>
+            </div>
+    </main>
+
+
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="./assets/js/templateGenarator.js"></script> -->
+    <!-- <script src="./assets/js/snow.jquery.min.js"></script> -->
+    <!-- <script src="./assets/js/snow.min.js"></script> -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/star-rating-svg@3.5.0/dist/jquery.star-rating-svg.min.js"></script>
+    <script>
+        $('#added-cart-exit').click(function () {
+            $('#added-card-modal').hide();
+        })
+
+    </script>
+    <button class="btn btn--float-feedback"
+        id="btn-feedback">
+        Feedback
+    </button>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script>
+        const screenshotTarget = document.body;
+        let canvas = document.getElementById('canvas');
+        let drawingArea = document.getElementById('drawingArea');
+        let screenshotBtn = $('#screenshotBtn');
+        let body = $('body,html');
+        let doc = document.documentElement;
+        let xOffset = window.screenX;
+        let yOffset = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+        let saveScreenshotBtn = $('#saveScreenshotBtn');
+        let exitScreenshotBtn = $('#exitScreenshotBtn');
+        let lastYScreenPosition = null;
+
+        function drawSquare(canvas) {
+            var mouse = {
+                x: 0,
+                y: 0,
+                startX: 0,
+                startY: 0,
+            };
+            function setMousePosition(e) {
+                var ev = e || window.event; 
+                if (ev.pageX) {
+                
+                    mouse.x = ev.pageX + window.pageXOffset;
+                    mouse.y = ev.pageY + window.pageYOffset;
+                } else if (ev.clientX) {
+                    mouse.x = ev.clientX + document.body.scrollLeft;
+                    mouse.y = ev.clientY + document.body.scrollTop;
+                }
+            }
+
+            var element = null;
+            canvas.onmousemove = function (e) {
+                setMousePosition(e);
+                if (element !== null) {
+                    element.style.width = Math.abs(mouse.x - mouse.startX) + "px";
+                    element.style.height =
+                        Math.abs(mouse.y - mouse.startY) - window.pageYOffset + "px";
+                    element.style.left =
+                        mouse.x - mouse.startX < 0 ? mouse.x + "px" : mouse.startX + "px";
+                    element.style.top =
+                        mouse.y - mouse.startY < 0 ? mouse.y + "px" : mouse.startY + "px";
+                }
+            };
+
+            canvas.onclick = function (e) {
+                if (element !== null) {
+                    element = null;
+                    canvas.style.cursor = "default";
+                } else {
+                    mouse.startX = mouse.x;
+                    mouse.startY = mouse.y;
+                    element = document.createElement("div");
+                    element.className = "rectangle";
+                    element.style.left = mouse.x + "px";
+                    element.style.top = mouse.y + "px";
+                    canvas.appendChild(element);
+                    canvas.style.cursor = "crosshair";
+                }
+            };
+        }
+
+
+        exitScreenshotBtn.click(function () {
+            clearCanvas();
+        })
+
+        saveScreenshotBtn.click(function () {
+            saveCanvas();
+        })
+
+        function clearCanvas() {
+            $(canvas).css({
+                display: 'none',
+            })
+            $(drawingArea).css({
+                backgroundImage: `none`
+            }).html('')
+           
+
+            if(lastYScreenPosition) scrollTo(lastYScreenPosition);
+
+            body.css('overflow', 'auto');
+        }
+
+        function saveCanvas() {
+            html2canvas(drawingArea, {
+                letterRendering: 1, allowTaint: true, useCORS: true
+            }).then((output) => {
+                const base64image = output.toDataURL("image/png");
+                console.log(base64image)
+                downloadBase64File(base64image, 'Screenshot');
+                clearCanvas();
+            });
+        }
+
+        screenshotBtn.click(function () {
+            html2canvas(screenshotTarget, {
+                y: yOffset,
+                letterRendering: 1, allowTaint: true, useCORS: true
+            }).then(async (output) => {
+                const base64image =  await output.toDataURL("image/png");
+                $(canvas).css({
+                    display: 'block',
+                })
+                $(drawingArea).css({
+                    backgroundImage: `url(${base64image})`
+                })
+                    
+                drawSquare(drawingArea);
+                lastYScreenPosition = yOffset;
+
+                body.css('overflow', 'hidden');
+                scrollTo(0);
+                
+            });
+        })
+        
+        
+        function scrollTo(value) {
+            document.body.scrollTop = value;
+            document.documentElement.scrollTop = value;
+        }
+
+        function downloadBase64File(base64Data, fileName) {
+            const downloadLink = document.createElement("a");
+            downloadLink.href = base64Data;
+            downloadLink.download = fileName;
+            downloadLink.click();
+        }
+
+    </script>
+
+</body>
+
+</html>
