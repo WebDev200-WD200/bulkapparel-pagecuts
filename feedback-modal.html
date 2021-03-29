@@ -27,70 +27,6 @@
 
 </head>
 
-<style>
-
-    #canvas {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background: #f8f8f8;
-        padding: 0;
-        margin: 0 auto;
-        margin-bottom: 1rem;
-        height: 100vh;
-        width: 100%;
-        border: 10px solid #0a2972;
-        z-index: 999;
-    }
-
-    .rectangle {
-        border: 3px solid #FF0000;
-        position: absolute;
-    }
-
-    .canvas__save,
-    .canvas__exit {
-        position: absolute;
-
-        padding: 10px 40px;
-        color: #fff;
-        font-weight: 700;
-        font-size: 20px;
-
-    }
-
-    .canvas__save:hover {
-        background: transparent;
-        color: #0a2972;
-    }
-
-    .canvas__save {
-        bottom: 15px;
-        right: 15px;
-        background: #0a2972;
-        border: 5px solid #0a2972;
-    }
-
-    .canvas__exit {
-        top: 15px;
-        right: 15px;
-        background: #FF0000;
-        ;
-        border: 5px solid #FF0000;
-    }
-
-    .drawing-area {
-        position: absolute; 
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: #f8f8f8;
-    }
-</style>
-
-
 <body class="themes--valentines">
     <header>
         <!-- <aside class="sidebar" id="app-sidebar">
@@ -876,7 +812,7 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar__footer" id="navbar-footer">
+            <div class="navbar__footer" id="navbar-footer" style="display: none;">
                 <div class="container">
                     <ul class="navbar__footer-list">
                     </ul>
@@ -1032,9 +968,9 @@
 
                 </div>
 
-                <button class="btn canvas__save"
+                <button class="canvas__save"
                     id="saveScreenshotBtn">Save</button>
-                <button class="btn canvas__exit"
+                <button class="canvas__exit"
                     id="exitScreenshotBtn">Exit</button>
             </div>
     </main>
@@ -1709,10 +1645,11 @@
          let body = $('body,html');
          let doc = document.documentElement;
          let xOffset = window.screenX;
-         let yOffset = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+         let yOffset = 0;
          let saveScreenshotBtn = $('#saveScreenshotBtn');
          let exitScreenshotBtn = $('#exitScreenshotBtn');
          let lastYScreenPosition = null;
+         let isText = true;
  
          function drawSquare(canvas) {
              var mouse = {
@@ -1734,12 +1671,22 @@
              }
  
              var element = null;
-             canvas.onmousemove = function (e) {
+
+             canvas.mousemove(function(event){            
+                var relX = event.pageX - $(this).offset().left;
+                var relY = event.pageY - $(this).offset().top;
+                var relBoxCoords = "(" + relX + "," + relY + ")";
+                $(".mouse-cords").text(relBoxCoords);
+            });
+        
+             canvas.onmousedown = function (e) {
                  setMousePosition(e);
                  if (element !== null) {
-                     element.style.width = Math.abs(mouse.x - mouse.startX) + "px";
-                     element.style.height =
-                         Math.abs(mouse.y - mouse.startY) - window.pageYOffset + "px";
+                    //  if(!isText && !isFocued) {
+                    // }
+                    element.style.width = Math.abs(mouse.x - mouse.startX) + "px";
+                    element.style.height =Math.abs(mouse.y - mouse.startY) - window.pageYOffset + "px";
+                         
                      element.style.left =
                          mouse.x - mouse.startX < 0 ? mouse.x + "px" : mouse.startX + "px";
                      element.style.top =
@@ -1748,6 +1695,8 @@
              };
  
              canvas.onclick = function (e) {
+                //  console.log(e.target);
+                //  if (element !== null || $(e.target).is('textarea')) {
                  if (element !== null) {
                      element = null;
                      canvas.style.cursor = "default";
@@ -1760,14 +1709,30 @@
                      element.style.top = mouse.y + "px";
                      canvas.appendChild(element);
                      canvas.style.cursor = "crosshair";
+
+                    // if(isText) {
+                    //     element = document.createElement("textarea");
+                    //     element.className = "canvas-text";
+                    //     element.style.left = mouse.x + "px";
+                    //     element.style.top = mouse.y + "px";
+                    //     element.style.position = 'fixed';
+                    //     canvas.appendChild(element);
+                    //     // canvas.style.cursor = "crosshair";
+                    // } else {
+
+                    // }
                  }
              };
          }
  
          function screenshotAndDraw() {
+             yOffset =  (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+             console.log('Live scroll', yOffset)
              html2canvas(screenshotTarget, {
                  y: yOffset,
-                 letterRendering: 1, allowTaint: true, useCORS: true
+                 letterRendering: 1, allowTaint: true, useCORS: true,
+                 windowWidth: $(window).width(),
+                 scale: 1,
              }).then(async (output) => {
                  const base64image =  await output.toDataURL("image/png");
                  $(canvas).css({
@@ -1779,14 +1744,16 @@
                      
                  drawSquare(drawingArea);
                  lastYScreenPosition = yOffset;
-    
+                console.log('Offset', yOffset)
+                 
                  body.css('overflow', 'hidden');
                  scrollTo(0);
                  
              });
 
          }
- 
+        //  screenshotAndDraw();
+
          screenshotBtn.click(function () {
              screenshotAndDraw();
          })
@@ -1803,14 +1770,6 @@
              downloadLink.download = fileName;
              downloadLink.click();
          }
-
-         exitScreenshotBtn.click(function () {
-             clearCanvas();
-         })
- 
-         saveScreenshotBtn.click(function () {
-             saveCanvas();
-         })
  
          function clearCanvas() {
              $(canvas).css({
@@ -1836,17 +1795,27 @@
                  console.log(base64image)
                  downloadBase64File(base64image, 'Screenshot');
                  clearCanvas();
+                 feedBackBtn.hide();
              });
          }
 
          var takeScreenshotBtn = $('#takeScreenshotBtn');
          var feedBackModal = $('#modal-feedback');
-         
+         var feedBackBtn = $('#btn-feedback');
          takeScreenshotBtn.click(function(){
              feedBackModal.hide();
              screenshotAndDraw();
          })
 
+         exitScreenshotBtn.click(function () {
+            feedBackBtn.show();
+             clearCanvas();
+         })
+ 
+         saveScreenshotBtn.click(function () {
+            feedBackBtn.show();
+             saveCanvas();
+         })
 
 
 

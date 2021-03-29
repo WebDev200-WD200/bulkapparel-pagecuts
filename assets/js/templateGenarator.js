@@ -1296,7 +1296,7 @@ const navbarTemplate = ` <div class="navbar__main">
     </div>
 </div>
 </div>
-<div class="navbar__footer" id="navbar-footer" style="display:block">
+<div class="navbar__footer" id="navbar-footer" style="">
 <div class="container">
     <div class="row no-gutters">
         <div class="col-12">
