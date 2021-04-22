@@ -950,3 +950,65 @@
 .navbar-relative {
   position: relative;
 }
+
+.navbar {
+  &__header-icons {
+    display: flex;
+
+    @include respond(laptop-s) {
+      margin: 10px 0;
+    }
+    & > *:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__header-icon {
+    display: flex;
+    align-items: center;
+    // width: 180px;
+    text-decoration: none;
+
+    @include respond(mobile-lg) {
+        width: 50%;
+    }
+
+    &>*:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .text {
+      
+      
+      h2 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #F46E20;
+      }
+      
+      p {
+        font-size: 13px;
+        color: #727272;
+        @include respond(mobile-lg) {
+          font-size: 11px;
+        }
+      }
+
+    }
+
+    .icon {
+      margin-right: 8px;
+      img {
+        height: 38px;
+      }
+      svg {
+        height: 25px;
+        width: 25px;
+        @include respond(mobile-lg) {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

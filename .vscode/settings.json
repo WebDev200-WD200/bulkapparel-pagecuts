@@ -1,24 +1,15 @@
 {
-    "json.schemas": [
-    
-    ],
-    "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": null
-    },
-    {
-      "format": "compressed",
-      "extensionName": ".min.css",
-      "savePath": null
-    }
-  ],
-  "editor.codeActionsOnSave": null,
-  "php.validate.executablePath": "C:/php-7.4.12-Win32-vc15-x64/php.exe",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  }
+  "editor.fontLigatures": null,
+  // Mainly for static files
+  "liveServer.settings.useWebExt": true,
+
+  // This means that you change your real URL (current PHP url) 
+  // to another URL (which Live Sever starts).
+  "liveServer.settings.proxy": {
+      "enable": true,                             //   i. enabled
+      "baseUri": "/",                             //  ii. workspace
+      "proxyUri": "http://localhost/bulkapparel/index.php" // iii. actual address
+  },
+ 
 
 }

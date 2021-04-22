@@ -521,3 +521,31 @@ $sprite-all: url("../../images/new-allsprite-final-latest-min-16.png");
         }
     }
 }
+
+
+.filter-selected {
+    display: flex;
+    margin-top: 10px;
+    &>*:not(:last-child) {
+        margin-right: 10px;
+    }
+    &__item {
+    }
+    &__chip {
+        display: flex;
+        align-items: center;
+        padding: 9px 14px;
+        background-color: $color-white-10;
+        text-decoration: none;
+        color: $color-black;
+        user-select: none;
+        font-weight: 700;
+        .exit {
+            margin-left: 15px;
+
+            &:hover {
+                color: $color-red;
+            }
+        }
+    }
+}
