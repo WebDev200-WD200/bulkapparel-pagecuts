@@ -35,22 +35,51 @@
                     <h2>Rating & Reviewes</h2>
                 </div>
 
-                <div class="row">
-                    <div class="col-4">
-                        <?php include('./components/reviews/review-overall.php') ?>
-                    </div>
-
-                    <div class="col-4">
-                        <div class="review-breakdown">
-                            <h3 class="review-breakdown__title">Rating Breakdown</h3>
-                            <?php include('./components/reviews/review-summary.php') ?>
+                <div class="product-container__content">
+                    <div class="row">
+                        <div class="col-4">
+                            <?php include('./components/reviews/review-overall.php') ?>
+                        </div>
+    
+                        <div class="col-4">
+                            <div class="review-breakdown">
+                                <h3 class="review-breakdown__title">Rating Breakdown</h3>
+                                <?php include('./components/reviews/review-summary.php') ?>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4">
+                            <?php include('./components/reviews/review-recommended.php') ?>
                         </div>
                     </div>
-                    
-                    <div class="col-4">
-                        <?php include('./components/reviews/review-recommended.php') ?>
+                </div>
+                <div class="row product-container__scales">
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-graph.php') ?>
+                    </div>
+                    <div class="col-3">
+                        <?php include('./components/reviews/review-graph.php') ?>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>

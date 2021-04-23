@@ -5,6 +5,6 @@
     </h2>
 
     <p class="caption">
-        recommened this product
+        of customers recommend this product
     </p>
 </div>

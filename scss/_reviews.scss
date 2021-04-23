@@ -1,16 +1,53 @@
+$color-review-border: #E5E5E5;
+$color-primary: #013068;
+$color-gray: #B0B0B0;
+$color-darkGray: #707070;
+$color-white: #fff;
+$color-lightGray: #E0E0E0;
+
+.product-container {
+    border: 1px solid $color-review-border;
+    &__header {
+        padding: 10px;
+        border-bottom: 1px solid $color-review-border;
+        h2 {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+    }
+    
+    &__content {
+        padding: 20px;
+    }
+
+    &__scales {
+        margin-top: 20px;
+        padding: 20px;
+    }
+}
+
+
+
 .review-overall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
     &__out-of {
-
+        font-size: 65px;
+        font-weight: 700;
         .value {
-
+            font-size: 78px
         }
 
         .slash {
-
+            color: $color-gray;
         }
-
+        
         .out-of {
-
+            color: $color-gray;
         }
     }
 
@@ -19,33 +56,112 @@
     }
 
     &__title {
-
+        font-size: 20px;
+        font-weight: 500;
     }
 
     &__reviews {
-
+        font-size: 18px;
+        font-weight: 600;
+        margin: 10px 0;
     }
 
     &__add-review {
-
+        padding: 10px 20px;
+        width: 75%;
+        color: $color-white;
+        background: $color-primary;
+        border-radius: 3px;
     }
+}
+
+.review-breakdown {
+    padding-right: 20px;
 }
 
 
 .review-summary {
+    margin-top: 20px;
     &__item {
-
+        display: flex;
+        font-size: 17px;
+        font-weight: 500;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
     }
 
     &__progress {
+        display: flex;
+        flex: 1;
+        height: 15px;
+        background: $color-lightGray;
+        border-radius: 10px;
 
+        span {
+            display: flex;
+            height: 100%;
+            background: $color-primary;
+            border-radius: 20px;
+        }
     }
 
     &__percent {
-        
+        width: 15px;
+        text-align: right;
+        margin-left: 10px;
     }
 
     &__name {
-        
+        margin-right: 10px;   
+    }
+}
+
+.review-recommended {
+    padding-left: 30px;
+    .percent {
+        font-size: 45px;
+        font-weight: 700;
+    }
+    .caption {
+        width: 80%;
+        color: $color-gray;
+    }
+}
+
+.review-scale {
+    display: flex;
+    margin-bottom: 20px;
+    &--horizontal {
+        flex-direction: column;
+    }
+
+
+    &__title {
+
+    }
+
+    &__content {
+
+    }
+
+    &__pin-container {
+        .pin {
+
+        }
+    }
+
+    &__gradient {
+
+    }
+
+    &__labels {
+        font-size: 18px;
+        height: 18px;
+        position: relative;
+        span {
+            position: absolute;
+        }
     }
 }
