@@ -5,7 +5,7 @@
     </div>
 
     <div class="review-overall__star">
-        <span class="filled-stars" style="width: 98%;"><span class="star"><i class="glyphicon glyphicon-star"></i></span><span class="star"><i class="glyphicon glyphicon-star"></i></span><span class="star"><i class="glyphicon glyphicon-star"></i></span><span class="star"><i class="glyphicon glyphicon-star"></i></span><span class="star"><i class="glyphicon glyphicon-star"></i></span></span>
+        <div class="star-overall" data-rating="5"></div>
     </div>
 
     <p class="review-overall__title">Average Customer Rating</p>

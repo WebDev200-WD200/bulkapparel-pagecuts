@@ -133,13 +133,17 @@ $color-lightGray: #E0E0E0;
 .review-scale {
     display: flex;
     margin-bottom: 20px;
+    flex-direction: column;
     &--horizontal {
         flex-direction: column;
+    }
+    &--horizontal &__pin-container .pin{
+        top:0 !important;
     }
 
 
     &__title {
-
+        margin-bottom: 5px;
     }
 
     &__content {
@@ -147,21 +151,141 @@ $color-lightGray: #E0E0E0;
     }
 
     &__pin-container {
+        height: 30px;
+        position: relative;
         .pin {
-
+            position: absolute;
+            svg {
+                height: 25px;
+            }
         }
     }
 
     &__gradient {
-
+        height: 8px;
+        border-radius: 30px;
+        width: 100%;
+        background: $color-lightGray;
+        overflow: hidden;
+        span {
+            display: flex;
+            height: 100%;
+            background: linear-gradient(90deg, #013068 50%, rgba(196, 196, 196, 0) 100%)
+        }
     }
 
     &__labels {
-        font-size: 18px;
+        display: flex;
+        font-size: 13px;
         height: 18px;
         position: relative;
-        span {
+        width: 100%;
+        p {
+            width: auto;
+            
             position: absolute;
         }
     }
+}
+
+.review-conversation {
+    padding: 10px;
+
+    &__header {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    &__action {
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.card {
+    &--convo {
+        &__title {
+            h3 {
+                text-transform: uppercase;
+            }
+        }
+
+        &__start-date {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        &__comment {
+            display: flex;
+            width: 80%;
+            color: #44414F;
+
+        }
+
+        &__user {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            .username {
+                font-weight: 700;
+            }
+
+            .verified {
+                color: $color-darkGray;
+            }
+        }
+
+        &__action {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            .caption {
+                color:#707070;
+                margin-right: 10px;
+
+            }
+
+            .action {
+                .yes, .no {
+                    padding: 3px 8px;
+                    border-radius: 3px;
+                    color: #fff;
+                }
+                .yes {
+                    background: $color-primary;
+                }
+
+                .no {
+                    background: $color-darkGray;
+                }
+            }
+        }
+
+        
+    }
+}
+
+.btn {
+    &--load-review {
+        background: $color-primary;
+        color: $color-white;
+        padding: 8px 30px;
+        margin: 0 auto;
+    }
+}
+
+.select--review {
+    font-size: 16px;
+    border-color: $color-primary;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.star-rating-comment, .star-overall {
+     svg {
+         fill: $color-primary !important;
+     }
 }
