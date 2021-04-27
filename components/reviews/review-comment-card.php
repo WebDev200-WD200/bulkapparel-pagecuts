@@ -13,8 +13,10 @@
     </div>
 
     <div class="card--convo__user">
-        <div class="username">John Doe </div>
-        <span class="verified">- Verfied Purchase</span>
+        <p class="name">
+            <span class="username">John Doe </span>
+            <span class="verified">- Verfied Purchase</span>
+        </p>
 
         <div class="card--convo__action">
             <div class="caption">

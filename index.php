@@ -28,6 +28,8 @@
 
 <body>
     <?php include('./components/layout/header.php') ?>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
     <main>
         <div class="container">
             <div class="product-container">
@@ -37,46 +39,46 @@
 
                 <div class="product-container__content">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-12 col-md-6 col-lg-4 mt-3 mt-md-2 mt-lg-0">
                             <?php include('./components/reviews/review-overall.php') ?>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-12 col-md-6 col-lg-4 mt-1 mt-md-2 mt-lg-0">
                             <div class="review-breakdown">
                                 <h3 class="review-breakdown__title">Rating Breakdown</h3>
                                 <?php include('./components/reviews/review-summary.php') ?>
                             </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-12 col-md-12 mt-md-3 col-lg-0 col-lg-4 mt-2 mt-md-2 mt-lg-0 ">
                             <?php include('./components/reviews/review-recommended.php') ?>
                         </div>
                     </div>
                 </div>
                 <div class="row product-container__scales">
-                    <div class="col-3">
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
                         <?php include('./components/reviews/review-scale-horizontal.php') ?>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
                         <?php include('./components/reviews/review-scale-horizontal.php') ?>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
                         <?php include('./components/reviews/review-scale-horizontal.php') ?>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
                         <?php include('./components/reviews/review-scale-horizontal.php') ?>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
                         <?php include('./components/reviews/review-scale-horizontal.php') ?>
                     </div>
-                    <div class="col-3">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                    <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
+                        <?php include('./components/reviews/review-scale-vertical.php') ?>
                     </div>
-                    <div class="col-3">
-                        <?php include('./components/reviews/review-graph.php') ?>
+                    <div class="col-6 col-md-6 col-lg-3 mb-0 mb-md-3 px-0 mb-lg-0">
+                        <?php include('./components/reviews/review-primary-usage-pie-graph.php') ?>
                     </div>
-                    <div class="col-3">
-                        <?php include('./components/reviews/review-graph.php') ?>
+                    <div class="col-6 col-md-6 col-lg-3 mb-0 mb-md-3 px-0 mb-lg-0">
+                        <?php include('./components/reviews/customization-pie-graph.php') ?>
                     </div>
                 </div>
                 <?php include('./components/reviews/review-conversation.php') ?>
@@ -85,8 +87,6 @@
         </div>
     </main>
     <?php include('./components/layout/footer.php') ?>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/star-rating-svg@3.5.0/dist/jquery.star-rating-svg.min.js"></script>
     <script>
         $(".star-rating-comment").starRating({
@@ -94,16 +94,20 @@
             activeColor: '#013068',
             strokeWidth: 10,
             starSize: 25,
+            ratedColor: '#013068',
             readOnly: true,
             useFullStar: true,
+            useGradient: false
         });
         $(".star-overall").starRating({
             initialRating: 4,
             activeColor: '#013068',
+            ratedColor: '#013068',
             strokeWidth: 10,
-            starSize: 25,
+            starSize: 35,
             useFullStar: true,
-            readOnly: true
+            readOnly: true,
+            useGradient: false
         });
     </script>
 </body>
