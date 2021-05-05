@@ -57,29 +57,29 @@
                 </div>
                 <div class="row product-container__scales">
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                        <?php include('./components/reviews/scales/fit-scales-graph.php') ?>
                     </div>
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                        <?php include('./components/reviews/scales/shrinkage-graph.php') ?>
                     </div>
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                        <?php include('./components/reviews/scales/product-softness-graph.php') ?>
                     </div>
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                        <?php include('./components/reviews/scales/product-durability-graph.php') ?>
                     </div>
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-horizontal.php') ?>
+                        <?php include('./components/reviews/scales/material-quality-graph.php') ?>
                     </div>
                     <div class="col-4 col-md-4 col-lg-3 mb-2 mb-md-3 mb-lg-0">
-                        <?php include('./components/reviews/review-scale-vertical.php') ?>
+                        <?php include('./components/reviews/scales/value-money-graph.php') ?>
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 mb-0 mb-md-3 px-0 mb-lg-0">
                         <?php include('./components/reviews/review-primary-usage-pie-graph.php') ?>
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 mb-0 mb-md-3 px-0 mb-lg-0">
                         <?php include('./components/reviews/customization-pie-graph.php') ?>
-                    </div>
+                     </div>
                 </div>
                 <?php include('./components/reviews/review-conversation.php') ?>
 
