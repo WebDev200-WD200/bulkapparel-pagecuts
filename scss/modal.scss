@@ -845,20 +845,20 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    padding: 16px;
+    padding: 15px;
     background: $color-darkblue;
     font-weight: 700;
     border-radius: 4px;
     font-size: 18px;
     letter-spacing: 0.5px;
 
-    @include respond(mobile-lg) {
-      padding: 12px;
+    @include respond(tab-port) {
+      padding: 14px;
       font-size: 16px;
     }
-    @include respond(mobile-lg) {
-      padding: 10px;
-      font-size: 14px;
+    @include respond(mobile-ms) {
+      padding: 13px;
+      font-size: 15px;
     }
   }
 }

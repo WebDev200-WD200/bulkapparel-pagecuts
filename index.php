@@ -31,7 +31,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js"></script>
     <main>
-        <div class="container">
+        <div class="container" id="printThis">
             <div class="product-container">
                 <div class="product-container__header">
                     <h2>Rating & Reviewes</h2>
@@ -79,14 +79,18 @@
                     </div>
                     <div class="col-6 col-md-6 col-lg-3 mb-0 mb-md-3 px-0 mb-lg-0">
                         <?php include('./components/reviews/customization-pie-graph.php') ?>
-                     </div>
+                    </div>
                 </div>
                 <?php include('./components/reviews/review-conversation.php') ?>
 
             </div>
         </div>
+        <button class="btn btn--primary" id="print">Hello World click this</button>
     </main>
     <?php include('./components/layout/footer.php') ?>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/star-rating-svg@3.5.0/dist/jquery.star-rating-svg.min.js"></script>
     <script>
         $(".star-rating-comment").starRating({
@@ -109,6 +113,33 @@
             readOnly: true,
             useGradient: false
         });
+
+        var opt = {
+            margin: 0,
+            filename: 'myfile.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 2
+            },
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        }
+
+        function downloadPdf() {
+            var element = document.getElementById('printThis');
+            var worker = html2pdf();
+            worker.set(opt).from(element).toImg().toPdf().save();
+        }
+
+        $('#print').click(function() {
+            downloadPdf()
+        })
     </script>
 </body>
 
