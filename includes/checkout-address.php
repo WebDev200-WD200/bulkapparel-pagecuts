@@ -1,4 +1,4 @@
- <div class="card--checkout-box checkout-open">
+ <div class="card--checkout-box checkout-open" id="checkoutAccountForm">
      <div class="card--checkout-box__header">
 
          <div class="card--checkout-box__header-icon">

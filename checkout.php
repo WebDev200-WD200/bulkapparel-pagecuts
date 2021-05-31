@@ -22,16 +22,128 @@
     <main>
         <div class="container">
             <div class="checkout-page">
-                <div class="card--checkout checkout-main">
-                    <?php include('./includes/checkout-address.php') ?>
-                    <?php include('./includes/checkout-payment.php') ?>
-
+                <div class="checkout-main">
+                    <div class="card--checkout ">
+                        <?php include('./includes/checkout-address.php') ?>
+                        <?php include('./includes/checkout-shipping.php') ?>
+                        <?php include('./includes/checkout-payment.php') ?>
+                        <?php include('./includes/checkout-items.php') ?>
+                    </div>
+                    <div class="card--checkout mt-1">
+                        <?php include('./includes/checkout-done.php') ?>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <?php include('./components/layout/footer.php') ?>
+
+    <script>
+        var doneClass = 'checkout-done';
+        var showClass = 'checkout-open';
+        var checkoutAccountForm = $('#checkoutAccountForm');
+        var checkoutPaymentForm = $('#checkoutPaymentForm');
+        var checkoutShippingForm = $('#checkoutShippingForm');
+        var checkoutItemForm = $('#checkoutItemsForm');   
+
+        function toggleMarkDone(form, done) {
+            if(done) {
+                return form.addClass(doneClass);
+            }
+            form.removeClass(doneClass);
+        }
+
+        function toggleMarkShow(form, show) {
+            if(show !== undefined && show) {
+                form.addClass(showClass);
+            } else if(show !== undefined && !show) {
+                form.removeClass(showClass);
+            } else {
+                form.toggleClass(showClass)
+            }
+        }
+
+        //  checkout account form
+        function openAccountMethod() {
+            toggleMarkShow(checkoutAccountForm, false);
+        }
+
+        checkoutAccountForm.find('.btn--secondary').click(function(){
+            veritfyAccountDetails();
+        })
+
+        checkoutAccountForm.find('.arrow-down').click(function(){
+            toggleMarkShow(checkoutAccountForm);
+        })
+
+        
+        function veritfyAccountDetails() {
+            toggleMarkDone(checkoutAccountForm, true);
+            openShippingMethod();
+        }
+
+
+        // shipping account form 
+        function openShippingMethod() {
+            if(isFormDone(checkoutAccountForm)) {
+                alert('Showing Shipping Form')
+                toggleMarkShow(checkoutAccountForm, false);
+                toggleMarkShow(checkoutShippingForm, true);
+            }
+        }
+
+        checkoutShippingForm.find('.btn--secondary').click(function(){
+            veritfyShippingDetails();
+        })
+
+        checkoutShippingForm.find('.arrow-down').click(function() {
+            toggleMarkShow(checkoutShippingForm);
+        })
+
+        function veritfyShippingDetails() {
+            toggleMarkDone(checkoutShippingForm, true);
+            openPaymentMethod();
+        }
+
+
+
+        //  payment account form
+        function openPaymentMethod() {
+            if(isFormDone(checkoutShippingForm)) {
+                alert('Showing Payment Form')
+                toggleMarkShow(checkoutShippingForm, false);
+                toggleMarkShow(checkoutPaymentForm, true);
+            }
+        }
+
+        checkoutPaymentForm.find('.btn--secondary').click(function(){
+            veritfyPaymentDetails();
+        })
+
+        checkoutPaymentForm.find('.arrow-down').click(function() {
+            openPaymentMethod();
+        })
+
+        function veritfyPaymentDetails() {
+            toggleMarkDone(checkoutPaymentForm, true);
+            alert('Sending to database, finalizing the process..')
+        }
+
+
+
+        function isFormDone(form) {
+            console.log(form, form.hasClass(doneClass))
+            return form.hasClass(doneClass);
+        }
+
+
+
+        
+
+        
+
+    </script>
 </body>
 
 

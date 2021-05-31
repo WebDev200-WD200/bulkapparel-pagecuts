@@ -1,14 +1,14 @@
-<div class="card--checkout-box" id="checkoutPaymentForm">
+<div class="card--checkout-box" id="checkoutShippingForm">
     <div class="card--checkout-box__header">
 
         <div class="card--checkout-box__header-icon">
-            <?php $name = "payment";
+            <?php $name = "shipping";
             include('./includes/icons.php') ?>
         </div>
 
         <div class="card--checkout-box__header-body">
             <h2 class="card--checkout-box__header-title">
-                Payment Method & Information
+                Shipping and Billing Address
             </h2>
 
             <div class="card--checkout-box__header-text done-text">
