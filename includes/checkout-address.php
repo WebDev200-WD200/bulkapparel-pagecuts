@@ -12,8 +12,7 @@
              </h2>
 
              <div class="card--checkout-box__header-text  done-text">
-                 <p>Shipping Address: Honolulu, HI 96814</p>
-                 <p>Billing Address: Honolulu, HI 96814</p>
+                
              </div>
          </div>
 

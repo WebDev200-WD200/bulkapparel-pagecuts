@@ -80,6 +80,10 @@
         
         function veritfyAccountDetails() {
             toggleMarkDone(checkoutAccountForm, true);
+            checkoutAccountForm.find('.done-text').html(`
+                 <p>Shipping Address: Honolulu, HI 96814</p>
+                 <p>Billing Address: Honolulu, HI 96814</p>
+            `)
             openShippingMethod();
         }
 
@@ -98,15 +102,16 @@
         })
 
         checkoutShippingForm.find('.arrow-down').click(function() {
-            toggleMarkShow(checkoutShippingForm);
+            if(isFormDone(checkoutAccountForm)) toggleMarkShow(checkoutShippingForm);
         })
 
         function veritfyShippingDetails() {
             toggleMarkDone(checkoutShippingForm, true);
+            checkoutPaymentForm.find('.done-text').html(`
+                 <p>Credit Card | XXXX-XXXX-XXXX-X123</p>
+            `)
             openPaymentMethod();
         }
-
-
 
         //  payment account form
         function openPaymentMethod() {

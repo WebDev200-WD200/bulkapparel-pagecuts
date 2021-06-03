@@ -12,7 +12,7 @@
             </h2>
 
             <div class="card--checkout-box__header-text done-text">
-                <p>Credit Card | XXXX-XXXX-XXXX-X123</p>
+               
             </div>
         </div>
 

@@ -12,12 +12,12 @@
             </h2>
 
             <div class="card--checkout-box__header-text done-text">
-                <p>Credit Card | XXXX-XXXX-XXXX-X123</p>
+                
             </div>
         </div>
 
         <div class="card--checkout-box__header-action">
-            <button class="btn btn--secondary btn--secondary-invert save-continue"> Save & Continue</button>
+            <button class="btn btn--secondary btn--secondary-invert save-continue">Place Order</button>
             <button class="btn card--checkout-box__arrow arrow-down">
                 <?php $name = "chevron-down";
                 include('./includes/icons.php') ?>

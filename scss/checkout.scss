@@ -55,7 +55,7 @@ $color-checkout-border: #c7c7c7;
     }
     &__header-body {
       display: flex;
-      align-items: center;
+      flex-direction: column;
     }
     &__header-text {
       font-size: 15px;
@@ -209,6 +209,9 @@ svg {
 }
 
 .checkout-open {
+  .card__action {
+    display: flex !important;
+  }
   .card__body {
     display: block !important;
   }
@@ -222,6 +225,9 @@ svg {
 }
 
 .checkout-done {
+  .done-text {
+    display: block;
+  }
   .arrow-down {
     cursor: pointer;
   }
