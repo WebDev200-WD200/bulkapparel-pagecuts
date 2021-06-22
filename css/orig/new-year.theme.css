@@ -1,0 +1,242 @@
+.new-year {
+  background: #d4b03a;
+}
+
+.navbar__hamburger-btn span {
+  background-color: #15347d;
+}
+
+.navbar__logo {
+  position: relative;
+}
+
+.navbar__logo::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("/images/theme/new-year/champange-fireworks.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  width: 105px;
+  height: 105px;
+  bottom: -32px;
+  right: -25px;
+}
+
+@media (max-width: 79em) {
+  .navbar__logo::before {
+    height: 95px;
+    width: 95px;
+    right: 0;
+    bottom: -37px;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .navbar__logo::before {
+    height: 90px;
+    width: 90px;
+    right: -90px;
+    bottom: -25px;
+  }
+}
+
+@media (max-width: 48em) {
+  .navbar__logo::before {
+    height: 80px;
+    width: 80px;
+    right: -80px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .navbar__logo::before {
+    height: 65px;
+    width: 65px;
+    right: -65px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .navbar__logo::before {
+    height: 55px;
+    width: 55px;
+    right: -55px;
+    bottom: -15px;
+  }
+}
+
+.navbar__logo::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("/images/theme/new-year/firework-solo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  bottom: -53px;
+  left: -100px;
+  width: 100px;
+  height: 120px;
+}
+
+@media (max-width: 79em) {
+  .navbar__logo::after {
+    display: none;
+  }
+}
+
+.navbar__footer-item:hover > .navbar__footer-header {
+  background-color: #d4b03a !important;
+  color: #fff !important;
+}
+
+.navbar .btn--my-account {
+  color: #15347d;
+}
+
+.navbar .btn--my-account svg {
+  fill: #15347d;
+}
+
+.navbar .btn--track__icon {
+  fill: #15347d;
+}
+
+.navbar .btn--track__label {
+  color: #15347d !important;
+}
+
+.navbar .btn--icon svg {
+  fill: #15347d;
+}
+
+.navbar .inp--search__button {
+  background: #15347d;
+}
+
+.navbar__footer {
+  background: #15347d;
+}
+
+.navbar .mega-menu__title {
+  color: #d4b03a;
+}
+
+.navbar .mega-menu__title::after {
+  background: #d4b03a;
+}
+
+.navbar .mega-menu__sub:hover {
+  background-color: rgba(212, 176, 58, 0.08);
+}
+
+.navbar .navbar__footer-sub-link:hover {
+  background-color: rgba(212, 176, 58, 0.08);
+}
+
+.navbar .search__auto-result li:hover a, .navbar .search__auto-result li:focus a {
+  color: #d4b03a !important;
+}
+
+.navbar .search__live-header span {
+  color: #d4b03a;
+}
+
+.footer {
+  position: relative;
+  background-color: #15347d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#002374), to(#001547));
+  background: linear-gradient(180deg, #002374 0%, #001547 100%);
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+@media (max-width: 62.5em) {
+  .footer {
+    padding: 110px 0;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .footer {
+    padding: 90px 0;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .footer {
+    padding: 70px 0;
+  }
+}
+
+.footer:after, .footer:before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("/images/theme/new-year/pseudo-img.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  height: 169px;
+  width: 100%;
+  left: 0;
+  background-repeat: repeat;
+}
+
+@media (max-width: 62.5em) {
+  .footer:after, .footer:before {
+    height: 150px;
+  }
+}
+
+@media (max-width: 37.5625em) {
+  .footer:after, .footer:before {
+    height: 130px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .footer:after, .footer:before {
+    height: 110px;
+  }
+}
+
+.footer::after {
+  top: -70px;
+}
+
+@media (max-width: 37.5625em) {
+  .footer::after {
+    top: -60px;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  .footer::after {
+    top: -50px;
+  }
+}
+
+.footer::before {
+  bottom: -60px;
+}
+
+.sidebar {
+  background-color: #15347d;
+}
+
+@media (max-width: 62.5em) {
+  .show-sub-list .navbar__footer-header {
+    background-color: #d4b03a;
+  }
+}
+
+body {
+  overflow-x: hidden !important;
+}
+/*# sourceMappingURL=new-year.theme.css.map */

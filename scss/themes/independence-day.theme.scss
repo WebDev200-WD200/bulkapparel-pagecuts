@@ -1,0 +1,280 @@
+@import "../mixin";
+
+@mixin independence-theme {
+  $color-theme-primary: #002868;
+  $color-theme-secondary: #0040a7;
+  $color-navbar: #002868;
+  $color-footer: #680016;
+  $color-white: #fff;
+  $img-desktop-navbar-logo: url('../../images/theme/independence-day/desktop/logo.png');
+  $img-desktop-footer-left: url('../../images/theme/independence-day/desktop/left-size-desktop-exact.png');
+  $img-desktop-footer-right: url('../../images/theme/independence-day/desktop/usa-star.png');
+
+  $img-mobile-navbar-logo: url('../../images/theme/independence-day/mobile/logo.png');
+  $img-mobile-footer-right: url('../../images/theme/independence-day/mobile/usa-star.png');
+
+
+  $img-gifts: url("/images/theme/christmas/gift-w150px.webp");
+  $img-santa: url("/images/theme/christmas/santa-claus_x220.webp");
+  $img-snow-pile-1: url("/images/theme/christmas/snow-pile-1_1_x338.webp");
+  $img-snow-pile-2: url("/images/theme/christmas/snow-pile-4_x180.webp");
+  $img-ornament: url("/images/theme/christmas/ornament_x300.webp");
+
+  .independence {
+    background: $color-theme-secondary;
+  }
+
+  .navbar {
+    &__hamburger-btn {
+      span {
+        background-color: $color-theme-primary;
+      }
+    }
+
+    &__logo {
+      position: relative;
+
+      @include pseudoImage("before", $img-desktop-navbar-logo) {
+          width: 140px;
+          height: 140px;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -140px; 
+
+          @media (max-width:1500px) {
+              width: 100px;
+              height: 100px;
+              left: -100px;
+          }
+          @media (max-width:1400px) {
+              width: 60px;
+              height: 60px;
+              left: unset;
+              top: 80%;
+              right: -60px;
+          }
+
+      }
+      @include respond(laptop-s) {
+        @include pseudoImage("before", $img-mobile-navbar-logo) {
+            width: 100px;
+            height: 100px;
+            bottom: unset;
+            top: 50%;
+            transform: translateY(-50%);
+            left: unset;
+            right: -110px; 
+
+            @include respond(tab-port) {
+                height: 80px;
+                width: 80px;
+                right: -85px;
+            }
+            
+            @include respond(mobile-lg) {
+                height: 70px;
+                width: 70px;
+                right: -75px;
+
+            }
+            @include respond(mobile-ms) {
+                height: 60px;
+                width: 60px;
+                right: -65px;
+
+            }
+            @include respond(mobile-m) {
+                height: 55px;
+                width: 55px;
+                right: -60px;
+            }
+            
+            @media (max-width: 364px ) {
+               display: none;
+            }
+        }
+      }
+    }
+
+    & .btn--my-account {
+      color: $color-theme-primary;
+
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .btn--track {
+      &__icon {
+        fill: $color-theme-primary;
+      }
+      &__label {
+        color: $color-theme-primary !important;
+      }
+    }
+
+    & .btn--icon {
+      svg {
+        fill: $color-theme-primary;
+      }
+    }
+
+    & .inp--search__button {
+      background: $color-theme-primary;
+    }
+
+    &__footer {
+      background: $color-theme-primary;
+    }
+
+    & .mega-menu__title {
+      color: $color-theme-secondary;
+      &::after {
+        background: $color-theme-secondary;
+      }
+    }
+
+    & .mega-menu__sub {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+    & .navbar__footer-sub-link {
+      &:hover {
+        background-color: rgba($color-theme-secondary, 0.08);
+      }
+    }
+
+    & .search {
+      &__auto-result {
+        li {
+          &:hover,
+          &:focus {
+            a {
+              color: $color-theme-secondary !important;
+            }
+          }
+        }
+      }
+
+      &__live-header {
+        span {
+          color: $color-theme-secondary;
+        }
+      }
+    }
+
+    &__footer-item:hover > .navbar__footer-header {
+      background-color: $color-theme-secondary !important;
+      color: $color-white !important;
+    }
+  }
+
+  .footer {
+    position: relative;
+    background-color: $color-theme-primary;
+    background: $color-footer;
+    white-space: nowrap;
+    margin-top: 40px;
+    padding-bottom: 100px;
+    @include respond(tab-port) {
+      padding-bottom: 100px;
+      margin-top: 20px;
+    }
+
+    @include respond(laptop) {
+        padding-top: 150px !important;
+    }
+
+    @include respond(tab-port) {
+        padding-top: 100px !important;
+    }
+
+    @include pseudoImage("after", $img-desktop-footer-right) {
+      height: 250px;
+      width: 250px;
+      top: 40%;
+      transform:translateY(-50%);
+      right:60px;
+
+      @media (max-width: 1600px) {
+          width: 200px;
+          height: 200px;
+          right: 40px;
+      }
+      @media (max-width: 1450px) {
+          width: 150px;
+          height: 150px;
+          right: 20px;
+      }
+
+
+
+      @include respond(laptop) {
+          height: 120px;
+          width: 120px;
+          top: 80px;
+          right: 20px;
+          
+        }
+        @include respond(laptop-s) {
+            height: 140px;
+            width: 140px;
+            top: 90px;
+      }
+        @include respond(tab-port) {
+            height: 120px;
+            width: 120px;
+            top: 70px;
+        }
+        
+        @include respond(mobile-lg) {
+          height: 80px;
+          width: 80px;
+          top: 60px;
+
+      }
+      
+
+    }
+    @include pseudoImage("before", $img-desktop-footer-left) {
+        height: 450px;
+        width: 450px;
+        top: 0;
+        left: 0;
+        @include respond(laptop) {
+            height: 320px;
+            width: 320px;
+        }
+        @include respond(laptop-s) {
+            height: 280px;
+            width: 280px;
+        }
+        @include respond(tab-port) {
+            height: 250px;
+            width: 250px;
+        }
+        @include respond(mobile-lg) {
+            height: 200px;
+            width: 200px;
+        }
+    }
+
+ 
+  }
+  .sidebar {
+    background-color: $color-theme-primary;
+  }
+
+  .show-sub-list .navbar__footer-header {
+    @include respond(laptop-s) {
+      background-color: $color-theme-secondary;
+    }
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+}
+
+@include independence-theme;

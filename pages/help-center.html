@@ -5,17 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header and Footer Customized</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/card.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/card.css">
+    <link rel="stylesheet" href="../bootstrap.min.css">
     <link rel="stylesheet" href="./css/themes/themes.min.css">
-    <link rel="stylesheet" href="./css/helpcenter-page.css">
+    <link rel="stylesheet" href="../css/helpcenter-page.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap"
         rel="stylesheet">
 
 
 </head>
+
+<style>
+.help-search-bar {
+    position: relative;
+}
+
+.search-suggestion {
+    position: absolute;
+    top: calc(100% + 10px);
+    /* padding: 15px; */
+    box-shadow: 0 0 20px rgba(0,0,0, .1);
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    background-color: #fff;
+    padding-bottom: 15px;
+}
+.search-suggestion__header {
+    font-size: 18px;
+    padding: 15px 15px;
+}
+
+.search-suggestion__list {
+    padding: 0 15px;
+}
+.search-suggestion__list li{
+    
+}
+.search-suggestion__list a{
+    display: block;
+    padding: 8px 0;
+   color: rgb(77, 77, 77);
+   transition: all 300ms ease;
+}
+.search-suggestion__list a:hover{
+   color: #000;
+}
+.search-suggestion__list .page{
+   color: grey;
+   font-size: 14px;
+}
+</style>
 
 <body class="themes--new-year">
     <header>
@@ -35,6 +78,21 @@
                                 d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z" />
                         </svg>
                     </button>
+
+                    <div class="search-suggestion">
+                        <div class="search-suggestion__header">
+                            Top Article Suggestion
+                        </div>
+
+                        <ul class="search-suggestion__list">
+                            <li>
+                                <a href="">How much is <b>shipping?</b> <span class="page">- FAQs</span>  </a>
+                            </li>
+                            <li>
+                                <a href="">How much is <b>shipping?</b> <span class="page">- FAQs</span>  </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,9 +133,9 @@
 
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/navbar-template.js"></script>
-    <script src="./assets/js/footer-template.js"></script>
-    <script src="./assets/js/templateGenarator.js"></script>
+    <script src="../assets/js/navbar-template.js"></script>
+    <script src="../assets/js/footer-template.js"></script>
+    <script src="../assets/js/templateGenarator.js"></script>
 </body>
 
 

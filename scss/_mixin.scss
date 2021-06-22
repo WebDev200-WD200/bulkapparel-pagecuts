@@ -1,69 +1,75 @@
 @mixin respond($screen-size) {
-  // 0 - 320px
-  @if $screen-size == mobile-s {
-    @media (max-width: 20em) {
-      @content;
-    }
+  // 0 to 320px
+  @if $screen-size==mobile-s {
+      @media (max-width: 320px) {
+          @content;
+      }
   }
-  // 320px - 375px
-  @if $screen-size == mobile-m {
-    @media (max-width: 23.4375em) {
-      @content;
-    }
+  // 320px to 375px
+  @if $screen-size==mobile-m {
+      @media (max-width: 375px) {
+          @content;
+      }
   }
-
-  // 375px - 500px
-  @if $screen-size == mobile-ms {
-    @media (max-width: 31.25em) {
-      @content;
-    }
+  // 375px to 500px
+  @if $screen-size==mobile-ms {
+      @media (max-width: 500px) {
+          @content;
+      }
   }
-
-  // 500px - 600px
-  @if $screen-size == mobile-lg {
-    @media (max-width: 37.5625em) {
-      @content;
-    }
+  // 500px to 600px
+  @if $screen-size==mobile-lg {
+      @media (max-width: 600px) {
+          @content;
+      }
   }
-
-  // 600px - 768px
-  @if $screen-size == tab-port {
-    @media (max-width: 48em) {
-      @content;
-    }
+  // 600px to 768px
+  @if $screen-size==tab-port {
+      @media (max-width: 768px) {
+          @content;
+      }
   }
-
-  // 768px - 900px
-  @if $screen-size == tab-land {
-    @media (max-width: 56.25em) {
-      @content;
-    }
+  // 768px to 900px
+  @if $screen-size==tab-land {
+      @media (max-width: 900px) {
+          @content;
+      }
   }
-
-  // 900px - 1000px
-  @if $screen-size == laptop-s {
-    @media (max-width: 62.5em) {
-      @content;
-    }
+  // 900px to 1000px
+  @if $screen-size==laptop-s {
+      @media (max-width: 1000px) {
+          @content;
+      }
   }
-
-  // 1000px - 1264px
-  @if $screen-size == laptop {
-    @media (max-width: 79em) {
-      @content;
-    }
+  // 1000px to 1264px
+  @if $screen-size==laptop {
+      @media (max-width: 1264px) {
+          @content;
+      }
   }
-  // 1264px - 1940px
-  @if $screen-size == desktop {
-    @media (max-width: 119em) {
-      @content;
-    }
+  // 1264px to 1366px
+  @if $screen-size==desktop-s {
+      @media (max-width: 1366px) {
+          @content;
+      }
   }
-  // 1940px - upward
-  @if $screen-size == big-desktop {
-    @media (min-width: 119em) {
-      @content;
-    }
+  // 1366px to 1440px
+  @if $screen-size==desktop-wide {
+      @media (max-width: 1440px) {
+          @content;
+      }
+  }
+  // 1440px to 1940px
+  @if $screen-size==desktop {
+      @media (max-width: 1940px) {
+          @content;
+      }
+  }
+  // 1940px to upward
+  @if $screen-size==big-desktop {
+      @media (min-width: 1940px) {
+          @content;
+      }
   }
 }
 
