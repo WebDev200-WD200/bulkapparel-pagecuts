@@ -1,0 +1,130 @@
+$color-size: 40px;
+
+.admin-color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+
+   
+    li {
+        min-height: $color-size;
+        height: $color-size;
+        min-width: $color-size;
+        width: $color-size;
+        margin: 2px;
+
+        border: 1px solid #000;
+        cursor: pointer;
+        
+        &:hover {
+            border: 2px solid #002868 !important;
+        }
+        &.admin-active {
+            border: 3px solid #002868 !important;
+        }
+    }
+   
+
+}
+
+
+$dropdownColorSize: 25px;
+
+.admin-color-dropdown {
+    position: relative;
+    display: flex;
+    width: 300px;
+    &__btn {
+        display: flex;
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #000 !important;
+        background: #fff;
+        align-items: center;
+        font-size: 15px;
+        cursor: pointer;
+        
+        .select {
+            margin-left: auto;
+        }
+    }
+
+    .color {
+
+        height: $dropdownColorSize;
+        min-width: $dropdownColorSize;
+        width: $dropdownColorSize;
+        border: 1px solid #000;
+        margin-right: 5px;
+    }
+
+    .text {
+        text-transform: uppercase !important;
+    }
+
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        border: 1px solid #000 !important;
+        z-index: 2;
+        background: #fff;
+        max-height: 300px;
+        overflow-y: auto;
+        border-top: none !important;
+        li {
+            display: flex;
+            padding: 6px;
+            width: 100%;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            &:hover {
+                background: #eeeeee;
+            }
+
+            &.admin-active {
+                background: #002868;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+$sizesBoxSize: 50px;
+
+.admin-sizes-picker {
+    display: flex;
+
+    li {
+        border: 2px solid #c7c7c7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        height: $sizesBoxSize;
+        width: $sizesBoxSize;
+        min-width: $sizesBoxSize;
+        cursor: pointer;
+        user-select: none;
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        &:hover {
+            color: #002868;
+            border-color: #002868;
+        }
+        
+        &.admin-active 
+        {
+            color: #fff;
+            background: #002868;
+            border-color: #002868 !important;
+        }
+    }
+}

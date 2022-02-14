@@ -228,6 +228,95 @@ $color-track-red: #ff4545;
     }
   }
 
+  &__number {
+    display: inline-flex;
+    align-items: center;
+    color: $color-track-primary;
+    width: 100%;
+    
+    @include respond(mobile-lg) {
+     font-size: 22px;
+     flex-direction: column;
+     align-items: flex-start;
+     margin-top: 15px;
+    }
+    
+   
+    span {
+      font-weight: 400;
+      font-size: 18px;
+      margin-right: 5px;
+
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    color: $color-track-gray;
+    font-weight: 600;
+
+    @include respond(mobile-lg) {
+      position: relative;
+      top: 0;
+      right: 0;
+      font-size: 16px;
+    }
+
+    span {
+      // font-weight: 700;
+    }
+  }
+
+  &__message {
+    a {
+      font-weight: 600;
+      color: $color-track-primary;
+    }
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+
+    @include respond(mobile-lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .chip {
+      background: $color-track-primary;
+      color: $color-white !important;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 18px;
+
+      @include respond(mobile-lg) {
+        font-size: 16px;
+       }
+
+    }
+
+    h3 {
+      font-size: 25px;
+      margin-left: 8px;
+
+      
+
+      @include respond(mobile-lg) {
+        margin-top: 8px;
+        font-size: 20px;
+        margin-left: 0 ;
+       }
+    }
+
+    &.error {
+      color: $color-track-red;
+    }
+  }
+
   &__active {
     position: absolute;
     top: -60px;
@@ -315,6 +404,7 @@ $color-track-red: #ff4545;
   @include respond(mobile-lg) {
     flex-direction: row;
     width: auto;
+    align-items: center;
   }
 
   &__icon {
@@ -374,9 +464,9 @@ $color-track-red: #ff4545;
     h4 {
       font-weight: 600;
       font-size: 14px;
-
+      width: 100%;
       @include respond(mobile-lg) {
-        font-size: 20px;
+        font-size: 18px;
       }
       @include respond(mobile-m) {
         font-size: 16px;
@@ -410,6 +500,23 @@ $color-track-red: #ff4545;
       border-style: solid;
       border-color: $color-track-primary;
       fill: $color-track-primary !important;
+    }
+  }
+}
+
+.track-error {
+  &::before {
+    @include tracking-dashed(to right, $color-track-red);
+    @include respond(mobile-lg) {
+      @include tracking-dashed(to bottom, $color-track-red);
+    }
+    opacity: .5;
+  }
+  .track-bread {
+    &__icon {
+      border-style: solid;
+      border-color: $color-track-red;
+      fill: $color-track-red !important;
     }
   }
 }
