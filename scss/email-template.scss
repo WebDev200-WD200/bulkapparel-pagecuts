@@ -42,3 +42,30 @@
     margin: 0;
     margin-top: 5px
 }
+
+.email-container {
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.email-links {
+    background-color: #013068;
+
+    &__container {
+        padding: 0 50px;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+
+    }
+
+    &__link {
+        padding: 0 18px;
+        img {
+            height: 130px;
+        }
+    }
+}

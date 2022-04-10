@@ -75,7 +75,7 @@
 
                 <tr>
                     <td class="newsletter-feedback__list">
-                        <table >
+                        <table>
                             <tr>
                                 <?php foreach ($reactions as $key => $value) : ?>
                                     <td>
@@ -93,7 +93,37 @@
             </tbody>
         </table>
 
-
+        <table class="email-links email-container">
+            <tr>
+                <td class="email-links__container">
+                    <table>
+                        <tr>
+                            <td class="email-links__wrapper">
+                                <a href="https://www.bulkapparel.com/tracking" class="email-links__link">
+                                    <img src="https://mcusercontent.com/30a5cd6624e6806da8c4b670e/images/bcdae388-a2f4-e801-36e3-07a26f6528f3.png" alt="Track order">
+                                </a>
+                            </td>
+                            <td class="email-links__wrapper">
+                                <a href="https://www.bulkapparel.com/returns" class="email-links__link">
+                                    <img src="https://mcusercontent.com/30a5cd6624e6806da8c4b670e/images/d6634fad-94a0-3c52-5198-16ea440fe4e7.png" alt="Return">
+                                   
+                                </a>
+                            </td>
+                            <td class="email-links__wrapper">
+                                <a href="https://www.bulkapparel.com/customer-service" class="email-links__link">
+                                    <img src="https://mcusercontent.com/30a5cd6624e6806da8c4b670e/images/70a24372-1514-af1b-7efe-3783d93173a8.png" alt="Contact">
+                                </a>
+                            </td>
+                            <td class="email-links__wrapper">
+                                <a href="https://blog.bulkapparel.com/" class="email-links__link">
+                                    <img src="https://mcusercontent.com/30a5cd6624e6806da8c4b670e/images/8a5ea159-08ad-37cf-2b4c-f785bb3a678c.png" alt="Blog">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
     </main>
 </body>
 
