@@ -108,52 +108,57 @@ function shopByColorItem(color) {
 
 }
 
-function shopByColorDesktop() {
-    var colorList = chunkArray(colors, 5);
+function shopByColorList() {
+    var colorList = [];
+    var windowWidth = $(window).width();
+    var windowCount = 5;
+    var itemWidth = '';
+    if (windowWidth > 768 && windowWidth <= 1000) {
+        windowCount = 3
+    } else if (windowWidth <= 768) {
+        windowCount = 2
+    } else {
+        windowCount = 5;
+    }
 
+    colorList = chunkArray(colors, windowCount);
+    console.log('Count',colorList)
+    var itemStyle = itemWidth ? 'width:' + '100%' : ''
 
     var columnTemplate = ''
-    
     colorList.forEach(function (item) {
         var listTemplate = ''
-        
+
         item.forEach(function (sub) {
-            listTemplate+= `
-            <li>
-                ${shopByColorItem(sub)}
-            </li>
-            `;
-        }) 
+            listTemplate += '' +
+            '<li>' +
+                shopByColorItem(sub) +
+            '</li>'
+            ;
+        })
 
 
-        columnTemplate += `
-        <div class="shop-color-list__items">
-            <ul>
-                ${listTemplate}
-            </ul>
-        </div>
-        `
+        columnTemplate += ''+
+        '<div class="shop-color-list__items" style="'+ itemStyle +'">' +
+            '<ul>' +
+                listTemplate +
+            '</ul>' +
+        '</div>'
 
     })
 
-    return `
-    <div class="shop-color-list">
-       ${columnTemplate}
-    </div>
-    `
+    return ' <h3>Select a color. each matching shade is now shown for each style.</h3>' +
+    '<div class="shop-color-list">' +
+       columnTemplate +
+    '</div>'
 }
 
 
 function generateShopByColor() {
     var shopByColorContainer = $('#shopByColorsContainer')
     console.log(shopByColorContainer)
-    if ($(window).width() > 1000) {
-        var desktopHtml = shopByColorDesktop();
-        console.log(desktopHtml)
-        shopByColorContainer.html(desktopHtml)
-    } else {
-
-    }
+    var desktopHtml = shopByColorList();
+    shopByColorContainer.html(desktopHtml)
 }
 
 

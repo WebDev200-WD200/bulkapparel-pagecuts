@@ -238,7 +238,21 @@
           min-width: 100%;
       }
   }
-  &__footer-brands {
+
+  &__footer-colors {
+    color: #44414f;
+    padding-top: 5px !important;
+    h3 {
+      padding: 8px 5px;
+      margin-bottom: 5px;
+
+      @include respond(mobile-lg) {
+        padding: 5px ;
+      }
+    }
+  }
+
+  &__footer-brands, &__footer-colors {
       display: none;
       position: absolute;
       right: 0;
