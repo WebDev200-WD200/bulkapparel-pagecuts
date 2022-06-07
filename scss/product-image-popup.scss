@@ -1,16 +1,66 @@
 @import "./color";
 @import "./mixin";
 
+#productImageDialog {
+  overflow-y: hidden;
+
+  @include respond(tab-port) {
+    display: none !important;
+  }
+}
+
 .product-image-popup {
+  user-select: none;
   display: flex;
   height: 800px;
-  width: 1200px;
+  width: 1000px;
   background-color: #fff;
   margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @include respond(laptop) {
+    width: 900px;
+    height: 700px;
+  }
+
+  @include respond(laptop-s) {
+    width: 95%;
+    height: 800px;
+  }
+
+  @include respond(tab-land)
+{
+  height: 700px;
+}
+  &--image {
+  }
+
+  &--video {
+    width: 100%;
+    height: 100%;
+  }
+
+  &--youtube {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__exit {
+    display: flex;
+    position: absolute;
+    font-weight: 600;
+    font-size: 40px;
+    right: 5px;
+    width: 30px;
+    height: 40px;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
 
   &__preview {
     flex: 0 1 100%;
@@ -25,35 +75,86 @@
     // }
   }
 
-  &__thumbnails {
-      display: flex;
-      flex-direction: column;
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    pointer-events: none;
+    h2 {
+      font-size: 28px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
     padding: 20px;
-    width: 600px;
+    padding-bottom: 10px;
+  }
 
-    .content {
-      h2 {
-        font-size: 28px;
-      }
+  .swiper-product-dialog-thumbnails {
+    height: 740px;
+    overflow: hidden;
+    position: relative;
 
-      p {
-        margin: 10px 0;
+    .swiper-button-prev,
+    .swiper-button-next {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      color: $color-primary;
+
+      &.swiper-button-disabled {
+        display: none;
       }
     }
+
+    .swiper-button-prev {
+      position: absolute;
+      top: 20px;
+    }
+
+    .swiper-button-next {
+      position: absolute;
+      bottom: 10px;
+      top: auto;
+    }
+  }
+
+  &__thumbnails {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px 20px 20px;
+    width: 260px;
+    // padding-right: 50px ;
+    
+    @include respond(laptop) {
+      width: 220px;
+      padding: 50px 10px 10px 10px;
+    }
+   
 
     ul {
       display: flex;
       flex-wrap: wrap;
-
+      width: auto;
       li {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 80px;
-        height: auto;
+        height: 100px;
+        margin-right: 5px;
+        margin-bottom: 5px;
         border: 2px solid rgba($color-gray, 0.1);
-        margin: 0 8px 8px 0;
         cursor: pointer;
+overflow: hidden;
+        @include respond(laptop) {
+          width: 70px;
+          height: 80px;
+        }
+
+
         &.active {
           border-color: $color-primary;
         }
@@ -62,6 +163,29 @@
         img {
           width: 100%;
           height: auto;
+        }
+
+        .detail-thumb {
+          &--video {
+            background-color: $color-primary;
+          }
+          
+          &--youtube {
+            background-color: $color-red;
+          }
+
+          &--video, &--youtube {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         
+            svg {
+              width: 40px;
+              fill: $color-white;
+            }
+          }
         }
       }
     }
@@ -76,6 +200,7 @@ figure.containerZoom {
   cursor: zoom-in;
   margin: 0;
   height: 100%;
+  background-repeat: no-repeat;
 
   .containerCover {
     position: absolute;

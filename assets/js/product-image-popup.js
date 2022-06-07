@@ -1,29 +1,28 @@
-(function ($) {
-    // Thanks to Mozilla for this polyfill
-    // find out more on - https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/replaceWith
-    function ReplaceWithPolyfill() {
-        'use-strict'; // For safari, and IE > 10
 
+// modified code from Mario-Duarte image-zoom.js
+(function ($) {
+    function ReplaceWithPolyfill() {
+        'use-strict';
         var parent = this.parentNode,
             i = arguments.length,
             currentNode;
         if (!parent) return;
-        if (!i) // if there are no arguments
+        if (!i)
             parent.removeChild(this);
 
         while (i--) {
-            // i-- decrements i and returns the value of i before the decrement
+
             currentNode = arguments[i];
 
             if (typeof currentNode !== 'object') {
                 currentNode = this.ownerDocument.createTextNode(currentNode);
             } else if (currentNode.parentNode) {
                 currentNode.parentNode.removeChild(currentNode);
-            } // the value of "i" below is after the decrement
+            }
 
 
-            if (!i) // if currentNode is the first argument (currentNode === arguments[0])
-                parent.replaceChild(currentNode, this); else // if currentNode isn't the first
+            if (!i)
+                parent.replaceChild(currentNode, this); else
                 parent.insertBefore(currentNode, this.previousSibling);
         }
     }
@@ -43,19 +42,15 @@
     const imageObj = {};
 
     $.fn.imageZoom = function (options) {
-        // Default settings for the zoom level
         let settings = $.extend({
             zoom: 150
-        }, options); // Main html template for the zoom in plugin
-
+        }, options);
         imageObj.template = `
               <figure class="containerZoom" style="background-image:url('${$(this).attr("src")}'); background-size: ${settings.zoom}%;">
-                  <img id="imageZoom" src="${$(this).attr("src")}" alt="${$(this).attr("alt")}" />
+                  <img draggable="false" id="imageZoom" src="${$(this).attr("src")}" alt="${$(this).attr("alt")}" />
                   <div class="containerCover"></div>
               </figure>
-          `; // Where all the magic happens, This will detect the position of your mouse
-        // in relation to the image and pan the zoomed in background image in the
-        // same direction
+          `;
 
         function zoomIn(e) {
             let zoomer = e.currentTarget;
@@ -67,15 +62,12 @@
             $(zoomer).css({
                 "background-position": `${x}% ${y}%`
             });
-        } // Main function to attach all events after replacing the image tag with
-        // the main template code
-
+        }
 
         function attachEvents(container) {
             container = $(container);
             container.on('click', function (e) {
                 if ("zoom" in imageObj == false) {
-                    // zoom is not defined, let define it and set it to false
                     imageObj.zoom = false;
                 }
 
@@ -105,9 +97,7 @@
             attachEvents($('.containerZoom')[$('.containerZoom').length - 1]);
         } else {
             newElm = $(this);
-        } // return updated element to allow for jQuery chained events
-
-
+        }
         return newElm;
     };
 })(jQuery);
@@ -117,62 +107,131 @@ var productImageDialog = $('#productImageDialog');
 var productImageDialogThumbnails = productImageDialog.find('.product-image-popup__thumbnails');
 var productImageDialogPreview = productImageDialog.find('.product-image-popup__preview')
 
-function productImageDialogPreviewTemplate(source) {
-    return `
-    <img 
-        width="480" 
-        height="600" 
-        ="Texas Orange" 
-        src="${source.highResoSrc}">
-    `
+const productImageDialogThumbnailsSwiperOptions = {
+    slidesPerView: 'auto',
+    slidesPerGroup: 3,
+    spaceBetween: 5,
+    direction: 'vertical',
+    observer: true,
+    navigation: {
+        nextEl: ".swiper-product-dialog-thumbnails .swiper-button-next",
+        prevEl: ".swiper-product-dialog-thumbnails .swiper-button-prev",
+    },
 }
 
+function initProductDialogThumbnailsSwiper() {
+    new Swiper(".swiper-product-dialog-thumbnails", productImageDialogThumbnailsSwiperOptions);
+}
 
-function productImageDialogThumbnailsTemplate(items) {
+function productImageDialogPreviewTemplate(activeImage) {
+    var type = activeImage.attr('data-type');
+    var previewParent = $('.product-image-popup__preview');
+    var videoEl = $('.product-image-popup--video');
+    var youtubeIframeEl = $('.product-image-popup--youtube');
+    var content = $('.product-image-popup__content');
+
+    console.log(activeImage);
+
+    videoEl[0].pause();
+    youtubeIframeEl.attr('src', '')
+
+    previewParent.children().hide();
+    content.show();
+    
+    if (type === "image") {
+        $('.containerZoom').remove();
+        previewParent.append('<img class="product-image-popup--image" draggable="false" width="480" height="600" src="'+activeImage.find('img').attr('data-high-reso-src')+'" style="display: none;">')
+        ;
+        previewParent.find('img').show().imageZoom({ zoom: 200 });
+
+    } else if (type === 'video') {
+        videoEl.show()
+        var source = document.createElement('source');
+        var previewVideoUrl = $(activeImage).find('.detail-thumb--video').data('video-src');
+        console.log(activeImage, previewVideoUrl);
+        source.setAttribute('src', previewVideoUrl);
+        source.setAttribute('type', 'video/mp4');
+        videoEl.append(source);
+
+        console.log(videoEl,previewVideoUrl)
+
+        videoEl[0].play();
+        
+    } else if (type === 'youtube') {
+        youtubeIframeEl.show()
+        var url = $(activeImage).find('.detail-thumb--youtube').data('youtube-src');
+        var id = url.split("?v=")[1];
+        var embedlink = "https://www.youtube.com/embed/" + id + '?enablejsapi=1&controls=1';
+        youtubeIframeEl.attr('src', embedlink);
+        content.hide();
+    }
+
+}
+
+function productImageDialogThumbnailsTemplate() {
+    var items = $('.detail-thumb li')
+
     var thumbnailsTemplate = "";
     items.each(function () {
-        var media = $(this).find('a');
-        console.log(media.length)
+        var active = $(this).hasClass('prd-active') ? 'active' : '';
+        var type = $(this).attr('data-type');
+
+        var media = $(this);
+
         if (media.length) {
-            var item = '<li>' + media.clone().html() + '</li>'
+            var item = '<li class="swiper-slide ' + active + '" data-type="' + type + '">' + media.clone().html() + '</li>'
             thumbnailsTemplate += item;
 
         }
     })
+    productImageDialogThumbnails.find('.list').html('<ul class="swiper-wrapper">' + thumbnailsTemplate + '</ul>');
+    // initProductDialogThumbnailsSwiper();
 
-    return '<ul>' + thumbnailsTemplate + '</ul>'
 }
 
+
 function generateProductImageContent() {
+    var contentEl = $('.product-image-popup__thumbnails .content');
+    var title = $('.product-title__title').text();
+    var colorName = $('#clrname').text()
 
-    var thumbnailsImages = $('.detail-thumb li');
+    contentEl.find('h2').html(title)
+    contentEl.find('p>span').html(colorName)
 
-    var activeImage = $('.detail-thumb .prd-active img')
+    productImageDialogThumbnailsTemplate();
 
-    productImageDialogThumbnails.find('.list').html(productImageDialogThumbnailsTemplate(thumbnailsImages));
+    productImageDialogPreviewTemplate($('.detail-thumb .prd-active'));
 
-    productImageDialogPreview.html(productImageDialogPreviewTemplate({
-        highResoSrc: activeImage.data('high-reso-src'),
-    }))
-
-    productImageDialogPreview.find('img').imageZoom({ zoom: 200 });
 }
 
 
 generateProductImageContent()
 
-
-var thumbnailsImagesList = $('#productImageDialog .product-image-popup__thumbnails li');
-
-thumbnailsImagesList.on('click', function () {
-    thumbnailsImagesList.removeClass('active');
+productImageDialog.show();
+$(document).on('click', '#productImageDialog .product-image-popup__thumbnails li', 'click', function () {
+    productImageDialogThumbnails.find('li').removeClass('active');
     $(this).addClass('active');
-
-    var activeImage = $(this).find('img');
-
-    productImageDialogPreview.html(productImageDialogPreviewTemplate({
-        highResoSrc: activeImage.data('high-reso-src'),
-    }))
-
-    productImageDialogPreview.find('img').imageZoom({ zoom: 200 });
+  
+    productImageDialogPreviewTemplate($(this))
 })
+
+$('#mainimg .product-item-image--image').on('click', function () {
+
+    if ($(window).width() > 768) {
+        $('body,html').css('overflow-y', 'hidden');
+        generateProductImageContent()
+
+        productImageDialog.show();
+    }
+})
+
+productImageDialog.find('.product-image-popup__exit').on('click', function () {
+    productImageDialog.hide()
+    $('html').css('overflow: auto');
+})
+
+productImageDialog.on('click', function (e) {
+    if (e.target !== e.currentTarget) return;
+    productImageDialog.hide();
+    $('html').css('overflow: auto');
+}) 
