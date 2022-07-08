@@ -139,10 +139,13 @@ function productImageDialogPreviewTemplate(activeImage) {
     content.show();
     
     if (type === "image") {
-        $('.containerZoom').remove();
-        previewParent.append('<img class="product-image-popup--image" draggable="false" width="480" height="600" src="'+activeImage.find('img').attr('data-high-reso-src')+'" style="display: none;">')
-        ;
-        previewParent.find('img').show().imageZoom({ zoom: 200 });
+        var image = activeImage.find('img').attr('data-high-reso-src');
+
+        console.log(image)
+
+        previewParent.find('.containerZoom').show().css({'background-image':'url(' + image + ')'});
+        previewParent.find('#imageZoom').attr('src',image);
+        
 
     } else if (type === 'video') {
         videoEl.show()
@@ -198,6 +201,13 @@ function generateProductImageContent() {
     contentEl.find('h2').html(title)
     contentEl.find('p>span').html(colorName)
 
+
+    var previewImage = $('.product-image-popup__preview').find('.product-image-popup--image'); 
+    if(previewImage.length) {
+        previewImage.imageZoom({ zoom: 200 })
+    };
+
+
     productImageDialogThumbnailsTemplate();
 
     productImageDialogPreviewTemplate($('.detail-thumb .prd-active'));
@@ -205,9 +215,9 @@ function generateProductImageContent() {
 }
 
 
-generateProductImageContent()
+// generateProductImageContent()
 
-productImageDialog.show();
+// productImageDialog.show();
 $(document).on('click', '#productImageDialog .product-image-popup__thumbnails li', 'click', function () {
     productImageDialogThumbnails.find('li').removeClass('active');
     $(this).addClass('active');
@@ -215,12 +225,11 @@ $(document).on('click', '#productImageDialog .product-image-popup__thumbnails li
     productImageDialogPreviewTemplate($(this))
 })
 
-$('#mainimg .product-item-image--image').on('click', function () {
+$('#mainimg ').on('click', function () {
 
     if ($(window).width() > 768) {
         $('body,html').css('overflow-y', 'hidden');
         generateProductImageContent()
-
         productImageDialog.show();
     }
 })
