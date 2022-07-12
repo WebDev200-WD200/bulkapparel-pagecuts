@@ -1,3 +1,9 @@
+@mixin custom-respond-max($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
 @mixin respond($screen-size) {
   // 0 to 320px
   @if $screen-size==mobile-s {

@@ -10,6 +10,7 @@
       "baseUri": "/",                             //  ii. workspace
       "proxyUri": "http://localhost/bulkapparel/index.php" // iii. actual address
   },
+  "liveServer.settings.port": 5501,
  
 
 }
