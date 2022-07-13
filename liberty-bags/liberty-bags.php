@@ -45,24 +45,27 @@
                     <a href="custom-printing-gildan">
                         Lat
                     </a>
-                    <a href="custom-printing-gildan" class="tab-link-active">
+                    <a href="custom-printing-gildan">
                         JAmerica
+                    </a>
+                    <a href="liberty-bags" class="tab-link-active">
+                        Liberty Bags
                     </a>
                 </div>
                 <div class="custompage__row">
                     <div class="custompage__image custompage__item">
                         <a href="jamerica-printing-on-the-glow-full-zip-hood">
-                            <img src="images/custom-images/glow-hood-print-cover.jpg" alt="Printing On The Glow Full Zip Hood">
+                            <img src="images/custom-images/glow-hood-print-cover.jpg" alt="Suggested Printing Instructions">
                         </a>
                     </div>
                     <div class="custompage__content custompage__item">
                         <div class="custompage__title-link">
                             <a href="jamerica-printing-on-the-glow-full-zip-hood">
-                                <h2>Printing On The Glow Full Zip Hood</h2>
+                                <h2>Suggested Printing Instructions</h2>
                             </a>
                         </div>
 
-                        <p>These print like any other Poly Fleece fabric. Keep the garment relatively flat so the EL wire/tube does not come in contact with the heating element in the dryer or the flash unit.</p>
+                        <p>Materials needed and instruction on how to print on every types of bags.</p>
                         <a href="jamerica-printing-on-the-glow-full-zip-hood" class="btn--view"><span>View </span> <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M14 16.94V12.94H5.08L5.05 10.93H14V6.94L19 11.94Z" />
                             </svg> </a>
