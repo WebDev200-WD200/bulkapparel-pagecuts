@@ -1,0 +1,23 @@
+.text-primary {
+    color: $color-text;
+}
+
+.text-secondary {
+    color: rgba($color-text, .75);
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.primary--text {
+    color: $color-primary;
+}
+
+.error--text {
+    color: $color-red;
+}
+
+.text-right {
+    text-align: right;
+}

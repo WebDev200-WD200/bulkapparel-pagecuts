@@ -1,0 +1,202 @@
+@import "color.scss";
+@import "utils.scss";
+
+.new-cart {
+  display: flex;
+  color: $color-text;
+  margin-top: 20px;
+}
+
+.new-cart-list {
+  width: 100%;
+}
+
+.new-cart-sidebar {
+  min-width: 330px;
+  padding: 15px;
+}
+
+.cart-group {
+  border: 1px solid $color-border;
+  border-radius: 3px;
+  &__header {
+    border-bottom: 1px solid $color-border;
+    padding: 10px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__body {
+    display: flex;
+  }
+
+  &__list {
+  }
+
+  &__summary {
+    min-width: 270px;
+    height: 100%;
+    border-left: 1px solid $color-border;
+  }
+}
+
+.cart-group-item {
+  position: relative;
+
+  &__body {
+    display: flex;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  &__col {
+    margin-bottom: 5px;
+  }
+
+  .label {
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  &__delete {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 30px;
+    color: $color-red;
+    z-index: 1;
+  }
+
+  &__content {
+    padding-left: 10px;
+  }
+
+  &__footer {
+  }
+
+  &__image {
+  }
+
+  .cart-group-image {
+    img {
+      height: 110px;
+      border-radius: 3px;
+      border: 2px solid $color-border;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    color: $color-primary;
+  }
+
+  &__color {
+    width: 50%;
+  }
+
+  .cart-group-color {
+    display: inline-flex;
+    align-items: center;
+
+    .color-box {
+      $color-size: 24px;
+      height: $color-size;
+      width: $color-size;
+      min-width: $color-size;
+      border: 1px solid $color-border;
+      border-radius: 3px;
+      margin: 0 5px;
+    }
+  }
+
+  &__size {
+    width: 50%;
+  }
+
+  .cart-group-size {
+  }
+
+  .cart-group-quantity {
+    $field-height: 35px;
+    $input-width: 60px;
+
+    &__body {
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $field-height;
+      width: $field-height;
+      font-size: 18px;
+      border: none;
+      color: $color-white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .input-quantity {
+      display: flex;
+      height: 100%;
+      max-width: $input-width;
+      height: $field-height;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 3px;
+      border: 2px solid $color-border;
+      outline: none;
+
+      &:hover {
+        border-color: $color-primary;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
+      }
+    }
+
+    .minus {
+      background: $color-red;
+    }
+
+    .input {
+    }
+
+    .plus {
+      background: $color-green;
+    }
+  }
+
+  &__quantity {
+    margin-right: auto;
+  }
+  &__price {
+    margin-right: auto;
+  }
+
+  &__total {
+    width: auto;
+  }
+
+  &__price,
+  &__total {
+  }
+
+  .cart-group-price {
+  }
+
+  .cart-group-total {
+  }
+}
