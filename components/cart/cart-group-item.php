@@ -1,28 +1,12 @@
-<?php
-define('base_site_url', 'https://sl7.bulkapparel.com/');
-
-$product = [
-    'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
-    'image' => "16813_f_fm.jpg",
-    'price' => 1.67,
-    'quantity' => 5,
-    'size' => 'S',
-    'color' => [
-        'hex' => '#000',
-        "name" => "White"
-    ]
-]; ?>
 
 
-
-
-<div class="cart-group-item">
-    <button class="btn cart-group-item__delete">
+<div class="cart-group-item" data-qty="0" data-styleid="1" data-groupid="1">
+    <button class="btn cart-group-item__delete delete">
             &times;
     </button>
 
     <div class="cart-group-item__body">
-        <a class="cart-group-item__image" href="#">
+        <a class="cart-group-item__image cart-group-item__image--desktop" href="#">
             <picture class="cart-group-image">
                 <source srcset="<?= base_site_url . '/image/search/' . $product['image'] ?>" media="(max-width: 480px)">
                 <img src="<?= base_site_url . '/image/popular-items/' . $product['image'] ?>" alt="<?=$product['title']?>" loading="true">
@@ -30,6 +14,8 @@ $product = [
         </a>
         <div class="cart-group-item__content">
             <div class="row">
+                
+
                 <div class="col-12 cart-group-item__col d-flex">
                     <a class="cart-group-item__title primary--text" href="#"><?= $product['title']; ?></a>
                 </div>
@@ -66,7 +52,7 @@ $product = [
                                     -
                                 </button>
 
-                                <input class="input-quantity" type="number" name="quantity" id="quantity" value="<?= $product['quantity'] ?>">
+                                <input class="input-quantity" type="number" name="quantity" id="quantity" value="<?= $product['quantity'] ?>" pattern="\d*" maxlength="6" min="0">
 
                                 <button class="btn-quantity plus">
                                     +

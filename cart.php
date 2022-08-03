@@ -29,43 +29,156 @@
     <?php include('./components/layout/header.php') ?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <main>
+
+
+        <?php
+        // remove this after
+        define('base_site_url', 'https://sl7.bulkapparel.com/');
+
+        function formatToMoney($value, $format = true)
+        {
+            return '$' . ($format ? number_format($value, 2) : $value);
+        }
+
+        $cart_data = [
+            "destination" => [
+                'location' => 'Lawton',
+                'zip_code' => "73505",
+            ],
+
+            "group" => [
+                [
+                    "id" => "1",
+                    "name" => "Alphabroader",
+                    "earlist_delivery" => "Monday, August 2, 2022",
+                    "shippings" => [
+                        [
+                            "date" => "Friday, July 29",
+                            "description" => "Fastest $9.95 Flat rate",
+                            "price" => 9.95,
+                            "selected" => true
+                        ],
+                        [
+                            "date" => "Monday, August 1",
+                            "description" => "Fastest $9.95 Flat rate",
+                            "price" => 9.95,
+                            "selected" => false
+                        ]
+                    ],
+                    "items" => [
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'S',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ]
+                    ],
+                    "summary" => [
+                        "retail_savings" => [
+                            "before" => 52.00,
+                            "after" => 23.00
+                        ],
+                        "total_items" => 5,
+                        "subtotal" => 3.34,
+                        "shipping_fee" => 0,
+                        "sale_discount" => -0.17,
+                        "sub_order_total" => 3.34
+                    ]
+
+                ],
+                [
+                    "id" => "2",
+                    "name" => "SNS",
+                    "earlist_delivery" => "Tuesday, August 3, 2022",
+                    "shippings" => [
+                        [
+                            "date" => "Friday, July 29",
+                            "description" => "Fastest $9.95 Flat rate",
+                            "price" => 9.95,
+                            "selected" => true
+                        ],
+                        [
+                            "date" => "Tuesday, August 3",
+                            "description" => "Fastest $9.95 Flat rate",
+                            "price" => 9.95,
+                            "selected" => false
+                        ]
+                    ],
+                    "items" => [
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'S',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ]
+                    ],
+                    "summary" => [
+                        "retail_savings" => [
+                            "before" => 52.00,
+                            "after" => 23.00
+                        ],
+                        "total_items" => 5,
+                        "subtotal" => 3.34,
+                        "shipping_fee" => 0,
+                        "sale_discount" => -0.17,
+                        "sub_order_total" => 3.34
+                    ]
+
+                ]
+            ]
+        ]
+        ?>
+
         <div class="container">
             <div class="new-cart">
                 <div class="new-cart-list">
                     <?php include('./components/cart/cart-group.php') ?>
                 </div>
                 <div class="new-cart-sidebar">
-                    Cart Sidebar
+                    <?php include('./components/cart/cart-destination.php') ?>
                 </div>
             </div>
         </div>
     </main>
 
-
-    <div class="row no-gutters ml-3">
-        <div class="col-auto d-flex justify-content-center flex-column mr-4">
-            <b>Resale:</b>
-        </div>
-        <div class="col-auto d-flex justify-content-end flex-column mr-3">
-            <label style="line-height: .5;" class="text-secondary" for=""><small>Status</small></label>
-            <p>Pending</p>
-        </div>
-        <div class="col-auto d-flex justify-content-end flex-column mr-3">
-            <label style="line-height: .5;" class="text-secondary" for=""><small>Resale# Acct</small></label>
-            <p>srTwoOne111</p>
-        </div>
-        <div class="col-auto d-flex justify-content-end flex-column mr-3">
-            <label style="line-height: .5;" class="text-secondary" for=""><small>Resale# Checkout</small></label>
-            <p>srTwoOne111</p>
-        </div>
-        <div class="col-auto d-flex justify-content-end flex-column">
-            <label style="line-height: .5;" class="text-secondary" for=""><small>Resale Permit</small></label>
-            <p>1658705714sellerspermit</p>
-        </div>
-    </div>
-
-
     <?php include('./components/layout/footer.php') ?>
+    <script src="assets/js/cart.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
 </body>

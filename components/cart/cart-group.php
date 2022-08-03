@@ -1,30 +1,37 @@
-
-
-
-<div class="cart-group text-primary">
-    <div class="cart-group__header">
-        <div class="row">
-            <div class="col-auto">
-                <p class="cart-group__title">Ships from <span class="error--text font-weight-bold">Group #1</span></h3>
-                <p class="cart-group__item-count">
-                    <span class="font-weight-bold">6</span> Items    
+<?php foreach ($cart_data['group'] as $group) { ?>
+    <div class="cart-group text-primary" id="<?= 'group' . $group['id'] ?>">
+        <div class="cart-group__header">
+            <div class="cart-group__title">
+                <p class="title">Ships from <span class="error--text font-weight-bold"><?= $group['name'] ?></span></h3>
+                <p class="count">
+                    <span class="font-weight-bold"><?= count($group['items']) ?></span> Items
                 </p>
             </div>
 
-            <div class="col-auto ml-auto text-right">
-                <p>Earlist Delivery</p>
-                <h3 class="font-weight-bold primary--text">Monday, August 1, 2022</h3>
+            <div class="cart-group__delivery ml-auto text-right">
+                <p class="title">Earlist Delivery</p>
+                <h3 class="value font-weight-bold primary--text"><?= $group['earlist_delivery'] ?></h3>
+            </div>
+        </div>
+
+        <div class="cart-group__body">
+            <div class="cart-group__list">
+                <?php foreach ($group['items'] as $item) { ?>
+                    <?php $product = $item;
+                    include('cart-group-item.php') ?>
+                <?php } ?>
+            </div>
+
+            <div class="cart-group__summary">
+                <?php
+                $shippings = $group['shippings'];
+                include('cart-group-shipping.php') ?>
+
+
+                <?php
+                $summary = $group['summary'];
+                include('cart-group-summary.php') ?>
             </div>
         </div>
     </div>
-
-    <div class="cart-group__body">
-        <div class="cart-group__list">
-            <?php include('cart-group-item.php')?>
-        </div>
-
-        <div class="cart-group__summary">
-
-        </div>
-    </div>
-</div>
+<?php }; ?>
