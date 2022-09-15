@@ -30,7 +30,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
     <?php
-    define('base_site_url', 'https://300dev.bulkapparel.com/');
+    define('base_site_url', 'https://sl7sl7.bulkapparel.com/');
 
     function newProductImagePath($image, $type = 'bulk-blank-shirts')
     {
@@ -139,9 +139,140 @@
                     "size" => "S",
                     "color" => "White", "to" => ""
                 ],
+            ],
+            "shipping_options" => [
+                [
+                    "selected" => true,
+                    "id" => "surepost",
+                    "additionalDaysForEstimatedDelivery" => "",
+                    "name" => "SurePost",
+                    "amount" => "8.95",
+                    "title" => "Surepost (usually 2-6 days)",
+                    "description" => "Surepost (usually 2-6 days)",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
+                ],
+                [
+                    "selected" => false,
+                    "id" => "ground",
+                    "additionalDaysForEstimatedDelivery" => "",
+                    "name" => "Ground",
+                    "amount" => "8.95",
+                    "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
+                    "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
+                ]
+            ]
+        ],
+
+        [
+            "group_name" => "Group 2",
+            "items" =>  [
+                [
+                    "name" => "G500 Gildan T-Shirt 5000 Heavy Cotton 5.3",
+                    'styleName' => "G500",
+                    "brand" => "Gildan",
+                    "image" => "16_fm.jpg",
+                    "price" => 1.67,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+                [
+                    "name" => "G200 Gildan T-Shirt 2000 Heavy Cotton 5.3",
+                    'styleName' => "G200",
+                    "brand" => "Gildan",
+                    "image" => "39_fm.jpg",
+                    "price" => 1.67,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+                [
+                    "name" => "Team 365 TT11 Mens Zone Performance T-Shirt",
+                    'styleName' => "TT11",
+                    "brand" => "Team 365",
+                    "image" => "395_fm.jpg",
+                    "price" => 8.00,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+                [
+                    "name" => "Core 365 88181 Mens Origin Performance Piqu Polo",
+                    'styleName' => "88181",
+                    "brand" => "Core 365",
+                    "image" => "88181_8y_p.jpg",
+                    "price" => 18.00,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+                [
+                    "name" => "Hanes P170 Ecosmart Hooded Sweatshirt",
+                    'styleName' => "P170",
+                    "brand" => "Hanes",
+                    "image" => "391a_fm.jpg",
+                    "price" => 10.49,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+                [
+                    "name" => "Threadfast Apparel 320H Unisex Ultimate Fleece Pullover Hooded Sweatshirt",
+                    'styleName' => "320H",
+                    "brand" => "Threadfast",
+                    "image" => "320h_20_p.jpg",
+                    "price" => 10.49,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+
+                ],
+                [
+                    "name" => "Just Hoods By AWDis JHA001 Mens 8020 Midweight College Hooded Sweatshirt",
+                    'styleName' => "320H",
+                    "brand" => "Justhoods",
+                    "image" => "jha001_33_p.jpg",
+                    "price" => 10.49,
+                    "quantity" => 2,
+                    "total" => 3.34,
+                    "size" => "S",
+                    "color" => "White", "to" => ""
+                ],
+            ],
+            "shipping_options" => [
+                [
+                    "selected" => true,
+                    "id" => "surepost",
+                    "additionalDaysForEstimatedDelivery" => "",
+                    "name" => "SurePost",
+                    "amount" => "8.95",
+                    "title" => "Surepost (usually 2-6 days)",
+                    "description" => "Surepost (usually 2-6 days)",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg",
+                ],
+                [
+                    "selected" => false,
+                    "id" => "ground",
+                    "additionalDaysForEstimatedDelivery" => "",
+                    "name" => "Ground",
+                    "amount" => "8.95",
+                    "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
+                    "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
+                ]
             ]
         ]
-
     ];
 
 
@@ -187,6 +318,26 @@
 
     <?php include('./components/layout/footer.php') ?>
     <script src="assets/js/cart.js"></script>
+
+
+    <script>
+        $(".shipping-group-toggle").on('click', function() {
+            var parent = $(this).closest('.shipping-group');
+            var self = $(this);
+            var listEl = parent.find('.shipping-group-list');
+            var headerEl = parent.find('.shipping-group-images, .shipping-group-text');
+            if ($(this).hasClass('more')) {
+                self.text('View').removeClass('more');
+                listEl.hide();
+                headerEl.css('opacity', 1);
+            } else {
+                self.text('Hide').addClass('more')
+                listEl.show();
+                headerEl.css('opacity', 0);
+            }
+        })
+    </script>
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
 </body>

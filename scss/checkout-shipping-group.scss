@@ -191,3 +191,227 @@
         }
     }
 }
+
+.ship-method {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.ship-method .ship-option {
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
+}
+
+.ship-method .ship-option {
+    display: flex;
+}
+
+.ship-method .ship-option label {
+    margin-left: 10px;
+}
+
+.ship-method .ship-option label .image-container {
+    margin-top: 10px;
+}
+
+.ship-method .ship-option label .image-container img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+}
+
+.ship-method .ship-option label h3 img {
+    height: 30px;
+    width: 83px;
+}
+
+@media only screen and (max-width: 540px) {
+    .ship-method {
+        flex-wrap: wrap;
+    }
+}
+
+.ship-option {
+    border: 1px solid $color-gray;
+    border-radius: 5px;
+    height: 100% !important;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    background-color: #fcfcfc;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+    box-sizing: border-box;
+    position: relative;
+    @include respond(mobile-lg) {
+        padding-bottom: 5px;
+    }
+    &:after {
+        border: 2px solid #9a9a9a;
+        display: block;
+        background: #fafafa;
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        left: 7px;
+        top: 12px;
+    }
+    &:before {
+        display: block;
+        background: #fafafa;
+        position: absolute;
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 100%;
+        left: 10px;
+        top: 15px;
+        z-index: 2;
+    }
+    &__main {
+        padding-right: 10px;
+        @include respond(mobile-lg) {
+            padding-right: 5px;
+        }
+    }
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3px;
+        @include respond(mobile-lg) {
+            margin-bottom: 0px;
+        }
+    }
+    h3 {
+        color: $color-gray;
+        @include respond(mobile-ms) {
+            font-size: 17px;
+        }
+        @include respond(mobile-m) {
+            font-size: 16px;
+        }
+    }
+    label {
+        padding: 0;
+        width: 100%;
+    }
+    small {
+        font-size: 16px;
+        color: $color-gray;
+    }
+    input {
+        opacity: 0;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        border-radius: 0 !important;
+        &:focus {
+            color: transparent !important;
+            background: transparent !important;
+        }
+    }
+    .image-container {
+        img {
+            width: 100px;
+            height: auto !important;
+            margin-right: 8px;
+            @include respond(mobile-lg) {
+                margin-right: 5px;
+            }
+            @include respond(mobile-lg) {
+                width: 90px;
+            }
+            @include respond(mobile-m) {
+                width: 80px;
+            }
+            @include respond(mobile-ms) {
+                height: 28px;
+            }
+        }
+    }
+    &:hover {
+        border-color: $color-primary;
+    }
+    &.ship-option-active {
+        border-color: $color-green !important;
+        background-color: rgba($color-green, 0.05) !important;
+        &:before {
+            background: $color-primary;
+        }
+        small {
+            color: $color-primary;
+        }
+        h3 {
+            color: $color-primary;
+        }
+        .info-popup-btn {
+            &__icon {
+                svg {
+                    fill: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.info-popup-btn {
+    display: inline-flex;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    background-size: cover;
+    background-color: none;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    z-index: 6;
+    &__icon {
+        svg {
+            height: 20px;
+            width: 20px;
+            fill: $color-gray;
+        }
+    }
+    &:focus,
+    &:hover {
+        .info-popup-text {
+            display: block !important;
+        }
+        .info-popup-btn {
+            &__icon {
+                svg {
+                    fill: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.info-popup-text {
+    position: absolute;
+    display: none;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 150px;
+    border: 1px solid $color-primary;
+    top: calc(100% + 3px);
+    left: 0;
+    z-index: 1;
+    border-radius: 3px;
+    background-color: $color-white;
+    @include respond(laptop-s) {
+        font-weight: 13px;
+        left: unset;
+        right: 0;
+    }
+}

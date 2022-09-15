@@ -1,4 +1,4 @@
-<ul class="shipping-group__list shipping-group-list">
+<ul class="shipping-group__list shipping-group-list" style="display: none;">
 
     <?php foreach ($group_list as $group_item) : ?>
         <li class="shipping-group-list__item">
