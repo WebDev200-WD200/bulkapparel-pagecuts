@@ -33,7 +33,8 @@
 
         <?php
         // remove this after
-        define('base_site_url', 'https://sl7.bulkapparel.com/');
+        define('base_site_url', 'https://300dev.bulkapparel.com/');
+        define('SYMBOL', '$');
 
         function formatToMoney($value, $format = true)
         {
@@ -172,6 +173,8 @@
                 </div>
                 <div class="new-cart-sidebar">
                     <?php include('./components/cart/cart-destination.php') ?>
+
+                    <?php include('./components/cart/cart-summary.php') ?>
                 </div>
             </div>
         </div>

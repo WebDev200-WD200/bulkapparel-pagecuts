@@ -523,3 +523,76 @@
     }
   }
 }
+
+
+.order-summary {
+  margin-bottom: 10px;
+
+  &__table {
+    width: 100%;
+
+    .text, .value {
+      padding: 0 0 8px 0 ;
+    }
+
+    .value, .title {
+      font-size: 20px;
+      
+      @include respond(mobile-lg) {
+        font-size: 18px;
+      }
+    }
+
+    .text {
+      
+    }
+
+    .value {
+      text-align: end;
+    }
+
+
+    .title {
+    }
+
+    .is_discount {
+      color: $color-red;
+    }
+   
+    .name {
+
+    }
+
+    .code {
+
+    }
+
+    .tag-free {
+      background: $color-green;
+      font-size: 16px;
+      color: $color-white;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .btn-remove {
+      background: $color-red;
+      padding: 3px 8px;
+      border-radius: 100px;
+      color: $color-white;
+      font-size: 12px;
+    }
+
+    .total {
+      font-weight: 700;
+
+      .title, .value {
+        font-size: 22px;
+      }
+    }
+
+    .shipping {
+      color: $color-text-secondary;
+    }
+  }
+}
