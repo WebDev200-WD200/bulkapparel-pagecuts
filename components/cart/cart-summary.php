@@ -33,7 +33,22 @@ $order_summary = [
         "name" => "Shipping",
         "value" => 0.00,
         "is_free" => true,
-        "class" => 'shipping'
+        "class" => 'shipping',
+        "is_collapsable" => true,
+        "breakdown" => [
+            [
+                "name" => "Group 1",
+                "value" => 23.00
+            ],
+            [
+                "name" => "Group 2",
+                "value" => 23.00
+            ],
+            [
+                "name" => "Group 3",
+                "value" => 23.00
+            ]
+        ]
     ],
     "gift_certificate" => [
         "is_discount" => true,
@@ -59,33 +74,85 @@ $order_summary = [
 
     <div class="new-cart-section__content">
         <table class="order-summary__table">
-            <?php foreach($order_summary as $item): ?> 
-                <tr class="<?=$item['class'];?> <?=isset($item['is_discount']) && $item['is_discount'] ? 'is_discount': '';?>">
+            <?php foreach ($order_summary as $item) : ?>
+                <tr class="<?= $item['class']; ?> <?= isset($item['is_discount']) && $item['is_discount'] ? 'is_discount' : ''; ?>">
                     <td class="text">
                         <p class="title">
                             <span class="name">
-                                <?=$item['name']?>
+                                <?= $item['name'] ?>
                             </span>
 
-                            <?php if(isset($item['code'])): ?>
-                                -  <span class="code"><?= $item['code']?></span>
+                            <?php if (isset($item['code'])) : ?>
+                                - <span class="code"><?= $item['code'] ?></span>
                             <?php endif ?>
 
-                            <?php if(isset($item['is_free'])): ?>
+                            <?php if (isset($item['is_free'])) : ?>
                                 <span class="tag-free">Free</span>
                             <?php endif ?>
                         </p>
 
-                        <?php if(isset($item['is_removable'])): ?>
+                        <?php if (isset($item['is_removable'])) : ?>
                             <button class="btn btn-remove">Remove</button>
                         <?php endif ?>
                     </td>
                     <td class="value">
-                        <?=SYMBOL. number_format($item['value'], 2, '.', '') ?>
+                        <div class="value-wrapper">
+                            <span class="value-main">
+                                <?= SYMBOL . number_format($item['value'], 2, '.', '') ?>
+                            </span>
+                            <?php if (isset($item['is_collapsable'])) : ?>
+                                <button class="btn btn-collapsable" data-target="<?= $item['class'] ?>">
+                                    <svg viewbox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.94.939L8 5.879 3.061.939.94 3.061 8 10.121l7.062-7.06L12.94.939z" fill="#000" />
+                                    </svg>
+                                </button>
+                            <?php endif ?>
+                        </div>
                     </td>
                 </tr>
-            <?php endforeach ?> 
+                <?php if (isset($item['is_collapsable'])) : ?>
+                    <tr>
+                        <td colspan="2" class="collapase" data-collapse-id="<?= $item['class'] ?>">
+                            <div class="collapase__wrapper">
+                                <table class="order-summary__table order-summary__table--small">
+                                    
+                                    <?php foreach($item['breakdown'] as $item_breakdown): ?>
+                                        <tr>
+                                            <td class="text">
+                                                <p class="title">
+                                                    <span class="name">
+                                                        <?= $item_breakdown['name'] ?>
+                                                    </span>
+                                                </p>
+                                            </td>
+                                            <td class="value">
+                                                <div class="value-wrapper">
+                                                    <span class="value-main">
+                                                        <?= SYMBOL . number_format($item_breakdown['value'], 2, '.', '') ?>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach ?>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endif ?>
+            <?php endforeach ?>
         </table>
 
     </div>
 </div>
+
+
+<script>
+    $('.btn-collapsable').on('click', function () { 
+        var target = $(this).attr('data-target');
+        var targetEl = $('.collapase[data-collapse-id="'+target+'"]');
+        $(this).toggleClass('open')
+
+        console.log(targetEl)
+        targetEl.find('.collapase__wrapper').toggleClass('open');
+    })
+</script>
