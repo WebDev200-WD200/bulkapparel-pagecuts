@@ -74,7 +74,7 @@
         font-size: 14px;
       }
     }
-    
+
     .value {
       @include respond(mobile-lg) {
         font-size: 16px;
@@ -333,7 +333,7 @@
 
 .cart-shipping-item {
   display: flex;
-  padding: 10px 8px;
+  padding: 12px 8px;
   position: relative;
   user-select: none;
 
@@ -354,11 +354,13 @@
     }
 
     input[type="radio"]:checked + label {
-      border-color: $color-primary !important;
+      border-color: $color-green !important;
+      background: rgba($color-green, 0.05);
     }
   }
 
   &__body {
+    width: 100%;
   }
 
   &__title {
@@ -367,6 +369,29 @@
   &__description {
     margin-top: 5px;
     font-size: 14px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__image {
+    height: 18px;
+    margin-right: 5px;
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    z-index: 2;
+    svg {
+      height: 20px;
+      width: 20px;
+      fill: $color-text-secondary;
+    }
   }
 }
 
@@ -531,7 +556,7 @@
     height: 15px;
     width: 15px;
     fill: $color-text-muted;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   &.open {
@@ -546,7 +571,7 @@
     opacity: 0;
     overflow: hidden;
     @include transition;
-    
+
     &.open {
       opacity: 1;
       height: auto !important;
@@ -561,26 +586,28 @@
     width: 100%;
 
     &--small {
-      .value, .title {
+      .value,
+      .title {
         font-size: 16px !important;
         color: $color-text-secondary;
       }
     }
 
-    .text, .value {
-      padding: 0 0 8px 0 ;
+    .text,
+    .value {
+      padding: 0 0 8px 0;
     }
 
-    .value, .title {
+    .value,
+    .title {
       font-size: 20px;
-      
+
       @include respond(mobile-lg) {
         font-size: 18px;
       }
     }
 
     .text {
-      
     }
 
     .value {
@@ -596,20 +623,17 @@
       }
     }
 
-
     .title {
     }
 
     .is_discount {
       color: $color-red;
     }
-   
-    .name {
 
+    .name {
     }
 
     .code {
-
     }
 
     .tag-free {
@@ -631,7 +655,8 @@
     .total {
       font-weight: 700;
 
-      .title, .value {
+      .title,
+      .value {
         font-size: 22px;
       }
     }
