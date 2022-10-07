@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/printing-tools.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <!-- <link rel="stylesheet" href="./css/themes/themes.min.css"> -->
@@ -29,7 +30,7 @@
     <?php include('./components/layout/header.php') ?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <main>
-        <div class="container">
+        <div class="container printing-tools">
             <?php include('./components/printing-tools/printing-tools-main.php')?>
         </div>
     </main>
