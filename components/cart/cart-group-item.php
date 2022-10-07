@@ -1,6 +1,6 @@
 
 
-<div class="cart-group-item" data-qty="0" data-styleid="1" data-groupid="1">
+<div class="cart-group-item" data-qty="0" data-styleid="1" data-groupid="1" <?=isset($load_more_group_id) ? "data-load-more-group='$load_more_group_id' style='display:none;'": ""; ?>>
     <button class="btn cart-group-item__delete delete">
             &times;
     </button>

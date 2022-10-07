@@ -1,0 +1,56 @@
+.group-more-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0;
+
+    &__images {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
+      .image {
+        display: flex;
+        height: 55px;
+        width: 55px;
+        overflow: hidden;
+        border-radius: 100%;
+        border: 3px solid $color-border;
+        margin-left: -25px;
+        background-color: $color-white;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 20px;
+        color: $color-text-secondary;
+        @include respond(mobile-lg) {
+          height: 40px;
+          width: 40px;
+        }
+  
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  
+    &__text {
+      margin-right: 8px;
+      color: $color-text;
+  
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+  
+    &__toggle {
+      font-weight: 700;
+      color: $color-primary;
+      font-size: 18px;
+    }
+  }
+  

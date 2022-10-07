@@ -2,6 +2,8 @@
 @import "utils.scss";
 @import "mixin.scss";
 
+@import "checkout-cart/group-more-items.scss";
+
 .new-cart {
   display: flex;
   color: $color-text;
@@ -113,6 +115,10 @@
     @include respond(tab-land) {
       flex-direction: column;
     }
+  }
+
+  .group-more-items {
+    padding-top: 0 !important;
   }
 }
 
