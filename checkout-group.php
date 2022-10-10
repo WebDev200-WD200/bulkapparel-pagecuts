@@ -31,6 +31,7 @@
 
     <?php
     define('base_site_url', 'https://sl7sl7.bulkapparel.com/');
+    define('SYMBOL', '$');
 
     function newProductImagePath($image, $type = 'bulk-blank-shirts')
     {
@@ -144,9 +145,9 @@
                 [
                     "selected" => true,
                     "id" => "surepost",
-                    "additionalDaysForEstimatedDelivery" => "",
-                    "name" => "SurePost",
-                    "amount" => "8.95",
+                    "estimated_delivery" => "Monday 10/05",
+                    "name" => "USPS",
+                    "amount" => "FREE",
                     "title" => "Surepost (usually 2-6 days)",
                     "description" => "Surepost (usually 2-6 days)",
                     "image" => base_site_url . "images/" . "surepost-logo.jpg",
@@ -155,9 +156,20 @@
                 [
                     "selected" => false,
                     "id" => "ground",
-                    "additionalDaysForEstimatedDelivery" => "",
-                    "name" => "Ground",
-                    "amount" => "8.95",
+                    "estimated_delivery" => "Monday 10/05",
+                    "name" => "UPS Ground or FedEx",
+                    "amount" => '$8.95',
+                    "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
+                    "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
+                ],
+                [
+                    "selected" => false,
+                    "id" => "ground",
+                    "estimated_delivery" => "Monday 10/06",
+                    "name" => "UPS Ground or FedEx",
+                    "amount" => '$9.00',
                     "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
                     "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
                     "image" => base_site_url . "images/" . "surepost-logo.jpg",
@@ -252,20 +264,31 @@
                 [
                     "selected" => true,
                     "id" => "surepost",
-                    "additionalDaysForEstimatedDelivery" => "",
-                    "name" => "SurePost",
-                    "amount" => "8.95",
+                    "estimated_delivery" => "Monday 10/05",
+                    "name" => "USPS",
+                    "amount" => "FREE",
                     "title" => "Surepost (usually 2-6 days)",
                     "description" => "Surepost (usually 2-6 days)",
                     "image" => base_site_url . "images/" . "surepost-logo.jpg",
-                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
                 ],
                 [
                     "selected" => false,
                     "id" => "ground",
-                    "additionalDaysForEstimatedDelivery" => "",
-                    "name" => "Ground",
-                    "amount" => "8.95",
+                    "estimated_delivery" => "Monday 10/05",
+                    "name" => "UPS Ground or FedEx",
+                    "amount" => '$8.95',
+                    "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
+                    "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
+                    "image" => base_site_url . "images/" . "surepost-logo.jpg",
+                    "description_image" => base_site_url . "images/" . "surepost-logo.jpg"
+                ],
+                [
+                    "selected" => false,
+                    "id" => "ground",
+                    "estimated_delivery" => "Monday 10/06",
+                    "name" => "UPS Ground or FedEx",
+                    "amount" => '$9.00',
                     "title" => "Ground Shipping estimated (1 to 3 days) FREE Over $99",
                     "description" => "Fastest Option (usually 1-3 days) Free over $99. Your order will Ship UPS or Fedex Ground or Local Ground carrier for fast delivery. This is an estimated delivery date based on past delivery with Ground shipping.",
                     "image" => base_site_url . "images/" . "surepost-logo.jpg",
@@ -305,14 +328,10 @@
 
     <main>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <?php foreach ($shipping_groups as $item) : ?>
-                        <?php $shipping_group = $item;
-                        include('./components/checkout/shipping-group.php') ?>
-                    <?php endforeach ?>
-                </div>
-            </div>
+            <?php foreach ($shipping_groups as $item) : ?>
+                <?php $shipping_group = $item;
+                include('./components/checkout/shipping-group.php') ?>
+            <?php endforeach ?>
         </div>
     </main>
 

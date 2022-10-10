@@ -1,54 +1,49 @@
-<ul class="shipping-group__list shipping-group-list" style="display: none;">
+<ul class="shipping-group__list shipping-group-list">
+    <?php
+    $shownItems = array_splice($group_list, 0, 4); ?>
 
-    <?php foreach ($group_list as $group_item) : ?>
-        <li class="shipping-group-list__item">
-            <div class="shipping-group-list__info">
-                <a class="shipping-group-list__image" href="<?= $group_item['to'] ?>">
-                    <picture>
-                        <source srcset="<?=base_site_url . '/image/thumbnail-m/' . $group_item['image'] ?>" media="(max-width: 768px)">
-                        <img src="<?=base_site_url . '/image/thumbnail/' . $group_item['image'] ?>" alt="" height="50" width="40">
-                    </picture>
-                </a>
-
-                <div class="shipping-group-list__product">
-                    <div class="row">
-                        <div class="col-12">
-                            <a class="shipping-group-list__title" href="">
-                                <h4><?= $group_item['name'] ?></h4>
-                            </a>
-                        </div>
-
-                        <div class="col-12 d-flex">
-                            <p class="shipping-group-list__others">
-                                <span class="name"><b>Color:</b></span>
-                                <span class="value"><?= $group_item['color'] ?></span>
-                            </p>
-                            <p class="shipping-group-list__others">
-                                <span class="name"><b>Size:</b></span>
-                                <span class="value"><?= $group_item['size'] ?></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="shipping-group-list__summary">
-                <div class="shipping-group-list__summary-item price">
-                    <p class="name">Price</p>
-                    <p class="value">$<?= $group_item['price'] ?></p>
-                </div>
-
-                <div class="shipping-group-list__summary-item quantity">
-                    <p class="name">Quantity</p>
-                    <p class="value"><?= $group_item['quantity'] ?></p>
-                </div>
-
-                <div class="shipping-group-list__summary-item total">
-                    <p class="name">Total</p>
-                    <p class="value">$<?= $group_item['total'] ?></p>
-                </div>
-
-            </div>
+    <?php foreach ($shownItems as $item) : ?>
+        <li class="shipping-group-list__item" data-gtin="<?= $group_item['gtin'] ?>">
+            <?php $props = $item;
+            include('components/checkout/shipping-group-item.php'); ?>
         </li>
-
     <?php endforeach ?>
+
+    <?php if (!empty($group_list)) :
+        $load_more_id = 'load-more-' . $group_name;
+    ?>
+
+        <?php foreach ($group_list as $item) { ?>
+            <?php
+            $props = $item;
+            $load_more_group_id = $load_more_id;
+            ?>
+            <li class="shipping-group-list__item" <?= isset($load_more_group_id) ? "data-load-more-group='$load_more_group_id' style='display:none;'" : ""; ?> data-gtin="<?= $group_item['gtin'] ?>">
+                <?php $props = $item;
+                include('components/checkout/shipping-group-item.php'); ?>
+            </li>
+
+        <?php } ?>
+
+        <?php $props = [
+
+            "load_more_id" => $load_more_id,
+            "max_show" => 4,
+            "items" => array_map(function ($item) {
+                return [
+                    ...$item,
+                    "image" => base_site_url . 'image/bulk-blank-shirts/' . $item['image']
+                ];
+            }, $group_list)
+
+        ];
+        include('components/cart-checkout/group-more-items.php');
+        ?>
+
+
+    <?php endif; ?>
+
+
+
+
 </ul>
