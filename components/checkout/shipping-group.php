@@ -12,7 +12,8 @@
         <?php
         $group_name=$shipping_group['group_name'];
         $group_list = $shipping_group['items'];
-        include('includes/checkout/shipping-group-list.php') ?>
+        include('includes/checkout/shipping-group-list.php')
+         ?>
     </div>
 
 
