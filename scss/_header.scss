@@ -194,6 +194,11 @@
   }
   &__footer {
       background-color: $color-gray;
+
+      @include respond(laptop-s) {
+        background-color: $color-white;
+      }
+
       display: block;
       @include respond(laptop-s) {
           display: none;

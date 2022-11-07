@@ -84,6 +84,78 @@
                             'image' => "16813_f_fm.jpg",
                             'price' => 1.67,
                             'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
                             'size' => 'S',
                             'color' => [
                                 'hex' => '#000',
@@ -124,6 +196,42 @@
                         ]
                     ],
                     "items" => [
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
+                        [
+                            'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
+                            'image' => "16813_f_fm.jpg",
+                            'price' => 1.67,
+                            'quantity' => 5,
+                            'size' => 'L',
+                            'color' => [
+                                'hex' => '#000',
+                                "name" => "White"
+                            ]
+
+                        ],
                         [
                             'title' => 'Gildan 5000 Heavy Cotton T-Shirt in bulk',
                             'image' => "16813_f_fm.jpg",
@@ -236,7 +344,7 @@
         ?>
 
         <div class="container">
-            <div class="new-cart">
+            <!-- <div class="new-cart">
                 <div class="new-cart-list">
                     <?php include('./components/cart/cart-group.php') ?>
                 </div>
@@ -245,7 +353,7 @@
 
                     <?php include('./components/cart/cart-summary.php') ?>
                 </div>
-            </div>
+                </div>
         </div>
     </main>
 
