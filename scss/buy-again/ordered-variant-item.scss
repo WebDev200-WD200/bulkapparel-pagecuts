@@ -1,0 +1,93 @@
+.ordered-variant {
+  display: flex;
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    .hypen {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .size {
+      font-weight: 600;
+    }
+
+    .text {
+        margin-right: 20px;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    flex-shrink: 0;
+
+    .price {
+      color: $color-primary !important;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    .bond {
+      position: relative;
+
+      @include respond(laptop-s) {
+        &:hover {
+          & .buy-again-quantity {
+            display: flex !important;
+          }
+        }
+      }
+    }
+
+    .buy-again-btn {
+      border: 2px solid $color-primary;
+      color: $color-primary !important;
+      border-radius: 15px;
+      padding: 3px 8px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+
+  .buy-again-quantity {
+    position: absolute;
+    background-color: $color-white;
+    width: 160px;
+    border: 1px solid $color-border;
+    padding: 8px;
+    right: 0;
+    top: 0;
+    z-index: 2;
+
+    .quantity-editor {
+      .btn-quantity,
+      .input-quantity {
+        height: 30px;
+      }
+    }
+
+    &__label {
+      margin: auto;
+      color: $color-text-secondary;
+    }
+
+    &__button {
+      border-radius: 3px;
+      background: $color-primary;
+      color: $color-white;
+      padding: 6px 8px;
+      width: 100%;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  }
+
+  .color-box {
+    margin-right: 5px;
+  }
+}

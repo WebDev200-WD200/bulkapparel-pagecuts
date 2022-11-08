@@ -1,0 +1,234 @@
+.choose-variants {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+
+  @include respond(laptop) {
+    margin-top: 20px;
+  }
+
+  @include respond(tab-port) {
+    margin-top: 0;
+  }
+
+  @include respond(mobile-lg) {
+    padding: 10px;
+  }
+
+  &__colors {
+    width: 40%;
+    padding-right: 15px;
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
+
+    @include respond(mobile-lg) {
+      width: 100%;
+    }
+  }
+
+  &__sizes {
+    width: 60%;
+
+    @include respond(tab-port) {
+      width: 50%;
+    }
+
+    @include respond(mobile-lg) {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+
+  &__action {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+
+    & > *:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    .hider {
+      width: 40%;
+      color: $color-text-secondary;
+      user-select: none;
+      font-weight: 600;
+      border-radius: 3px;
+
+      &:hover {
+        color: $color-text;
+        text-decoration: underline;
+      }
+
+      &:active {
+        background-color: rgba($color-text, 0.1);
+      }
+    }
+
+    .add-cart {
+      background-color: $color-primary;
+      padding: 10px 20px;
+      color: $color-white;
+      width: 60%;
+      border-radius: 3px;
+      user-select: none;
+
+      &:hover {
+        background-color: rgba($color-primary, 0.9);
+      }
+    }
+  }
+}
+
+.choose-colors {
+  position: relative;
+  color: $color-text;
+  user-select: none;
+  margin-top: 10px;
+  background-color: $color-white;
+
+  &__default {
+    display: flex;
+    align-items: center;
+    border: 2px solid $color-border;
+    background: $color-white;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+
+    & .color-box {
+      height: 32px;
+      width: 32px;
+      margin-right: 5px;
+    }
+
+    & .name {
+      font-size: 16px;
+    }
+
+    & .arrow {
+      height: 15px;
+      width: 15px;
+      fill: $color-text;
+      margin-left: auto;
+    }
+
+    &:hover {
+      background-color: rgba($color-black, 0.05);
+    }
+
+    &:active {
+      background-color: rgba($color-black, 0.1);
+    }
+  }
+
+  &.expand &__list {
+    border: 1px solid $color-border;
+    height: auto;
+    overflow: auto;
+  }
+
+  &__list {
+    position: absolute;
+    display: block;
+    max-height: 250px;
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 10px 10px rgba($color-black, 0.05);
+
+    & .selected {
+      background-color: $color-primary !important;
+      color: $color-white !important;
+
+      .color-box {
+        border: none !important;
+      }
+    }
+
+    & .item {
+      display: flex;
+      align-items: center;
+      padding: 3px 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba($color-black, 0.05);
+      }
+    }
+
+    & .color-box {
+      height: 32px;
+      width: 32px;
+      margin-right: 5px;
+    }
+
+    & .name {
+    }
+  }
+}
+
+.choose-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-top: 10px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      text-align: center;
+      width: 60px;
+      padding: 5px;
+    }
+
+    .size {
+      width: 100%;
+      font-weight: 600;
+      color: $color-text;
+    }
+
+    .price {
+      width: 100%;
+      color: $color-green;
+      font-weight: 600;
+    }
+
+    .input {
+      width: 100%;
+      border: 1px solid $color-border;
+      padding: 8px 5px;
+      border-radius: 2px;
+      font-size: 18px;
+      text-align: center;
+      appearance: none;
+      color: $color-text;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
+      }
+    }
+
+    .stocks {
+      width: 100%;
+      font-size: 14px;
+      margin-top: 3px;
+      color: $color-text-secondary;
+    }
+  }
+}

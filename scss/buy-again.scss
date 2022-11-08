@@ -3,7 +3,17 @@
 @import "mixin.scss";
 @import "./quantity-editor";
 
+.sidebar {
+  display: block; width: 240px; height: 40vh; background: white;
+
+  @include respond(laptop-s) {
+    display: none;
+  }
+}
+
 .buy-again {
+  width: 100%;
+
   &__header {
   }
 
@@ -14,155 +24,21 @@
 .buy-again-list {
 }
 
-.buy-again-card {
-  border: 1px solid $color-border;
-
-  &__main {
-    display: flex;
-    padding: 10px 10px 0 10px;
-  }
-
-  &__info {
-    .title {
-      font-weight: 400;
-      color: $color-text;
-    }
-
-    .start-at {
-      color: $color-text-secondary;
-    }
-
-    .price {
-      color: $color-red;
-      font-size: 20px;
-      font-weight: 600;
-    }
-  }
-
-  &__image {
-    display: flex;
-    margin-right: 8px;
-    border-radius: 3px;
-    overflow: hidden;
-    // flex: 1 0;
-    
-    img {
-        display: flex;
-        min-width: 50px;
-        width: 50px;
-        height: 66px;
-    }
-
-  }
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px 10px 10px;
-    align-items: flex-start;
-  }
-
-  &__ordered {
-    width: 100%;
-    & > *:not(:last-child) {
-      margin-bottom: 5px;
-    }
-  }
-
-  .order-variants-btn {
-    margin: 10px auto;
-    text-decoration: underline;
-    
-  }
-
-  .view-all-btn {
-    padding: 8px 10px;
-    border: 1px solid $color-primary;
-    border-radius: 3px;
-    font-weight: 700;
-    margin: 0 auto;
-    background-color: rgba($color-primary, 0.08);
-    
-  }
-}
-
-.ordered-variant {
+.color-box {
   display: flex;
-
-  &__list {
-  }
-
-  &__info {
-    display: flex;
-    align-items: center;
-
-    .hypen {
-      display: inline-block;
-      margin: 0 5px;
-    }
-
-    .size {
-      font-weight: 600;
-    }
-  }
-
-  &__action {
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-left: auto;
-
-    .price {
-      color: $color-primary !important;
-      font-weight: 600;
-      margin-right: 10px;
-    }
-    & > .button {
-      border: 2px solid $color-primary;
-      border-radius: 15px;
-      padding: 3px 8px;
-      font-weight: 600;
-      font-size: 15px;
-    }
-  }
-
-  .buy-again-quantity {
-    display: flex;
-    position: absolute;
-    background-color: $color-white;
-    width: 160px;
-    border: 1px solid $color-border;
-    padding: 8px;
-    right: 0;
-    top: 0;
-
-    &__label {
-      margin: auto;
-      color: $color-text-secondary;
-    }
-
-    &__button {
-      border-radius: 3px;
-      background: $color-primary;
-      color: $color-white;
-      padding: 6px 8px;
-      width: 100%;
-      margin-top: 5px;
-      font-size: 14px;
-    }
-  }
-
-  .color-box {
-    display: flex;
-    $color-size: 24px;
-    height: $color-size;
-    width: $color-size;
-    min-width: $color-size;
-    border: 1px solid $color-border;
-    border-radius: 3px;
-    margin-right: 5px;
-    span {
-      width: 100%;
-    }
+  $color-size: 24px;
+  height: $color-size;
+  width: $color-size;
+  min-width: $color-size;
+  border: 1px solid $color-border;
+  margin-top: 0 !important;
+  border-radius: 3px;
+  span {
+    width: 100%;
   }
 }
+
+
+@import "./buy-again/buy-again-card.scss";
+@import "./buy-again/choose-variants.scss";
+@import "./buy-again/ordered-variant-item.scss";

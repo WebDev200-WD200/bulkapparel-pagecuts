@@ -92,30 +92,30 @@
                         "price" => 1.77,
                     ],
                 ],
-                "more_colors_sizes" => [
+                "variants" => [
                     "colors" => [
                         [
                             "id" => 1,
+                            "color" => "Dark Gray",
+                            "hex" => ["#4D4D52"],
+                        ],
+                        [
+                            "id" => 2,
+                            "color" => "Violet",
+                            "hex" => ["#EE82EE"],
+                        ],
+                        [
+                            "id" => 3,
+                            "color" => "Pink",
+                            "hex" => ["#FFC0CB"],
+                        ],
+                        [
+                            "id" => 4,
                             "color" => "Antique Red",
                             "hex" => ["#D25168"],
                         ],
                         [
-                            "id" => 1,
-                            "color" => "Antique Red",
-                            "hex" => ["#D25168"],
-                        ],
-                        [
-                            "id" => 1,
-                            "color" => "Antique Red",
-                            "hex" => ["#D25168"],
-                        ],
-                        [
-                            "id" => 1,
-                            "color" => "Antique Red",
-                            "hex" => ["#D25168"],
-                        ],
-                        [
-                            "id" => 1,
+                            "id" => 5,
                             "color" => "Antique Red",
                             "hex" => ["#D25168"],
                         ],
@@ -125,31 +125,43 @@
                         [
                             "id" => 1,
                             "size" => "S",
-                            "price" => formatToMoney(2.19),
-                            "stocks" => 216533
+                            "price" => 2.19,
+                            "stocks" => 216533,
                         ],
                         [
                             "id" => 2,
                             "size" => "M",
-                            "price" => formatToMoney(2.19),
+                            "price" => 2.19,
                             "stocks" => 216533
                         ],
                         [
                             "id" => 3,
                             "size" => "L",
-                            "price" => formatToMoney(2.19),
+                            "price" => 2.19,
                             "stocks" => 216533
                         ],
                         [
                             "id" => 4,
                             "size" => "XL",
-                            "price" => formatToMoney(2.19),
+                            "price" => 2.19,
                             "stocks" => 216533
                         ],
                         [
                             "id" => 5,
                             "size" => "2XL",
-                            "price" => formatToMoney(2.19),
+                            "price" => 2.19,
+                            "stocks" => 216533
+                        ],
+                        [
+                            "id" => 5,
+                            "size" => "2XL",
+                            "price" => 2.19,
+                            "stocks" => 216533
+                        ],
+                        [
+                            "id" => 5,
+                            "size" => "2XL",
+                            "price" => 2.19,
                             "stocks" => 216533
                         ]
                     ]
@@ -174,7 +186,10 @@
         ];
         ?>
 
-        <div class="container">
+        <div class="container d-flex">
+            <div class="sidebar">Sidebar</div>
+
+
             <div class="buy-again">
                 <div class="buy-again__header">
                     <h2 class="color--primary">Buy it Again</h2>
@@ -189,7 +204,7 @@
     </main>
 
     <?php include('./components/layout/footer.php') ?>
-    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/buy-again.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
 </body>
