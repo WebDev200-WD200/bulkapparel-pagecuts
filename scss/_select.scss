@@ -1,0 +1,9 @@
+.select {
+    &--primary {
+        font-size: 16px;
+        border: 1px solid $color-border;
+        color: $color-text;
+        padding: 10px;
+        border-radius: 3px;
+    }
+}
