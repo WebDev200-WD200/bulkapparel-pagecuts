@@ -48,6 +48,13 @@
 .cart-group {
   border: 1px solid $color-border;
   border-radius: 3px;
+
+  &__load-more {
+    &.expand {
+      border-top: 1px solid $color-border;
+    }
+  }
+
   &__header {
     display: flex;
     border-bottom: 1px solid $color-border;
@@ -210,6 +217,7 @@
     align-items: center;
 
     .color-box {
+      display: flex;
       $color-size: 24px;
       height: $color-size;
       width: $color-size;

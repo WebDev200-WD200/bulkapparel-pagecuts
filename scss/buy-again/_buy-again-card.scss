@@ -1,10 +1,13 @@
 .buy-again-card {
   display: flex;
-  border: 1px solid $color-border;
   border-radius: 3px;
 
   @include respond(laptop) {
     flex-direction: column;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $color-border;
   }
 
   &__main {
@@ -16,6 +19,8 @@
       width: 100%;
     }
   }
+
+ 
 
   &__info {
     .title {
@@ -54,6 +59,7 @@
   }
 
   &__list {
+    position: relative;
     display: flex;
     width: 65%;
 
@@ -66,6 +72,33 @@
       padding: 0;
       flex-direction: column;
       align-items: flex-start;
+    }
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color-white, 0.5);
+      backdrop-filter: blur(2px);
+    }
+
+    svg {
+      z-index: 1;
     }
   }
 

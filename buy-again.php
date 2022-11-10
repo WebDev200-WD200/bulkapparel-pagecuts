@@ -20,12 +20,14 @@
     <!-- New year theme-->
     <!-- <link id="theme" rel="stylesheet" href="./css/themes/valentines.theme.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+
 </head>
 
 <body>
     <?php include('includes/functions.php') ?>
     <?php include('./components/layout/header.php') ?>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <main>
         <?php
         $data = [
@@ -340,7 +342,7 @@
             </div>
         </div>
 
-        <div class="modal-dialog modal-dialog-centered" role="document" style="width: 350px; display:none;">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="width: 350px;" id="noQtyMessageModal">
             <div class="modal-content">
                 <div class="modal-header pb-0">
                     <h3 class="modal-title">
@@ -350,7 +352,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body pb-0">
                     <p>
                         Enter the quantity you would like to order in at least one of the boxes that looks this.
                     </p>
@@ -358,12 +360,16 @@
                     <img src="<?= base_url_site ?>images/indication-box-new2.jpg" loading="lazy" alt="enter quantity on text field">
                 </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Okay</button>
+                <div class="modal-footer pt-0">
+                    <button type="button" class="btn btn--primary">Okay</button>
                 </div>
             </div>
         </div>
     </main>
+
+
+    <script>
+    </script>
 
     <?php include('./components/layout/footer.php') ?>
     <script src="assets/js/buy-again.js"></script>
