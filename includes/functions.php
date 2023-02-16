@@ -2,6 +2,99 @@
 define('base_url_site', 'https://300dev.bulkapparel.com/');
 define('SYMBOL', '$');
 
+define('PRODUCT_IMAGES_CONFIG', [
+	'thumbnail-m' => [
+		"path"=> "thumbnail-m",
+		"width" => 56,
+		"height" => 70
+	],
+	'thumbnail' => [
+		"path"=> "thumbnail",
+		"width" => 80,
+		"height" => 100
+	],
+	'search' => [
+		"path"=> "search",
+		"width" => 116,
+		"height" => 145
+	],
+	'popular-items' => [
+		"path"=> "popular-items",
+		"width" => 200,
+		"height" => 250
+	],
+	'bulk-blank-shirts' => [
+		"path"=> "bulk-blank-shirts",
+		"width" => 238,
+		"height" => 297
+	],
+	'fashion-wear-m' => [
+		"path"=> "fashion-wear-m",
+		"width" => 328,
+		"height" => 410
+	],
+	'fashion-wear' => [
+		"path"=> "fashion-wear",
+		"width" => 480,
+		"height" => 600
+	],
+	'fashion-wear-lg' => [
+		"path"=> "fashion-wear-lg",
+		"width" => 600,
+		"height" => 750
+	],
+	'high-reso' => [
+		"path"=> "high-reso",
+		"width" => 1200,
+		"height" => 1500
+	],
+	'alpha-thumbnail-m' => [
+		"path"=> "alpha-colors/thumbnail-m",
+		"width" => 56,
+		"height" => 70
+	],
+	'alpha-thumbnail' => [
+		"path"=> "alpha-colors/thumbnail",
+		"width" => 80,
+		"height" => 100
+	],
+	'alpha-search' => [
+		"path"=> "alpha-colors/search",
+		"width" => 116,
+		"height" => 145
+	],
+	'alpha-wholesale' => [
+		"path"=> "alpha-colors/popular-items",
+		"width" => 200,
+		"height" => 250
+	],
+	'alpha-bulk-blank-shirts' => [
+		"path"=> "alpha-colors/bulk-blank-shirts",
+		"width" => 238,
+		"height" => 297
+	],
+	'alpha-blank-shirts-wholesale-m' => [
+		"path"=> "alpha-colors/fashion-wear-m",
+		"width" => 328,
+		"height" => 410
+	],
+	'alpha-blank-shirts-wholesale' => [
+		"path"=> "alpha-colors/fashion-wear",
+		"width" => 480,
+		"height" => 600
+	],
+	'alpha-blank-shirts-wholesale-lg' => [
+		"path"=> "alpha-colors/fashion-wear-lg",
+		"width" => 600,
+		"height" => 750
+	],
+	'alpha-high-reso' => [
+		"path"=> "alpha-colors/high-reso",
+		"width" => 1200,
+		"height" => 1500
+	],
+]);
+
 function formatToMoney($value, $format = true){
     return '$' . ($format ? number_format($value, 2) : $value);
 }
@@ -28,27 +121,16 @@ function template($filePath, $variables = array(), $print = true)
     return $output;
 
 };
-
 function newProductImagePath($image, $type = 'bulk-blank-shirts')
 {
-	$newImagePaths = [
-		'thumbnail-m' => 'thumbnail-m',
-		'thumbnail' => 'thumbnail',
-		'search' => 'search',
-		'popular-items' => 'popular-items',
-		'bulk-blank-shirts' => 'bulk-blank-shirts',
-		'fashion-wear-m' => 'fashion-wear-m',
-		'fashion-wear' => 'fashion-wear',
-		'high-reso' => 'high-reso',
-		'alpha-thumbnail-m' => 'alpha-colors/thumbnail-m', // 'alpha-image/thumbnail-m',
-		'alpha-thumbnail' => 'alpha-colors/thumbnail', //'alpha-image/thumbnail',
-		'alpha-search' => 'alpha-colors/search', //'alpha-image/search',
-		'alpha-wholesale' => 'alpha-colors/popular-items', //'alpha-image/wholesale',
-		'alpha-bulk-blank-shirts' => 'alpha-colors/bulk-blank-shirts', //'alpha-image/bulk-blank-shirts',
-		'alpha-blank-shirts-wholesale-m' => 'alpha-colors/fashion-wear-m', 
-		'alpha-blank-shirts-wholesale' => 'alpha-colors/fashion-wear', 
-		'alpha-high-reso' => 'alpha-colors/high-reso',
-	];
 	$filename = str_replace(['Images/Color/', 'Images/Style/'], '',  $image);
-	return base_url_site . 'image/' . $newImagePaths[$type] . '/' . $filename;
+	return base_url_site . 'image/' . PRODUCT_IMAGES_CONFIG[$type]['path'] . '/' . $filename;
+}
+
+function productImageSize($type = 'bulk-blank-shirts') {
+	$size = PRODUCT_IMAGES_CONFIG[$type];
+	return [
+		"width" => $size['width'],
+		"height" => $size['height']
+	];
 }

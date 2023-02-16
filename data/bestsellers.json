@@ -1,0 +1,222 @@
+[
+  {
+    "styleID": 16,
+    "brandName": "Gildan",
+    "slug": "g500-gildan-t-shirt-5000-heavy-cotton-53",
+    "styleName": "5000",
+    "customTitle": "G500 Gildan T-Shirt 5000 Heavy Cotton 5.3",
+    "pPrice": 2.19,
+    "styleImage": "Images/Style/16_fm.jpg",
+    "pModelImage": "Images/Color/16785_f_fm.jpg",
+    "pTotalColors": 71
+  },
+  {
+    "styleID": 39,
+    "brandName": "Gildan",
+    "slug": "g200-gildan-2000-t-shirt-ultra-cotton",
+    "styleName": "2000",
+    "customTitle": "G200 Gildan 2000 T-Shirt Ultra Cotton",
+    "pPrice": 2.97,
+    "styleImage": "Images/Style/39_fm.jpg",
+    "pModelImage": "Images/Color/17072_f_fm.jpg",
+    "pTotalColors": 63
+  },
+  {
+    "styleID": 213113,
+    "brandName": "Team 365",
+    "slug": "team-365-tt11-mens-zone-performance-t-shirt",
+    "styleName": "TT11",
+    "customTitle": "Team 365 TT11 Mens Zone Performance T-Shirt",
+    "pPrice": 6.4,
+    "styleImage": "Images/Style/tt11_00_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 26
+  },
+  {
+    "styleID": 211820,
+    "brandName": "Core 365",
+    "slug": "core-365-88181-mens-origin-performance-piqu-polo",
+    "styleName": "88181",
+    "customTitle": "Core 365 88181 Mens Origin Performance Piqu Polo",
+    "pPrice": 14.4,
+    "styleImage": "Images/Style/88181_8y_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 16
+  },
+  {
+    "styleID": 33,
+    "brandName": "Hanes",
+    "slug": "hanes-5250-authentic-short-sleeve-t-shirt",
+    "styleName": "5250",
+    "customTitle": "Hanes 5250 Authentic Short Sleeve T-Shirt",
+    "pPrice": 3.38,
+    "styleImage": "Images/Style/33_fm.jpg",
+    "pModelImage": "Images/Color/16941_f_fm.jpg",
+    "pTotalColors": 49
+  },
+  {
+    "styleID": 29,
+    "brandName": "Bella + Canvas",
+    "slug": "bella-canvas-3001-t-shirt-unisex-short-sleeve",
+    "styleName": "3001",
+    "customTitle": "Bella Canvas 3001 T-Shirt Unisex Short Sleeve",
+    "pPrice": 5.48,
+    "styleImage": "Images/Style/29_fm.jpg",
+    "pModelImage": "Images/Color/30654_f_fm.jpg",
+    "pTotalColors": 131
+  },
+  {
+    "styleID": 211733,
+    "brandName": "Core 365",
+    "slug": "core-365-78181-ladies-origin-performance-piqu-polo",
+    "styleName": "78181",
+    "customTitle": "Core 365 78181 Ladies Origin Performance Piqu Polo",
+    "pPrice": 14.4,
+    "styleImage": "Images/Style/78181_3z_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 16
+  },
+  {
+    "styleID": 146,
+    "brandName": "Gildan",
+    "slug": "g800-gildan-t-shirt-8000-dryblend-50-50",
+    "styleName": "8000",
+    "customTitle": "G800 Gildan T-Shirt 8000 DryBlend 50/50",
+    "pPrice": 2.97,
+    "styleImage": "Images/Style/146_fm.jpg",
+    "pModelImage": "Images/Color/17902_f_fm.jpg",
+    "pTotalColors": 41
+  },
+  {
+    "styleID": 213117,
+    "brandName": "Team 365",
+    "slug": "team-365-tt11l-mens-zone-performance-long-sleeve-t-shirt",
+    "styleName": "TT11L",
+    "customTitle": "Team 365 TT11L Mens Zone Performance Long-Sleeve T-Shirt",
+    "pPrice": 8.8,
+    "styleImage": "Images/Style/tt11l_rd_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 13
+  },
+  {
+    "styleID": 213125,
+    "brandName": "Team 365",
+    "slug": "team-365-tt11y-youth-zone-performance-t-shirt",
+    "styleName": "TT11Y",
+    "customTitle": "Team 365 TT11Y Youth Zone Performance T-Shirt",
+    "pPrice": 6.4,
+    "styleImage": "Images/Style/tt11y_sk_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 25
+  },
+  {
+    "styleID": 32,
+    "brandName": "Gildan",
+    "slug": "g640-gildan-t-shirt-64000-softstyle",
+    "styleName": "64000",
+    "customTitle": "G640 Gildan T-Shirt 64000 Softstyle",
+    "pPrice": 2.97,
+    "styleImage": "Images/Style/32_fm.jpg",
+    "pModelImage": "Images/Color/16924_f_fm.jpg",
+    "pTotalColors": 68
+  },
+  {
+    "styleID": 212686,
+    "brandName": "A4",
+    "slug": "a4-n3165-mens-cooling-performance-long-sleeve-t-shirt",
+    "styleName": "N3165",
+    "customTitle": "A4 N3165 Mens Cooling Performance Long Sleeve T-Shirt",
+    "pPrice": 10.4,
+    "styleImage": "Images/Style/n3165_be_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 32
+  },
+  {
+    "styleID": 211901,
+    "brandName": "Adams",
+    "slug": "adams-ad969-optimum-pigment-dyed-cap",
+    "styleName": "AD969",
+    "customTitle": "Adams AD969 Optimum Pigment Dyed-Cap",
+    "pPrice": 8.19,
+    "styleImage": "Images/Style/ad969_13_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 60
+  },
+  {
+    "styleID": 1441,
+    "brandName": "Bella + Canvas",
+    "slug": "bella-canvas-3413-unisex-triblend-short-sleeve-tee",
+    "styleName": "3413",
+    "customTitle": "Bella + Canvas 3413 Unisex Triblend Short Sleeve Tee",
+    "pPrice": 7.97,
+    "styleImage": "Images/Style/1441_fm.jpg",
+    "pModelImage": "Images/Color/26098_f_fm.jpg",
+    "pTotalColors": 66
+  },
+  {
+    "styleID": 211549,
+    "brandName": "Threadfast Apparel",
+    "slug": "threadfast-apparel-100a-unisex-ultimate-t-shirt",
+    "styleName": "100A",
+    "customTitle": "Threadfast Apparel 100A Unisex Ultimate T-Shirt",
+    "pPrice": 6.86,
+    "styleImage": "Images/Style/100a_5c_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 24
+  },
+  {
+    "styleID": 211753,
+    "brandName": "UltraClub",
+    "slug": "ultraclub-8210-mens-cool-dry-meshpiqu-polo",
+    "styleName": "8210",
+    "customTitle": "UltraClub 8210 Mens Cool  Dry MeshPiqu Polo",
+    "pPrice": 14.4,
+    "styleImage": "Images/Style/8210_66_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 22
+  },
+  {
+    "styleID": 10,
+    "brandName": "Hanes",
+    "slug": "hanes-wholesale-t-shirts-5280",
+    "styleName": "5280",
+    "customTitle": "Hanes 5280 ComfortSoft T-Shirt",
+    "pPrice": 2.31,
+    "styleImage": "Images/Style/10_fm.jpg",
+    "pModelImage": "Images/Color/16647_f_fm.jpg",
+    "pTotalColors": 56
+  },
+  {
+    "styleID": 395,
+    "brandName": "Gildan",
+    "slug": "gildan-18500-hoodie-heavy-blend-hooded-sweatshirt",
+    "styleName": "18500",
+    "customTitle": "Gildan 18500 Hoodie Heavy Blend Hooded Sweatshirt",
+    "pPrice": 10.49,
+    "styleImage": "Images/Style/395_fm.jpg",
+    "pModelImage": "Images/Color/19727_f_fm.jpg",
+    "pTotalColors": 47
+  },
+  {
+    "styleID": 212623,
+    "brandName": "Harriton",
+    "slug": "harriton-m990-mens-8-oz-full-zip-fleece",
+    "styleName": "M990",
+    "customTitle": "Harriton M990 Mens 8 oz Full-Zip Fleece",
+    "pPrice": 22.4,
+    "styleImage": "Images/Style/m990_13_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 10
+  },
+  {
+    "styleID": 212090,
+    "brandName": "Big Accessories",
+    "slug": "big-accessories-bx880-6-panel-twill-unstructured-cap",
+    "styleName": "BX880",
+    "customTitle": "Big Accessories BX880 6-Panel Twill Unstructured Cap",
+    "pPrice": 4.24,
+    "styleImage": "Images/Style/bx880_15_p.jpg",
+    "pModelImage": "",
+    "pTotalColors": 13
+  }
+]

@@ -1,0 +1,132 @@
+@import "color.scss";
+@import "utils.scss";
+@import "mixin.scss";
+
+// temp
+.container-buy-again {
+    width: 1241px;
+    margin: 0 auto;
+}
+
+.buy-again-section {
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        .see-more-item {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            font-weight: 600;
+            color: $color-text;
+
+            svg {
+                height: 18px;
+                width: 18px;
+                transform: rotate(-180deg);
+                margin-left: 8px;
+            }
+        }
+
+        .title {
+            color: $color-primary;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+    }
+
+    &__list {
+
+    }
+}
+
+
+.card--product-buy-again {
+
+    & .title {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        text-overflow: ellipsis;
+    }
+
+    & .price {
+        color: $color-red;
+        font-size: 13px;
+        font-weight: 600;
+        margin-left: auto;
+    }
+
+    & .short-title {
+        display: none;
+        @include respond(mobile-lg) {
+
+        }
+    }
+
+    & .colors {
+        color: $color-text;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    & .bought-count {
+        font-size: 12px;
+        color: rgba($color-text, .8);
+    }
+
+    & .add-to-cart {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        background-color: $color-primary;
+        border-radius: 10px;
+        font-size: 12px;
+        color: $color-white;
+        padding: 3px 6px;
+
+        svg {
+            display: block;
+            height: 14px;
+            width: 14px;
+            margin-right: 3px;
+        }
+    }
+
+    &__info {
+        padding: 5px 8px;
+    }
+
+    &__image {
+        height: auto !important;
+        width: 160px;
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        
+        .price {
+            display: none;
+        }
+        
+    }
+    
+    &__middle {
+        display: flex;
+        padding-top: 3px;
+        align-items: center;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        padding-top: 3px;
+    }
+}
