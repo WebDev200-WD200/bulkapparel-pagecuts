@@ -29,8 +29,10 @@ function cardProductImage($product, $size = "bulk-blank-shirts")
 
         <a class="see-more-item" href="">
             See More Items
-            <?php $name = 'chevron-left';
-            include('components/icons.php'); ?>
+
+            <?php template('includes/icons.php', [
+                "name" => "chevron-left"
+            ]) ?>
         </a>
     </div>
     <div class="buy-again-section__list">
@@ -40,44 +42,27 @@ function cardProductImage($product, $size = "bulk-blank-shirts")
             <div class="swiper-wrapper">
                 <?php foreach ($buyAgainItems as $item) : ?>
                     <div class="swiper-slide">
-                        <?php template('components/card-product-buy-again.php', [
+                        <?php template('components/buy-again-section/card-product-buy-again.php', [
                             "product" => $item
                         ]); ?>
                     </div>
                 <?php endforeach ?>
                 <!-- Slides -->
             </div>
-            <div class="swiper-button-prev buy-again-section-swiper__prev"></div>
-            <div class="swiper-button-next buy-again-section-swiper__next"></div>
-
+            <div class="btn buy-again-section-swiper__prev">
+                <?php template('includes/icons.php', [
+                    "name" => "chevron-left"
+                ]) ?>
+            </div>
+            <div class="btn buy-again-section-swiper__next">
+                <?php template('includes/icons.php', [
+                    "name" => "chevron-left"
+                ]) ?>
+            </div>
         </div>
-
-
     </div>
 
 </div>
 
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-
-        slidesPerView: 8.5,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-    });
-</script>
+<?php include_once('select-variant-modal.php'); ?>
+<?php include_once('buy-again-section-script.php')?>

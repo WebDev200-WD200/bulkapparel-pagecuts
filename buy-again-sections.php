@@ -26,16 +26,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
 </head>
 
 <body>
     <?php include('includes/functions.php'); ?>
     <?php // include('./components/layout/header.php') 
     ?>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <main>
         <div class="container-buy-again">
-            <?php include('components/buy-again-product-row.php'); ?>
+            <?php include('components/buy-again-section/buy-again-product-row.php'); ?>
         </div>
     </main>
 

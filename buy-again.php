@@ -21,8 +21,7 @@
     <!-- <link id="theme" rel="stylesheet" href="./css/themes/valentines.theme.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-
+    
 </head>
 
 <body>
@@ -372,7 +371,9 @@
     </script>
 
     <?php include('./components/layout/footer.php') ?>
+    <!-- <script src="assets/js/bootstrap-modal.js"></script> -->
     <script src="assets/js/buy-again.js"></script>
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script> -->
 </body>

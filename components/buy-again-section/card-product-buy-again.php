@@ -1,23 +1,25 @@
 <?php
 
-$mobileImage = cardProductImage($product, 'search');
+$desktopImage = cardProductImage($product, 'search');
 $desktopImage = cardProductImage($product);
-
+$link = base_url_site . $product['slug'];
 ?>
 
 <div class="card--product-buy-again">
-    <picture class="card--product-buy-again__image">
-        <source srcset="<?= $mobileImage['src']; ?> media=" (max-width: 480px)" width="<?= $mobileImage['height']; ?>" height="<?= $mobileImage['height']; ?>">
-        <img src="<?= $desktopImage['src']; ?>" loading=" lazy" width="<?= $desktopImage['height']; ?>" height="<?= $desktopImage['height']; ?>">
-    </picture>
+    <a href="<?=$link?>">
+        <picture class="card--product-buy-again__image">
+            <source srcset="<?= $desktopImage['src']; ?>" media="(max-width: 600px)" width="<?= $desktopImage['height']; ?>" height="<?= $desktopImage['height']; ?>">
+            <img src="<?= $desktopImage['src']; ?>" loading=" lazy" width="<?= $desktopImage['height']; ?>" height="<?= $desktopImage['height']; ?>" width="<?= $desktopImage['height']; ?>" height="<?= $desktopImage['height']; ?>">
+        </picture>
+    </a>
 
     
     <div class="card--product-buy-again__info">
 
         <div class="card--product-buy-again__header">
-            <div class="title">
+            <a href="<?=$link?>" class="title">
                 <?= $product['customTitle'] ?>
-            </div>
+            </a>
     
             <div class="short-title">
                 <?= $product['brandName'] ?> <?= $product['styleName'] ?>
@@ -43,7 +45,7 @@ $desktopImage = cardProductImage($product);
                 Bought 3 times
             </div>
     
-            <button class="btn add-to-cart">
+            <button class="btn add-to-cart" data-id="<?=$product['styleID']?>">
 
                 <?php template('includes/icons.php', [
                     "name" => "add-to-cart"
