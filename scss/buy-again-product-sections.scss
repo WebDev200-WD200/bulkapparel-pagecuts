@@ -118,8 +118,9 @@
   }
 
   &__image {
+    display: block;
     height: auto !important;
-    width: 160px;
+    max-width: 146px;
     img {
       height: auto;
       width: 100%;

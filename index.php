@@ -23,14 +23,15 @@
     <!-- <link id="theme" rel="stylesheet" href="./css/themes/valentines.theme.css"> -->
     <link id="theme" rel="stylesheet" href="./css/themes/independence-day.theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
 </head>
 
 <body>
     <?php include('./components/layout/header.php') ?>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <main>
         <div class="container">
-            
+            <?php include('includes/yesOrNoModal.php');?>
         </div>
     </main>
 
