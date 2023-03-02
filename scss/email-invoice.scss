@@ -1,0 +1,122 @@
+@import "color.scss";
+// @import "utils.scss";
+@import "mixin.scss";
+
+body, html {
+    font-family: "Roboto Condensed", 'Arial Narrow';
+    color: #282828;
+   
+}
+*,*::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+.email-template {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #f8f8f8;
+
+   
+}
+
+table {
+    width: 100%;
+}
+
+.email-invoice {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+
+    &__header {
+        padding: 5px 15px;
+
+        table {
+            border-bottom: 1px solid #000;
+
+            td {
+                padding: 10px 0;
+            }
+        }
+       
+    }
+
+    &__logo {
+
+    }
+
+    &__info {
+        font-weight: bold;
+        color: $color-primary;
+    }
+
+    &__address {
+        padding: 0 15px;
+    }
+
+    &__address-column {
+        td {
+            vertical-align: top;
+        }
+
+        .title {
+            text-align: right;
+            padding-right: 10px;
+        }
+    }
+
+    &__purchase {
+        padding: 10px 15px;
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background: black;
+            color: $color-white;
+            padding: 8px 5px;
+            text-align: start;
+        }
+
+        td {
+            padding: 8px 5px;
+            border-bottom: 1px solid lightgrey;
+        }
+    }
+
+    &__payment {
+        padding: 0 40px 10px 40px;
+        font-size: 18px;
+        font-weight: 600;
+        .title {
+
+        }
+
+        .method {
+
+        }
+    }
+
+    &__summary {
+        padding: 0 15px 10px 15px;
+        .summary {
+            width: 70%;
+            margin-left: auto;
+            font-weight: 600;
+        }
+
+        .title,.value {
+            padding: 2px 0;
+        }
+
+        .value {
+            text-align: right;
+        }
+
+        .total {
+            font-size: 22px;
+        }
+    }
+}
