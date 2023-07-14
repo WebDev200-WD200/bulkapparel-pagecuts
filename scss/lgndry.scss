@@ -1,0 +1,84 @@
+.connect-social {
+    position: relative;
+    height: 300px;
+    width: 100%;
+
+    &::after {
+        display: block;
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background-color: rgba(#000, .5);
+    }
+
+    &--instagram {
+        &::after {
+          background: radial-gradient(51.8% 49.8% at 36.25% 96.55%, rgba(255, 214, 0, 0.5) 0%, rgba(255, 105, 48, 0.5) 48.44%, rgba(254, 59, 54, 0.5) 73.44%, rgba(254, 59, 54, 0) 100%), radial-gradient(182.65% 122.8% at 84.5% 113.5%, rgba(255, 27, 144, 0.5) 24.39%, rgba(248, 2, 97, 0.5) 43.67%, rgba(237, 0, 192, 0.5) 68.85%, rgba(197, 0, 233, 0.5) 77.68%, rgba(112, 23, 255, 0.5));  
+        }
+    }
+
+    &--facebook {
+        &::after {
+            background: linear-gradient(0deg, rgba(59, 89, 152, 0.7), rgba(59, 89, 152, 0.7));
+        }
+    }
+
+    &--tiktok {
+        &::after {
+            background: linear-gradient(138.26deg, rgba(255, 112, 166, 0.5) 1.57%, rgba(171, 107, 255, 0.5) 100.08%);
+        }
+    }
+
+    &--twitter {
+        &::after {
+            background: linear-gradient(0deg, rgba(29, 161, 242, 0.5), rgba(29, 161, 242, 0.5));
+        }
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        color: #fff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &:hover {
+            color: rgba(#fff, .8) !important;
+
+            .logo {
+                opacity: .8;
+            }
+        } 
+
+        .logo {
+            svg {
+                height: 60px;
+            }
+        }
+
+        .text {
+            margin-top: 10px;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
+        img {
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
