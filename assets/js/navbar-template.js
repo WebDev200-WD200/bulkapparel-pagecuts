@@ -545,7 +545,7 @@ const headerTemplate = `
 
 `;
 
-$(".navbar").html(headerTemplate);
+// $(".navbar").html(headerTemplate);
 
 // function changeTheme(theme) {
 //     const headCss = $("#theme");

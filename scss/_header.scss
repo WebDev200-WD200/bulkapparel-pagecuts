@@ -1,3 +1,5 @@
+@import "new-menu/_new-menu";
+
 .navbar {
   @include respond(tab-port) {
       margin-bottom: 0px !important;

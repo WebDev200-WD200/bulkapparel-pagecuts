@@ -28,10 +28,9 @@
 </head>
 
 <body>
-    <?php include('./components/layout/header.php') ?>
+    <?php include('./components/layout/new-header.php') ?>
     <main>
         <div class="container">
-            <?php include('includes/yesOrNoModal.php');?>
         </div>
     </main>
 

@@ -231,5 +231,5 @@
         </div>
     </div>
 </footer>
-<script src="./assets/js/templateGenarator.js"></script>
+<!-- <script src="./assets/js/templateGenarator.js"></script> -->
 <script src="./assets/js/shop-by-colors.js"></script>
