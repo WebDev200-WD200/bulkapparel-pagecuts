@@ -8,13 +8,13 @@
             @include respond(mobile-lg) {
                 padding: 12px 8px;
             }
-           
+
         }
-        
+
         &:hover {
             a {
                 background-color: rgba($color-black, 0.03);
-                
+
             }
         }
 
@@ -23,9 +23,7 @@
         }
     }
 
-    &__body {
-
-    }
+    &__body {}
 
     &__icon {
         width: 42px;

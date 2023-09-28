@@ -1,0 +1,187 @@
+@import "./color.scss";
+
+$checkbox-rounded: 5px;
+$radio-rounded: 100%;
+$checkbox-size: 22px;
+$checkbox-radio-color: #E8E8E8;
+
+.checkbox {
+	display: block;
+	position: relative;
+	width: $checkbox-size;
+	height: $checkbox-size;
+	z-index: 0;
+	overflow: hidden;
+	border-radius: $checkbox-rounded;
+	/* Add if not using autoprefixer */
+	-webkit-appearance: none;
+	appearance: none;
+	/* For iOS < 15 to remove gradient background */
+	background-color: #fff;
+	/* Not removed via appearance */
+	cursor: pointer;
+	margin: 0;
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: inherit;
+		height: inherit;
+		border-radius: $checkbox-rounded;
+		background-color: $checkbox-radio-color;
+	}
+
+	&::after {
+		content: url('../assets/img/checkbox.svg');
+		top: 0;
+		left: 0;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		z-index: 2;
+		border-radius: $checkbox-rounded;
+		background-color: $color-primary;
+	}
+
+
+	&:checked::after {
+		display: flex;
+	}
+
+}
+
+.radiobutton {
+	display: block;
+	position: relative;
+	width: $checkbox-size;
+	height: $checkbox-size;
+	z-index: 0;
+	overflow: hidden;
+	border-radius: $radio-rounded;
+	/* Add if not using autoprefixer */
+	-webkit-appearance: none;
+	appearance: none;
+	/* For iOS < 15 to remove gradient background */
+	background-color: #fff;
+	/* Not removed via appearance */
+	cursor: pointer;
+	margin: 0;
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: inherit;
+		height: inherit;
+		border-radius: inherit;
+		background-color: $checkbox-radio-color;
+	}
+
+	&::after {
+		content: '';
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		z-index: 2;
+		border-radius: inherit;
+		background-color: #fff;
+	}
+
+
+	&:checked::after {
+		display: flex;
+	}
+
+	&:checked::before {
+		background-color: $color-primary;
+	}
+
+}
+
+.side-filters {
+	display: flex;
+	flex-direction: column;
+}
+
+.side-filter {
+	display: flex;
+	width: 250px;
+	flex-direction: column;
+	row-gap: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $color-border;
+
+	&__item {
+		width: 100%;
+	}
+
+	&__btn {
+		display: flex;
+		font-size: 20px;
+		width: 100%;
+		font-weight: bold;
+		height: 34px;
+		align-items: center;
+	}
+
+	&__arrow {
+		margin-left: auto;
+		color: $color-text;
+
+		svg {
+			fill: inherit;
+			opacity: 50%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 12px;
+	}
+
+
+	&__item {
+		align-items: center;
+		font-size: 18px;
+
+		.label {
+			display: flex;
+			width: 100%;
+		}
+
+		.name {
+			margin-left: 8px;
+			margin-right: 5px;
+		}
+
+		.count {
+			font-weight: 600;
+			opacity: 75%;
+		}
+	}
+
+	&__more {
+		font-size: 18px;
+		font-weight: bold;
+		text-align: left;
+		color: $color-primary;
+	}
+}

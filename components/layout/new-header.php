@@ -686,7 +686,7 @@
                             </button>
                         </div>
                         <ul class="mega-menu">
-                            <?php include('menu-items/t-shirts.php') ?>
+                            <!-- <?php include('menu-items/t-shirts.php') ?> -->
                         </ul>
                     </li>
                 </ul>

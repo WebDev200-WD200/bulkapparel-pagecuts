@@ -2,67 +2,7 @@
 @import "./mixin";
 
 .card {
-  &--primary {
-    display: flex;
-    flex-direction: column;
-    padding: 5px 8px;
-    border: 1px solid rgba($color-black, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-    &__image {
-      position: relative;
-      width: 100%;
-      user-select: none;
-      img {
-        width: 100%;
-      }
-    }
 
-    &__body {
-      display: flex;
-      padding: 10px 0;
-    }
-
-    &__footer {
-      display: flex;
-      border-top: 1px solid rgba($color-black, 0.1);
-      padding: 10px 0;
-    }
-
-    &__brand {
-      height: 25px;
-      margin-right: 8px;
-      img {
-        height: 100%;
-      }
-    }
-
-    &__title {
-      font-size: 14px;
-      color: $color-black;
-    }
-
-    &__available {
-      width: 32%;
-      font-size: 14px;
-    }
-
-    &__price {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-
-      .start-at {
-        font-size: 13px;
-        margin-right: 5px;
-      }
-      .price {
-        font-size: 25px;
-        font-weight: 700;
-        color: $color-red;
-      }
-    }
-  }
   &--form {
     color: $color-dark7;
     background: #fff;
@@ -71,43 +11,54 @@
 
     &__title {
       font-size: 27px;
+
       @include respond(tab-port) {
         font-size: 24px;
       }
+
       @include respond(mobile-lg) {
         font-size: 20px;
       }
     }
+
     &__subtitle {
       color: $color-lightgray-11;
       margin-top: 5px;
+
       @include respond(tab-port) {
         font-size: 14px;
       }
     }
+
     &__body,
     &__header,
     &__actions {
       padding: 19px 30px;
+
       @include respond(tab-port) {
         // font-size: ;
         padding: 15px 20px;
       }
+
       @include respond(mobile-lg) {
         padding: 12px 12px;
       }
     }
-    &__body {
-    }
+
+    &__body {}
+
     &__header {
       border-bottom: 1px solid rgba($color-dark7, 0.05);
     }
+
     &__actions {
       display: flex;
     }
+
     &__loading {
       height: 50px;
       margin-left: auto;
+
       img {
         height: 100%;
       }
@@ -119,43 +70,44 @@
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05),
       -10px -10px 30px rgba(0, 0, 0, 0.05);
 
+    @include respond(tab-port) {
+      padding: 40px 20px;
+    }
+
+    @include respond(mobile-lg) {
+      padding: 26px 16px;
+    }
+
+    &__header {}
+
+    &__title {
+      font-size: 26px;
+      color: $color-darkblue;
+
       @include respond(tab-port) {
-        padding: 40px 20px;
+        font-size: 24px
       }
+
       @include respond(mobile-lg) {
-        padding: 26px 16px;
+        font-size: 23px
       }
-      
-      &__header {
-      }
-      
-      &__title {
-        font-size: 26px;
-        color: $color-darkblue;
 
-        @include respond(tab-port) {
-          font-size: 24px
-        }
-        @include respond(mobile-lg) {
-          font-size: 23px
-        }
-        
-      }
-      
-      &__description {
-        font-size: 16px;
-        color: #707070;
-        
-        @include respond(tab-port) {
-          font-size: 15px;
-        }
-        @include respond(mobile-lg) {
-          font-size: 14px;
-        }
     }
 
-    &__body {
+    &__description {
+      font-size: 16px;
+      color: #707070;
+
+      @include respond(tab-port) {
+        font-size: 15px;
+      }
+
+      @include respond(mobile-lg) {
+        font-size: 14px;
+      }
     }
+
+    &__body {}
 
     &__footer-text {
       color: #707070;
@@ -164,12 +116,13 @@
       @include respond(tab-port) {
         font-size: 16px;
       }
+
       a {
         font-weight: 700;
         color: $color-darkblue;
       }
 
-     
+
     }
   }
 }
@@ -199,7 +152,7 @@
     background: #F6F5F5;
     font-size: 19px;
     width: 100%;
-    border-bottom: 2px solid #c4c4c4 ;
+    border-bottom: 2px solid #c4c4c4;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 
@@ -207,7 +160,7 @@
       padding: 14px 18px;
       font-size: 16px;
     }
-    
+
     &__hint {
       font-size: 14px;
       color: grey;
@@ -240,7 +193,8 @@
     background: #fff;
 
     @include respond(tab-port) {
-      box-shadow: none !important;    }
+      box-shadow: none !important;
+    }
   }
 
   .card--new-form {
