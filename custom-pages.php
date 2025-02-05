@@ -54,7 +54,7 @@
                 <div class="custompage__row">
                     <div class="custompage__image custompage__item">
                         <a href="">
-                            <img src="https://300dev.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
+                            <img src="https://dev8888.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
                         </a>
                     </div>
                     <div class="custompage__content custompage__item">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="custompage__image custompage__item">
                         <a href="">
-                            <img src="https://300dev.bulkapparel.com/images/custom-images/SCREEN PRINTING ON 100_ POLYESTER.jpg" alt="Screen Printing on 100% Polyester ">
+                            <img src="https://dev8888.bulkapparel.com/images/custom-images/SCREEN PRINTING ON 100_ POLYESTER.jpg" alt="Screen Printing on 100% Polyester ">
                         </a>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="custompage__row">
                     <div class="custompage__image custompage__item">
                         <a href="">
-                            <img src="https://300dev.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
+                            <img src="https://dev8888.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
                         </a>
                     </div>
                     <div class="custompage__content custompage__item">
@@ -124,7 +124,7 @@
                     </div>
                     <div class="custompage__image custompage__item">
                         <a href="">
-                            <img src="https://300dev.bulkapparel.com/images/custom-images/SCREEN PRINTING ON 100_ POLYESTER.jpg" alt="Screen Printing on 100% Polyester ">
+                            <img src="https://dev8888.bulkapparel.com/images/custom-images/SCREEN PRINTING ON 100_ POLYESTER.jpg" alt="Screen Printing on 100% Polyester ">
                         </a>
                     </div>
                 </div>
@@ -132,7 +132,7 @@
                 <div class="custompage__row">
                     <div class="custompage__image custompage__item">
                         <a href="">
-                            <img src="https://300dev.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
+                            <img src="https://dev8888.bulkapparel.com/images/custom-images/SCREEN PRINTING.jpg" alt="screen printing ">
                         </a>
                     </div>
                     <div class="custompage__content custompage__item">

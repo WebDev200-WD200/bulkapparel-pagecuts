@@ -1,0 +1,84 @@
+@import "./color";
+
+.email-spacing {
+		margin-bottom: 40px !important;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.m-0 {
+	margin: 0;
+}
+
+.email {
+	font-size: 20px;
+	&__header {
+		margin: 0;
+		color: $color-primary;
+		font-size: 32px;
+		text-align: center;
+	}
+
+	&__product {
+		background-color: #F4F8FC;
+		border-radius: 5px;
+		padding: 20px 30px;
+		border: 1px solid #E0E0E0;
+	}
+
+	&__product-link {
+		font-size: 24px;
+		width: 100%;
+		color: #2B4DC6;
+		padding: 0 !important;
+		margin: 0 !important;
+		font-weight: 600;
+	}
+
+	&__body {
+		font-size: 20px;
+	}
+
+&__hi {
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+	&__customer{
+		color: $color-primary;
+		font-weight: bold;
+	}
+}
+
+.question-container {
+	margin-bottom: 45px;
+	&__header {
+		font-size: 20px;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	&__body {
+		margin: 0;
+	}
+}
+
+
+.answer-container {
+padding: 40px 30px;
+background-color: #F4F8FC;
+border-left: 4px  solid #004973;
+margin-bottom: 15px;
+	&__header {
+		font-size: 20px;
+		margin: 0;
+		color: $color-primary;
+		margin-bottom: 20px;
+	}
+
+	&__body {
+		margin: 0;
+	}
+}

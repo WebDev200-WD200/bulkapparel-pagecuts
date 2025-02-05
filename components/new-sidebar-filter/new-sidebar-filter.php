@@ -28,7 +28,7 @@ $filters = [
 		"count" => 775,
 		"param" => "mens",
 		"selected" => false,
-		"url" => "https://300dev.bulkapparel.com/styles?sfid=mens",
+		"url" => "https://dev8888.bulkapparel.com/styles?sfid=mens",
 		"type" => "shop-for"
 	],
 	[
@@ -36,7 +36,7 @@ $filters = [
 		"count" => 385,
 		"param" => "womens",
 		"selected" => false,
-		"url" => "https://300dev.bulkapparel.com/styles?sfid=womens",
+		"url" => "https://dev8888.bulkapparel.com/styles?sfid=womens",
 		"type" => "shop-for"
 	],
 	[
@@ -44,7 +44,7 @@ $filters = [
 		"count" => 155,
 		"param" => "youth",
 		"selected" => false,
-		"url" => "https://300dev.bulkapparel.com/styles?sfid=youth",
+		"url" => "https://dev8888.bulkapparel.com/styles?sfid=youth",
 		"type" => "shop-for"
 	],
 	[
@@ -52,7 +52,7 @@ $filters = [
 		"count" => 20,
 		"param" => "girls",
 		"selected" => false,
-		"url" => "https://300dev.bulkapparel.com/styles?sfid=girls",
+		"url" => "https://dev8888.bulkapparel.com/styles?sfid=girls",
 		"type" => "shop-for"
 	]
 ]; ?>

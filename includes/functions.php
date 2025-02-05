@@ -1,5 +1,5 @@
 <?php 
-define('base_url_site', 'https://300dev.bulkapparel.com/');
+define('base_url_site', 'https://dev8888.bulkapparel.com/');
 define('SYMBOL', '$');
 
 define('PRODUCT_IMAGES_CONFIG', [

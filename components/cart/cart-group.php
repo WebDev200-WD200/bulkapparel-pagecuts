@@ -39,13 +39,13 @@
                     <button type="button" class="btn group-more-items" data-load-more-target="<?=$load_more_id?>">
                         <div class="group-more-items__images" style="opacity: 1;">
                             <picture class="image">
-                                <img src="https://300dev.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
+                                <img src="https://dev8888.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
                             </picture>
                             <picture class="image">
-                                <img src="https://300dev.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
+                                <img src="https://dev8888.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
                             </picture>
                             <picture class="image">
-                                <img src="https://300dev.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
+                                <img src="https://dev8888.bulkapparel.com/image/thumbnail-m/16_fm.jpg" alt="G500 Gildan T-Shirt 5000 Heavy Cotton 5.3" height="40" width="40" loading="lazy">
                             </picture>
                             <div class="image">
                                 3+

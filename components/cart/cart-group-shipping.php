@@ -20,7 +20,7 @@
 
                     <div class="cart-shipping-item__body">
                         <div class="cart-shipping-item__header">
-                            <img src="https://300dev.bulkapparel.com/images/surepost-logo.jpg" alt="" class="cart-shipping-item__image">
+                            <img src="https://dev8888.bulkapparel.com/images/surepost-logo.jpg" alt="" class="cart-shipping-item__image">
 
                             <h4 class="cart-shipping-item__title">
                                 <?= $shipping['date'] ?>

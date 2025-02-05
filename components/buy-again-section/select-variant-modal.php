@@ -7,14 +7,14 @@
 
             <div class="buy-again-card" data-id="39">
                 <div class="buy-again-card__main">
-                    <a href="https://300dev.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton">
+                    <a href="https://dev8888.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton">
                         <picture class="buy-again-card__image">
-                            <source srcset="https://300dev.bulkapparel.com/image/thumbnail-m/39_fm.jpg" media="(max-width: 480px)">
-                            <img class="image" src="https://300dev.bulkapparel.com/image/thumbnail/39_fm.jpg" alt="" loading="true">
+                            <source srcset="https://dev8888.bulkapparel.com/image/thumbnail-m/39_fm.jpg" media="(max-width: 480px)">
+                            <img class="image" src="https://dev8888.bulkapparel.com/image/thumbnail/39_fm.jpg" alt="" loading="true">
                         </picture>
                     </a>
                     <div class="buy-again-card__info">
-                        <a href="https://300dev.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton" class="title">G200 Gildan 2000 T-Shirt Ultra Cotton</a>
+                        <a href="https://dev8888.bulkapparel.com/tshirts/g200-gildan-2000-t-shirt-ultra-cotton" class="title">G200 Gildan 2000 T-Shirt Ultra Cotton</a>
                         <p class="start-at">
                             Starting at <span class="price">$2.97</span>
                         </p>

@@ -472,7 +472,7 @@
                                         <ul>
                                             <?php foreach ($group['items'] as $key => $item) : ?>
                                                 <li>
-                                                    <a class="shop-all-colors-box" href="https://300dev.bulkapparel.com/styles?color=<?= $item['name'] ?>">
+                                                    <a class="shop-all-colors-box" href="https://dev8888.bulkapparel.com/styles?color=<?= $item['name'] ?>">
                                                         <div class="shop-all-colors-box__color" style="background-color: <?= $item['hex'] ?>;">
 
                                                         </div>

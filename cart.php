@@ -33,7 +33,7 @@
 
         <?php
         // remove this after
-        define('base_site_url', 'https://300dev.bulkapparel.com/');
+        define('base_site_url', 'https://dev8888.bulkapparel.com/');
         define('SYMBOL', '$');
 
         function formatToMoney($value, $format = true)

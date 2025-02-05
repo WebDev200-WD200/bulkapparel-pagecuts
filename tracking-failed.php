@@ -161,7 +161,7 @@
                             <p style="text-align:center;font-size:13px;color:navy"> We will offer customer support by Chat and Email only.</p>
                             <p style="text-align:center;font-size:14px;color:Green"> All orders are being processsed and shipped at this time.**</p>
                         </h5>
-                        <h3><a href="https://300dev.bulkapparel.com/generate_coupon?code=SALEANDSAVE" style="font-size: 15px;color: #d83939;margin: auto;">PROMO : SALEANDSAVE</a></h3>
+                        <h3><a href="https://dev8888.bulkapparel.com/generate_coupon?code=SALEANDSAVE" style="font-size: 15px;color: #d83939;margin: auto;">PROMO : SALEANDSAVE</a></h3>
                     </div>
                     <!-- Tracking Sidebar Ads End -->
                 </div>

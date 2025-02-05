@@ -1,27 +1,27 @@
 <?php
 $shopByStyle = [
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/10722_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/10722_fm.jpg",
         "title" => "Short-Sleeve",
         "to" => "/tshirts-mens-shortsleeves"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/135_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/135_fm.jpg",
         "title" => "Long-Sleeve",
         "to" => "/longsleeves-tshirts"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/6534_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/6534_fm.jpg",
         "title" => "Three-Quarter Sleeve",
         "to" => "/styles?q=three+quarter"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/3180_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/3180_fm.jpg",
         "title" => "Tank-Tops",
         "to" => "/tshirts-tanktops"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/3461_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/3461_fm.jpg",
         "title" => "V-Neck",
         "to" => "/tshirts-vneck"
     ],
@@ -31,7 +31,7 @@ $shopByStyle = [
         "to" => "/tshirts-cottonover50-athletics"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/16_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/16_fm.jpg",
         "title" => "View All T-Shirts",
         "to" => "/tshirts"
     ],
@@ -40,22 +40,22 @@ $shopByStyle = [
 
 $shopByGender = [
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/16_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/16_fm.jpg",
         "title" => "Men & Unisex",
         "to" => "/tshirts?sfid=mens"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/3898_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/3898_fm.jpg",
         "title" => "Womens",
         "to" => "/tshirts?sfid=womens"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/540_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/540_fm.jpg",
         "title" => "Youth",
         "to" => "/tshirts?sfid=youth"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image//bulk-blank-shirts/6167_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image//bulk-blank-shirts/6167_fm.jpg",
         "title" => "Infant & Toddlers",
         "to" => "/tshirts?sfid=youth"
     ],
@@ -145,47 +145,47 @@ $shopByColor = [
 
 $shopByBrands = [
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/35_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/35_fm.jpg",
         "title" => "Gildan",
         "to" => "/gildan"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/5_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/5_fm.jpg",
         "title" => "Bella + Canvas",
         "to" => "/bella-canvas"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/medium/23_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/medium/23_fm.jpg",
         "title" => "Jer",
         "to" => "/"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/1_fm.png",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/1_fm.png",
         "title" => "Hanes",
         "to" => "/hanes"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/123_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/123_fm.jpg",
         "title" => "Next Level",
         "to" => "/next-level"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/9_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/9_fm.jpg",
         "title" => "Fruit of the Loom",
         "to" => "/fruit-of-the-loom"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/8_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/8_fm.jpg",
         "title" => "Comfort Colors",
         "to" => "/comfort-colors"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/large/51_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/large/51_fm.jpg",
         "title" => "Alternative  ",
         "to" => "/alternative"
     ],
     [
-        "image" => "https://300dev.bulkapparel.com/image/brand/medium/201_fm.jpg",
+        "image" => "https://dev8888.bulkapparel.com/image/brand/medium/201_fm.jpg",
         "title" => "Tultex",
         "to" => "/tultex"
     ],
