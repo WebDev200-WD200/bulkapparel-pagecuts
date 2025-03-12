@@ -55,9 +55,12 @@ $font-color: rgba(#3C3C43, .85);
         margin-bottom:  30px;
     }
 
+    @media (max-width: 1000px) {
+					gap: 10px;
+    }
+
 		@media (max-width: 900px) {
 			    grid-template-columns: repeat(2, minmax(0, 1fr));
-					gap: 10px;
     }
 }
 
@@ -91,9 +94,12 @@ $font-color: rgba(#3C3C43, .85);
         color: white;
         gap: 8px;
 
+        @media (max-width: 1000px) {
+            padding: 10px;
+        }
+
         @include respond(mobile-lg) {
           gap: 0;
-          padding: 10px;
         }
 
         h2 {
@@ -101,9 +107,9 @@ $font-color: rgba(#3C3C43, .85);
             font-size: 24px;
             line-height: 1.2;
 
-						@include respond(mobile-lg) {
-							font-size: 22px;
-						}
+            @media screen and (max-width: 1100px) {
+                font-size: 22px; 
+            }
 
 						@media screen and (max-width: 410px) {
 							font-size: 20px;
@@ -116,7 +122,11 @@ $font-color: rgba(#3C3C43, .85);
 
 
         p {
-						font-size: 12px;
+						font-size: 14px;
+
+            @include respond(mobile-lg) {
+              font-size: 12px;
+            }
 					}
 
         a,button,.promo-button {
@@ -135,11 +145,19 @@ $font-color: rgba(#3C3C43, .85);
             transition: background-color 0.3s;
 						font-size: 18px;
 
+            @media screen and (max-width: 1100px) {
+                font-size: 16px; 
+            }
+
+            @media screen and (max-width: 1000px) {
+              width: calc(100% - 20px); 
+							bottom: 10px;
+              padding: 4px 8px;
+            }
+
 						@include respond(mobile-lg) {
 							font-size: 14px;
-							width: calc(100% - 20px);
-							bottom: 10px;
-							padding: 4px 8px;
+							
 						}
 
 						@include respond(mobile-m) {
@@ -235,7 +253,7 @@ $font-color: rgba(#3C3C43, .85);
 
         &.accordion-active {
             max-height: 1000px;
-            padding: 16px 24px 32px 0;
+            padding: 16px 0 32px 0;
         }
 
         p {
@@ -308,14 +326,6 @@ $font-color: rgba(#3C3C43, .85);
     display: flex;
     margin-bottom: 40px;
     width: 100%;
-    img {
-        width: 100%;
-        aspect-ratio: 16 / 3;
-
-        @media (max-width: 475px) {
-            aspect-ratio: 768 / 360;
-        }
-    }
 }
 
 .swiper-review-container {
