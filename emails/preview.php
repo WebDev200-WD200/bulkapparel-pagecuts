@@ -1,27 +1,10 @@
 <?php
-// Start session to store the selected template
-session_start();
-
 // Include data
 require_once __DIR__ . '/config.php';
 
 // Make sure the components directory exists
 if (!file_exists(__DIR__ . '/components')) {
    mkdir(__DIR__ . '/components', 0755, true);
-}
-
-// Get the template to preview
-// If template is in GET, use it and save to session
-if (isset($_GET['template'])) {
-    $template = $_GET['template'];
-    $_SESSION['selected_template'] = $template;
-// If not in GET but in session, use from session
-} elseif (isset($_SESSION['selected_template'])) {
-    $template = $_SESSION['selected_template'];
-// Default to order-confirmed if no template is specified
-} else {
-    $template = 'order-confirmed';
-    $_SESSION['selected_template'] = $template;
 }
 
 // List of available templates
@@ -32,6 +15,11 @@ $templates = [
    'order-delivered' => 'Order Delivered',
    'review-request' => 'Review Request'
 ];
+
+// Get the template to preview from URL parameter only
+$template = isset($_GET['template']) && array_key_exists($_GET['template'], $templates) 
+    ? $_GET['template'] 
+    : 'order-confirmed';
 
 // If this is an AJAX request, just return the template content
 if (isset($_GET['ajax']) && $_GET['ajax'] == 'true') {
@@ -71,6 +59,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 'true') {
             padding: 20px;
         }
         .template-selector {
+            padding: 0 10px;
             margin-bottom: 0;
         }
         .template-list {
@@ -85,6 +74,7 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 'true') {
             text-decoration: none;
             transition: all 0.2s;
             border-left: 3px solid transparent;
+            margin-bottom: 5px;
         }
         .template-link:hover {
             color: white;
@@ -265,11 +255,6 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 'true') {
                 $activeLink.addClass('active');
             }
             
-            // Update URL without reloading the page
-            const url = new URL(window.location.href);
-            url.searchParams.set('template', templateName);
-            window.history.pushState({}, '', url);
-            
             // Load template content into iframe
             $iframe.on('load', function() {
                 $loading.hide();
@@ -287,23 +272,22 @@ if (isset($_GET['ajax']) && $_GET['ajax'] == 'true') {
         
         // Initial load
         $(document).ready(function() {
-            loadTemplate('<?php echo $template; ?>');
+            // Get template from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const template = urlParams.get('template') || 'order-confirmed';
+            
+            loadTemplate(template);
             
             // Add click event listeners to all template links
             $('.template-link').on('click', function(e) {
                 e.preventDefault();
                 const templateName = $(this).data('template');
-                loadTemplate(templateName);
+                
+                // Update URL with the new template parameter
+                const url = new URL(window.location.href);
+                url.searchParams.set('template', templateName);
+                window.location.href = url.toString();
             });
-        });
-        
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function(event) {
-            const url = new URL(window.location.href);
-            const templateParam = url.searchParams.get('template');
-            if (templateParam) {
-                loadTemplate(templateParam);
-            }
         });
         
         // Print the email
