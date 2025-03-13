@@ -137,11 +137,11 @@ $emailContent .= '
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td style="padding: 20px;">
-        <div class="tracking-box" style="background-color: #f5f5f5; padding: 10px; margin: 10px 0;">
+        <div class="tracking-box" style="background-color: #f5f5f5; padding: 10px; margin: 10px 0; border: 1px solid #e5e5e5;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="50%" style="font-weight: bold;">Tracking Number</td>
-              <td width="50%"><a href="#" style="color: #002868; text-decoration: underline;">' . $emailData['order']['tracking_number'] . '</a></td>
+              <td width="50%"><a href="#" style="color: #002868; text-decoration: underline;font-weight:bold;">' . $emailData['order']['tracking_number'] . '</a></td>
             </tr>
           </table>
         </div>
