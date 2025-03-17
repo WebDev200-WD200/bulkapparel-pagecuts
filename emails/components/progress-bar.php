@@ -33,12 +33,12 @@ function renderProgressBar($emailData, $currentStatus) {
    <!-- Progress Bar -->
    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">
      <tr>
-       <td style="padding: 10px 20px;">
+       <td>
          <img src="' . $progressImage . '" alt="Order Progress" style="width: 100%; max-width: 600px; height: auto;" />
        </td>
      </tr>
      <tr>
-       <td style="padding: 0 20px;">
+       <td>
          <table width="100%" border="0" cellspacing="0" cellpadding="0">
            <tr>
              <td width="25%" align="center" valign="top" style="padding-top: 5px;">

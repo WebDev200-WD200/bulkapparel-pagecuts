@@ -50,7 +50,7 @@ function renderSuggestedItems($suggestedItems, $title = "Suggested Items", $desc
                       </td>
                   </tr>
                   <tr>
-                      <td style="padding: 8px; 5px 0 5px;">
+                      <td style="padding: 8px 5px 0 5px;">
                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                   <td style="font-family: \'Open Sans\', Arial, sans-serif; font-size: 12px; color: #666666;">

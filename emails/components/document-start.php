@@ -27,8 +27,11 @@ function renderDocumentStart($title) {
   </style>
   <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; font-family: \'Open Sans\', Arial, sans-serif; background: #f8f8f8;">
-  <div class="body-wrapper" style="max-width: 600px; margin: 100px auto; background: white; font-family: \'Open Sans\', Arial, sans-serif;">';
+<body style="margin: 0; padding: 0; font-family: \'Open Sans\', Arial, sans-serif; background: #f8f8f8; padding: 100px 0;">
+  <table class="body-wrapper" style="max-width: 600px; margin: 0 auto; background: white; font-family: \'Open Sans\', Arial, sans-serif;">
+  <tr>
+  <td>
+  ';
 }
 
 /**
@@ -37,8 +40,8 @@ function renderDocumentStart($title) {
  * @return string HTML markup for the end of the email document
  */
 function renderDocumentEnd() {
-    return '
-  </div>
+    return '   </td> </tr>
+  </table>
 </body>
 </html>';
 }
