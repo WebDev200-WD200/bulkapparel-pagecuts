@@ -11,37 +11,40 @@ require_once __DIR__ . '/config.php';
 
 // Define default data for this template
 $defaultData = [
-   'customer' => [
-       'name' => 'KIMBERELY',
-       'full_name' => 'KIMBERELY LLOYD',
-       'email' => 'customer@example.com',
-       'address' => '6041 Stonechase Blvd',
-       'city' => 'Pace',
-       'state' => 'FL',
-       'zip' => '32571',
-       'phone' => '(540) 760-6687'
-   ],
-   'order' => [
-       'number' => 'B736752781737',
-       'date' => 'Sunday, January 12',
-       'order_date_short' => '01/16/25',
-       'shipping_method' => 'USPS',
-       'shipping_time' => '3-7 Business Days',
-       'total_items' => 1,
-       'payment_method' => 'Visa XXXX1111',
-       'tracking_number' => '1Z80E16V033142087',
-       'estimated_delivery' => 'January 20th, 2025',
-       'delivery_date_short' => '01/20/25',
-       'delivery_date' => 'Friday, January 17',
-       'shipped_date' => '01/16/25',
-       'out_for_delivery_date' => '01/20/25'
-   ],
-   'status' => [
-       'ordered' => true,
-       'shipped' => true,
-       'out_for_delivery' => true,
-       'delivered' => true
-   ]
+  'email' => [
+    'preview_text' => '',
+  ],
+  'customer' => [
+    'name' => 'KIMBERELY',
+    'full_name' => 'KIMBERELY LLOYD',
+    'email' => 'customer@example.com',
+    'address' => '6041 Stonechase Blvd',
+    'city' => 'Pace',
+    'state' => 'FL',
+    'zip' => '32571',
+    'phone' => '(540) 760-6687'
+  ],
+  'order' => [
+    'number' => 'B736752781737',
+    'date' => 'Sunday, January 12',
+    'order_date_short' => '01/16/25',
+    'shipping_method' => 'USPS',
+    'shipping_time' => '3-7 Business Days',
+    'total_items' => 1,
+    'payment_method' => 'Visa XXXX1111',
+    'tracking_number' => '1Z80E16V033142087',
+    'estimated_delivery' => 'January 20th, 2025',
+    'delivery_date_short' => '01/20/25',
+    'delivery_date' => 'Friday, January 17',
+    'shipped_date' => '01/16/25',
+    'out_for_delivery_date' => '01/20/25'
+  ],
+  'status' => [
+    'ordered' => true,
+    'shipped' => true,
+    'out_for_delivery' => true,
+    'delivered' => true
+  ]
 ];
 
 // Use passed data or default data
@@ -56,8 +59,11 @@ $companyWebsite = getConfig('company.website');
 $customerServiceUrl = getConfig('company.customer_service_url');
 $pointsPerReview = getConfig('rewards.points_per_review');
 
+// Create preview text
+$previewText = empty($emailData['email']['preview_text']) ? 'Your order #' . $emailData['order']['number'] . ' has been delivered! We hope you love your purchase. Leave a review and earn reward points!' : $emailData['email']['preview_text'];
+
 // Generate the email content
-$emailContent = renderDocumentStart('Your Order Was Delivered!');
+$emailContent = renderDocumentStart('Your Order Was Delivered!', $previewText);
 
 // Add header
 $emailContent .= renderHeader('Your Order Was Delivered!');
@@ -144,10 +150,10 @@ $emailContent .= '
 
 // Add review box with same design but slightly modified text for delivered context
 $emailContent .= renderReviewBox(
-  "Get ".$pointsPerReview." Rewards Points!",
+  "Get " . $pointsPerReview . " Rewards Points!",
   "Leave A Review And Earn Points!",
-  "Enjoying your recent purchase? Visit the item page and share your thoughts by leaving a review. Whether it’s good or bad, we value your honest feedback and won’t judge. Plus, you’ll earn ".$pointsPerReview." points just for sharing! Redeem your points anytime for website credit.",
-  "+".$pointsPerReview." POINTS PER REVIEW"
+  "Enjoying your recent purchase? Visit the item page and share your thoughts by leaving a review. Whether it’s good or bad, we value your honest feedback and won’t judge. Plus, you’ll earn " . $pointsPerReview . " points just for sharing! Redeem your points anytime for website credit.",
+  "+" . $pointsPerReview . " POINTS PER REVIEW"
 );
 
 // Add thank you
@@ -161,5 +167,3 @@ $emailContent .= renderDocumentEnd();
 
 // Output the email content
 echo $emailContent;
-?>
-

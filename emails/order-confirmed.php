@@ -11,17 +11,36 @@ require_once __DIR__ . '/config.php';
 // Add info-box component to includes
 require_once __DIR__ . '/components/info-box.php';
 
-// Define default data for this template
+// Define default data for this template, and be use when no data is passed for testing purposes 
 $defaultData = [
+  'email' => [
+    'preview_text' => '',
+  ],
   'customer' => [
     'name' => 'KIMBERELY',
     'full_name' => 'KIMBERELY LLOYD',
-    'email' => 'customer@example.com',
+  ],
+  'shipping_address' => [
+    'name' => 'KIMBERELY LLOYD',
     'address' => '6041 Stonechase Blvd',
+    'address_2' => '6042 Stonechase Blvd',
+    'email' => 'kimberly@webdev200.com',
     'city' => 'Pace',
     'state' => 'FL',
     'zip' => '32571',
-    'phone' => '(540) 760-6687'
+    'phone' => '(540) 760-6687',
+    'company' => 'Bulk Apparel',
+  ],
+  'billing_address' => [
+    'name' => 'KIMBERELY LLOYD',
+    'email' => 'kimberly@webdev200.com',
+    'address' => '6041 Stonechase Blvd',
+    'address_2' => '',
+    'city' => 'Pace',
+    'state' => 'FL',
+    'zip' => '32571',
+    'phone' => '(540) 760-6687',
+    'seller_permit' => '123456789',
   ],
   'order' => [
     'number' => 'B736752781737',
@@ -53,7 +72,7 @@ $defaultData = [
         'est' => '3-7 Business Days',
       ]
     ],
-   
+
   ],
   'total_items_count' => 8,
   'group' => [
@@ -132,12 +151,6 @@ $defaultData = [
       'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028'
     ]
   ],
-  'status' => [
-    'ordered' => true,
-    'shipped' => false,
-    'out_for_delivery' => false,
-    'delivered' => false
-  ]
 ];
 
 // Use passed data or default data
@@ -146,8 +159,11 @@ $emailData = isset($emailData) ? $emailData : $defaultData;
 // Set the current status
 $currentStatus = 'ordered';
 
+// Create preview text
+$previewText = empty($emailData['email']['preview_text']) ? 'Thank you for your order #' . $emailData['order']['number'] . '. Your order has been confirmed and is being processed. Estimated delivery: ' . $emailData['order']['estimated_delivery'] . '.' : $emailData['email']['preview_text'];
+
 // Generate the email content
-$emailContent = renderDocumentStart('Your Order is Confirmed!');
+$emailContent = renderDocumentStart('Your Order is Confirmed!', $previewText);
 
 // Add header
 $emailContent .= renderHeader('Your Order is Confirmed!');
@@ -176,26 +192,121 @@ $emailContent .= '
     </tr>
   </table>';
 
+$additionalColumns = [];
+
 // Add order details
 $shippingAddress = '
-    <a href="mailto:' . $emailData['customer']['email'] . '" style="color: #002868; text-decoration: underline;">' . $emailData['customer']['email'] . '</a><br />
-    <strong>' . $emailData['customer']['full_name'] . '</strong><br />
-    ' . $emailData['customer']['address'] . '<br />
-    ' . $emailData['customer']['city'] . ', ' . $emailData['customer']['state'] . ', ' . $emailData['customer']['zip'] . '<br />
-    ' . $emailData['customer']['phone'];
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <a href="mailto:' . $emailData['shipping_address']['email'] . '" style="color: #002868; text-decoration: underline;">' . $emailData['shipping_address']['email'] . '</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>' . $emailData['shipping_address']['name'] . '</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ' . $emailData['shipping_address']['address'] . '
+      </td>
+    </tr>';
+
+if ($emailData['shipping_address']['address_2']) {
+  $shippingAddress .= '
+    <tr>
+      <td>
+        ' . $emailData['shipping_address']['address_2'] . '
+      </td>
+    </tr>';
+}
+    
+$shippingAddress .=   '<tr>
+      <td>
+        ' . $emailData['shipping_address']['city'] . ', ' . $emailData['shipping_address']['state'] . ', ' . $emailData['shipping_address']['zip'] . '
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ' . $emailData['shipping_address']['phone'] . '
+      </td>
+    </tr>
+  </table>';
+
+
+// Add order details
+$billingAddress = '
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <a href="mailto:' . $emailData['billing_address']['email'] . '" style="color: #002868; text-decoration: underline;">' . $emailData['billing_address']['email'] . '</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>' . $emailData['billing_address']['name'] . '</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ' . $emailData['billing_address']['address'] . '
+      </td>
+    </tr>';
+
+if ($emailData['billing_address']['address_2']) {
+  $billingAddress .= '
+    <tr>
+      <td>
+        ' . $emailData['billing_address']['address_2'] . '
+      </td>
+    </tr>';
+}
+    
+$billingAddress .=   '<tr>
+      <td>
+        ' . $emailData['billing_address']['city'] . ', ' . $emailData['billing_address']['state'] . ', ' . $emailData['billing_address']['zip'] . '
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ' . $emailData['billing_address']['phone'] . '
+      </td>
+    </tr>';
+
+if(!empty($emailData['billing_address']['seller_permit'])) {
+  $billingAddress .= '
+    <tr>
+      <td>
+        ' . $emailData['billing_address']['seller_permit'] . '
+      </td>
+    </tr>';
+};
+
+$billingAddress .= '</table>';
 
 $orderDate = $emailData['order']['date'];
+$orderNumber = $emailData['order']['number'];
 
-$emailContent .= renderInfoBoxRow([
-  [
-    'title' => 'Shipping Address',
-    'content' => $shippingAddress
-  ],
-  [
-    'title' => 'Order Date',
-    'content' => $orderDate
-  ]
-]);
+$additionalColumns[] = [
+  'title' => 'Shipping Address',
+  'content' => $shippingAddress
+];
+
+$additionalColumns[] = [
+  'title' => 'Billing Address',
+  'content' => $billingAddress
+];
+
+$additionalColumns[] = [
+  'title' => 'Order Number',
+  'content' => '#'.$orderNumber
+];
+
+$additionalColumns[] = [
+  'title' => 'Order Date',
+  'content' => $orderDate
+];
 
 // Add shipping & payment details
 
@@ -204,40 +315,45 @@ $shippingsData = $emailData['order']['shippings'] ?? [];
 $shippingContent = '';
 
 if (count($shippingsData) > 0) {
-  $shippingContent .= '<table>';
+  $shippingContent .= '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
   foreach ($shippingsData as $shipping) {
     $shippingContent .= '
     <tr>
-      <td style="padding-bottom: 5px;">
-        <span>' . $shipping['group'] . ' - ' . $shipping['name'] . ' </span><br/>
-        <small style="color: #006400;">'.$shipping['est'].'</small> </br/>
-        <small style="color: #006400;"><b>Total Items: ' . $emailData['order']['total_items'] . '</b></small>
+      <td style="padding: 0 10px 5px 0;">
+        <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>' . $shipping['group'] . ' - ' . $shipping['name'] . '</td>
+          </tr>
+          <tr>
+            <td><small style="color: #006400;">' . $shipping['est'] . '</small></td>
+          </tr>
+          <tr>
+            <td><small style="color: #006400;"><b>Total Items: ' . $emailData['order']['total_items'] . '</b></small></td>
+          </tr>
+        </table>
       </td>
     </tr>';
   }
   $shippingContent .= '</table>';
 }
 
-
-
 $paymentContent = $emailData['order']['payment_method'];
 
-$emailContent .= renderInfoBoxRow([
-  [
-    'title' => 'Shipping',
-    'content' => $shippingContent
-  ],
-  [
-    'title' => 'Payment',
-    'content' => $paymentContent
-  ]
-]);
+$additionalColumns[] = [
+  'title' => 'Shipping',
+  'content' => $shippingContent
+];
+
+$additionalColumns[] = [
+  'title' => 'Payment',
+  'content' => $paymentContent
+];
+
+$emailContent .= count($additionalColumns) ? renderInfoBoxRow($additionalColumns, 2) : '';
 
 
-$itemsCount =
-
-  // Add items ordered
-  $emailContent .= '
+// Add items ordered
+$emailContent .= '
   <!-- Items Ordered -->
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -248,18 +364,24 @@ $itemsCount =
         </div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">';
 
-foreach ($emailData['group'] as $group) {
+$maxItems = 150;
+$itemCount = 0;
 
+foreach ($emailData['group'] as $group) {
   if (count($emailData['group']) > 1) {
     $emailContent .= '
           <tr>
             <td style="padding: 5px 0;">
-              <div style="font-weight: bold;;color:#445162">' . $group['name'] . '</div>
+              <div style="font-weight: bold; color:#445162">' . $group['name'] . '</div>
             </td>
           </tr>';
   }
 
   foreach ($group['items'] as $item) {
+    if ($itemCount >= $maxItems) {
+      break 2;
+    }
+
     $emailContent .= '
           <tr>
             <td style="padding: 16px 0; border-top: 1px solid #eee;">
@@ -281,7 +403,17 @@ foreach ($emailData['group'] as $group) {
               </table>
             </td>
           </tr>';
+    $itemCount++;
   }
+}
+
+if ($itemCount >= $maxItems) {
+  $emailContent .= '
+          <tr>
+            <td style="padding: 16px 0; text-align: center;">
+              <a href="' . $baseUrl . '/orderconfirm?orderId=' . $orderNumber . '" style="background-color: #002868; color: white; padding: 12px 30px; text-decoration: none; display: inline-block; font-size: 14px; border-radius: 4px;">View More</a>
+            </td>
+          </tr>';
 }
 
 $emailContent .= '
@@ -290,7 +422,9 @@ $emailContent .= '
     </tr>
   </table>';
 
-// Credit Amount 
+
+
+  // Credit Amount 
 $summaryColumns = [];
 
 // Bulk Discount
@@ -309,7 +443,7 @@ if (isset($bulkDiscountAmount) && $bulkDiscountAmount > 0) {
 $couponDiscountAmount = $emailData['totals']['coupon_discounts_amount'] ?? 0;
 $couponDiscountTitle = 'Coupon Discounts';
 $couponDiscountSub = implode(', ', $emailData['totals']['coupon_discounts'] ?? []);
-$couponDiscountContent = number_format($couponDiscountAmount, 2);
+$couponDiscountContent = '$' . number_format($couponDiscountAmount, 2);
 
 if (isset($couponDiscountAmount) && $couponDiscountAmount > 0) {
   $summaryColumns[] = [
@@ -323,12 +457,12 @@ if (isset($couponDiscountAmount) && $couponDiscountAmount > 0) {
 $brandDiscountAmount = $emailData['totals']['brand_discounts_amount'] ?? 0;
 $brandDiscountTitle = 'Brand Discounts';
 $brandDiscountSub = implode(', ', $emailData['totals']['brand_discounts'] ?? []);
-$brandDiscountContent = number_format($brandDiscountAmount, 2);
+$brandDiscountContent = '$' .  number_format($brandDiscountAmount, 2);
 
 if (isset($brandDiscountAmount) && $brandDiscountAmount > 0) {
   $summaryColumns[] = [
     'title' => $brandDiscountTitle,
-    'sub' => $brandDiscountSub, 
+    'sub' => $brandDiscountSub,
     'content' => $brandDiscountContent
   ];
 }
@@ -337,7 +471,7 @@ if (isset($brandDiscountAmount) && $brandDiscountAmount > 0) {
 $categoryDiscountAmount = $emailData['totals']['category_discounts_amount'] ?? 0;
 $categoryDiscountTitle = 'Category Discounts';
 $categoryDiscountSub = implode(', ', $emailData['totals']['category_discounts'] ?? []);
-$categoryDiscountContent = '$'. number_format($categoryDiscountAmount, 2);
+$categoryDiscountContent = '$' . number_format($categoryDiscountAmount, 2);
 
 if (isset($categoryDiscountAmount) && $categoryDiscountAmount > 0) {
   $summaryColumns[] = [
@@ -355,9 +489,9 @@ if (count($shippingsData) > 0) {
   foreach ($shippingsData as $shipping) {
     $shippingBreakdown .= '
     <tr>
-      <td style="padding-top: 5px;">
+      <td style="padding: 5px 10px 0 0;">
         <small>
-        ' . $shipping['group'] . ' - ' . $shipping['name'] . '
+        <b> ' . $shipping['group'] . ' - ' . $shipping['name'] . '</b>
         </small>
       </td>
 
@@ -380,7 +514,7 @@ if (isset($shippingsData) && $shippingsData > 0) {
 // Tax
 $taxAmount = $emailData['totals']['tax'] ?? 0;
 $taxTitle = 'Tax';
-$taxContent = '$' . number_format($taxAmount, 2); 
+$taxContent = '$' . number_format($taxAmount, 2);
 
 if (isset($taxAmount) && $taxAmount > 0) {
   $summaryColumns[] = [
@@ -393,7 +527,7 @@ if (isset($taxAmount) && $taxAmount > 0) {
 $giftCertAmount = $emailData['totals']['gift_certs_amount'] ?? 0;
 $giftCertTitle = 'Gift Certificates';
 $giftCertsString = implode(', ', $emailData['totals']['gift_certs'] ?? []);
-$giftCertContent = number_format($giftCertAmount, 2);
+$giftCertContent = '$' .  number_format($giftCertAmount, 2);
 
 if (isset($giftCertAmount) && $giftCertAmount > 0) {
   $summaryColumns[] = [
@@ -415,39 +549,40 @@ if (isset($creditAmount) && $creditAmount > 0) {
   ];
 }
 
-$emailContent .= '  <table width="100%" border="0" cellspacing="0" cellpadding="0"> ';
+$emailContent .= '  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom:40px;"> ';
 
 $emailContent .= '
   <tr>
     <td style="padding: 10px 20px;" width="100%" align="right">
-      <table border="0" cellspacing="0" cellpadding="0" width="300px">
+      <table border="0" cellspacing="0" cellpadding="0" width="250px">
         <tr>
           <td align="left" style="padding: 5px 0;">Product Total</td>
-          <td align="right" style="padding: 5px 0 5px 20px;">$' . number_format($emailData['totals']['product_total'], 2) . '</td>
+          <td align="right" style="padding: 5px 0 5px 20px;">
+          <b>$' . number_format($emailData['totals']['product_total'], 2) . '</b>
+          </td>
         </tr> ';
 
 foreach ($summaryColumns as $column) {
 
-  if(isset($column['column'])) {
-      $emailContent .= '
+  if (isset($column['column'])) {
+    $emailContent .= '
         <tr>
-          <td colspan="2" style="padding: 5px 0;">' .$column['title']. '<br>' . $column['content'] . '</td>
+          <td colspan="2" style="padding: 5px 0 0 0;">' . $column['title'] . '<br>' . $column['content'] . '</td>
         </tr>';
   } else {
-      $emailContent .= '
+    $emailContent .= '
         <tr>
-          <td align="left" style="padding: 5px 0;">' . $column['title'] . (
-            isset($column['sub']) ? '<br><b style="font-size: 12px;">' . $column['sub'] . '</b>' : ''
-          ) . '</td>
+          <td align="left" style="padding: 5px 10px 0 0;">' . $column['title'] . (
+      isset($column['sub']) ? '<br><b style="font-size: 12px;">' . $column['sub'] . '</b>' : ''
+    ) . '</td>
           <td align="right" style="padding: 5px 0 5px 20px;"><b>' . $column['content'] . '</b></td>
         </tr>';
   }
-
 }
 
 $emailContent .= '  <tr class="total-row" style="font-weight: bold;">
-          <td align="left" style="padding: 10px 0; border-top: 1px solid #eee;">Total</td>
-          <td align="right" style="padding: 10px 0 10px 20px; border-top: 1px solid #eee; color: #002868;">$' . number_format($emailData['totals']['total'], 2) . '</td>
+          <td align="left" style="padding: 10px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee;margin-top:5px;">Total</td>
+          <td align="right" style="padding: 10px 0 10px 20px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; color: #002868;margin-top:5px;">$' . number_format($emailData['totals']['total'], 2) . '</td>
         </tr>
       </table>
     </td>

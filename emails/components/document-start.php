@@ -3,9 +3,19 @@
  * Renders the starting HTML structure for email templates
  * 
  * @param string $title The title of the email
+ * @param string $previewText The preview text to show in email clients
  * @return string HTML markup for the beginning of the email document
  */
-function renderDocumentStart($title) {
+function renderDocumentStart($title, $previewText = '') {
+    $previewTextHtml = '';
+    if (!empty($previewText)) {
+        $previewTextHtml = '<div style="display: none; max-height: 0px; overflow: hidden;">
+            ' . $previewText . '
+            &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>';
+    }
     return '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,11 +37,15 @@ function renderDocumentStart($title) {
   </style>
   <![endif]-->
 </head>
-<body style="margin: 0; padding: 0; font-family: \'Open Sans\', Arial, sans-serif; background: #f8f8f8; padding: 100px 0;">
-  <table class="body-wrapper" style="max-width: 600px; margin: 0 auto; background: white; font-family: \'Open Sans\', Arial, sans-serif;">
-  <tr>
-  <td>
-  ';
+<body style="margin: 0; padding: 0; background-color: #f8f8f8;font-family: \'Open Sans\', Arial, sans-serif;"> 
+'.$previewTextHtml.'
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f8f8f8">
+<tr>
+<td align="center" valign="top" style="padding: 100px 0;">
+<table class="body-wrapper" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="min-width:600px; width: 600px; max-width: 600px;">
+<tr>
+<td>
+';
 }
 
 /**
@@ -40,8 +54,13 @@ function renderDocumentStart($title) {
  * @return string HTML markup for the end of the email document
  */
 function renderDocumentEnd() {
-    return '   </td> </tr>
-  </table>
+    return '
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
 </body>
 </html>';
 }

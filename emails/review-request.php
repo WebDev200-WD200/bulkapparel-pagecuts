@@ -8,20 +8,23 @@ require_once __DIR__ . '/config.php';
 
 // Define default data for this template
 $defaultData = [
-   'customer' => [
-       'name' => 'KIMBERELY',
-       'full_name' => 'KIMBERELY LLOYD',
-       'email' => 'customer@example.com',
-       'address' => '6041 Stonechase Blvd',
-       'city' => 'Pace',
-       'state' => 'FL',
-       'zip' => '32571',
-       'phone' => '(540) 760-6687'
-   ],
-   'order' => [
-       'number' => 'B736752781737',
-       'date' => 'Sunday, January 12'
-   ]
+  'email' => [
+    'preview_text' => '',
+  ],
+  'customer' => [
+    'name' => 'KIMBERELY',
+    'full_name' => 'KIMBERELY LLOYD',
+    'email' => 'customer@example.com',
+    'address' => '6041 Stonechase Blvd',
+    'city' => 'Pace',
+    'state' => 'FL',
+    'zip' => '32571',
+    'phone' => '(540) 760-6687'
+  ],
+  'order' => [
+    'number' => 'B736752781737',
+    'date' => 'Sunday, January 12'
+  ]
 ];
 
 // Use passed data or default data
@@ -33,8 +36,11 @@ $companyWebsite = getConfig('company.website');
 $customerServiceUrl = getConfig('company.customer_service_url');
 $pointsPerReview = getConfig('rewards.points_per_review');
 
+// Create preview text
+$previewText = empty($emailData['email']['preview_text']) ? 'Share your feedback and earn ' . getConfig('rewards.points_per_review') . ' reward points for each review! Your opinion matters to us and helps other shoppers.' : $emailData['email']['preview_text'];
+
 // Generate the email content
-$emailContent = renderDocumentStart('We Value Your Opinion');
+$emailContent = renderDocumentStart('We Value Your Opinion', $previewText);
 
 // Add header with subtitle
 $emailContent .= renderHeader('We Value Your Opinion<br>Get ' . $pointsPerReview . ' Points For Your Feedback!');
@@ -55,10 +61,10 @@ $emailContent .= '
 
 // Add review box with exact text from design
 $emailContent .= renderReviewBox(
-  "Get ".$pointsPerReview." Rewards Points!",
+  "Get " . $pointsPerReview . " Rewards Points!",
   "Leave A Review And Earn Points!",
   "Visit the item page and share your thoughts—good or bad, we value your honest feedback and won't judge. Your review also helps other shoppers make the right choice! You can redeem your points anytime for website credit!",
-  "+".$pointsPerReview." POINTS PER REVIEW"
+  "+" . $pointsPerReview . " POINTS PER REVIEW"
 );
 
 // Add order details
@@ -104,5 +110,3 @@ $emailContent .= renderDocumentEnd();
 
 // Output the email content
 echo $emailContent;
-?>
-

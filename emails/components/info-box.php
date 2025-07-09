@@ -13,7 +13,7 @@ function renderInfoBox($title, $content, $width = null) {
     return '
     <td' . $widthStyle . ' valign="top" style="padding: 10px 0;">
         <div class="section-title" style="font-weight: bold; color: #002868; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">' . $title . '</div>
-        <p style="margin: 0;">' . $content . '</p>
+				' . $content . '
     </td>';
 }
 
