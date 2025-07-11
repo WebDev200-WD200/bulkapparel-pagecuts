@@ -104,9 +104,9 @@ window.selectedMockups = ['custom'];
 
 const sampleOverlay = '/assets/img/dtf/sample-overlay.png';
 
-function htmlShirtMockup({ id, preview, title, overlay = sampleOverlay, selected = false, className = 'selection-item' }) {
+function htmlShirtMockup({ id, preview, title, overlay = sampleOverlay, selected = false, className = 'selection-item', isCarousel = false }) {
 	return `
-		<div class="${className} ${id} ${selected ? 'selected' : ''}" data-type="${id}">
+		<div class="${className} ${id} ${selected ? 'selected' : ''} ${isCarousel ? 'swiper-slide' : ''}" data-type="${id}">
 				<div class="${className}__preview">
 					<img class="mockup-image" src="${preview}" alt="${title}">
 					${id != 'custom' ? `<div class="mockup-image__overlay">
@@ -133,13 +133,33 @@ function updateSelectedMockups() {
 	});
 }
 
+var shirtMockupsSwiper = null;
+
+function initShirtMockupsSwiper() {
+	const container = $('#shirtMockups');
+	if (shirtMockupsSwiper) {
+		shirtMockupsSwiper.destroy();
+	}
+
+	shirtMockupsSwiper = new Swiper(container.get(0), {
+		slidesPerView: 5,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: container.find('.dtf-selection__button.next').get(0),
+			prevEl: container.find('.dtf-selection__button.prev').get(0),
+		},
+	});
+}
+
+
 function renderShirtMockups() {
-	const shirtMockups = $('#shirtMockups');
+	const shirtMockups = $('#shirtMockups .swiper-wrapper');
 	var html = '';
 	Object.values(mockups).forEach(mockup => {
-		html += htmlShirtMockup({ ...mockup, selected: window.selectedMockups.includes(mockup.id) });
+		html += htmlShirtMockup({ ...mockup, selected: window.selectedMockups.includes(mockup.id), isCarousel: true });
 	});
 	shirtMockups.html(html);
+	initShirtMockupsSwiper();
 }
 
 function isCustomMockupExists() {
@@ -235,17 +255,17 @@ function htmlColor({ id, hex }) {
 };
 
 function updateMockupColor(hex) {
-	const mockup = $(`.selection-item .selection-item__preview`).css('background-color', hex);
+	const mockup = $(`.selection-item .selection-item__preview, .large-mockups__item .mockup-image`).css('background-color', hex);
 }
 
-$(document).on('click', '#colors .colors-item', function () {
+$(document).on('click', '.dtf-card__colors-list .colors-item, .large-mockups__colors-list .colors-item', function () {
 	const hex = $(this).css('background-color');
-	$('#colors .colors-item').removeClass('selected');
+	$(document).find('.dtf-card__colors-list .colors-item, .large-mockups__colors-list .colors-item').removeClass('selected');
 	$(this).addClass('selected');
 	updateMockupColor(hex);
 });
 
-function renderColors(container = $('#colors')) {
+function renderColors(container = $('.dtf-card__colors-list')) {
 	var html = '';
 	dtfColors.forEach(color => {
 		html += htmlColor(color);
@@ -263,19 +283,20 @@ function displayLargeMockups() {
 
 
 	Object.values(mockups).forEach(mockup => {
+		if (mockup.id === 'custom') return;
 		html += htmlShirtMockup({ ...mockup, className: 'large-mockups__item' });
 	});
 
 	modal.find('.large-mockups__list').html(html);
 
-	renderColors(modal.find('.large-mockups__colors'));
+	renderColors(modal.find('.large-mockups__colors-list'));
 
 	modal.modal('show');
 }
 
 function htmlMockupSizeInput({ name, size, price }) {
 	return `
-		<div class="sizes-item">
+		<div class="sizes-item swiper-slide">
 			<div class="sizes-item__title">
 				${name}
 			</div>
@@ -310,8 +331,17 @@ function htmlMockupSizes(type = 'fullFront') {
 			<div class="sizes-container__title">
 				${mockups[type].title}
 			</div>
-			<div class="sizes-container__list">
-				${html}
+			<div class="sizes-container__list swiper">
+				<div class="swiper-wrapper">
+					${html}
+				</div>
+
+				<button class="sizes-container__button next">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+				</button>
+				<button class="sizes-container__button prev">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
+				</button>
 			</div>
 
 			<div>
@@ -325,6 +355,7 @@ function htmlMockupSizes(type = 'fullFront') {
 }
 
 function htmlMockupCustomSize({ width = 1.45, height = 1.00, quantity = 1, price = 0.05 }) {
+
 	return `
 	<div class="custom-size">
 		<div class="custom-size__group">
@@ -398,10 +429,31 @@ function htmlMockupCustomSizes() {
 	`
 }
 
+
+var swipers = {}
+
+
+function initSizeContainerSwiper(type) {
+	const container = $(document).find(`.sizes-container[data-type="${type}"]`);
+
+	if (swipers[type]) {
+		swipers[type].destroy();
+	}
+
+	swipers[type] = new Swiper(container.find('.swiper').get(0), {
+		slidesPerView: 5,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: container.find('.sizes-container__button.next').get(0),
+			prevEl: container.find('.sizes-container__button.prev').get(0),
+		},
+	});
+}
+
 function attachSizeContainerEvents() {
 	$(document).find(`.sizes-container`).each(function () {
 		const container = $(this);
-
+		const type = container.data('type');
 
 		function getTotalTransfer() {
 			const inputs = container.find('.sizes-item__input input')
@@ -434,7 +486,6 @@ function attachSizeContainerEvents() {
 				quantity: totalAmount.quantity
 			}
 		}
-
 
 		function updateSummary() {
 			const total = getTotalTransfer();
@@ -500,6 +551,8 @@ function attachSizeContainerEvents() {
 		container.find('.sizing-guide-btn').off('click').on('click', function () {
 			displaySizingGuides(container.data('type'));
 		});
+
+		initSizeContainerSwiper(type);
 	});
 }
 
@@ -684,7 +737,6 @@ function attachCustomSizeContainerEvents() {
 	});
 }
 
-
 function htmlSizingGuide({ title, preview, sizes }) {
 	return `
 	<div class="sizing-guide__item">
@@ -750,12 +802,18 @@ $(document).ready(function () {
 	renderColors();
 	$('#sizes').append(htmlMockupCustomSizes());
 	attachCustomSizeContainerEvents();
-	// $('#sizes').append(htmlMockupSizes('fullFront'));
-	// $('#sizes').append(htmlMockupSizes('fullBack'));
-	// $('#sizes').append(htmlMockupSizes('leftChest'));
-	// $('#sizes').append(htmlMockupSizes('sleeve'));
-	// $('#sizes').append(htmlMockupSizes('backCollar'));
-	displayLargeMockups()
+	$('#sizes').append(htmlMockupSizes('fullFront'));
+	$('#sizes').append(htmlMockupSizes('fullBack'));
+	$('#sizes').append(htmlMockupSizes('leftChest'));
+	$('#sizes').append(htmlMockupSizes('sleeve'));
+	$('#sizes').append(htmlMockupSizes('backCollar'));
+	attachSizeContainerEvents();
+	// displayLargeMockups()
+
+
+	$('#viewLargerMockupsBtn').on('click', function () {
+		displayLargeMockups();
+	});
 });
 
 

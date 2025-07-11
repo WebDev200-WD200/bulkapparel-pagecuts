@@ -27,6 +27,12 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="/assets/js/bootstrap-modal.js"></script>
 	<script src="/assets/js/dtf.js"></script>
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 
 <?php
@@ -121,16 +127,36 @@ $accordions = [
 					<h2>Set 2: Set Design Size</h2>
 
 					<div class="dtf-card__content">
-						<div class="dtf-card__selection" id="shirtMockups">
 
+						<div class="dtf-selection swiper" id="shirtMockups">
+							<div class="swiper-wrapper">
+
+							</div>
+
+							<div class="dtf-selection__button next">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right">
+									<path d="m9 18 6-6-6-6" />
+								</svg>
+							</div>
+							<div class="dtf-selection__button prev">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
+									<path d="m15 18-6-6 6-6" />
+								</svg>
+							</div>
 						</div>
 
 						<div class="dtf-card__colors" id="colors">
+							<div class="dtf-card__colors-list">
 
+							</div>
+
+							<button class="dtf-card__colors-btn" id="viewLargerMockupsBtn">
+								View Larger Mockups
+							</button>
 						</div>
 
 						<div class="dtf-card__browse">
-							<p>T-shirt not included. Need one? <a href="https://www.bulkapparel.com/">Browse our selection!</a></p>
+							<p>T-shirt not included. Need one? <a target="_blank" href="https://www.bulkapparel.com/">Browse our selection!</a></p>
 						</div>
 
 						<div class="dtf-card__sizes" id="sizes">
@@ -174,8 +200,8 @@ $accordions = [
 		</div>
 	</div>
 
-	<div class="modal modal-large-mockups" tabindex="-1" role="dialog" id="largeMockupsModal" style="display: block !important;" aria-hidden="false">
-		<div class="modal-dialog" role="document" style="width: 1000px;">
+	<div class="modal modal-large-mockups" tabindex="-1" role="dialog" id="largeMockupsModal" style="display: none !important;" aria-hidden="false">
+		<div class="modal-dialog" role="document" style="width: 700px;">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title"></h5>
@@ -190,7 +216,16 @@ $accordions = [
 						</div>
 
 						<div class="large-mockups__colors">
+							<h6 class="large-mockups__colors-title">
+								Preview background
+							</h6>
 
+							<div class="large-mockups__colors-list">
+
+							</div>
+							<p class="large-mockups__colors-note">
+								T-shirt not included. Need one? <a href="https://www.bulkapparel.com/">Browse our selection!</a>
+							</p>
 						</div>
 
 					</div>
