@@ -100,6 +100,14 @@ var mockups = {
 };
 
 
+window.values = {
+	logo: '',
+	customSizes: [
+		{ width: 1, height: 1, quantity: 5, amount: .20 }
+	]
+}
+
+
 window.selectedMockups = ['custom'];
 
 const sampleOverlay = '/assets/img/dtf/sample-overlay.png';
@@ -148,6 +156,29 @@ function initShirtMockupsSwiper() {
 			nextEl: container.find('.dtf-selection__button.next').get(0),
 			prevEl: container.find('.dtf-selection__button.prev').get(0),
 		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 5,
+			},
+			1000: {
+				slidesPerView: 4,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			500: {
+				slidesPerView: 4,
+			},
+			400: {
+				slidesPerView: 3,
+			},
+			300: {
+				slidesPerView: 2,
+			},
+			0: {
+				slidesPerView: 2,
+			}
+		}
 	});
 }
 
@@ -156,7 +187,7 @@ function renderShirtMockups() {
 	const shirtMockups = $('#shirtMockups .swiper-wrapper');
 	var html = '';
 	Object.values(mockups).forEach(mockup => {
-		html += htmlShirtMockup({ ...mockup, selected: window.selectedMockups.includes(mockup.id), isCarousel: true });
+		html += htmlShirtMockup({ ...mockup, selected: window.selectedMockups.includes(mockup.id), isCarousel: true, overlay: window.values.logo });
 	});
 	shirtMockups.html(html);
 	initShirtMockupsSwiper();
@@ -247,6 +278,37 @@ var dtfColors = [
 
 ]
 
+function attachColorPickerEvents() {
+
+	$(document).find('.custom-color-picker').off('click').on('click', function () {
+		$(this).find('input').click();
+	});
+
+	$(document).find('.custom-color-picker input').off('change').on('change', function () {
+		const color = $(this).val();
+		$(this).parent().find('.custom-color-picker__icon').css('background-color', color);
+		updateMockupColor(color);
+	});
+}
+
+
+function htmlColorPicker({ hex = '#000000' }) {
+	return `
+	<div class="custom-color-picker">
+			<input type="color" value="${hex}">
+			<span class="custom-color-picker__icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Google Material Icons by Material Design Authors - https://github.com/material-icons/material-icons/blob/master/LICENSE -->
+					<path fill="currentColor" d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.04 10 9c0 3.31-2.69 6-6 6h-1.77c-.28 0-.5.22-.5.5c0 .12.05.23.13.33c.41.47.64 1.06.64 1.67A2.5 2.5 0 0 1 12 22m0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5a.54.54 0 0 0-.14-.35c-.41-.46-.63-1.05-.63-1.65a2.5 2.5 0 0 1 2.5-2.5H16c2.21 0 4-1.79 4-4c0-3.86-3.59-7-8-7" />
+					<circle cx="6.5" cy="11.5" r="1.5" fill="currentColor" />
+					<circle cx="9.5" cy="7.5" r="1.5" fill="currentColor" />
+					<circle cx="14.5" cy="7.5" r="1.5" fill="currentColor" />
+					<circle cx="17.5" cy="11.5" r="1.5" fill="currentColor" />
+				</svg>
+			</span>
+		</div>
+	`
+}
+
 function htmlColor({ id, hex }) {
 	return `
 		<div class="colors-item" data-type="${id}" style="background-color: ${hex};">
@@ -270,7 +332,13 @@ function renderColors(container = $('.dtf-card__colors-list')) {
 	dtfColors.forEach(color => {
 		html += htmlColor(color);
 	});
+
+
+	html += htmlColorPicker({ hex: '#000000' });
+
 	container.html(html);
+	$(document).find('.dtf-card__colors').show();
+	attachColorPickerEvents();
 }
 
 
@@ -305,9 +373,9 @@ function htmlMockupSizeInput({ name, size, price }) {
 			</div>
 
 			<div class="sizes-item__input">
-				<button class="minus-btn">-</button>
-				<input data-price="${price}" type="number" value="0">
-				<button class="plus-btn">+</button>
+				<button class="btn minus-btn">-</button>
+				<input min="0" data-price="${price}" type="number" value="0">
+				<button class="btn plus-btn">+</button>
 			</div>
 
 			<div class="sizes-item__price">
@@ -326,7 +394,9 @@ function htmlMockupSizes(type = 'fullFront') {
 
 	return `
 		<div class="sizes-container" data-type="${type}">
-			<button class="remove-btn">Remove</button>
+			<button class="remove-btn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
+			</button>
 
 			<div class="sizes-container__title">
 				${mockups[type].title}
@@ -344,7 +414,7 @@ function htmlMockupSizes(type = 'fullFront') {
 				</button>
 			</div>
 
-			<div>
+			<div class="sizes-container__footer">
 				<div class="sizes-container__summary">
 					0 Transfer
 				</div>
@@ -354,28 +424,28 @@ function htmlMockupSizes(type = 'fullFront') {
 	`
 }
 
-function htmlMockupCustomSize({ width = 1.45, height = 1.00, quantity = 1, price = 0.05 }) {
+function htmlMockupCustomSize({ width = 1.45, height = 1.00, quantity = 1, price = 0.05, initial = false }) {
 
 	return `
 	<div class="custom-size">
 		<div class="custom-size__group">
 			<div class="custom-size__field width">
 				<label>Width (inch)</label>
-				<input type="number" name="width" placeholder="Enter width" value="${width}">
+				<input type="number" name="width" placeholder="Enter width" value="${width}" ${initial ? 'disabled="disabled"' : ''}>
 			</div>
 			<div class="x">x</div>
 			<div class="custom-size__field height">
 				<label for="height">Height (inch)</label>
-				<input type="number" name="height" placeholder="Enter height" value="${height}">
+				<input type="number" name="height" placeholder="Enter height" value="${height}" ${initial ? 'disabled="disabled"' : ''}>
 			</div>
 		</div>
 
 		<div class="custom-size__field quantity">
 			<label>Quantity</label>
 			<div class="sizes-item__input">
-				<button class="minus-btn">-</button>
-				<input data-price="${price}" type="number" value="${quantity}">
-				<button class="plus-btn">+</button>
+				<button class="btn minus-btn" ${initial ? 'disabled="disabled"' : ''}>-</button>
+				<input data-price="${price}" type="number" value="${quantity}" ${initial ? 'disabled="disabled"' : ''}>
+				<button class="btn plus-btn" ${initial ? 'disabled="disabled"' : ''}>+</button>
 			</div>
 			<div class="amount">
 				$${price}
@@ -383,7 +453,9 @@ function htmlMockupCustomSize({ width = 1.45, height = 1.00, quantity = 1, price
 
 		</div>
 
-		<button class="delete-btn" style="display: none;">Delete</button>
+		<button class="btn delete-btn" style="display: none;">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"/></svg>
+		</button>
 	</div>
 	`
 }
@@ -401,7 +473,7 @@ function updateContainersRemoveBtnAppearance() {
 	});
 }
 
-function htmlMockupCustomSizes() {
+function htmlMockupCustomSizes(initial = false) {
 
 	return `
 		<div class="custom-sizes-container" data-type="custom">
@@ -415,16 +487,15 @@ function htmlMockupCustomSizes() {
 		width: 1.45,
 		height: 1.00,
 		quantity: 1,
-		price: 0.05
+		price: 0.05,
+		initial
 	})}
 		</div>
 
-		<div class="custom-sizes-container__summary">
-			<p>0 Transfer</p>
-		</div>
+		${initial ? '' : '<div class="custom-sizes-container__summary"><p>0 Transfer</p></div>'}
 
 
-		<button class="add-size-btn">Add Another Size</button>
+		${initial ? '' : '<button class="add-size-btn">Add Another Size</button>'}
 	</div>
 	`
 }
@@ -441,12 +512,29 @@ function initSizeContainerSwiper(type) {
 	}
 
 	swipers[type] = new Swiper(container.find('.swiper').get(0), {
-		slidesPerView: 5,
+		slidesPerView: 5.2,
 		spaceBetween: 10,
 		navigation: {
 			nextEl: container.find('.sizes-container__button.next').get(0),
 			prevEl: container.find('.sizes-container__button.prev').get(0),
 		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 5.2,
+			},
+			1000: {
+				slidesPerView: 4.2,
+			},
+			768: {
+				slidesPerView: 3.2,
+			},
+			600: {
+				slidesPerView: 4.2,
+			},
+			0: {
+				slidesPerView: 2.2,
+			}
+		}
 	});
 }
 
@@ -758,7 +846,6 @@ function htmlSizingGuide({ title, preview, sizes }) {
 	`
 }
 
-
 function getSizingGuides(type) {
 	const sizes = mockups[type].sizes;
 	const previews = mockups[type].previews;
@@ -796,28 +883,51 @@ function displaySizingGuides(type) {
 	modal.modal('show');
 }
 
+function saveTimeTooltip() {
+	var modal = $('#saveTimeTooltipModal');
+	modal.modal('show');
+}
 
-$(document).ready(function () {
+
+function proceedToStepTwo({ logo }) {
+	window.values.logo = logo;
 	renderShirtMockups();
 	renderColors();
-	$('#sizes').append(htmlMockupCustomSizes());
+	$('#sizes').html(htmlMockupCustomSizes());
 	attachCustomSizeContainerEvents();
+
+	$('#sizes').append(htmlMockupCustomSizes(true));
 	$('#sizes').append(htmlMockupSizes('fullFront'));
 	$('#sizes').append(htmlMockupSizes('fullBack'));
 	$('#sizes').append(htmlMockupSizes('leftChest'));
 	$('#sizes').append(htmlMockupSizes('sleeve'));
 	$('#sizes').append(htmlMockupSizes('backCollar'));
 	attachSizeContainerEvents();
+}
+
+
+function resetStepTwo() {
+	$(document).find('.dtf-card__colors').hide();
+	$(document).find('.dtf-card__browse').hide();
+}
+
+$(document).ready(function () {
+
 	// displayLargeMockups()
+	// saveTimeTooltip();
 
 
-	$('#viewLargerMockupsBtn').on('click', function () {
+	proceedToStepTwo({ logo: sampleOverlay });
+
+	$('#viewLargerMockupsBtn').off('click').on('click', function () {
 		displayLargeMockups();
+	});
+
+	$('#saveTimeTooltipBtn').off('click').on('click', function () {
+		saveTimeTooltip();
 	});
 });
 
-
-console.log($(document).find('.sizes-item'));
 
 
 

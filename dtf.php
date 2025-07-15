@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/modal.css">
 	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" href="css/dtf.css">
+	<link rel="stylesheet" href="/scss/dtf/dtf.css">
 	<!-- <link rel="stylesheet" href="./css/themes/themes.min.css"> -->
 	<!-- Hallooween theme -->
 	<!-- <link rel="stylesheet" href="./css/themes/halloween-theme.min.css"> -->
@@ -26,12 +26,13 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="/assets/js/bootstrap-modal.js"></script>
-	<script src="/assets/js/dtf.js"></script>
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
 	<link
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="/assets/js/dtf.js"></script>
 
 </head>
 
@@ -124,7 +125,7 @@ $accordions = [
 
 			<div class="col-md-7">
 				<div class="dtf-card">
-					<h2>Set 2: Set Design Size</h2>
+					<h2 class="dtf-card__title">Set 2: Set Design Size</h2>
 
 					<div class="dtf-card__content">
 
@@ -145,17 +146,19 @@ $accordions = [
 							</div>
 						</div>
 
-						<div class="dtf-card__colors" id="colors">
+						<div class="dtf-card__colors" id="colors" style="display: none;">
 							<div class="dtf-card__colors-list">
 
 							</div>
+
+
 
 							<button class="dtf-card__colors-btn" id="viewLargerMockupsBtn">
 								View Larger Mockups
 							</button>
 						</div>
 
-						<div class="dtf-card__browse">
+						<div class="dtf-card__browse" style="display: none;">
 							<p>T-shirt not included. Need one? <a target="_blank" href="https://www.bulkapparel.com/">Browse our selection!</a></p>
 						</div>
 
@@ -172,6 +175,11 @@ $accordions = [
 							<label for="save-time">
 								<input type="checkbox" id="save-time">
 								<span>Pre-cut transfers ($0.30 each)</span>
+								<button class="btn save-time-tooltip-btn" id="saveTimeTooltipBtn">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+										<path fill="currentColor" d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8t-.288-.712T12 7t-.712.288T11 8t.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8" />
+									</svg>
+								</button>
 							</label>
 							<p>This applies to all DTF Transfers by Size orders</p>
 						</div>
@@ -184,7 +192,7 @@ $accordions = [
 	</main>
 	<!-- show -->
 	<div class="modal modal-sizing-guide" tabindex="-1" role="dialog" id="sizingGuideModal2" style="display: none !important;" aria-hidden="false">
-		<div class="modal-dialog" role="document" style="width: 1000px;">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">Sleeve</h5>
@@ -201,7 +209,7 @@ $accordions = [
 	</div>
 
 	<div class="modal modal-large-mockups" tabindex="-1" role="dialog" id="largeMockupsModal" style="display: none !important;" aria-hidden="false">
-		<div class="modal-dialog" role="document" style="width: 700px;">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title"></h5>
@@ -228,6 +236,46 @@ $accordions = [
 							</p>
 						</div>
 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal save-time-tooltip" tabindex="-1" role="dialog" id="saveTimeTooltipModal" style="display: none !important;" aria-hidden="false">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">What’s pre-cut?</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="save-time-tooltip__content">
+					<p>
+						Pre-cut transfers are ready to apply right out of the package—no trimming required!
+						This ensures a faster, cleaner application every time.
+					</p>
+
+					<div class="save-time-tooltip__list row">
+						<div class="col-md-6 save-time-tooltip__item">
+							<img src="/assets/img/dtf/no-pre-cut.jpeg" alt="">
+
+							<h4>No Pre-cut</h4>
+							<p>Time per 10 transfers: <br>
+								<b>10 minutes</b>
+							</p>
+						</div>
+
+						<div class="col-md-6 save-time-tooltip__item">
+							<img src="/assets/img/dtf/pre-cut.png" alt="">
+
+							<h4>Pre-cut</h4>
+							<p>Time per 10 transfers: <br>
+								<b>0 minutes</b>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
