@@ -477,7 +477,9 @@ function htmlMockupCustomSizes(initial = false) {
 
 	return `
 		<div class="custom-sizes-container" data-type="custom">
-		<button class="remove-btn" style="display: none;">Remove</button>
+		<button class="btn remove-btn" style="display: none;">
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"></path></svg>
+		</button>
 
 		<div class="custom-sizes-container__title">
 			Custom Size
@@ -891,31 +893,67 @@ function saveTimeTooltip() {
 
 function proceedToStepTwo({ logo }) {
 	window.values.logo = logo;
+	$(document).find('#dummyCustomSize').hide();
 	renderShirtMockups();
 	renderColors();
 	$('#sizes').html(htmlMockupCustomSizes());
 	attachCustomSizeContainerEvents();
 
-	$('#sizes').append(htmlMockupCustomSizes(true));
-	$('#sizes').append(htmlMockupSizes('fullFront'));
-	$('#sizes').append(htmlMockupSizes('fullBack'));
-	$('#sizes').append(htmlMockupSizes('leftChest'));
-	$('#sizes').append(htmlMockupSizes('sleeve'));
-	$('#sizes').append(htmlMockupSizes('backCollar'));
-	attachSizeContainerEvents();
+	// $('#sizes').append(htmlMockupCustomSizes(true));
+	// $('#sizes').append(htmlMockupSizes('fullFront'));
+	// $('#sizes').append(htmlMockupSizes('fullBack'));
+	// $('#sizes').append(htmlMockupSizes('leftChest'));
+	// $('#sizes').append(htmlMockupSizes('sleeve'));
+	// $('#sizes').append(htmlMockupSizes('backCollar'));
+	// attachSizeContainerEvents();
 }
 
 
 function resetStepTwo() {
-	$(document).find('.dtf-card__colors').hide();
-	$(document).find('.dtf-card__browse').hide();
+	$(document).find('#dummyCustomSize').show();
+	$(document).find('.dtf-card__colors, .dtf-card__browse, .dtf-card__note, .dtf-card__save-time').hide();
 }
+
+// Start - transfer by size DTF - CL - 942025
+function initSwitches() {
+	// Handle Remove Background switch
+	$('#removeBackground').off('change').on('change', function () {
+		const isEnabled = $(this).is(':checked');
+		console.log('Remove Background:', isEnabled ? 'enabled' : 'disabled');
+
+		// Add your logic here for remove background functionality
+		if (isEnabled) {
+			// Enable remove background feature
+			// Example: apply background removal to images
+		} else {
+			// Disable remove background feature
+		}
+	});
+
+	// Handle Super Resolution switch
+	$('#superResolution').off('change').on('change', function () {
+		const isEnabled = $(this).is(':checked');
+		console.log('Super Resolution:', isEnabled ? 'enabled' : 'disabled');
+
+		// Add your logic here for super resolution functionality
+		if (isEnabled) {
+			// Enable super resolution feature
+			// Example: enhance image quality
+		} else {
+			// Disable super resolution feature
+		}
+	});
+}
+// End - transfer by size DTF - CL - 942025
+
 
 $(document).ready(function () {
 
 	// displayLargeMockups()
 	// saveTimeTooltip();
 
+	// Initialize switches
+	initSwitches();
 
 	proceedToStepTwo({ logo: sampleOverlay });
 

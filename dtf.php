@@ -123,6 +123,42 @@ $accordions = [
 				</div>
 			</div>
 
+
+			<!-- Add here  -->
+			<div class="switches-container">
+				<div class="switch-item">
+					<div class="switch">
+						<input type="checkbox" id="removeBackground" class="switch__input">
+						<label for="removeBackground" class="switch__label">
+							<span class="switch__toggle"></span>
+						</label>
+					</div>
+					<div class="switch__content">
+						<span class="switch__text">Remove Background</span>
+						<span class="ai-badge">
+							<span class="ai-badge__icon">🤖</span>
+							<span class="ai-badge__text">AI</span>
+						</span>
+					</div>
+				</div>
+
+				<div class="switch-item">
+					<div class="switch">
+						<input type="checkbox" id="superResolution" class="switch__input">
+						<label for="superResolution" class="switch__label">
+							<span class="switch__toggle"></span>
+						</label>
+					</div>
+					<div class="switch__content">
+						<span class="switch__text">Super Resolution</span>
+						<span class="ai-badge">
+							<span class="ai-badge__icon">🤖</span>
+							<span class="ai-badge__text">AI</span>
+						</span>
+					</div>
+				</div>
+			</div>
+
 			<div class="col-md-7">
 				<div class="dtf-card">
 					<h2 class="dtf-card__title">Set 2: Set Design Size</h2>
@@ -166,11 +202,44 @@ $accordions = [
 
 						</div>
 
-						<div class="dtf-card__note">
+						<div class="custom-size" id="dummyCustomSize">
+							<div class="custom-size__group">
+								<div class="custom-size__field width">
+									<label>Width (inch)</label>
+									<input type="number" name="width" placeholder="" disabled>
+								</div>
+								<div class="x">x</div>
+								<div class="custom-size__field height">
+									<label for="height">Height (inch)</label>
+									<input type="number" name="height" placeholder="" disabled>
+								</div>
+							</div>
+
+							<div class="custom-size__field quantity">
+								<label>Quantity</label>
+								<div class="sizes-item__input" style="background-color: #fbfbfb !important;">
+									<button class="btn minus-btn" disabled>-</button>
+									<input type="number" disabled>
+									<button class="btn plus-btn" disabled>+</button>
+								</div>
+								<div class="amount">
+									0
+								</div>
+
+							</div>
+
+							<button class="btn delete-btn" style="display: none;">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+									<path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z" />
+								</svg>
+							</button>
+						</div>
+
+						<div class="dtf-card__note" style="display:none;">
 							<p>Padding for easy cutting is added for free</p>
 						</div>
 
-						<div class="dtf-card__save-time">
+						<div class="dtf-card__save-time" style="display: none;">
 							<h3>Want to save time?</h3>
 							<label for="save-time">
 								<input type="checkbox" id="save-time">
