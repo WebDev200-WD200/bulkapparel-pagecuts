@@ -11,6 +11,8 @@ if (!file_exists(__DIR__ . '/components')) {
 $templates = [
    'order-confirmed' => 'Order Confirmed',
    'order-shipped' => 'Order Shipped',
+   'tracking-email-regular' => 'Tracking Information (Regular Items)',
+   'tracking-email-dtf' => 'Tracking Information (DTF)',
    'out-for-delivery' => 'Out For Delivery',
    'order-delivered' => 'Order Delivered',
    'order-status' => 'Order Status (Combined)',

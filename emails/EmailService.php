@@ -23,6 +23,8 @@ class EmailService {
     private $validTemplates = [
         'order-confirmed',
         'order-shipped',
+        'tracking-email-regular',
+        'tracking-email-dtf',
         'out-for-delivery',
         'order-delivered',
         'review-request',

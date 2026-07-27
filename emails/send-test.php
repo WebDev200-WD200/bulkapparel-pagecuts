@@ -11,7 +11,7 @@ $template = isset($_GET['template']) ? $_GET['template'] : '';
 $email = isset($_GET['email']) ? $_GET['email'] : '';
 
 // Validate template
-$validTemplates = ['order-confirmed', 'order-shipped', 'out-for-delivery', 'order-delivered', 'order-status', 'review-request'];
+$validTemplates = ['order-confirmed', 'order-shipped', 'tracking-email-regular', 'tracking-email-dtf', 'out-for-delivery', 'order-delivered', 'order-status', 'review-request'];
 if (!in_array($template, $validTemplates)) {
     echo json_encode(['success' => false, 'message' => 'Invalid template']);
     exit;
@@ -163,7 +163,23 @@ try {
             ];
             $result = $emailService->sendOrderShipped($email, $data);
             break;
-            
+
+        case 'tracking-email-regular':
+            $result = $emailService->email(
+                'tracking-email-regular',
+                $email,
+                'Tracking Information — Regular Items Shipment'
+            );
+            break;
+
+        case 'tracking-email-dtf':
+            $result = $emailService->email(
+                'tracking-email-dtf',
+                $email,
+                'Tracking Information — DTF Shipment'
+            );
+            break;
+
         case 'out-for-delivery':
             $data = [
                 'customer' => [
