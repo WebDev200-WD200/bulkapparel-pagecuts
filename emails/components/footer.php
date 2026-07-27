@@ -1,5 +1,5 @@
 <?php
-require_once './config.php';
+require_once __DIR__ . '/../config.php';
 
 function renderFooter() {
     $companyName = getConfig('company.name');
@@ -14,40 +14,201 @@ function renderFooter() {
     $twitter = getConfig('company.social_media.twitter');
     $tiktok = getConfig('company.social_media.tiktok');
     $youtube = getConfig('company.social_media.youtube');
-    $baseUrl = getConfig('base_url');
-    
+    $baseUrl = rtrim(getConfig('base_url'), '/');
+
+    // DTF banner destinations — no confirmed URLs in the email config/components.
+    // Replace these placeholders with the live DTF product page URLs when available.
+    $dtfTransferUrl =  $baseUrl .'/dtf-transfers'; // Placeholder: DTF Transfers landing page URL
+    $dtfTransferBySizeUrl = $baseUrl .'/dtf-transfers-by-size/dtf-standard'; // Placeholder: Transfers by Size page URL
+    $dtfUploadGangSheetUrl = $baseUrl .'/dtf-gang-sheet-uploads/gang-standard'; // Placeholder: Upload a Gang Sheet page URL
+    $dtfBuildGangSheetUrl = $baseUrl .'/dtf-gang-sheets'; // Placeholder: Build a Gang Sheet page URL
+
+    $footerImg = $baseUrl . '/emails/images/footer';
+    $dtfImg = $baseUrl . '/emails/images/dtf-banner';
+    $socialImg = $baseUrl . '/emails/images';
+
+    // Match Figma address layout: company + street, then city/state/zip
+    $addressParts = preg_split('/\s+(?=Carlsbad,)/', $companyAddress, 2);
+    $addressLine1 = $companyName . (isset($addressParts[0]) ? ' ' . $addressParts[0] : '');
+    $addressLine2 = isset($addressParts[1]) ? $addressParts[1] : '';
+
     $html = '
-    <!-- Footer -->
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; margin: 0 auto;">
+    <!--[if !mso]><!-->
+    <style type="text/css">
+      @media only screen and (max-width: 600px) {
+        .footer-dtf-cell {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+        .footer-stack-col {
+          display: block !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .footer-nav-item {
+          display: inline-block !important;
+          width: 48% !important;
+          max-width: 48% !important;
+        }
+        .footer-invest-col {
+          border-left: 0 !important;
+          padding-top: 14px !important;
+        }
+        .footer-center-mobile {
+          text-align: center !important;
+        }
+        .footer-social-table,
+        .footer-address-table {
+          margin: 0 auto !important;
+        }
+        .footer-address-pad {
+          padding-top: 16px !important;
+        }
+      }
+    </style>
+    <!--<![endif]-->
+
+    <!-- Email Footer -->
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; margin: 0 auto;">
+
+        <!-- DTF Banner Section -->
         <tr>
-            <td class="mail-footer" style="background: #002868; background: linear-gradient(to bottom right, #043169, #1557ab); color: #fff; text-align: center; padding: 30px 20px; width: 100%;">
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 560px; margin: 0 auto;">
+            <td align="center" style="padding: 0; font-size: 0; line-height: 0;">
+                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
                     <tr>
-                        <td>
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <td class="footer-dtf-cell" width="225" valign="top" style="width: 37.5%; padding: 0; font-size: 0; line-height: 0;">
+                            <a href="' . $dtfTransferUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                <img src="' . $dtfImg . '/dtf-transfer.jpg" alt="Need Custom Prints? DTF Transfers — No Minimums, Vibrant Colors, Easy to Apply" width="225" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                            </a>
+                        </td>
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                            <a href="' . $dtfTransferBySizeUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                <img src="' . $dtfImg . '/transfer-by-size.jpg" alt="Transfers by Size — Upload designs in any size" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                            </a>
+                        </td>
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                            <a href="' . $dtfUploadGangSheetUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                <img src="' . $dtfImg . '/upload-gang-sheet.jpg" alt="Upload a Gang Sheet — Upload your print-ready sheet" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                            </a>
+                        </td>
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                            <a href="' . $dtfBuildGangSheetUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                <img src="' . $dtfImg . '/build-gang-sheet.jpg" alt="Build a Gang Sheet — Arrange designs and save space" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Main Footer -->
+        <tr>
+            <td class="mail-footer" bgcolor="#002868" style="background-color: #002868; color: #ffffff; padding: 18px 16px 16px 16px; width: 100%;">
+                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 568px; margin: 0 auto;">
+
+                    <!-- Nav links + Invest graphic -->
+                    <tr>
+                        <td style="padding: 0 0 14px 0;">
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
-                                    <td class="email-links__container">
-                                        <table style="width: 100%; margin: 0 auto;" border="0" cellspacing="0" cellpadding="0">
+                                    <td class="footer-stack-col footer-center-mobile" width="48%" valign="middle" style="width: 48%; padding: 0;">
+                                        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                                             <tr>
-                                                <td class="email-links__wrapper" style="padding: 0 5px; width: 25%;">
-                                                    <a href="' . $trackingUrl . '" class="email-links__link">
-                                                        <img src="' . $baseUrl . '/emails/images/track-order-icon.png" alt="Track order" style="width: 100%; max-width: 100px;">
+                                                <td class="footer-nav-item" width="25%" align="center" valign="middle" style="width: 25%; padding: 0 0px;">
+                                                    <a href="' . $trackingUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                                        <img src="' . $footerImg . '/track-order.png" alt="Track Order" width="64" border="0" style="display: block; width: 64px; max-width: 100%; height: auto; margin: 0 auto; border: 0; outline: none;">
                                                     </a>
                                                 </td>
-                                                <td class="email-links__wrapper" style="padding: 0 5px; width: 25%;">
-                                                    <a href="' . $returnsUrl . '" class="email-links__link">
-                                                        <img src="' . $baseUrl . '/emails/images/return-icon.png" alt="Return" style="width: 100%; max-width: 100px;">
+                                                <td class="footer-nav-item" width="25%" align="center" valign="middle" style="width: 25%; padding: 0 0px;">
+                                                    <a href="' . $returnsUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                                        <img src="' . $footerImg . '/return.png" alt="Return" width="64" border="0" style="display: block; width: 64px; max-width: 100%; height: auto; margin: 0 auto; border: 0; outline: none;">
                                                     </a>
                                                 </td>
-                                                <td class="email-links__wrapper" style="padding: 0 5px; width: 25%;">
-                                                    <a href="' . $customerServiceUrl . '" class="email-links__link">
-                                                        <img src="' . $baseUrl . '/emails/images/contact-icon.png" alt="Contact" style="width: 100%; max-width: 100px;">
+                                                <td class="footer-nav-item" width="25%" align="center" valign="middle" style="width: 25%; padding: 0 0px;">
+                                                    <a href="' . $customerServiceUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                                        <img src="' . $footerImg . '/contact.png" alt="Contact" width="64" border="0" style="display: block; width: 64px; max-width: 100%; height: auto; margin: 0 auto; border: 0; outline: none;">
                                                     </a>
                                                 </td>
-                                                <td class="email-links__wrapper" style="padding: 0 5px; width: 25%;">
-                                                    <a href="' . $blogUrl . '" class="email-links__link">
-                                                        <img src="' . $baseUrl . '/emails/images/blog-icon.png" alt="Blog" style="width: 100%; max-width: 100px;">
+                                                <td class="footer-nav-item" width="25%" align="center" valign="middle" style="width: 25%; padding: 0 0px;">
+                                                    <a href="' . $blogUrl . '" target="_blank" style="text-decoration: none; border: 0;">
+                                                        <img src="' . $footerImg . '/blog.png" alt="Blog" width="64" border="0" style="display: block; width: 64px; max-width: 100%; height: auto; margin: 0 auto; border: 0; outline: none;">
                                                     </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="footer-stack-col footer-center-mobile footer-invest-col" width="52%" valign="middle" style="width: 52%; padding: 0 0 0 14px; border-left: 1px solid #7482A5;">
+                                        <a href="' . $companyWebsite . '" target="_blank" style="text-decoration: none; border: 0;">
+                                            <img src="' . $footerImg . '/invest-in-yourself-buy-in-bulk.png" alt="Invest in Yourself, Buy in Bulk" width="280" border="0" style="display: block; width: 100%; max-width: 280px; height: auto; border: 0; outline: none; margin: 0 auto;">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Horizontal divider -->
+                    <tr>
+                        <td style="padding: 0; font-size: 0; line-height: 0;">
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="1" bgcolor="#7482A5" style="height: 1px; line-height: 1px; font-size: 0; background-color: #7482A5;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Social links + Address section -->
+                    <tr>
+                        <td style="padding: 14px 0 0 0;">
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="footer-stack-col footer-center-mobile" width="52%" valign="middle" style="width: 52%; padding: 0;">
+                                        <table role="presentation" class="footer-social-table" border="0" cellspacing="0" cellpadding="0" align="left">
+                                            <tr>
+                                                <td valign="middle" style="padding: 0 10px 0 0; font-family: \'Open Sans\', Arial, Helvetica, sans-serif; font-size: 12px; letter-spacing: 0.5px; color: #ffffff; white-space: nowrap; text-transform: uppercase;">
+                                                    Follow Us
+                                                </td>
+                                                <td valign="middle" style="padding: 0 4px;">
+                                                    <a href="' . $facebook . '" target="_blank" style="display: block; text-decoration: none; border: 0;">
+                                                        <img src="' . $socialImg . '/facebook-icon.png" alt="Facebook" width=32" height=32" border="0" style="display: block; width:32px; height:32px; border: 0; outline: none;">
+                                                    </a>
+                                                </td>
+                                                <td valign="middle" style="padding: 0 4px;">
+                                                    <a href="' . $instagram . '" target="_blank" style="display: block; text-decoration: none; border: 0;">
+                                                        <img src="' . $socialImg . '/instagram-icon.png" alt="Instagram" width=32" height=32" border="0" style="display: block; width:32px; height:32px; border: 0; outline: none;">
+                                                    </a>
+                                                </td>
+                                                <td valign="middle" style="padding: 0 4px;">
+                                                    <a href="' . $twitter . '" target="_blank" style="display: block; text-decoration: none; border: 0;">
+                                                        <img src="' . $socialImg . '/twitter-icon.png" alt="Twitter" width=32" height=32" border="0" style="display: block; width:32px; height:32px; border: 0; outline: none;">
+                                                    </a>
+                                                </td>
+                                                <td valign="middle" style="padding: 0 4px;">
+                                                    <a href="' . $tiktok . '" target="_blank" style="display: block; text-decoration: none; border: 0;">
+                                                        <img src="' . $socialImg . '/tiktok-icon.png" alt="TikTok" width=32" height=32" border="0" style="display: block; width:32px; height:32px; border: 0; outline: none;">
+                                                    </a>
+                                                </td>
+                                                <td valign="middle" style="padding: 0 0 0 4px;">
+                                                    <a href="' . $youtube . '" target="_blank" style="display: block; text-decoration: none; border: 0;">
+                                                        <img src="' . $socialImg . '/youtube.png" alt="YouTube" width=32" height=32" border="0" style="display: block; width:32px; height:32px; border: 0; outline: none;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="footer-stack-col footer-center-mobile footer-address-pad" width="48%" valign="middle" align="right" style="width: 48%; padding: 0;">
+                                        <table role="presentation" class="footer-address-table" border="0" cellspacing="0" cellpadding="0" align="right">
+                                            <tr>
+                                                <td valign="top" style="padding: 2px 8px 0 0;">
+                                                    <img src="' . $footerImg . '/location.png" alt="" width="28" height="28" border="0" style="display: block; width: 28px; height: 28px; border: 0; outline: none;">
+                                                </td>
+                                                <td valign="middle" align="left" style="font-family: \'Open Sans\', Arial, Helvetica, sans-serif; font-size: 11px; line-height: 1.45; color: #ffffff; text-align: left;">
+                                                    ' . $addressLine1 . '<br>
+                                                    ' . $addressLine2 . '
                                                 </td>
                                             </tr>
                                         </table>
@@ -56,62 +217,12 @@ function renderFooter() {
                             </table>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="mail-footer__image" style="width: 100%; padding-top: 20px;">
-                            <a href="' . $companyWebsite . '">
-                                <img src="' . $baseUrl . '/emails/images/invest-bulk.png" alt="Invest in yourself, buy in bulk" style="width: 100%; max-width: 498px; padding-bottom: 24px; border-bottom: 2px solid #fff !important; background: transparent;">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="mail-footer__header" style="padding: 15px 0 16px 0; font-size: 15px; color: #fff; background: transparent;">
-                            <p style="margin: 0; margin-bottom: 10px; color: #fff; background: transparent; text-transform: uppercase;">Follow our social media</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="mail-footer__socials" style="text-align: center;">
-                            <table style="width: 280px; margin: 0 auto;" border="0" cellspacing="0" cellpadding="0" align="center">
-                                <tr>
-                                    <td class="mail-footer__socials-item" style="width: 56px;">
-                                        <a href="' . $facebook . '" style="display: block;">
-                                            <img src="' . $baseUrl . '/emails/images/facebook-icon.png" alt="Facebook" style="width: 46px; margin-right: 0; margin-left: -5px;">
-                                        </a>
-                                    </td>
-                                    <td class="mail-footer__socials-item" style="width: 56px;">
-                                        <a href="' . $instagram . '" style="display: block;">
-                                            <img src="' . $baseUrl . '/emails/images/instagram-icon.png" alt="Instagram" style="width: 46px; margin-right: 0; margin-left: -5px;">
-                                        </a>
-                                    </td>
-                                    <td class="mail-footer__socials-item" style="width: 56px;">
-                                        <a href="' . $twitter . '" style="display: block;">
-                                            <img src="' . $baseUrl . '/emails/images/twitter-icon.png" alt="Twitter" style="width: 46px; margin-right: 0; margin-left: -5px;">
-                                        </a>
-                                    </td>
-                                    <td class="mail-footer__socials-item" style="width: 56px;">
-                                        <a href="' . $tiktok . '" style="display: block;">
-                                            <img src="' . $baseUrl . '/emails/images/tiktok-icon.png" alt="Tiktok" style="width: 46px; margin-right: 0; margin-left: -5px;">
-                                        </a>
-                                    </td>
-                                    <td class="mail-footer__socials-item" style="width: 56px;">
-                                        <a href="' . $youtube . '" style="display: block;">
-                                            <img src="' . $baseUrl . '/emails/images/youtube.png" alt="Youtube" style="width: 46px; margin-right: 0; margin-left: -5px;">
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="mail-footer__bottom" style="padding: 15px 20px 0 20px; font-size: 14px;">
-                            <p style="margin: 0; line-height: 1.8; color: #fff !important; background: transparent;">' . $companyName . ' ' . $companyAddress . '</p>
-                        </td>
-                    </tr>
+
                 </table>
             </td>
         </tr>
     </table>';
-    
+
     return $html;
 }
 ?>
-

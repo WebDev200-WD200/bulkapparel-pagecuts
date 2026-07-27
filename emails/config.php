@@ -2,12 +2,12 @@
 // Company information configuration
 $_config = [
     // Start - Abandoned Cart Email - LS - for dev only 2/4/2026
-    'base_url' => 'https://5dev1459water.bulkapparel.com/',
+    'base_url' => 'http://localhost:5500/',
     // End - Abandoned Cart Email - LS - 2/4/2026
     'company' => [
         'name' => 'BulkApparel.com',
         // Start - Abandoned Cart Email - LS - for dev only - 2/4/2026
-        'logo' => 'https://5dev1459water.bulkapparel.com/emails/images/email-logo-no-com.png',
+        'logo' => 'http://localhost:5500/emails/images/email-logo-no-com.png',
         // End - Abandoned Cart Email - LS - 2/4/2026
         'address' => '2244 Faraday Avenue #102 Carlsbad, CA, 92008',
         'website' => 'https://bulkapparel.com',
