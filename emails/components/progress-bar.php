@@ -1,24 +1,27 @@
 <?php
+require_once __DIR__ . '/../config.php';
+
 function renderProgressBar($emailData, $currentStatus) {
    $order = $emailData['order'];
+   $baseUrl = getConfig('base_url', '');
    
    // Determine which progress image to use based on status
    $progressImage = '';
    switch ($currentStatus) {
        case 'ordered':
-           $progressImage = '/emails/images/order-confirmed-progress.png';
+           $progressImage = $baseUrl . '/emails/images/order-confirmed-progress.png';
            break;
        case 'shipped':
-           $progressImage = '/emails/images/order-shipped-progress.png';
+           $progressImage = $baseUrl . '/emails/images/order-shipped-progress.png';
            break;
        case 'out_for_delivery':
-           $progressImage = '/emails/images/out-for-delivery-progress.png';
+           $progressImage = $baseUrl . '/emails/images/out-for-delivery-progress.png';
            break;
        case 'delivered':
-           $progressImage = '/emails/images/order-delivered-progress.png';
+           $progressImage = $baseUrl . '/emails/images/order-delivered-progress.png';
            break;
        default:
-           $progressImage = '/emails/images/order-confirmed-progress.png';    
+           $progressImage = $baseUrl . '/emails/images/order-confirmed-progress.png';    
    }
    
    // Prepare styles for each status based on current status

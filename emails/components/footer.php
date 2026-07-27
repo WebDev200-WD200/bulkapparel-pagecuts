@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config.php';
+require_once './config.php';
 
 function renderFooter() {
     $companyName = getConfig('company.name');
@@ -20,7 +20,7 @@ function renderFooter() {
     <!-- Footer -->
     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; margin: 0 auto;">
         <tr>
-            <td class="mail-footer" style="background: linear-gradient(to bottom right, #043169, #1557ab); color: #fff; text-align: center; padding: 30px 20px; width: 100%;">
+            <td class="mail-footer" style="background: #002868; background: linear-gradient(to bottom right, #043169, #1557ab); color: #fff; text-align: center; padding: 30px 20px; width: 100%;">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 560px; margin: 0 auto;">
                     <tr>
                         <td>

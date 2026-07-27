@@ -13,6 +13,7 @@ $templates = [
    'order-shipped' => 'Order Shipped',
    'out-for-delivery' => 'Out For Delivery',
    'order-delivered' => 'Order Delivered',
+   'order-status' => 'Order Status (Combined)',
    'review-request' => 'Review Request'
 ];
 

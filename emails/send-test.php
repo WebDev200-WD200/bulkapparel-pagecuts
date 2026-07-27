@@ -11,7 +11,7 @@ $template = isset($_GET['template']) ? $_GET['template'] : '';
 $email = isset($_GET['email']) ? $_GET['email'] : '';
 
 // Validate template
-$validTemplates = ['order-confirmed', 'order-shipped', 'out-for-delivery', 'order-delivered', 'review-request'];
+$validTemplates = ['order-confirmed', 'order-shipped', 'out-for-delivery', 'order-delivered', 'order-status', 'review-request'];
 if (!in_array($template, $validTemplates)) {
     echo json_encode(['success' => false, 'message' => 'Invalid template']);
     exit;
@@ -260,6 +260,81 @@ try {
             $result = $emailService->sendOrderDelivered($email, $data);
             break;
             
+        case 'order-status':
+            $data = [
+                'customer' => [
+                    'name' => 'John',
+                    'full_name' => 'KIMBERELY LLOYD',
+                    'email' => $email,
+                    'address' => '6041 Stonechase Blvd',
+                    'city' => 'Pace',
+                    'state' => 'FL',
+                    'zip' => '32571',
+                    'phone' => '(540) 760-6687',
+                ],
+                'order' => [
+                    'number' => 'B1234556667',
+                ],
+                'shipments' => [
+                    [
+                        'tracking_number' => '#20200323000533',
+                        'tracking_url' => '#',
+                        'current_status' => 'out_for_delivery',
+                        'status_label' => 'On The Way',
+                        'estimated_delivery' => 'January 20th, 2026',
+                        'order_date_short' => '01/10/23',
+                        'shipped_date' => '01/16/23',
+                        'out_for_delivery_date' => '01/20/23',
+                        'delivery_date_short' => '01/20/23',
+                    ],
+                    [
+                        'tracking_number' => '#202003230111111',
+                        'tracking_url' => '#',
+                        'current_status' => 'delivered',
+                        'status_label' => 'Delivered',
+                        'estimated_delivery' => 'January 21st, 2026',
+                        'order_date_short' => '01/10/23',
+                        'shipped_date' => '01/16/23',
+                        'out_for_delivery_date' => '01/18/23',
+                        'delivery_date_short' => '01/19/23',
+                    ],
+                    [
+                        'is_trackable' => false,
+                        'carrier' => 'UPS',
+                        'tracking_number' => '1Z80E16V033142087',
+                        'tracking_url' => 'https://www.ups.com/track',
+                        'current_status' => 'shipped',
+                        'status_label' => 'In Transit',
+                        'estimated_delivery' => 'January 22nd, 2026',
+                    ],
+                ],
+                'suggested_items' => [
+                    [
+                        'name' => 'G500 Gildan T-Shirt Heavy Cotton',
+                        'colors_available' => 50,
+                        'price' => 2.44,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/16_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                    [
+                        'name' => 'Gildan 5400 Heavy Cotton Long Sleeve T-Shirt',
+                        'colors_available' => 23,
+                        'price' => 4.41,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/395_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                    [
+                        'name' => 'Bella + Canvas 3001 Unisex Jersey T-Shirt',
+                        'colors_available' => 36,
+                        'price' => 3.64,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/391a_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                ],
+            ];
+            $result = $emailService->sendOrderStatus($email, $data);
+            break;
+
         case 'review-request':
             $data = [
                 'customer' => [

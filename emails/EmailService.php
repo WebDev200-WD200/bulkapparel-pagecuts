@@ -25,7 +25,8 @@ class EmailService {
         'order-shipped',
         'out-for-delivery',
         'order-delivered',
-        'review-request'
+        'review-request',
+        'order-status',
     ];
     
     /**
@@ -431,6 +432,62 @@ class EmailService {
             'review-request',
             $to,
             'We Value Your Opinion',
+            $orderData
+        );
+    }
+
+    /**
+     * Send a consolidated order status email (multiple shipments in one message).
+     *
+     * @param string $to Recipient email address
+     * @param array $orderData Order data with shipments array
+     * @param string|null $subject Optional custom subject
+     * @return bool Whether the email was sent successfully
+     *
+     * Sample orderData structure:
+     * [
+     *   'customer' => [...],
+     *   'order' => ['number' => 'B1234556667'],
+     *   'email' => [
+     *     'preview_text' => '',
+     *     'intro' => 'Custom intro message...',
+     *   ],
+     *   'shipments' => [
+     *     [
+     *       'tracking_number' => '#20200323000533',
+     *       'tracking_url' => 'https://...',
+     *       'current_status' => 'out_for_delivery', // ordered|shipped|out_for_delivery|delivered
+     *       'status_label' => 'On The Way',
+     *       'estimated_delivery' => 'January 20th, 2026',
+     *       'order_date_short' => '01/10/23',
+     *       'shipped_date' => '01/16/23',
+     *       'out_for_delivery_date' => '01/20/23',
+     *       'delivery_date_short' => '01/20/23',
+     *     ],
+     *     [
+     *       'is_trackable' => false,
+     *       'carrier' => 'UPS',
+     *       'tracking_number' => '1Z80E16V033142087',
+     *       'tracking_url' => 'https://www.ups.com/track',
+     *       'message' => 'Optional intro when carrier tracking is available externally.',
+     *       'message_secondary' => 'Optional second paragraph.',
+     *       'button_text' => 'View Carrier Tracking',
+     *     ],
+     *     // Or, when not yet shipped (omit carrier + tracking_number):
+     *     [
+     *       'is_trackable' => false,
+     *       'status_label' => 'Processing',
+     *       'estimated_delivery' => 'January 22nd, 2026',
+     *     ],
+     *   ],
+     *   'suggested_items' => [...],
+     * ]
+     */
+    public function sendOrderStatus($to, $orderData, $subject = null) {
+        return $this->email(
+            'order-status',
+            $to,
+            $subject ?: 'Your Order Status',
             $orderData
         );
     }
