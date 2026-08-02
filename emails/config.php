@@ -78,8 +78,52 @@ $_config = [
             'email_order_status_title',
             'email_order_status_body',
         ],
-    ]
+    ],
     // End - Bulkapparel Order emails adjustments - CL - 5152026
+
+    // Where each email template is included/called in production.
+    // Format: 'template-key' => [ '/path/to/file.php' => 'start-end' ]
+    'included_at' => [
+        'abandon-cart-email' => [
+            '/var/www/html/cron/abandon-cart.php' => '88-120',
+        ],
+        'order-confirmed' => [
+            '/var/www/html/home.php' => '132-145',
+        ],
+        'order-shipped' => [
+            '/var/www/html/home.php' => '210-238',
+        ],
+        'out-for-delivery' => [
+            '/var/www/html/home.php' => '260-288',
+        ],
+        'on-the-way' => [
+            '/var/www/html/tracking/update.php' => '55-78',
+        ],
+        'order-delivered' => [
+            '/var/www/html/home.php' => '310-340',
+        ],
+        'review-request' => [
+            '/var/www/html/cron/review-request.php' => '40-65',
+        ],
+        'no-tracking-email' => [
+            '/var/www/html/orders/notify.php' => '90-115',
+        ],
+        'order-status' => [
+            '/var/www/html/orders/status-email.php' => '22-48',
+        ],
+        'tracking-email-regular' => [
+            '/var/www/html/orders/tracking-email.php' => '15-42',
+        ],
+        'tracking-email-dtf' => [
+            '/var/www/html/orders/tracking-email-dtf.php' => '15-42',
+        ],
+        'bulk-bucks-redeemed' => [
+            '/var/www/html/rewards/redeem.php' => '100-125',
+        ],
+        'dtf-uploaded-design-access-email' => [
+            '/var/www/html/dtf/guest-access.php' => '70-95',
+        ],
+    ],
 ];
 
 // Function to get config value
@@ -100,4 +144,3 @@ function getConfig($key, $default = null) {
     return $value;
 }
 ?>
-

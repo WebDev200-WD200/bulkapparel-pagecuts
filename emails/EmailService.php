@@ -47,6 +47,44 @@ class EmailService {
         // Set template path
         $this->templatePath = $templatePath ?: __DIR__;
     }
+
+    /**
+     * @return array
+     */
+    public function getValidTemplates() {
+        return $this->validTemplates;
+    }
+
+    /**
+     * Render an email template to HTML without sending.
+     *
+     * When $data is empty, the template's own dummy defaults are used.
+     * When $data is provided, it is merged over constructor defaultData and
+     * passed into the template as $emailData.
+     *
+     * @param string $template
+     * @param array $data
+     * @return string
+     * @throws Exception
+     */
+    public function render($template, $data = []) {
+        if (!in_array($template, $this->validTemplates, true)) {
+            throw new Exception("Invalid email template: $template");
+        }
+
+        $templateFile = $this->templatePath . '/' . $template . '.php';
+        if (!is_file($templateFile)) {
+            throw new Exception("Email template file not found: $template");
+        }
+
+        if (!empty($data) || !empty($this->defaultData)) {
+            $emailData = array_replace_recursive($this->defaultData, is_array($data) ? $data : []);
+        }
+
+        ob_start();
+        include $templateFile;
+        return (string) ob_get_clean();
+    }
     
     /**
      * Send an email using a specific template
@@ -60,32 +98,12 @@ class EmailService {
      * @throws Exception If template is invalid
      */
     public function email($template, $to, $subject, $data = [], $attachments = []) {
-        // Validate template
-        if (!in_array($template, $this->validTemplates)) {
-            throw new Exception("Invalid email template: $template");
-        }
-        
         // Validate email
         if (!filter_var($to, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("Invalid email address: $to");
         }
-        
-        // Merge data
-        $emailData = array_merge($this->defaultData, $data);
 
-
-				// var_dump([
-				// 	"template" => $template,
-				// 	"to" => $to,
-				// 	"subject" => $subject,
-				// 	"emailData" => $emailData,
-				// 	"attachments" => $attachments
-				// ]);
-        
-        // Get the email content by including the template
-        ob_start();
-        include $this->templatePath . '/' . $template . '.php';
-        $emailContent = ob_get_clean();
+        $emailContent = $this->render($template, $data);
         
         // Set headers
         $companyName = getConfig('company.name');
@@ -493,6 +511,38 @@ class EmailService {
             $orderData
         );
     }
+
+    /**
+     * Send tracking information email (regular apparel items).
+     *
+     * @param string $to
+     * @param array $orderData
+     * @return bool
+     */
+    public function sendTrackingEmailRegular($to, $orderData = []) {
+        return $this->email(
+            'tracking-email-regular',
+            $to,
+            'Tracking Information',
+            $orderData
+        );
+    }
+
+    /**
+     * Send tracking information email (DTF shipments).
+     *
+     * @param string $to
+     * @param array $orderData
+     * @return bool
+     */
+    public function sendTrackingEmailDTF($to, $orderData = []) {
+        return $this->email(
+            'tracking-email-dtf',
+            $to,
+            'Tracking Information',
+            $orderData
+        );
+    }
     
     /**
      * Add attachments to email headers
@@ -536,5 +586,4 @@ class EmailService {
         );
     }
 }
-?>
 

@@ -184,27 +184,69 @@ function renderShipmentExpandedRemaining($remaining) {
 }
 
 /**
+ * True when tracking is not ready yet (no tracking number, or status is Pending).
+ *
+ * @param array $shipment
+ * @return bool
+ */
+function isShipmentAwaitingTracking($shipment) {
+    $status = strtolower(trim((string) ($shipment['status'] ?? $shipment['status_label'] ?? '')));
+    if ($status === 'pending') {
+        return true;
+    }
+
+    return trim((string) ($shipment['tracking_number'] ?? '')) === '';
+}
+
+/**
+ * Placeholder shown when a shipment has no tracking / is Pending (no products).
+ *
+ * @param array $shipment
+ * @param array $config
+ * @return string
+ */
+function renderShipmentAwaitingTrackingPlaceholder($shipment = [], $config = []) {
+    $message = $shipment['pending_message']
+        ?? $config['pending_tracking_message']
+        ?? 'Tracking will be available soon';
+
+    return '
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin: 8px 0 12px 0;">
+                <tr>
+                  <td align="center" style="padding: 24px 12px; font-family: \'Open Sans\', Arial, Helvetica, sans-serif; font-size: 14px; color: #666666; line-height: 1.5; text-align: center;">
+                    ' . htmlspecialchars($message) . '
+                  </td>
+                </tr>
+              </table>';
+}
+
+/**
  * Shipment card header: title, item count, optional type label, tracking link.
  *
  * @param array $shipment
  * @param int $totalItems
  * @param string $type
+ * @param bool $awaitingTracking
  * @return string
  */
-function renderShipmentSectionHeader($shipment, $totalItems, $type = 'regular') {
+function renderShipmentSectionHeader($shipment, $totalItems, $type = 'regular', $awaitingTracking = false) {
     $number = (int) ($shipment['number'] ?? 1);
     $trackingNumber = htmlspecialchars($shipment['tracking_number'] ?? '');
     $trackingUrl = htmlspecialchars($shipment['tracking_url'] ?? '#');
-    $itemLabel = $totalItems === 1 ? '1 Item' : $totalItems . ' Items';
     $typeLabel = $shipment['type_label'] ?? ($type === 'dtf' ? 'DTF' : '');
 
-    $metaHtml = htmlspecialchars($itemLabel);
-    if ($typeLabel !== '') {
-        $metaHtml .= ' <span style="color: #000000;">&middot;</span> ' . htmlspecialchars($typeLabel);
+    if ($awaitingTracking) {
+        $metaHtml = $typeLabel !== '' ? htmlspecialchars($typeLabel) : '';
+    } else {
+        $itemLabel = $totalItems === 1 ? '1 Item' : $totalItems . ' Items';
+        $metaHtml = htmlspecialchars($itemLabel);
+        if ($typeLabel !== '') {
+            $metaHtml .= ' <span style="color: #000000;">&middot;</span> ' . htmlspecialchars($typeLabel);
+        }
     }
 
     $trackingHtml = '';
-    if ($trackingNumber !== '') {
+    if (!$awaitingTracking && $trackingNumber !== '') {
         $trackingHtml = '
                 <td align="right" valign="top" style="font-family: \'Open Sans\', Arial, Helvetica, sans-serif; white-space: nowrap;">
                   <a href="' . $trackingUrl . '" target="_blank" style="font-size: 16px; font-weight: bold; color: #002868; text-decoration: none;">
@@ -213,12 +255,16 @@ function renderShipmentSectionHeader($shipment, $totalItems, $type = 'regular') 
                 </td>';
     }
 
+    $metaRow = $metaHtml !== ''
+        ? '<div style="font-size: 12px; color: #44414f; line-height: 1.3;">' . $metaHtml . '</div>'
+        : '';
+
     return '
               <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 15px;">
                 <tr>
                   <td valign="top" style="font-family: \'Open Sans\', Arial, Helvetica, sans-serif;">
                     <div style="font-size: 18px; font-weight: bold; color: #282828; line-height: 1.3; margin: 0 0 4px 0;">Shipment #' . $number . '</div>
-                    <div style="font-size: 12px; color: #44414f; line-height: 1.3;">' . $metaHtml . '</div>
+                    ' . $metaRow . '
                   </td>
                   ' . $trackingHtml . '
                 </tr>
@@ -235,14 +281,35 @@ function renderShipmentSectionHeader($shipment, $totalItems, $type = 'regular') 
  * @return string
  */
 function renderShipmentSection($shipment, $type, $config, $viewMoreUrl) {
-    $items = isset($shipment['items']) && is_array($shipment['items']) ? $shipment['items'] : [];
+    $awaitingTracking = isShipmentAwaitingTracking($shipment);
+    $items = (!$awaitingTracking && isset($shipment['items']) && is_array($shipment['items']))
+        ? $shipment['items']
+        : [];
     $totalItems = count($items);
+
+    if ($awaitingTracking) {
+        return '
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 24px;">
+    <tr>
+      <td style="padding: 0 20px;">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #ececec;">
+          <tr>
+            <td style="padding: 12px 15px 6px 15px;">
+              ' . renderShipmentSectionHeader($shipment, $totalItems, $type, true) . '
+              ' . renderShipmentAwaitingTrackingPlaceholder($shipment, $config) . '
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>';
+    }
+
     $expanded = !empty($config['expanded']);
     $initialVisible = max(0, (int) ($config['initial_visible_items'] ?? 4));
-    $expandedVisible = max(0, (int) ($config['expanded_visible_items'] ?? 10));
     $thumbnailPreview = max(0, (int) ($config['thumbnail_preview_items'] ?? 10));
 
-    $visibleCount = $expanded ? $expandedVisible : $initialVisible;
+    $visibleCount = $expanded ? $totalItems : $initialVisible;
     $visibleCount = min($visibleCount, $totalItems);
     $visibleItems = array_slice($items, 0, $visibleCount);
     $hiddenItems = array_slice($items, $visibleCount);
@@ -256,14 +323,10 @@ function renderShipmentSection($shipment, $type, $config, $viewMoreUrl) {
     }
 
     $footerHtml = '';
-    if ($hiddenCount > 0) {
-        if ($expanded) {
-            $footerHtml = renderShipmentExpandedRemaining($hiddenCount);
-        } else {
-            $previewItems = array_slice($hiddenItems, 0, $thumbnailPreview);
-            $remainingAfterPreview = max(0, $hiddenCount - count($previewItems));
-            $footerHtml = renderShipmentCollapsedMore($previewItems, $remainingAfterPreview, $viewMoreUrl, $type);
-        }
+    if (!$expanded && $hiddenCount > 0) {
+        $previewItems = array_slice($hiddenItems, 0, $thumbnailPreview);
+        $remainingAfterPreview = max(0, $hiddenCount - count($previewItems));
+        $footerHtml = renderShipmentCollapsedMore($previewItems, $remainingAfterPreview, $viewMoreUrl, $type);
     }
 
     return '
@@ -273,7 +336,7 @@ function renderShipmentSection($shipment, $type, $config, $viewMoreUrl) {
         <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #ececec;">
           <tr>
             <td style="padding: 12px 15px 6px 15px;">
-              ' . renderShipmentSectionHeader($shipment, $totalItems, $type) . '
+              ' . renderShipmentSectionHeader($shipment, $totalItems, $type, false) . '
               ' . $itemsHtml . '
               ' . $footerHtml . '
             </td>

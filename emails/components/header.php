@@ -1,6 +1,6 @@
 <?php
 
-function renderHeader($title)
+function renderHeader($title, $showTitle = true)
 {
   $companyName = getConfig('company.name');
   $companyLogo = getConfig('company.logo');
@@ -80,7 +80,10 @@ function renderHeader($title)
     </td>
   </tr>
 </table>
+';
 
+  if ($showTitle) {
+    $html .= '
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td class="main-title" style="color: #002868; font-size: 24px; font-weight: bold; text-align: center; padding: 0 20px 20px 20px; font-family: \'Open Sans\', Arial, sans-serif;">
@@ -88,8 +91,8 @@ function renderHeader($title)
     </td>
   </tr>
 </table>
-
 ';
+  }
 
   return $html;
 }

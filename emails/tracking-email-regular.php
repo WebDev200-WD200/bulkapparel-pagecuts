@@ -14,18 +14,21 @@ require_once __DIR__ . '/components/shipments.php';
 require_once __DIR__ . '/config.php';
 
 // ---------------------------------------------------------------------------
-// Shipment display configuration (render-time; no client-side toggle)
-// Set 'expanded' => true to preview the expanded state (10 items + +N).
+// Email configuration (render-time). title/body are pure HTML.
+// Placeholders: {customer_name}, {company_name}, {customer_service_url}
+// Set 'expanded' => true to show all shipment items.
 // ---------------------------------------------------------------------------
-$shipmentConfig = [
+$emailConfig = [
+    'title' => 'Tracking Information',
+    'body' => '<p style="margin:0 0 4px 0;">Here is your order tracking information</p><p style="margin:0;">Your order may be delivered in multiple shipments on separate days.</p>',
     'initial_visible_items' => 4,
-    'expanded_visible_items' => 10,
     'thumbnail_preview_items' => 10,
     'expanded' => false,
+    'view_more_url' => 'https://www.bulkapparel.com',
 ];
 
 // Dummy View More destination — replace with hosted order/shipment details URL
-$viewMoreUrl = 'https://www.bulkapparel.com/tracking'; // Dummy / placeholder URL
+$viewMoreUrl = $emailConfig['view_more_url']; // Dummy / placeholder URL
 
 // Seed products used to generate a large dummy shipment list
 $regularSeedProducts = [
@@ -115,10 +118,6 @@ $shipmentTwoItems = [
 $defaultData = [
     'email' => [
         'preview_text' => '',
-        'intro_lines' => [
-            'Here is your order tracking information',
-            'Your order may be delivered in multiple shipments on separate days.',
-        ],
     ],
     'customer' => [
         'name' => 'Kimberely',
@@ -145,6 +144,13 @@ $defaultData = [
             'tracking_number' => '20200323000533',
             'tracking_url' => 'https://www.ups.com/track?tracknum=20200323000533',
             'items' => $shipmentTwoItems,
+        ],
+        [
+            'number' => 3,
+            'status' => 'Pending',
+            'tracking_number' => '',
+            'tracking_url' => '',
+            'items' => [],
         ],
     ],
     'suggested_items' => [
@@ -182,32 +188,36 @@ $previewText = !empty($emailData['email']['preview_text'])
     ? $emailData['email']['preview_text']
     : 'Here is your order tracking information for order #' . $orderNumber . '. Your order may arrive in multiple shipments.';
 
-$introLines = $emailData['email']['intro_lines'] ?? [
-    'Here is your order tracking information',
-    'Your order may be delivered in multiple shipments on separate days.',
+$placeholders = [
+    '{customer_name}' => $emailData['customer']['name'] ?? '',
+    '{company_name}' => $companyName,
+    '{customer_service_url}' => $customerServiceUrl,
 ];
+$titleHtmlRaw = strtr((string) ($emailConfig['title'] ?? 'Tracking Information'), $placeholders);
+$bodyHtmlRaw = strtr((string) ($emailConfig['body'] ?? ''), $placeholders);
+$documentTitle = trim(strip_tags($titleHtmlRaw)) ?: 'Tracking Information';
 
-$emailContent = renderDocumentStart('Tracking Information', $previewText);
-$emailContent .= renderHeader('Tracking Information');
-$emailContent .= renderOrderNumber($emailData, 'left');
-
-$emailContent .= '
-  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+$bodyHtml = '
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td class="content" style="padding: 0 20px 20px 20px;">
-        <p class="greeting" style="font-size: 16px; margin: 0 0 10px 0; font-weight: bold; font-family: \'Open Sans\', Arial, sans-serif;">Hey ' . htmlspecialchars($emailData['customer']['name']) . ',</p>
-        <p style="font-family: \'Open Sans\', Arial, sans-serif; font-size: 16px; color: #000000; line-height: 1.5; margin: 0 0 4px 0;">' . htmlspecialchars($introLines[0]) . '</p>
-        <p style="font-family: \'Open Sans\', Arial, sans-serif; font-size: 16px; color: #000000; line-height: 1.5; margin: 0;">' . htmlspecialchars($introLines[1] ?? '') . '</p>
+      <td class="tracking-email-body content" style="padding: 0 20px 20px 20px; font-family: \'Open Sans\', Arial, Helvetica, sans-serif; font-size: 16px; color: #000000; line-height: 1.5;">
+        <p class="greeting" style="margin: 0 0 10px 0; font-weight: bold;">Hey ' . htmlspecialchars($emailData['customer']['name'] ?? '') . ',</p>
+        ' . $bodyHtmlRaw . '
       </td>
     </tr>
   </table>';
+
+$emailContent = renderDocumentStart($documentTitle, $previewText);
+$emailContent .= renderHeader($documentTitle);
+$emailContent .= renderOrderNumber($emailData, 'left');
+$emailContent .= $bodyHtml;
 
 $emailContent .= renderShippingAddress($emailData['customer']);
 
 $emailContent .= renderShipments([
     'type' => 'regular',
     'shipments' => $emailData['shipments'] ?? [],
-    'config' => $shipmentConfig,
+    'config' => $emailConfig,
     'view_more_url' => $viewMoreUrl,
 ]);
 
