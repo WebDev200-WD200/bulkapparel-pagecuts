@@ -32,6 +32,8 @@ $templates = [
     'on-the-way' => 'On The Way',
     'order-delivered' => 'Order Delivered',
     'review-request' => 'Review Request',
+    'registration-email' => 'Registration Email',
+    'stock-alert-signup' => 'Stock Alert Signup',
     'bulk-bucks-redeemed' => 'Bulk Bucks Redeemed',
     'no-tracking-email' => 'No Tracking Info', // Start - Bulkapparel Order emails adjustments - CL - 1282026
     // Start - Gangsheet Integration Feature Updates - LS - 2/3/2026
@@ -196,6 +198,21 @@ if (!is_array($adminSettings)) {
 
         .preview-actions .send:hover {
             background-color: #1565c0;
+        }
+
+        .preview-actions .open-preview-tab {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            font-weight: normal;
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        .preview-actions .open-preview-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.55);
         }
 
         .main-content {
@@ -512,6 +529,7 @@ if (!is_array($adminSettings)) {
         <div class="preview-actions">
             <button class="print" onclick="printEmail()">Print Email</button>
             <button class="send" onclick="sendTestEmail()">Send Test Email</button>
+            <button type="button" class="open-preview-tab" id="open-iframe-url" onclick="openPreviewInNewTab()">Open preview at New Tab</button>
         </div>
     </div>
 
@@ -693,7 +711,9 @@ if (!is_array($adminSettings)) {
             });
 
             // Load the template with ajax=true parameter to get just the content
-            $iframe.attr('src', templateName + '.php?ajax=true');
+            const previewUrl = templateName + '.php?ajax=true';
+            $iframe.attr('src', previewUrl);
+            $('#open-iframe-url').data('preview-url', previewUrl);
 
             // Keep Include/Called at in sync with selected template
             refreshSettingsPanel(templateName);
@@ -788,6 +808,19 @@ if (!is_array($adminSettings)) {
                     }
                 });
             }
+        }
+
+        // Open the same URL the preview iframe loads (fallback when iframe fails)
+        function openPreviewInNewTab() {
+            const $iframe = $('#preview-frame');
+            const url = $iframe.attr('src') || $('#open-iframe-url').data('preview-url');
+
+            if (!url) {
+                alert('No preview URL loaded yet.');
+                return;
+            }
+
+            window.open(url, '_blank', 'noopener,noreferrer');
         }
     </script>
 </body>

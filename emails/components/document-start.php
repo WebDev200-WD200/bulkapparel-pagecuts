@@ -21,11 +21,27 @@ function renderDocumentStart($title, $previewText = '') {
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light only" />
+  <meta name="supported-color-schemes" content="light only" />
   <title>' . $title . '</title>
   <!--[if !mso]><!-->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style type="text/css">
     @import url(\'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap\');
+    :root {
+      color-scheme: light only;
+      supported-color-schemes: light only;
+    }
+    @media only screen and (max-width: 600px) {
+      .body-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      .email-outer-pad {
+        padding: 24px 0 !important;
+      }
+    }
   </style>
   <!--<![endif]-->
   
@@ -41,8 +57,11 @@ function renderDocumentStart($title, $previewText = '') {
 '.$previewTextHtml.'
 <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f8f8f8">
 <tr>
-<td align="center" valign="top" style="padding: 100px 0;">
-<table class="body-wrapper" border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="min-width:600px; width: 600px; max-width: 600px;">
+<td class="email-outer-pad" align="center" valign="top" style="padding: 100px 0;">
+<!--[if mso]>
+<table border="0" cellpadding="0" cellspacing="0" width="600" bgcolor="#ffffff"><tr><td>
+<![endif]-->
+<table class="body-wrapper" border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="width: 100%; max-width: 600px; min-width: 0;">
 <tr>
 <td>
 ';
@@ -58,6 +77,9 @@ function renderDocumentEnd() {
 </td>
 </tr>
 </table>
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
 </td>
 </tr>
 </table>

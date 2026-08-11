@@ -1,25 +1,44 @@
 <?php
+require_once './config.php';
 
-function renderHeader($title, $showTitle = true)
-{
-  $companyName = getConfig('company.name');
-  $companyLogo = getConfig('company.logo');
-  $baseUrl = getConfig('base_url');
-  // Check if companyLogo is an array and extract the URL
-  if (is_array($companyLogo)) {
-    $companyLogo = isset($companyLogo['url']) ? $companyLogo['url'] : '';
-  }
+/**
+ * @param string $title Header title HTML
+ * @param array $config {
+ *   @type bool   $showTitle  Whether to render the title block (default true)
+ *   @type string $titleAlign Title text-align: left, center, or right (default center)
+ * }
+ */
+function renderHeader($title, $config = []) {
+    if (!is_array($config)) {
+        $config = [];
+    }
 
-  $html = '
+    $showTitle = array_key_exists('showTitle', $config) ? (bool) $config['showTitle'] : true;
+    $titleAlign = isset($config['titleAlign']) ? $config['titleAlign'] : 'center';
+
+    $companyName = getConfig('company.name');
+    $companyLogo = getConfig('company.logo');
+    $baseUrl = getConfig('base_url');
+    // Check if companyLogo is an array and extract the URL
+    if (is_array($companyLogo)) {
+        $companyLogo = isset($companyLogo['url']) ? $companyLogo['url'] : '';
+    }
+
+    $allowedAligns = ['left', 'center', 'right'];
+    $titleAlign = strtolower((string) $titleAlign);
+    if (!in_array($titleAlign, $allowedAligns, true)) {
+        $titleAlign = 'center';
+    }
+
+    $html = '
 <table style="border-collapse:collapse;width:100%;">
   <tr>
     <td style="width:100%; text-align:center; padding:30px 0 0 0;">
-      <a href="' . $baseUrl . '/" style="display:inline-block; margin:0 auto;">
+      <a href="'.$baseUrl.'/" style="display:inline-block; margin:0 auto;">
         <img 
           width="480" 
           height="89" 
           src="' . $companyLogo . '" 
-          alt="Bulkapparel Logo"
           style="width:480px; height:89px; max-height:89px; min-height:89px;"
         >
       </a>
@@ -34,25 +53,25 @@ function renderHeader($title, $showTitle = true)
       <table style="position:relative; z-index:2; border-collapse:collapse;">
         <tr>
           <td>
-            <a href="' . $baseUrl . '" 
+            <a href="'.$baseUrl.'" 
                style="color:#000; text-decoration:none; font-size:16px; text-transform:uppercase; padding:0 13.3px; margin:0 auto; white-space:nowrap;">
               Shop
             </a>
           </td>
           <td>
-            <a href="' . $baseUrl . '/customer-service" 
+            <a href="'.$baseUrl.'/customer-service" 
                style="color:#000; text-decoration:none; font-size:16px; text-transform:uppercase; padding:0 13.3px; margin:0 auto; white-space:nowrap;">
               FAQ
             </a>
           </td>
           <td>
-            <a href="' . $baseUrl . '/tracking" 
+            <a href="'.$baseUrl.'/tracking" 
                style="color:#000; text-decoration:none; font-size:16px; text-transform:uppercase; padding:0 13.3px; margin:0 auto; white-space:nowrap;">
               Tracking
             </a>
           </td>
           <td>
-            <a href="' . $baseUrl . '/returns" 
+            <a href="'.$baseUrl.'/returns" 
                style="color:#000; text-decoration:none; font-size:16px; text-transform:uppercase; padding:0 13.3px; margin:0 auto; white-space:nowrap;">
               Returns
             </a>
@@ -64,13 +83,12 @@ function renderHeader($title, $showTitle = true)
             </a>
           </td>
           <td>
-            <a href="' . $baseUrl . '/" 
+            <a href="'.$baseUrl.'/" 
                style="display:inline-block; text-align:right; padding:0 !important; width:100px;">
               <img 
                 width="100" 
                 height="37" 
-                src="https://mcusercontent.com/30a5cd6624e6806da8c4b670e/images/b88583ec-afa4-ddb4-8d39-32528bf8a7e2.png" 
-                alt="Bulkapparel Logo" 
+                src="'.getEmailImageUrl('email-logo-com-only.png').'" 
                 style="width:100px; margin-left:auto;"
               >
             </a>
@@ -82,17 +100,18 @@ function renderHeader($title, $showTitle = true)
 </table>
 ';
 
-  if ($showTitle) {
-    $html .= '
+    if ($showTitle) {
+        $html .= '
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td class="main-title" style="color: #002868; font-size: 24px; font-weight: bold; text-align: center; padding: 0 20px 20px 20px; font-family: \'Open Sans\', Arial, sans-serif;">
-      ' . $title . '
-    </td>
-  </tr>
+<tr>
+  <td class="main-title" style="color: #002868; font-size: 24px; font-weight: bold; text-align: ' . $titleAlign . '; padding: 0 20px 20px 20px; font-family: \'Open Sans\', Arial, sans-serif;">
+    ' . $title . '
+  </td>
+</tr>
 </table>
 ';
-  }
+    }
 
-  return $html;
+    return $html;
 }
+?>

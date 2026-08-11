@@ -28,6 +28,8 @@ class EmailService {
         'out-for-delivery',
         'order-delivered',
         'review-request',
+        'registration-email',
+        'stock-alert-signup',
         'order-status',
     ];
     
@@ -453,6 +455,71 @@ class EmailService {
             $to,
             'We Value Your Opinion',
             $orderData
+        );
+    }
+
+    /**
+     * Send a registration / welcome email after account signup.
+     *
+     * @param string $to Recipient email address
+     * @param array $data Optional email data (preview_text, customer.email, etc.)
+     * @return bool Whether the email was sent successfully
+     *
+     * Sample data structure:
+     * [
+     *   'email' => [
+     *     'preview_text' => 'Thank you for joining BulkApparel.com...',
+     *   ],
+     *   'customer' => [
+     *     'email' => 'customer@example.com',
+     *   ],
+     * ]
+     */
+    public function sendRegistrationEmail($to, $data = []) {
+        return $this->email(
+            'registration-email',
+            $to,
+            'Thank you for joining BulkApparel.com',
+            $data
+        );
+    }
+
+    /**
+     * Send a stock alert signup confirmation email (Notify Me).
+     *
+     * @param string $to Recipient email address
+     * @param array $data Stock alert data
+     * @return bool Whether the email was sent successfully
+     *
+     * Sample data structure:
+     * [
+     *   'email' => [
+     *     'preview_text' => 'We will notify you as soon as your item is back in stock.',
+     *   ],
+     *   'item' => [
+     *     'name' => 'Gildan 5000 Heavy Cotton T-Shirt',
+     *     'product_url' => 'https://www.bulkapparel.com/tshirts/gildan-5000-heavy-cotton-t-shirt?color=WHITE',
+     *     'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/16_fm.jpg',
+     *     'color' => 'White',
+     *     'sizes' => 'S, M, L', // or ['S', 'M', 'L']
+     *   ],
+     *   'suggested_items' => [
+     *     [
+     *       'name' => 'G5000 Gildan 5000 T-Shirt Youth Heavy Cotton',
+     *       'colors_available' => 50,
+     *       'price' => 2.44,
+     *       'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/16_fm.jpg',
+     *       'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+     *     ],
+     *   ],
+     * ]
+     */
+    public function sendStockAlertSignup($to, $data = []) {
+        return $this->email(
+            'stock-alert-signup',
+            $to,
+            'BulkApparel.com - Stock notification signup',
+            $data
         );
     }
 

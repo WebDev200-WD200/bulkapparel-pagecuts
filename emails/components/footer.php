@@ -35,11 +35,42 @@ function renderFooter() {
     $html = '
     <!--[if !mso]><!-->
     <style type="text/css">
+      .mail-footer,
+      .mail-footer td {
+        background-color: #002868 !important;
+        color: #ffffff !important;
+      }
+      @media (prefers-color-scheme: dark) {
+        .mail-footer,
+        .mail-footer td {
+          background-color: #002868 !important;
+          color: #ffffff !important;
+        }
+      }
+      [data-ogsc] .mail-footer,
+      [data-ogsc] .mail-footer td,
+      [data-ogsb] .mail-footer,
+      [data-ogsb] .mail-footer td {
+        background-color: #002868 !important;
+        color: #ffffff !important;
+      }
       @media only screen and (max-width: 600px) {
+        .email-footer-wrap,
+        .email-footer-inner,
+        .footer-dtf-table {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+        }
         .footer-dtf-cell {
           display: block !important;
           width: 100% !important;
           max-width: 100% !important;
+        }
+        .footer-dtf-cell img {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
         }
         .footer-stack-col {
           display: block !important;
@@ -63,6 +94,7 @@ function renderFooter() {
         .footer-social-table,
         .footer-address-table {
           margin: 0 auto !important;
+          float: none !important;
         }
         .footer-address-pad {
           padding-top: 16px !important;
@@ -72,31 +104,31 @@ function renderFooter() {
     <!--<![endif]-->
 
     <!-- Email Footer -->
-    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; margin: 0 auto;">
+    <table role="presentation" class="email-footer-wrap" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 600px; min-width: 0; margin: 0 auto;">
 
         <!-- DTF Banner Section -->
         <tr>
             <td align="center" style="padding: 0; font-size: 0; line-height: 0;">
-                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px;">
+                <table role="presentation" class="footer-dtf-table" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 600px; min-width: 0;">
                     <tr>
-                        <td class="footer-dtf-cell" width="225" valign="top" style="width: 37.5%; padding: 0; font-size: 0; line-height: 0;">
+                        <td class="footer-dtf-cell" width="225" valign="top" style="width: 37.5%; max-width: 225px; padding: 0; font-size: 0; line-height: 0;">
                             <a href="' . $dtfTransferUrl . '" target="_blank" style="text-decoration: none; border: 0;">
-                                <img src="' . $dtfImg . '/dtf-transfer.jpg" alt="Need Custom Prints? DTF Transfers — No Minimums, Vibrant Colors, Easy to Apply" width="225" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                                <img src="' . $dtfImg . '/dtf-transfer.jpg" alt="Need Custom Prints? DTF Transfers — No Minimums, Vibrant Colors, Easy to Apply" width="225" border="0" style="display: block; width: 100%; max-width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
                             </a>
                         </td>
-                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; max-width: 125px; padding: 0; font-size: 0; line-height: 0;">
                             <a href="' . $dtfTransferBySizeUrl . '" target="_blank" style="text-decoration: none; border: 0;">
-                                <img src="' . $dtfImg . '/transfer-by-size.jpg" alt="Transfers by Size — Upload designs in any size" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                                <img src="' . $dtfImg . '/transfer-by-size.jpg" alt="Transfers by Size — Upload designs in any size" width="125" border="0" style="display: block; width: 100%; max-width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
                             </a>
                         </td>
-                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; max-width: 125px; padding: 0; font-size: 0; line-height: 0;">
                             <a href="' . $dtfUploadGangSheetUrl . '" target="_blank" style="text-decoration: none; border: 0;">
-                                <img src="' . $dtfImg . '/upload-gang-sheet.jpg" alt="Upload a Gang Sheet — Upload your print-ready sheet" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                                <img src="' . $dtfImg . '/upload-gang-sheet.jpg" alt="Upload a Gang Sheet — Upload your print-ready sheet" width="125" border="0" style="display: block; width: 100%; max-width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
                             </a>
                         </td>
-                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; padding: 0; font-size: 0; line-height: 0;">
+                        <td class="footer-dtf-cell" width="125" valign="top" style="width: 20.833%; max-width: 125px; padding: 0; font-size: 0; line-height: 0;">
                             <a href="' . $dtfBuildGangSheetUrl . '" target="_blank" style="text-decoration: none; border: 0;">
-                                <img src="' . $dtfImg . '/build-gang-sheet.jpg" alt="Build a Gang Sheet — Arrange designs and save space" width="125" border="0" style="display: block; width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
+                                <img src="' . $dtfImg . '/build-gang-sheet.jpg" alt="Build a Gang Sheet — Arrange designs and save space" width="125" border="0" style="display: block; width: 100%; max-width: 100%; height: auto; border: 0; outline: none; text-decoration: none;">
                             </a>
                         </td>
                     </tr>
@@ -106,8 +138,8 @@ function renderFooter() {
 
         <!-- Main Footer -->
         <tr>
-            <td class="mail-footer" bgcolor="#002868" style="background-color: #002868; color: #ffffff; padding: 18px 16px 16px 16px; width: 100%;">
-                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 568px; margin: 0 auto;">
+            <td class="mail-footer" bgcolor="#002868" style="background-color: #002868 !important; color: #ffffff !important; padding: 18px 16px 16px 16px; width: 100%;">
+                <table role="presentation" class="email-footer-inner" width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%; max-width: 568px; min-width: 0; margin: 0 auto;">
 
                     <!-- Nav links + Invest graphic -->
                     <tr>

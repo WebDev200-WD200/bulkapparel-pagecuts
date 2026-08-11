@@ -23,6 +23,7 @@ $_config = [
             'youtube' => 'https://www.youtube.com/bulkapparel'
         ]
     ],
+    'image_version' => '862026',
     'rewards' => [
         'points_per_review' => 20
     ],
@@ -69,6 +70,8 @@ $_config = [
             'email_status_review_title',
             'email_status_review_body',
         ],
+        'registration-email' => [],
+        'stock-alert-signup' => [],
         'no-tracking-email' => [
             'email_status_no_tracking_toggle',
             'email_status_no_tracking_title',
@@ -104,6 +107,14 @@ $_config = [
         ],
         'review-request' => [
             '/var/www/html/cron/review-request.php' => '40-65',
+        ],
+        'registration-email' => [
+            '/var/www/html/email/do_signup.php' => '93-125',
+            '/var/www/html/email/confirmordercreateaccount.php' => '139-143',
+            '/var/www/html/email/addcustomeraddressinfo.php' => '271-275',
+        ],
+        'stock-alert-signup' => [
+            '/var/www/html/email/saveemailstockalerts.php' => '101-119',
         ],
         'no-tracking-email' => [
             '/var/www/html/orders/notify.php' => '90-115',
@@ -142,5 +153,10 @@ function getConfig($key, $default = null) {
     }
     
     return $value;
+}
+
+function getEmailImageUrl($image) {
+    global $_config;
+    return $_config['base_url'] . '/emails/images/' . $image . '?v=' . $_config['image_version'];
 }
 ?>

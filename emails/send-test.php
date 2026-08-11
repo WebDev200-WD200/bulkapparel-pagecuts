@@ -11,7 +11,7 @@ $template = isset($_GET['template']) ? $_GET['template'] : '';
 $email = isset($_GET['email']) ? $_GET['email'] : '';
 
 // Validate template
-$validTemplates = ['order-confirmed', 'order-shipped', 'tracking-email-regular', 'tracking-email-dtf', 'out-for-delivery', 'order-delivered', 'order-status', 'review-request'];
+$validTemplates = ['order-confirmed', 'order-shipped', 'tracking-email-regular', 'tracking-email-dtf', 'out-for-delivery', 'order-delivered', 'order-status', 'review-request', 'registration-email', 'stock-alert-signup'];
 if (!in_array($template, $validTemplates)) {
     echo json_encode(['success' => false, 'message' => 'Invalid template']);
     exit;
@@ -386,6 +386,57 @@ try {
                 ]
             ];
             $result = $emailService->sendReviewRequest($email, $data);
+            break;
+
+        case 'registration-email':
+            $data = [
+                'email' => [
+                    'preview_text' => 'Thank you for joining BulkApparel.com — exclusive discounts, trending styles, and more await.',
+                ],
+                'customer' => [
+                    'email' => $email,
+                ],
+            ];
+            $result = $emailService->sendRegistrationEmail($email, $data);
+            break;
+
+        case 'stock-alert-signup':
+            $data = [
+                'email' => [
+                    'preview_text' => 'We will notify you as soon as your item is back in stock.',
+                ],
+                'item' => [
+                    'name' => 'Gildan 5000 Heavy Cotton T-Shirt',
+                    'product_url' => 'https://www.bulkapparel.com/tshirts/gildan-5000-heavy-cotton-t-shirt?color=WHITE',
+                    'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/16_fm.jpg',
+                    'color' => 'White',
+                    'sizes' => 'S, M, L',
+                ],
+                'suggested_items' => [
+                    [
+                        'name' => 'G5000 Gildan 5000 T-Shirt Youth Heavy Cotton',
+                        'colors_available' => 50,
+                        'price' => 2.44,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/16_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                    [
+                        'name' => 'Gildan 5400 Heavy Cotton Long Sleeve T-Shirt',
+                        'colors_available' => 23,
+                        'price' => 4.41,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/395_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                    [
+                        'name' => 'Gildan 5000L Heavy Cotton Women\'s Short Sleeve',
+                        'colors_available' => 36,
+                        'price' => 3.64,
+                        'image' => 'https://www.bulkapparel.com/image/bulk-blank-shirts/391a_fm.jpg',
+                        'logo' => 'https://www.bulkapparel.com/image/brand/small/35_fm.jpg?v=8302028',
+                    ],
+                ],
+            ];
+            $result = $emailService->sendStockAlertSignup($email, $data);
             break;
     }
     
